@@ -148,10 +148,12 @@ external Ollama plus non-Windows helper memory sit outside them.
 
 Stated plainly so they are not mistaken for oversights:
 
-- **The Python package is flat.** There are no `api/`, `db/`, `jobs/`,
-  `ingestion/`, `knowledge/`, `grounding/`, `tutor/`, `assessment/`, `learner/`,
-  `providers/` or `evaluation/` boundaries. `database.py` mixes CRUD, jobs and
-  presentation; `schema.py` mixes database and API concerns.
+- **The Python package is still flat in behaviour.** B4 scaffolded
+  `knowledge/`, `grounding/`, `tutor/`, `assessment/`, `learner/`, `providers/`
+  and a top-level `evaluation/` package, but they contain **interfaces only** —
+  every entry point raises `NotImplementedError` and nothing in the application
+  imports them. `database.py` still mixes CRUD, jobs and presentation;
+  `schema.py` still mixes database and API concerns.
 - **Not implemented:** retrieval, grounded answers and citations, tutoring,
   assessment, learner modelling, and scored evaluation.
 - **Provenance is partial.** Immutable versions, hashes and locators exist.
@@ -173,9 +175,15 @@ Stated plainly so they are not mistaken for oversights:
 
 | Gate | Command | Count |
 | --- | --- | --- |
-| Python service | `npm.cmd run api:test` | 165 |
-| JavaScript + build | `npm.cmd run check` | 15 tests + `tsc --noEmit` + `vite build` |
+| Python service | `npm.cmd run api:test` | 181 collected: 167 pass, 14 skipped (scaffold placeholders) |
+| JavaScript + build | `npm.cmd run check` | 18 tests + `tsc --noEmit` + `vite build` |
 | Desktop smoke | `npm.cmd run smoke:desktop` | hidden Electron window, isolated data dir |
+
+The 14 skips are the B4 scaffold placeholders. Each names its milestone
+(`not implemented: knowledge index`, `grounding`, `tutor`, `assessment`,
+`learner`, `providers`, `track D benchmark`). They are intentional: they mark the
+test surface without asserting nothing and passing. One real test in that group
+verifies every scaffold package imports and exposes its contracts.
 
 Focused subsets exist as `queue:test`, `ingest:test`, `visual:test`,
 `vision:test`, `audio:test`, `audio:cloud:test`, `video:test`,
@@ -210,11 +218,11 @@ response, including units whose status is `needs_ocr`, `suspect`, `unreadable`,
 | --- | --- |
 | `src/` | React renderer, typed storage client, hooks |
 | `electron/` | Main process, preload bridge, backend client, media |
-| `services/studylens_service/` | Python service — **flat module set** (§9) |
-| `services/tests/` | Python test suite (165 tests) |
+| `services/studylens_service/` | Python service — flat modules plus B4 interface scaffolds (§9) |
+| `services/tests/` | Python test suite (181 collected; 167 pass, 14 skipped) |
 | `tests/` | JavaScript test suite (15 tests) |
 | `tests/fixtures/ingestion/` | Authored ingestion fixtures used by tests and smoke |
 | `scripts/` | Build/dev/smoke entry points |
 | `scripts/ingestion-evals/` | Runnable standalone ingestion evaluators |
 | `docs/` | This document, audit, privacy, decisions, archive |
-| `evaluation/` | **Reserved and empty** for the Track D benchmark |
+| `evaluation/` | **Reserved** for the Track D benchmark; interfaces only (§9) |
