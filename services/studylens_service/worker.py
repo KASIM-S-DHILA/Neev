@@ -96,7 +96,7 @@ class Worker:
     def claim(self):
         self.connection.execute("BEGIN IMMEDIATE")
         try:
-            row = self.connection.execute("SELECT * FROM jobs WHERE state='queued' AND cancel_requested=0 AND available_at<=? ORDER BY (kind='cloud_visuals'),(kind='video_frames'),created_at,(kind='extract_source'),id LIMIT 1", (time.time(),)).fetchone()
+            row = self.connection.execute("SELECT * FROM jobs WHERE state='queued' AND cancel_requested=0 AND available_at<=? ORDER BY (kind='cloud_visuals'),(kind='video_frame_visuals'),(kind='video_frames'),created_at,(kind='extract_source'),id LIMIT 1", (time.time(),)).fetchone()
             if row:
                 self.connection.execute("UPDATE jobs SET state='running', stage='Starting', owner=?, attempts=attempts+1, updated_at=? WHERE id=?", (self.owner, time.time(), row["id"]))
             self.connection.commit()
@@ -143,6 +143,19 @@ class Worker:
         fields = ",".join(values)
         placeholders = ",".join("?" for _ in values)
         self.connection.execute(f"INSERT INTO jobs ({fields}) VALUES ({placeholders}) ON CONFLICT(kind,source_version_id) DO NOTHING", tuple(values.values()))
+
+    def queue_automatic_frame_visuals(self, job, selected_frames):
+        from .video_frame_visuals import automatic_enabled
+        if not selected_frames or not automatic_enabled():
+            return
+        from .jobs import job_values
+        source = self.connection.execute("SELECT filename FROM source_versions WHERE id=?", (job["source_version_id"],)).fetchone()
+        if not source:
+            return
+        values = job_values(job["workspace_id"], job["subject_id"], job["source_version_id"],
+            "video_frame_visuals", source["filename"] + " · Frame text", selected_frames)
+        fields = ",".join(values)
+        self.connection.execute(f"INSERT INTO jobs ({fields}) VALUES ({','.join('?' for _ in values)}) ON CONFLICT(kind,source_version_id) DO NOTHING", tuple(values.values()))
 
     def verify(self, job):
         row = self.connection.execute("SELECT * FROM source_versions WHERE id=?", (job["source_version_id"],)).fetchone()
@@ -222,6 +235,11 @@ class Worker:
                 from .resource_guard import ParserGuard
                 with ParserGuard(self, job) as guard:
                     result = process(self, job, guard)
+            elif job["kind"] == "video_frame_visuals":
+                from .video_frame_visuals import process
+                from .resource_guard import ParserGuard
+                with ParserGuard(self, job) as guard:
+                    result = process(self, job, guard)
             elif job["kind"] == "youtube_import":
                 from .youtube import process
                 from .resource_guard import ParserGuard
@@ -239,10 +257,13 @@ class Worker:
                 partial = job["kind"] == "extract_source" and (result["counts"]["text"] < result["units"] or result["warnings"] or not result["units"])
                 partial = partial or (job["kind"] == "cloud_visuals" and bool(result["needs_review"]))
                 partial = partial or (job["kind"] == "video_frames" and (bool(result["omitted_candidates"]) or bool(result["empty_windows"]) or not result["selected_frames"]))
+                partial = partial or (job["kind"] == "video_frame_visuals" and bool(result["cloud_needs_review"]))
                 partial = partial or (job["kind"] == "youtube_import" and bool(result["issue"]))
                 self.update(job, state="partial" if partial else "succeeded", stage="Some content needs attention" if partial else "Complete", owner=None, result_json=json.dumps(result), error=None)
                 if job["kind"] == "extract_source":
                     self.queue_automatic_visuals(job)
+                if job["kind"] == "video_frames":
+                    self.queue_automatic_frame_visuals(job, result["selected_frames"])
                 self.connection.commit()
             except BaseException:
                 self.connection.rollback()

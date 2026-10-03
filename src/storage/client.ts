@@ -6,7 +6,7 @@ export type Job = {
   workspace_id: string;
   subject_id: string | null;
   source_version_id: string | null;
-  kind: "verify_original" | "queue_fixture" | "extract_source" | "cloud_visuals" | "video_frames" | "youtube_import";
+  kind: "verify_original" | "queue_fixture" | "extract_source" | "cloud_visuals" | "video_frames" | "video_frame_visuals" | "youtube_import";
   provider?: string;
   automatic?: boolean;
   label: string;
@@ -169,8 +169,16 @@ export type EquationPreview = {
 export type VisualTable = { headers: string[]; rows: string[][]; notes: string[] };
 export type VisionStatus = { configured: boolean; model: string; automatic: boolean };
 export type VideoFramePage = {
-  version_id: string; source_sha256: string; job: Job | null; total: number; offset: number;
+  version_id: string; source_sha256: string; job: Job | null; visual_job: Job | null; total: number; offset: number;
   frames: { id: string; seconds: number; reasons: string[]; review_required: true; ocr_pending: true;
+    visual?: { source_version_id: string; source_sha256: string; seconds: number;
+      ocr: {text: string; available: boolean; engine?: string; language?: string; mean_confidence?: number | null; warning?: string | null};
+      routing: {decision: string; reasons: string[]};
+      cloud: null | {status: string; reason?: string; provider?: string; model?: string;
+        extraction?: {is_blank: boolean; text_lines: string[]; tables: VisualTable[]; equations: string[];
+          diagram_nodes: string[]; diagram_edges: {from: string; to: string; label: string}[]; uncertainties: string[]}}} | null;
+    nearby_audio: {unit_id: string; source_version_id: string; start_seconds: number; end_seconds: number;
+      text: string; provider: string; review_required: true}[];
     asset: { data_url?: string; error?: string; sha256: string; width: number; height: number; caption: string } }[];
 };
 export type ExtractedContent = {
@@ -232,6 +240,7 @@ export type StorageBridge = {
       | "openYouTube"
       | "processAudio"
       | "processVideoFrames"
+      | "processFrameVisuals"
       | "readVideoFrames"
       | "processCloudVisuals"
       | "readContent"
@@ -326,7 +335,7 @@ async function operation<T>(
   return browserRequest<T>(
     route,
     body === undefined &&
-      !["cancelJob", "retryJob", "verifyOriginal", "processVisuals", "processAudio"].includes(
+      !["cancelJob", "retryJob", "verifyOriginal", "processVisuals", "processAudio", "processFrameVisuals"].includes(
         action,
       )
       ? {}
@@ -353,6 +362,9 @@ export const storageClient = {
   processVideoFrames: (workspaceId: string, versionId: string) => operation<Job>(
     "processVideoFrames", `/workspaces/${encodeURIComponent(workspaceId)}/source-versions/${encodeURIComponent(versionId)}/process-video-frames`,
     workspaceId, {}, {versionId}),
+  processFrameVisuals: (workspaceId: string, versionId: string) => operation<Job>(
+    "processFrameVisuals", `/workspaces/${encodeURIComponent(workspaceId)}/source-versions/${encodeURIComponent(versionId)}/process-frame-visuals`,
+    workspaceId, undefined, {versionId}),
   audioStatus: () => operation<{ ffmpeg: boolean; ffprobe: boolean; recognizer: boolean; model_ready: boolean; cloud_enabled: boolean; model: string }>("audioStatus", "/audio"),
   processAudio: (workspaceId: string, versionId: string) => operation<Job>("processAudio",
     "/workspaces/" + encodeURIComponent(workspaceId) + "/source-versions/" + encodeURIComponent(versionId) + "/process-audio",

@@ -212,8 +212,9 @@ export function ContentPreview({
       )}
       {(content?.state === "cancelled" || content?.state === "failed") && (
         <p className="small-text">
-          Extraction is unfinished. Saved units are retained; use Resume in
-          Background work.
+          {content.kind === "video"
+            ? "Video audio extraction is unfinished. Saved frame results below remain available; use Resume in Background work for audio."
+            : "Extraction is unfinished. Saved units are retained; use Resume in Background work."}
         </p>
       )}
       <div className="content-navigation">
@@ -403,7 +404,9 @@ export function ContentPreview({
           <p className="content-no-text">
             {content?.state === "unsupported"
               ? "This material type will be processed in a later ingestion phase."
-              : "No extracted unit is available at this location yet."}
+              : content?.kind === "video"
+                ? "No transcript interval is saved here yet. Selected frame text can still be reviewed below."
+                : "No extracted unit is available at this location yet."}
           </p>
         )
       )}

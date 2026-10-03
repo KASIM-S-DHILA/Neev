@@ -123,13 +123,13 @@ function registerStorage(getWindow, getBackend) {
             (action === "cancelJob" ? "/cancel" : "/retry"),
           { method: "POST" },
         );
-      if (action === "verifyOriginal" || action === "processVisuals" || action === "processAudio" || action === "processVideoFrames")
+      if (action === "verifyOriginal" || action === "processVisuals" || action === "processAudio" || action === "processVideoFrames" || action === "processFrameVisuals")
         return backend.request(
           "/workspaces/" +
             identifier(workspaceId) +
             "/source-versions/" +
             identifier(versionId) +
-            (action === "verifyOriginal" ? "/verify" : action === "processAudio" ? "/process-audio" : action === "processVideoFrames" ? "/process-video-frames" : "/process-visuals"),
+            (action === "verifyOriginal" ? "/verify" : action === "processAudio" ? "/process-audio" : action === "processVideoFrames" ? "/process-video-frames" : action === "processFrameVisuals" ? "/process-frame-visuals" : "/process-visuals"),
           { method: "POST" },
         );
       if (action === "readContent" || action === "readVideoFrames") {

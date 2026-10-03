@@ -10,7 +10,7 @@ function jobStatus(job: Job) {
       ? "Test complete"
       : job.kind === "extract_source"
         ? "Text extracted"
-        : job.kind === "cloud_visuals" ? "Visuals processed" : job.kind === "video_frames" ? "Frames selected · OCR pending" : job.kind === "youtube_import" ? "YouTube captions saved" : "Original checked";
+        : job.kind === "cloud_visuals" ? "Visuals processed" : job.kind === "video_frames" ? "Frames selected" : job.kind === "video_frame_visuals" ? "Frame text saved · review needed" : job.kind === "youtube_import" ? "YouTube captions saved" : "Original checked";
   if (job.state === "partial") return "Some content needs review";
   if (job.state === "queued")
     return ["Waiting for Groq quota", "Waiting for Groq audio quota", "Pacing Groq audio requests", "Retrying visual output", "Retry scheduled"].includes(job.stage) ? job.stage : "Waiting";
@@ -111,7 +111,7 @@ export function JobPanel({
                   >
                     <X size={12} /> Cancel
                   </button>
-                ) : ["extract_source", "video_frames", "youtube_import"].includes(job.kind) && job.state === "partial" ? (
+                ) : ["extract_source", "video_frames", "video_frame_visuals", "youtube_import"].includes(job.kind) && job.state === "partial" ? (
                   <span className="small-text">Review in Materials</span>
                 ) : ["failed", "cancelled", "partial"].includes(job.state) ? (
                   <button

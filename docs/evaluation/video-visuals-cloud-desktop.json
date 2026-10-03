@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "checks": {
+    "threeFrames": true,
+    "textVisible": true,
+    "unverified": true,
+    "timestamp": true,
+    "noAudioClaim": true,
+    "savedCloudRendered": true
+  },
+  "screenshot": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\docs\\evaluation\\screenshots\\phase-07c-cloud-frame-desktop.png",
+  "data_directory": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\video-visuals-integration-20261003-104845",
+  "saved_cloud": true
+}

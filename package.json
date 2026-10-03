@@ -18,6 +18,7 @@
     "audio:cloud:test": "node scripts/python.mjs -m unittest discover -s services/tests -p test_cloud_audio.py -v",
     "video:test": "node scripts/python.mjs -m unittest discover -s services/tests -p test_video.py -v",
     "video:frames:test": "node scripts/python.mjs -m unittest discover -s services/tests -p test_video_frames.py -v",
+    "video:visuals:test": "node scripts/python.mjs -m unittest discover -s services/tests -p test_video_frame_visuals.py -v",
     "youtube:test": "node scripts/python.mjs -m unittest discover -s services/tests -p test_youtube.py -v",
     "audio:setup": "npm run api:install && node scripts/python.mjs scripts/setup-audio.py --download",
     "api:install": "node scripts/python.mjs -m pip install -r services/requirements-lock.txt",

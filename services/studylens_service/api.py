@@ -102,6 +102,10 @@ def create_app(root: Path, token: str, *, max_file_bytes=2 * 1024**3, ready=None
     async def process_frames(workspace_id: str, version_id: str):
         return await queue.process_frames(workspace_id, version_id)
 
+    @app.post("/workspaces/{workspace_id}/source-versions/{version_id}/process-frame-visuals", status_code=202)
+    async def process_frame_visuals(workspace_id: str, version_id: str):
+        return await queue.process_frame_visuals(workspace_id, version_id)
+
     @app.get("/workspaces/{workspace_id}/source-versions/{version_id}/video-frames")
     async def video_frames(workspace_id: str, version_id: str, offset: int = 0):
         if not 0 <= offset <= 600:

@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "checks": {
+    "frame_times": true,
+    "ocr_saved": true,
+    "no_cloud": true,
+    "source_unchanged": true,
+    "audio_cancelled": true,
+    "visual_job_finished": true
+  },
+  "version_id": "10a2de02-4a56-4892-ae20-a277e248f9c5",
+  "data_directory": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\video-visuals-integration-20261003-104402",
+  "frame_times": [
+    0.0,
+    4.0,
+    8.0
+  ],
+  "ocr_text": [
+    "Conditional probability\nP(A | B) = P(A and B) / P(B)",
+    "Independent events\nP(A| B) = P(A and B) / P(B)\nP(B) = 0.5",
+    "Example and solution\nP(A | B) = P(A and B) / P(B)\nP(B) = 0.5\nP(A and B) = 0.2\nP(A | B) = 0.4"
+  ],
+  "method": "Real FFmpeg/PySceneDetect/Tesseract in isolated API/worker; no ASR or Groq."
+}

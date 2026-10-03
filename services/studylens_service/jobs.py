@@ -2,7 +2,7 @@ import json
 import time
 from uuid import uuid4
 
-from sqlalchemy import delete, insert, select, update
+from sqlalchemy import delete, func, insert, select, update
 from sqlalchemy.dialects.sqlite import insert as sqlite_insert
 
 from .database import Conflict, Missing
@@ -22,7 +22,7 @@ def public_job(row):
     return {key: row[key] for key in ("id", "workspace_id", "subject_id", "source_version_id", "kind",
         "label", "state", "stage", "done", "total", "error", "cancel_requested", "attempts", "failures",
         "max_attempts", "recoveries", "created_at", "updated_at")} | {
-        "checkpoint": {key: value for key, value in json.loads(row["checkpoint_json"]).items() if key not in ("frames", "video")}, "result": json.loads(row["result_json"]) if row["result_json"] else None,
+        "checkpoint": {key: value for key, value in json.loads(row["checkpoint_json"]).items() if key not in ("frames", "video", "results")}, "result": json.loads(row["result_json"]) if row["result_json"] else None,
         **({"provider": json.loads(row["payload_json"]).get("provider", "groq"),
             "automatic": bool(json.loads(row["payload_json"]).get("automatic"))} if row["kind"] == "cloud_visuals" else {})}
 
@@ -51,6 +51,16 @@ class JobStore:
                 if row["kind"] == "video" and automatic_enabled():
                     values = job_values(row["workspace_id"], row["subject_id"], row["id"], "video_frames", row["filename"] + " · Frames", 0)
                     await connection.execute(sqlite_insert(jobs).values(**values).on_conflict_do_nothing(index_elements=["kind", "source_version_id"]))
+                if row["kind"] == "video":
+                    from .video_frame_visuals import automatic_enabled as frame_visuals_enabled
+                    selected = (await connection.execute(select(jobs).where(jobs.c.kind == "video_frames",
+                        jobs.c.source_version_id == row["id"]))).mappings().first()
+                    if frame_visuals_enabled() and selected and selected["state"] in ("succeeded", "partial"):
+                        count = len(json.loads(selected["checkpoint_json"]).get("frames", []))
+                        if count:
+                            values = job_values(row["workspace_id"], row["subject_id"], row["id"],
+                                "video_frame_visuals", row["filename"] + " · Frame text", count)
+                            await connection.execute(sqlite_insert(jobs).values(**values).on_conflict_do_nothing(index_elements=["kind", "source_version_id"]))
 
     async def import_youtube(self, workspace_id, subject_id, body):
         from .youtube import parse_url
@@ -92,12 +102,53 @@ class JobStore:
                 current = (await connection.execute(select(jobs).where(jobs.c.kind == "video_frames", jobs.c.source_version_id == version_id))).mappings().first()
                 if current and current["state"] in ("queued", "running"):
                     raise Conflict("Frame selection is already active. Cancel it before rebuilding.")
+                visual = (await connection.execute(select(jobs).where(jobs.c.kind == "video_frame_visuals",
+                    jobs.c.source_version_id == version_id))).mappings().first()
+                if visual and visual["state"] == "running":
+                    raise Conflict("Cancel frame visual processing before selecting frames again.")
+                await connection.execute(delete(jobs).where(jobs.c.kind == "video_frame_visuals", jobs.c.source_version_id == version_id))
                 if current:
                     job_id = current["id"]
                     await connection.execute(update(jobs).where(jobs.c.id == job_id).values(state="queued", stage="Selecting frames again", done=0, total=0,
                         checkpoint_json="{}", result_json=None, error=None, cancel_requested=False, failures=0, owner=None, available_at=time.time(), updated_at=time.time()))
                 else:
                     values = job_values(workspace_id, source["subject_id"], version_id, "video_frames", source["filename"] + " · Frames", 0)
+                    job_id = values["id"]
+                    await connection.execute(insert(jobs).values(**values))
+                await connection.commit()
+            except BaseException:
+                await connection.rollback()
+                raise
+        return await self.get(workspace_id, job_id)
+
+    async def process_frame_visuals(self, workspace_id, version_id):
+        async with self.db.engine.connect() as connection:
+            from sqlalchemy import text
+            await connection.execute(text("BEGIN IMMEDIATE"))
+            try:
+                source = (await connection.execute(select(source_versions, sources.c.kind, sources.c.subject_id)
+                    .join(sources, sources.c.id == source_versions.c.source_id)
+                    .where(sources.c.workspace_id == workspace_id, source_versions.c.id == version_id))).mappings().first()
+                if not source or source["kind"] != "video":
+                    raise Missing("Video version not found in this workspace")
+                frames = (await connection.execute(select(jobs).where(jobs.c.kind == "video_frames",
+                    jobs.c.source_version_id == version_id))).mappings().first()
+                if not frames or frames["state"] not in ("succeeded", "partial") or not json.loads(frames["checkpoint_json"]).get("frames"):
+                    raise Conflict("Finish selecting video frames before visual extraction.")
+                current = (await connection.execute(select(jobs).where(jobs.c.kind == "video_frame_visuals",
+                    jobs.c.source_version_id == version_id))).mappings().first()
+                if current and current["state"] in ("queued", "running"):
+                    raise Conflict("Frame visual processing is already active.")
+                count = len(json.loads(frames["checkpoint_json"])["frames"])
+                if current:
+                    job_id = current["id"]
+                    await connection.execute(update(jobs).where(jobs.c.id == job_id).values(state="queued",
+                        stage="Reading selected frames again", done=0, total=count, checkpoint_json="{}",
+                        result_json=None, error=None, cancel_requested=False, failures=0, owner=None,
+                        available_at=time.time(), updated_at=time.time()))
+                else:
+                    values = job_values(workspace_id, source["subject_id"], version_id, "video_frame_visuals",
+                        source["filename"] + " · Frame text", count)
                     job_id = values["id"]
                     await connection.execute(insert(jobs).values(**values))
                 await connection.commit()
@@ -114,17 +165,49 @@ class JobStore:
                 raise Missing("Video version not found in this workspace")
             job = (await connection.execute(select(jobs).where(jobs.c.kind == "video_frames", jobs.c.source_version_id == version_id))).mappings().first()
             checkpoint = json.loads(job["checkpoint_json"]) if job else {}
+            visual_job = (await connection.execute(select(jobs).where(jobs.c.kind == "video_frame_visuals",
+                jobs.c.source_version_id == version_id))).mappings().first()
+            visual_checkpoint = json.loads(visual_job["checkpoint_json"]) if visual_job else {}
+            visible = checkpoint.get("frames", [])[offset:offset + 4]
+            if visible:
+                first, last = min(frame["seconds"] for frame in visible), max(frame["seconds"] for frame in visible)
+                audio_rows = (await connection.execute(select(content_units.c.id, content_units.c.metadata_json)
+                    .where(content_units.c.source_version_id == version_id,
+                        func.json_extract(content_units.c.locator_json, "$.kind") == "time",
+                        func.json_extract(content_units.c.locator_json, "$.start_seconds") <= last + 8,
+                        func.json_extract(content_units.c.locator_json, "$.end_seconds") >= first - 8))).mappings().all()
+            else:
+                audio_rows = []
         values = checkpoint.get("frames", [])
         if values and checkpoint.get("source_sha256") != source["sha256"]:
             raise Conflict("Frame source fingerprint changed. Select frames again.")
         from .visual_assets import public_assets
+        from .video_frame_visuals import manifest
         import asyncio
+        valid_visuals = (visual_checkpoint.get("manifest") == manifest(checkpoint)
+            and visual_checkpoint.get("source_sha256") == source["sha256"])
+        visual_results = visual_checkpoint.get("results", {}) if valid_visuals else {}
+        def nearby_audio(seconds):
+            matches = []
+            for row in audio_rows:
+                metadata = json.loads(row["metadata_json"])
+                speech = metadata.get("speech", {})
+                for segment in metadata.get("segments", []):
+                    if segment["start_seconds"] - 8 <= seconds <= segment["end_seconds"] + 8:
+                        matches.append({"unit_id": row["id"], "source_version_id": version_id,
+                            "start_seconds": segment["start_seconds"], "end_seconds": segment["end_seconds"],
+                            "text": segment["text"][:500], "provider": speech.get("provider", "local"),
+                            "review_required": True})
+            return sorted(matches, key=lambda item: min(abs(seconds-item["start_seconds"]), abs(seconds-item["end_seconds"])))[:2]
         async def publish(frame):
             asset = (await asyncio.to_thread(public_assets, self.db.root, {"assets": [frame["asset"]]}))["assets"][0]
             if asset.get("error"):
                 asset["error"] = "Frame preview missing or damaged. Select frames again; the original is retained."
-            return {key: value for key, value in frame.items() if key != "asset"} | {"asset": asset}
+            return {key: value for key, value in frame.items() if key != "asset"} | {
+                "asset": asset, "visual": visual_results.get(frame["id"]),
+                "nearby_audio": nearby_audio(frame["seconds"])}
         return {"version_id": version_id, "source_sha256": source["sha256"], "job": public_job(job) if job else None,
+            "visual_job": public_job(visual_job) if visual_job else None,
             "total": len(values), "offset": offset, "frames": await asyncio.gather(*(publish(frame) for frame in values[offset:offset + 4]))}
 
     async def list(self, workspace_id, subject_id=None, limit=50):

@@ -1656,3 +1656,11 @@ kbd {
 .youtube-cue button { flex-shrink: 0; font-variant-numeric: tabular-nums; }
 .youtube-cue p { white-space: pre-wrap; line-height: 1.6; margin: 8px 0; }
 @media(max-width:760px) { .youtube-import-options { grid-template-columns: 1fr; } }
+.frame-extracted-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 12rem;
+  overflow-y: auto;
+  font: inherit;
+  font-size: 0.82rem;
+}
