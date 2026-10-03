@@ -9,6 +9,42 @@ Status values: **Accepted** (in force) · **Provisional** (in force, may change)
 
 ---
 
+## D0. Never print a secret
+
+**Status:** Accepted — learned the hard way in B0
+
+`GROQ_API_KEY` is a live credential. During the B0 relocation I ran a PowerShell
+check that included `$env:GROQ_API_KEY` on its own line, intending only to test
+whether it was set. PowerShell printed the **value** into the tool output, which
+landed in a transcript. The intent was "is it set"; the effect was "here it is".
+
+**The rule: never print an environment variable's value. Test presence with a
+boolean only.**
+
+```powershell
+# Wrong — prints the secret.
+$env:GROQ_API_KEY
+if ($env:GROQ_API_KEY) { "set" }
+
+# Right — boolean only.
+[bool]$env:GROQ_API_KEY          # -> True / False
+if ($env:GROQ_API_KEY) { "set" } # the string "set" never contains the value
+```
+
+Same for any credential: API keys, tokens, passwords, connection strings.
+
+**Why this is a DECISIONS entry rather than a code comment:** tool output is not
+a private channel. It is captured in transcripts, scrollback and logs that may be
+retained or shared. A secret printed once must be treated as disclosed and
+rotated. The cost of rotation is small; the cost of a leaked key is not.
+
+**Standing checks.** `git grep -n "gsk_"` returns nothing, and `git log --all -S
+"gsk_"` finds nothing, so no key is in the repository or its history. `.env` and
+`.env.*` are gitignored except `.env.example`, and no `.env` file exists in the
+repository. If a key is ever printed again: **rotate first, then investigate.**
+
+---
+
 ## D1. Loopback FastAPI service behind an Electron bridge
 
 **Status:** Accepted
