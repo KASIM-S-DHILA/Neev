@@ -175,9 +175,22 @@ Stated plainly so they are not mistaken for oversights:
 
 | Gate | Command | Count |
 | --- | --- | --- |
-| Python service | `npm.cmd run api:test` | 181 collected: 167 pass, 14 skipped (scaffold placeholders) |
+| Python service | `npm.cmd run api:test` | 184 collected: 170 pass, 14 skipped (scaffold placeholders) |
 | JavaScript + build | `npm.cmd run check` | 18 tests + `tsc --noEmit` + `vite build` |
 | Desktop smoke | `npm.cmd run smoke:desktop` | hidden Electron window, isolated data dir |
+
+JavaScript tests per file (`node --test tests/<file>`), 18 total:
+
+| File | Tests | Covers |
+| --- | --- | --- |
+| `tests/imports.test.ts` | 3 | import scope, cancel, partial failure |
+| `tests/session.test.ts` | 7 | tabs, drafts, restore validation, tab cap |
+| `tests/storage.test.ts` | 3 | `describeStorage` derives WAL from `/health` |
+| `tests/writer.test.ts` | 3 | serialisation, coalescing, retry, conflict |
+| `tests/youtube.test.ts` | 2 | URL guard, browser + IPC scope |
+
+`tests/storage.test.ts` was added in B1b with 3 tests, not 4. The earlier
+work report said 4; the file was correct and the report was not.
 
 The 14 skips are the B4 scaffold placeholders. Each names its milestone
 (`not implemented: knowledge index`, `grounding`, `tutor`, `assessment`,
@@ -219,8 +232,8 @@ response, including units whose status is `needs_ocr`, `suspect`, `unreadable`,
 | `src/` | React renderer, typed storage client, hooks |
 | `electron/` | Main process, preload bridge, backend client, media |
 | `services/studylens_service/` | Python service — flat modules plus B4 interface scaffolds (§9) |
-| `services/tests/` | Python test suite (181 collected; 167 pass, 14 skipped) |
-| `tests/` | JavaScript test suite (15 tests) |
+| `services/tests/` | Python test suite (184 collected; 170 pass, 14 skipped) |
+| `tests/` | JavaScript test suite (18 tests across 5 files, §10) |
 | `tests/fixtures/ingestion/` | Authored ingestion fixtures used by tests and smoke |
 | `scripts/` | Build/dev/smoke entry points |
 | `scripts/ingestion-evals/` | Runnable standalone ingestion evaluators |

@@ -1,5 +1,6 @@
 """Independent cloud gate. Provider fixtures never send course material."""
 import asyncio
+import hashlib
 import io
 import json
 import os
@@ -23,9 +24,33 @@ from studylens_service.slides import native_tables
 from studylens_service.visual_assets import save_preview
 from studylens_service.worker import Worker
 
-# Retained pilot evidence, archived by the B1 cleanup. Not a fixture: this is a
-# historical result kept so the duplicate-rejection rule stays tested against it.
-ARCHIVE = Path(__file__).resolve().parents[2] / "docs" / "archive" / "ingestion-pilots"
+# Copied from the retained Groq vision pilot (docs/archive/ingestion-pilots/
+# groq-vision-results.json, SHA256
+# CB340CD7A2F17EDAF192F389EA834A25CDE08C77A612319C438520799C15C27F). It is a real
+# provider result, not authored material, so it is never regenerated and never
+# edited. Tests must never read from docs/archive/.
+PILOT_RESULTS = (
+    Path(__file__).resolve().parents[2]
+    / "tests/fixtures/ingestion/pilot/groq-vision-results.json"
+)
+
+
+PILOT_SHA256 = "cb340cd7a2f17edaf192f389ea834a25cde08c77a612319c438520799c15c27f"
+
+
+def read_pilot_results():
+    """Load the retained pilot result, failing loudly if it is absent.
+
+    A silently missing fixture would quietly stop the duplicate-rejection check
+    from running, which is worse than a hard failure.
+    """
+    if not PILOT_RESULTS.is_file():
+        raise AssertionError(
+            "Missing pilot fixture " + str(PILOT_RESULTS) + ". Restore it from "
+            "docs/archive/ingestion-pilots/groq-vision-results.json; do not make "
+            "this test skip."
+        )
+    return json.loads(PILOT_RESULTS.read_text("utf-8"))
 
 
 def output(**changes):
@@ -355,10 +380,30 @@ class ShapeAndRoutingTests(unittest.TestCase):
                 vision.validate_output(invalid)
 
     def test_retained_initial_pilot_partial_duplicates_are_rejected(self):
-        report = json.loads((ARCHIVE / "groq-vision-results.json").read_text("utf-8"))
+        report = read_pilot_results()
         table = next(sample["extraction"] for sample in report["samples"] if sample["sample"] == "table-slide-12")
         with self.assertRaises(ValueError):
             vision.validate_output(json.dumps(table))
+
+    def test_pilot_fixture_is_present_and_matches_the_retained_original(self):
+        # Guards the guard: if this fixture is ever deleted or edited, say so
+        # loudly instead of letting the duplicate-rejection test read a
+        # different file or silently stop running.
+        self.assertTrue(
+            PILOT_RESULTS.is_file(),
+            "pilot fixture is missing at " + str(PILOT_RESULTS),
+        )
+        self.assertEqual(
+            hashlib.sha256(PILOT_RESULTS.read_bytes()).hexdigest(),
+            PILOT_SHA256,
+            "pilot fixture was modified; restore it from docs/archive/ingestion-pilots/",
+        )
+        report = read_pilot_results()
+        self.assertIn("samples", report)
+        self.assertTrue(
+            any(sample["sample"] == "table-slide-12" for sample in report["samples"]),
+            "pilot fixture no longer contains the table-slide-12 sample",
+        )
 
     def test_shape_rejects_ragged_dangling_blank_contradiction_and_unknown_fields(self):
         for value in (output(tables=[{"headers": ["a", "b"], "rows": [["1"]], "notes": []}]),

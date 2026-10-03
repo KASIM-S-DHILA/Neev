@@ -175,6 +175,46 @@ Groq, Ollama and YouTube clients live inside the modules that use them. There is
 no shared provider interface, prompt registry or versioned prompt store.
 
 **Cost, concrete:** Groq vision records `prompt_version` and ASR records
+## D16. The smoke screenshot is written to `tmp/`, not to `docs/`
+
+**Status:** Accepted
+
+`electron/main.cjs` previously wrote the desktop smoke screenshot to
+`docs/evaluation/screenshots/phase-05-workspace-desktop.png`. When B1 moved the
+archived evidence out of `docs/evaluation/`, that write would have recreated the
+directory and left an untracked file after **every** gate run — so a passing test
+suite would still dirty the working tree, and the "restore it byte-for-byte" step
+in the audit procedure would have had nothing to restore.
+
+The smoke test now writes to `tmp/smoke-screenshots/`, which is gitignored.
+
+**Why here and not "restore it afterwards":** a gate that leaves the tree dirty is
+a gate that gets skipped or force-restored, and a force-restore is exactly how a
+real regression in a generated artifact gets hidden.
+
+**Cost:** the last-known-good desktop screenshot is no longer version-controlled.
+It was never evidence — it is regenerated on each run. Historical screenshots are
+retained separately in `docs/archive/ingestion-pilots/screenshots/`.
+
+## D17. Windows filename case-insensitivity is a real constraint
+
+**Status:** Accepted — a platform fact, not a preference
+
+On NTFS, `docs/architecture.md` and `docs/ARCHITECTURE.md` are **the same path**.
+Git can store both names, but the working tree cannot, and the checkout after a
+pull from a case-sensitive machine (Linux CI, a Mac with a case-sensitive volume)
+would produce a file that collides on the next Windows checkout.
+
+B1 replaced the stale `docs/architecture.md` with a new document at
+`docs/ARCHITECTURE.md`. Both names are now used nowhere in the tree.
+
+**How this is enforced:** nothing enforces it today. `.gitattributes` pins line
+endings and binary types but does not address case. The risk returns the moment
+someone adds `Readme.md` alongside `README.md`.
+
+**Open risk:** a case-only rename commit can succeed locally on Windows and fail
+or silently no-op on a case-sensitive checkout. If CI ever runs on Linux, add a
+check that rejects any commit containing two paths that differ only in case.
 engine/config/model, but **Ollama records only model and text with no prompt
 revision** — a real provenance gap, not a stylistic one.
 
