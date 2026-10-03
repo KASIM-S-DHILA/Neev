@@ -1,0 +1,27 @@
+{
+  "provenance": "Locally drawn, authored teaching slides and worked equation; FFmpeg H264. No audio or model-generated content.",
+  "slides_change_seconds": [
+    4,
+    8
+  ],
+  "whiteboard_change_seconds": [
+    3,
+    6,
+    9,
+    12
+  ],
+  "return_change_seconds": [
+    4,
+    8
+  ],
+  "vfr_change_seconds": [
+    2.4,
+    5.6
+  ],
+  "sample_delay_tolerance_seconds": 1.2,
+  "static_references_seconds": [
+    0,
+    60
+  ],
+  "limitations": "Known synthetic scenes; not held-out frame-selection quality. Brief changes between samples can be missed."
+}

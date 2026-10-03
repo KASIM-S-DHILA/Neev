@@ -1,0 +1,243 @@
+{
+  "source_report": "docs\\evaluation\\hinglish-results-20261002-044052.json",
+  "allocation": {
+    "hinglish": 40,
+    "hi": 20,
+    "en": 20,
+    "neutral": 20,
+    "noisy_hi": 20
+  },
+  "baseline": {
+    "en": {
+      "clips": 20,
+      "audio_seconds": 107.216,
+      "pipeline_failures": 0,
+      "wer_percent": 5.73,
+      "raw_asr_wer_percent": 5.73,
+      "cer_percent": 3.09,
+      "raw_asr_cer_percent": 3.09,
+      "median_pipeline_seconds": 5.289,
+      "real_time_factor": 0.994,
+      "empty_predictions_on_speech": 0,
+      "false_speech_negatives": 0,
+      "negative_clips": 0,
+      "script_pairs": {
+        "latin -> latin": 20
+      },
+      "raw_script_pairs": {
+        "latin -> latin": 20
+      },
+      "timestamp_rejections": 0,
+      "peak_helper_mib": 1294.21
+    },
+    "hi": {
+      "clips": 20,
+      "audio_seconds": 100.244,
+      "pipeline_failures": 3,
+      "wer_percent": 122.99,
+      "raw_asr_wer_percent": 125.29,
+      "cer_percent": 115.74,
+      "raw_asr_cer_percent": 118.15,
+      "median_pipeline_seconds": 5.453,
+      "real_time_factor": 1.108,
+      "empty_predictions_on_speech": 5,
+      "false_speech_negatives": 0,
+      "negative_clips": 0,
+      "script_pairs": {
+        "devanagari -> latin": 13,
+        "devanagari -> empty_or_other": 5,
+        "devanagari -> devanagari": 1,
+        "mixed -> empty_or_other": 1
+      },
+      "raw_script_pairs": {
+        "devanagari -> latin": 15,
+        "devanagari -> empty_or_other": 3,
+        "devanagari -> devanagari": 1,
+        "mixed -> latin": 1
+      },
+      "timestamp_rejections": 3,
+      "peak_helper_mib": 1294.33
+    },
+    "hinglish": {
+      "clips": 40,
+      "audio_seconds": 133.064,
+      "pipeline_failures": 20,
+      "wer_percent": 115.24,
+      "raw_asr_wer_percent": 93.91,
+      "cer_percent": 137.18,
+      "raw_asr_cer_percent": 110.53,
+      "median_pipeline_seconds": 5.446,
+      "real_time_factor": 1.763,
+      "empty_predictions_on_speech": 20,
+      "false_speech_negatives": 0,
+      "negative_clips": 0,
+      "script_pairs": {
+        "latin -> empty_or_other": 10,
+        "mixed -> empty_or_other": 8,
+        "mixed -> latin": 7,
+        "latin -> latin": 3,
+        "devanagari -> empty_or_other": 3,
+        "devanagari -> latin": 8,
+        "mixed -> devanagari": 1
+      },
+      "raw_script_pairs": {
+        "latin -> latin": 13,
+        "mixed -> latin": 13,
+        "mixed -> empty_or_other": 2,
+        "devanagari -> empty_or_other": 3,
+        "devanagari -> latin": 8,
+        "mixed -> devanagari": 1
+      },
+      "timestamp_rejections": 20,
+      "peak_helper_mib": 1294.88
+    },
+    "neutral": {
+      "clips": 20,
+      "audio_seconds": 81.649,
+      "pipeline_failures": 0,
+      "wer_percent": null,
+      "raw_asr_wer_percent": null,
+      "cer_percent": null,
+      "raw_asr_cer_percent": null,
+      "median_pipeline_seconds": 2.633,
+      "real_time_factor": 0.715,
+      "empty_predictions_on_speech": 0,
+      "false_speech_negatives": 3,
+      "negative_clips": 20,
+      "script_pairs": {
+        "empty_or_other -> empty_or_other": 17,
+        "empty_or_other -> devanagari": 1,
+        "empty_or_other -> latin": 2
+      },
+      "raw_script_pairs": {
+        "empty_or_other -> empty_or_other": 17,
+        "empty_or_other -> devanagari": 1,
+        "empty_or_other -> latin": 2
+      },
+      "timestamp_rejections": 0,
+      "peak_helper_mib": 1293.27
+    },
+    "noisy_hi": {
+      "clips": 20,
+      "audio_seconds": 109.629,
+      "pipeline_failures": 6,
+      "wer_percent": 175.95,
+      "raw_asr_wer_percent": 178.01,
+      "cer_percent": 178.74,
+      "raw_asr_cer_percent": 180.1,
+      "median_pipeline_seconds": 5.219,
+      "real_time_factor": 0.981,
+      "empty_predictions_on_speech": 7,
+      "false_speech_negatives": 0,
+      "negative_clips": 0,
+      "script_pairs": {
+        "devanagari -> empty_or_other": 8,
+        "devanagari -> latin": 9,
+        "mixed -> latin": 1,
+        "latin -> empty_or_other": 1,
+        "devanagari -> devanagari": 1
+      },
+      "raw_script_pairs": {
+        "devanagari -> empty_or_other": 3,
+        "devanagari -> latin": 14,
+        "mixed -> latin": 1,
+        "latin -> empty_or_other": 1,
+        "devanagari -> devanagari": 1
+      },
+      "timestamp_rejections": 6,
+      "peak_helper_mib": 1295.67
+    }
+  },
+  "paired_hinglish": {
+    "auto": {
+      "hinglish": {
+        "clips": 20,
+        "audio_seconds": 60.577,
+        "pipeline_failures": 12,
+        "wer_percent": 125.9,
+        "raw_asr_wer_percent": 100.6,
+        "cer_percent": 153.81,
+        "raw_asr_cer_percent": 122.71,
+        "median_pipeline_seconds": 5.312,
+        "real_time_factor": 1.74,
+        "empty_predictions_on_speech": 12,
+        "false_speech_negatives": 0,
+        "negative_clips": 0,
+        "script_pairs": {
+          "latin -> empty_or_other": 8,
+          "mixed -> empty_or_other": 3,
+          "mixed -> latin": 5,
+          "latin -> latin": 2,
+          "devanagari -> empty_or_other": 1,
+          "devanagari -> latin": 1
+        },
+        "raw_script_pairs": {
+          "latin -> latin": 10,
+          "mixed -> latin": 7,
+          "mixed -> empty_or_other": 1,
+          "devanagari -> empty_or_other": 1,
+          "devanagari -> latin": 1
+        },
+        "timestamp_rejections": 12,
+        "peak_helper_mib": 1294.88
+      }
+    },
+    "hi": {
+      "hinglish": {
+        "clips": 20,
+        "audio_seconds": 60.577,
+        "pipeline_failures": 11,
+        "wer_percent": 189.16,
+        "raw_asr_wer_percent": 168.67,
+        "cer_percent": 182.27,
+        "raw_asr_cer_percent": 156.45,
+        "median_pipeline_seconds": 4.265,
+        "real_time_factor": 1.51,
+        "empty_predictions_on_speech": 11,
+        "false_speech_negatives": 0,
+        "negative_clips": 0,
+        "script_pairs": {
+          "latin -> empty_or_other": 7,
+          "latin -> latin": 3,
+          "mixed -> empty_or_other": 3,
+          "mixed -> latin": 5,
+          "devanagari -> empty_or_other": 1,
+          "devanagari -> latin": 1
+        },
+        "raw_script_pairs": {
+          "latin -> latin": 10,
+          "mixed -> latin": 8,
+          "devanagari -> latin": 2
+        },
+        "timestamp_rejections": 11,
+        "peak_helper_mib": 1295.5
+      }
+    }
+  },
+  "baseline_failures": {
+    "Speech timestamps were invalid. No transcript was saved for this interval.": 29
+  },
+  "failed_count": 29,
+  "audio_seconds": 531.802,
+  "pipeline_seconds": 618.174,
+  "max_helper_mib": 1295.67,
+  "all_originals_unchanged": true,
+  "all_transcripts_unverified": true,
+  "hardware": {
+    "cores": 6,
+    "ram_bytes": 17027551232,
+    "cpu": "Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz",
+    "logical_processors": 12
+  },
+  "model": {
+    "name": "Multilingual faster-whisper Tiny",
+    "model_binary_sha256": "dcb76c6586fc06cbdac6dd21f14cfd129cc4cdd9dce19bf4ffa62e59cbe6e6d1",
+    "compute_type": "int8",
+    "device": "cpu",
+    "cpu_threads": 2,
+    "faster_whisper": "1.2.1",
+    "ctranslate2": "4.8.2",
+    "av": "16.1.0",
+    "onnxruntime": "1.30.0"
+  }
+}

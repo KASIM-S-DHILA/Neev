@@ -1,0 +1,93 @@
+{
+  "date": "2026-10-01T17:35:41.812504+00:00",
+  "cloud_requests": 0,
+  "method": "Actual production Tesseract + Pillow routing on the known seven-image fixture set; English configuration. This differs from the earlier cached PP-OCR/OpenCV pilot.",
+  "limitations": "Not held-out accuracy or calibration. Hindi recognition is not claimed with English traineddata. Borderless tables, photographs, handwriting, densely packed or faint/rotated layouts require manual comparison and override.",
+  "samples": [
+    {
+      "sample": "scan",
+      "local_seconds": 0.432,
+      "routing_seconds": 0.154,
+      "language": "eng",
+      "mean_confidence": 96.19,
+      "local_text": "Conditional probability\nThe sample space contains 100 outcomes.\nEvent A contains 25 outcomes.\nThe probability of Ais 0.25.",
+      "decision": "local",
+      "reasons": [
+        "No difficult-layout signal; retained locally"
+      ]
+    },
+    {
+      "sample": "scan-degraded",
+      "local_seconds": 0.337,
+      "routing_seconds": 0.165,
+      "language": "eng",
+      "mean_confidence": 95.22,
+      "local_text": "Conditional probability\nThe sample space contains 100 outcomes.\nEvent A contains 25 outcomes.\nThe probability of Ais 0.25.",
+      "decision": "local",
+      "reasons": [
+        "No difficult-layout signal; retained locally"
+      ]
+    },
+    {
+      "sample": "table-slide-12",
+      "local_seconds": 0.474,
+      "routing_seconds": 0.129,
+      "language": "eng",
+      "mean_confidence": 94.75,
+      "local_text": "Speaking engagement metrics\nAudience interaction Percentage (%)\nKnowledge retention Percentage (%) 75 80\nPost-presentation surveys Average rating 4.2 45\nReferral rate Percentage (%) 10 12\nCollaboration opportunities # of opportunities 8 10",
+      "decision": "cloud",
+      "reasons": [
+        "Possible table: repeated numbers and horizontal rules",
+        "Possible diagram connections"
+      ]
+    },
+    {
+      "sample": "equation",
+      "local_seconds": 0.338,
+      "routing_seconds": 0.159,
+      "language": "eng",
+      "mean_confidence": 93.28,
+      "local_text": "Bayes rule - compare fraction structure\nP(BIA) P(A)\nP(A|B) =\nP(B)\nDo not treat OCR as a verified mathematical formula.",
+      "decision": "cloud",
+      "reasons": [
+        "Possible mathematical layout"
+      ]
+    },
+    {
+      "sample": "figure",
+      "local_seconds": 0.338,
+      "routing_seconds": 0.155,
+      "language": "eng",
+      "mean_confidence": 96.3,
+      "local_text": "A branching experiment\nHeads 0.5\nOCR labels alone do not prove graph relationships.",
+      "decision": "cloud",
+      "reasons": [
+        "Possible diagram connections"
+      ]
+    },
+    {
+      "sample": "blank",
+      "local_seconds": 0.263,
+      "routing_seconds": 0.002,
+      "language": "eng",
+      "mean_confidence": null,
+      "local_text": "",
+      "decision": "local",
+      "reasons": [
+        "Empty white preview and no extracted text"
+      ]
+    },
+    {
+      "sample": "hindi-mixed",
+      "local_seconds": 0.404,
+      "routing_seconds": 0.167,
+      "language": "eng",
+      "mean_confidence": 61.43,
+      "local_text": "wWhiod ow ukaa\nHa GROTH Ht GVA 100 1\nUca A FH 25 URUTA él\nProbability of A = 0.25",
+      "decision": "cloud",
+      "reasons": [
+        "Low local recognition confidence"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checks": {
+    "native_import_form": true,
+    "invalid_url_rejected": true,
+    "live_captions_review": true,
+    "coverage_labels": true,
+    "hindi_caption_page": true,
+    "native_timestamp_link": true,
+    "external_url_boundary": true
+  },
+  "live_first_interval_cues": 19,
+  "external_launches": "Captured; no browser opened",
+  "timestamp_link": "https://www.youtube.com/watch?v=WUvTyaaNkzM&t=65",
+  "screenshot": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\docs\\evaluation\\screenshots\\youtube-desktop.png",
+  "data_directory": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\youtube-integration-20261003-083018"
+}

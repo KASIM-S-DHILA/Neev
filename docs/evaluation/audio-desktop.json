@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "checks": {
+    "native_audio_ipc": true,
+    "transcript_visible": true,
+    "pcm_playback_metadata": true,
+    "timestamp_seek": true
+  },
+  "duration": 9.368063,
+  "seek_seconds": 2.6,
+  "screenshot": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\docs\\evaluation\\screenshots\\phase-06-audio-desktop.png",
+  "data_directory": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\audio-integration-20261002-041044"
+}

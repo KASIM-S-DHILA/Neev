@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-03",
+  "status": "removed",
+  "targets": [
+    {
+      "path": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\ocr-benchmark",
+      "files": 35870,
+      "bytes": 7609905056
+    },
+    {
+      "path": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\hunyuan-ocr",
+      "files": 70,
+      "bytes": 1703282274
+    },
+    {
+      "path": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\lighton-ocr",
+      "files": 32,
+      "bytes": 1470920123
+    },
+    {
+      "path": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\gemma4-omni",
+      "files": 68,
+      "bytes": 5688529272
+    },
+    {
+      "path": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\omnidoc-eval",
+      "files": 25155,
+      "bytes": 942186313
+    },
+    {
+      "path": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\omnidocbench",
+      "files": 104,
+      "bytes": 68305570
+    }
+  ],
+  "archive_path": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\docs\\evaluation\\retired-ocr-evidence.zip",
+  "archive_files": 354,
+  "archive_bytes": 7734565,
+  "free_before": 92623400960,
+  "preserved": [
+    "Production Tesseract",
+    "LibreOffice",
+    "Groq and Google adapters",
+    "models/faster-whisper-tiny",
+    "Student originals and SQLite data",
+    "Pre-existing shared Hugging Face and Ollama models"
+  ],
+  "free_after": 109298069504
+}

@@ -1,0 +1,46 @@
+{
+  "provenance": "Authored Phase 5 fixtures; manually inspect images and rendered PDF pages.",
+  "ocr": [
+    {
+      "source": "scan.png",
+      "needle": "100 outcomes"
+    },
+    {
+      "source": "oriented-scan.jpg",
+      "needle": "100 outcomes"
+    }
+  ],
+  "pdf": [
+    {
+      "page": 1,
+      "needle": "100 outcomes"
+    },
+    {
+      "page": 2,
+      "needle": "Heads"
+    },
+    {
+      "page": 3,
+      "math_review_required": true
+    }
+  ],
+  "slides": [
+    {
+      "slide": 1,
+      "part": "ppt/slides/slide2.xml",
+      "needle": "First slide",
+      "picture": 1
+    },
+    {
+      "slide": 2,
+      "part": "ppt/slides/slide1.xml",
+      "needle": "Second slide",
+      "equation_denominator": "P(B)"
+    }
+  ],
+  "off_material": "No extracted source describes entropy; do not invent it.",
+  "semantic_truth": {
+    "figure": "Start has two outgoing arrows to Heads 0.5 and Tails 0.5.",
+    "equation": "P(A|B) = P(B|A) P(A) / P(B). OCR is not assumed to preserve this."
+  }
+}

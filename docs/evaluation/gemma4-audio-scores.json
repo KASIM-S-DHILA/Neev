@@ -1,0 +1,114 @@
+{
+  "report": "docs\\evaluation\\gemma4-audio.json",
+  "inference_status": "completed",
+  "groups": {
+    "en": {
+      "clips": 20,
+      "raw_wer_percent": 5.44,
+      "paired_tiny_raw_wer_percent": 5.73,
+      "cer_percent": 3.42,
+      "reference_words": 349,
+      "word_errors": 19,
+      "median_request_seconds": 7.578,
+      "audio_seconds": 107.216,
+      "request_seconds": 156.39,
+      "request_failures": 0,
+      "output_truncations": 0,
+      "negative_clips": 0,
+      "nonempty_outputs_on_negative_clips": 0,
+      "script_pairs": {
+        "latin -> latin": 20
+      }
+    },
+    "hi": {
+      "clips": 20,
+      "raw_wer_percent": 24.52,
+      "paired_tiny_raw_wer_percent": 125.29,
+      "cer_percent": 15.84,
+      "reference_words": 261,
+      "word_errors": 64,
+      "median_request_seconds": 5.156,
+      "audio_seconds": 100.244,
+      "request_seconds": 110.405,
+      "request_failures": 0,
+      "output_truncations": 0,
+      "negative_clips": 0,
+      "nonempty_outputs_on_negative_clips": 0,
+      "script_pairs": {
+        "devanagari -> devanagari": 17,
+        "devanagari -> latin": 2,
+        "mixed -> devanagari": 1
+      }
+    },
+    "hinglish": {
+      "clips": 40,
+      "raw_wer_percent": 24.93,
+      "paired_tiny_raw_wer_percent": 93.91,
+      "cer_percent": 24.21,
+      "reference_words": 361,
+      "word_errors": 90,
+      "median_request_seconds": 3.82,
+      "audio_seconds": 133.064,
+      "request_seconds": 173.265,
+      "request_failures": 0,
+      "output_truncations": 0,
+      "negative_clips": 0,
+      "nonempty_outputs_on_negative_clips": 0,
+      "script_pairs": {
+        "latin -> latin": 12,
+        "mixed -> devanagari": 11,
+        "mixed -> mixed": 2,
+        "mixed -> latin": 3,
+        "latin -> devanagari": 1,
+        "devanagari -> devanagari": 9,
+        "devanagari -> latin": 2
+      }
+    },
+    "neutral": {
+      "clips": 20,
+      "raw_wer_percent": null,
+      "paired_tiny_raw_wer_percent": null,
+      "cer_percent": null,
+      "reference_words": 0,
+      "word_errors": 30,
+      "median_request_seconds": 4.203,
+      "audio_seconds": 81.649,
+      "request_seconds": 88.125,
+      "request_failures": 0,
+      "output_truncations": 0,
+      "negative_clips": 20,
+      "nonempty_outputs_on_negative_clips": 4,
+      "script_pairs": {
+        "empty_or_other -> empty_or_other": 16,
+        "empty_or_other -> devanagari": 4
+      }
+    },
+    "noisy_hi": {
+      "clips": 20,
+      "raw_wer_percent": 36.43,
+      "paired_tiny_raw_wer_percent": 178.01,
+      "cer_percent": 25.41,
+      "reference_words": 291,
+      "word_errors": 106,
+      "median_request_seconds": 6.102,
+      "audio_seconds": 109.629,
+      "request_seconds": 125.892,
+      "request_failures": 0,
+      "output_truncations": 0,
+      "negative_clips": 0,
+      "nonempty_outputs_on_negative_clips": 0,
+      "script_pairs": {
+        "devanagari -> mixed": 2,
+        "devanagari -> devanagari": 13,
+        "devanagari -> latin": 3,
+        "mixed -> mixed": 1,
+        "latin -> empty_or_other": 1
+      }
+    }
+  },
+  "normalization": "Same NFKC, casefold, punctuation/symbol to spaces, collapsed whitespace as Tiny; no translation/transliteration/reference rewriting.",
+  "timing_caveat": "Gemma is a persistent 4-thread server; per-request timings exclude cold loading. Tiny used 2 threads and started a new helper per interval. No identical-runtime speed claim.",
+  "alignment_caveat": "Gemma returns plain text here, without aligned segment timestamps. Raw recognition only, not an integrated app-output score.",
+  "peak_private_mib": 1892.58,
+  "peak_resident_mib": 2717.06
+}

@@ -1,0 +1,30 @@
+{
+  "report": "docs\\evaluation\\gemma4-pilot.json",
+  "inference_status": "failed",
+  "groups": {
+    "hinglish": {
+      "clips": 4,
+      "raw_wer_percent": 36.67,
+      "paired_tiny_raw_wer_percent": 63.33,
+      "cer_percent": 38.28,
+      "reference_words": 30,
+      "word_errors": 11,
+      "median_request_seconds": 2.609,
+      "audio_seconds": 11.345,
+      "request_seconds": 12.718,
+      "request_failures": 0,
+      "output_truncations": 0,
+      "negative_clips": 0,
+      "nonempty_outputs_on_negative_clips": 0,
+      "script_pairs": {
+        "latin -> latin": 2,
+        "mixed -> devanagari": 2
+      }
+    }
+  },
+  "normalization": "Same NFKC, casefold, punctuation/symbol to spaces, collapsed whitespace as Tiny; no translation/transliteration/reference rewriting.",
+  "timing_caveat": "Gemma is a persistent 4-thread server; per-request timings exclude cold loading. Tiny used 2 threads and started a new helper per interval. No identical-runtime speed claim.",
+  "alignment_caveat": "Gemma returns plain text here, without aligned segment timestamps. Raw recognition only, not an integrated app-output score.",
+  "peak_private_mib": 2430.69,
+  "peak_resident_mib": 3364.57
+}

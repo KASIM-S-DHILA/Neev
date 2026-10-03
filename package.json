@@ -1,0 +1,50 @@
+{
+  "name": "neev",
+  "productName": "Neev",
+  "version": "0.6.0",
+  "private": true,
+  "description": "A student desktop workspace for grounded learning",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:web": "node scripts/dev-web.mjs",
+    "api:test": "node scripts/python.mjs -m unittest discover -s services/tests -v",
+    "queue:test": "node scripts/python.mjs -m unittest discover -s services/tests -p test_jobs.py -v",
+    "ingest:test": "node scripts/python.mjs -m unittest discover -s services/tests -p test_extraction.py -v",
+    "visual:test": "node scripts/python.mjs -m unittest discover -s services/tests -p test_visual.py -v",
+    "vision:test": "node scripts/python.mjs -m unittest discover -s services/tests -p test_cloud_vision.py -v",
+    "audio:test": "node scripts/python.mjs -m unittest discover -s services/tests -p test_audio.py -v",
+    "audio:cloud:test": "node scripts/python.mjs -m unittest discover -s services/tests -p test_cloud_audio.py -v",
+    "video:test": "node scripts/python.mjs -m unittest discover -s services/tests -p test_video.py -v",
+    "video:frames:test": "node scripts/python.mjs -m unittest discover -s services/tests -p test_video_frames.py -v",
+    "youtube:test": "node scripts/python.mjs -m unittest discover -s services/tests -p test_youtube.py -v",
+    "audio:setup": "npm run api:install && node scripts/python.mjs scripts/setup-audio.py --download",
+    "api:install": "node scripts/python.mjs -m pip install -r services/requirements-lock.txt",
+    "build": "tsc --noEmit && vite build",
+    "start": "electron .",
+    "test": "node --test tests/*.test.ts",
+    "check": "npm run test && npm run build",
+    "smoke:desktop": "node scripts/smoke.mjs"
+  },
+  "dependencies": {
+    "@fontsource/inter": "5.3.0",
+    "lucide-react": "1.49.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.3.3",
+    "@types/node": "26.6.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "electron": "44.5.1",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2",
+    "vite": "8.3.1"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}

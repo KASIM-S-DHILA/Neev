@@ -1,0 +1,11 @@
+file 'board-0.png'
+duration 3
+file 'board-1.png'
+duration 3
+file 'board-2.png'
+duration 3
+file 'board-3.png'
+duration 3
+file 'board-4.png'
+duration 3
+file 'board-4.png'

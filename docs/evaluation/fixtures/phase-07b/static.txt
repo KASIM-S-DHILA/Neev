@@ -1,0 +1,3 @@
+file 'slide-a.png'
+duration 65
+file 'slide-a.png'

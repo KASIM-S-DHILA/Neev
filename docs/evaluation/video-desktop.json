@@ -1,0 +1,71 @@
+{
+  "status": "passed",
+  "checks": {
+    "original_video_decoded": true,
+    "native_byte_range": true,
+    "scoped_playback": true,
+    "private_query_rejected": true,
+    "original_time_seek": true,
+    "coverage_and_provenance": true,
+    "no_audio_playback": true
+  },
+  "media": {
+    "duration": 20,
+    "width": 320,
+    "src": "studylens-media://original/semester-3/80b45515-ef1b-44ef-b8c1-f09aa02d46d8"
+  },
+  "delayed_seek": {
+    "label": 3,
+    "actual": 3.528
+  },
+  "interval_seek": {
+    "label": 31,
+    "actual": 31.512
+  },
+  "screenshot": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\docs\\evaluation\\screenshots\\phase-07a-video-desktop.png",
+  "data_directory": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\video-integration-20261003-071221",
+  "media_requests": [
+    {
+      "method": "GET",
+      "origin": "file://",
+      "status": 206
+    },
+    {
+      "method": "GET",
+      "status": 206
+    },
+    {
+      "method": "GET",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "status": 400
+    },
+    {
+      "method": "GET",
+      "origin": "file://",
+      "status": 206
+    },
+    {
+      "method": "GET",
+      "origin": "file://",
+      "status": 206
+    },
+    {
+      "method": "GET",
+      "origin": "file://",
+      "status": 206
+    },
+    {
+      "method": "GET",
+      "origin": "file://",
+      "status": 206
+    },
+    {
+      "method": "GET",
+      "origin": "file://",
+      "status": 206
+    }
+  ]
+}

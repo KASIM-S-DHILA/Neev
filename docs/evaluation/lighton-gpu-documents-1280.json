@@ -1,0 +1,487 @@
+{
+  "status": "stopped_by_user",
+  "samples": [
+    {
+      "id": "doc-000",
+      "kind": "image",
+      "group": "book",
+      "path": "tmp\\gemma4-omni\\document-images\\page-000.png",
+      "source_image": "page-80a540c8-88d4-4643-b40e-282489353fb8.png",
+      "source_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+      "dimensions": [
+        989,
+        1280
+      ],
+      "prompt": "",
+      "max_tokens": 2048,
+      "ground_truth_index": 0,
+      "source": "opendatalab/OmniDocBench",
+      "input_sha256": "3c543dde5a11627ddd348ddb1527039d383a34ff1798fa84a52dbb2b5bda5c12",
+      "prediction": "THE MULTILINEAR FRACTIONAL SPARSE OPERATOR THEORY ... 43\n\nNext we set $\\lambda'_Q := \\mu(Q)^{\\eta\\gamma} \\langle \\sigma_1 \\rangle_Q^\\gamma \\langle \\sigma_2 \\rangle_Q^{\\gamma-1} \\langle u \\rangle_Q \\sigma_2(Q)$ . To estimate $II$ , as shown above, it is straightforward to demonstrate\n\n$$\nII \\lesssim \\sum_{F_1 \\in \\mathcal{F}_1} \\langle f_1 \\rangle_{\\sigma_1, F_1} \\sum_{\\substack{H \\in \\mathcal{H} \\\\ H \\subseteq F_1}} \\langle h \\rangle_{u, H} \\sum_{\\substack{F_2 \\in \\mathcal{F}_2 \\\\ F_2 \\subseteq H}} \\langle f_2 \\rangle_{\\sigma_2, F_2} \\sum_{\\substack{Q \\in \\mathcal{S} \\\\ \\pi(Q) = (F_1, F_2, H)}} \\lambda'_Q\n$$\n\n$$\n\\leq \\sum_{F_1 \\in \\mathcal{F}_1} \\langle f_1 \\rangle_{\\sigma_1, F_1} \\sum_{\\substack{H \\in \\mathcal{H} \\\\ \\pi_{\\mathcal{F}_1}(H) = F_1}} \\langle h \\rangle_{u, H} \\Big\\| \\sum_{\\substack{F_2 \\in \\mathcal{F}_2 \\\\ \\pi_{\\mathcal{H}}(F_2) = H}} \\sum_{Q \\in \\mathcal{S}} \\frac{\\lambda'_Q}{\\sigma_2(Q)} \\chi_Q \\Big\\|_{L^{(p_2/\\gamma)'}(\\sigma_2)}\n$$\n\n$$\n\\times \\Big\\| \\sup_{\\substack{F'_2 \\in \\mathcal{F}_2 \\\\ \\pi_{\\mathcal{H}}(F'_2) = H}} \\langle f_2 \\rangle_{\\sigma_2, F'_2} \\chi_{F'_2} \\Big\\|_{L^{p_2/\\gamma}(\\sigma_2)}\n$$\n\n$$\n\\leq \\Big( \\sum_{F_1 \\in \\mathcal{F}_1} \\sum_{\\substack{H \\in \\mathcal{H} \\\\ \\pi_{\\mathcal{F}_1}(H) = F_1}} (\\langle f_1 \\rangle_{\\sigma_1, F_1} \\langle h \\rangle_{u, H})^{(p_2/\\gamma)'} \\Big\\| \\sum_{\\substack{F_2 \\in \\mathcal{F}_2 \\\\ \\pi_{\\mathcal{H}}(F_2) = H}} \\sum_{Q \\in \\mathcal{S}} \\frac{\\lambda'_Q}{\\sigma_2(Q)} \\chi_Q \\Big\\|_{L^{(p_2/\\gamma)'}(\\sigma_2)}^{(p_2/\\gamma)'} \\Big)^{1/(p_2/\\gamma)'}\n$$\n\n$$\n\\times \\Big( \\sum_{F_1 \\in \\mathcal{F}_1} \\sum_{\\substack{H \\in \\mathcal{H} \\\\ \\pi_{\\mathcal{F}_1}(H) = F_1}} \\sum_{\\substack{F'_2 \\in \\mathcal{F}_2 \\\\ \\pi_{\\mathcal{H}}(F'_2) = H}} (\\langle f_2 \\rangle_{\\sigma_2, F'_2})^{(p_2/\\gamma)} \\sigma_2(F'_2) \\Big)^{1/(p_2/\\gamma)}\n$$\n\n$$\n\\leq \\Big( \\sum_{F_1 \\in \\mathcal{F}_1} \\sum_{\\substack{H \\in \\mathcal{H} \\\\ \\pi_{\\mathcal{F}_1}(H) = F_1}} (\\langle f_1 \\rangle_{\\sigma_1, F_1} \\langle h \\rangle_{u, H})^{(p_2/\\gamma)'} \\Big\\| \\sum_{\\substack{Q \\in \\mathcal{S} \\\\ \\pi_{\\mathcal{H}}(Q) = H}} \\frac{\\lambda'_Q}{\\sigma_2(Q)} \\chi_Q \\Big\\|_{L^{(p_2/\\gamma)'}(\\sigma_2)}^{(p_2/\\gamma)'} \\Big)^{1/(p_2/\\gamma)'} \\cdot \\|f_2\\|_{L^{p_2/\\gamma}(\\sigma_2)}.\n$$\n\nThus, it follows from (4.8) and (4.13) that\n\n$$\nII \\leq \\|u, \\vec{\\sigma}\\|_{A_{\\vec{\\rho}, q}^*}^{\\frac{\\gamma}{q}} \\Big( \\sum_{F_1 \\in \\mathcal{F}_1} \\sum_{\\substack{H \\in \\mathcal{H} \\\\ \\pi_{\\mathcal{F}_1}(H) = F_1}} (\\langle f_1 \\rangle_{\\sigma_1, F_1} \\langle h \\rangle_{u, H})^{(p_",
+      "error": "Request exceeded 120-second budget",
+      "finish_reason": "deadline",
+      "seconds": 120.063
+    },
+    {
+      "id": "doc-001",
+      "kind": "image",
+      "group": "book",
+      "path": "tmp\\gemma4-omni\\document-images\\page-001.png",
+      "source_image": "page-4431f432-9e71-46d3-a5ea-4d705ad163a8.png",
+      "source_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+      "dimensions": [
+        1038,
+        1280
+      ],
+      "prompt": "",
+      "max_tokens": 2048,
+      "ground_truth_index": 1,
+      "source": "opendatalab/OmniDocBench",
+      "input_sha256": "394e5446e30a74b3db61228e5e0203007c76eb61e656a51738f9777350239506",
+      "prediction": "# 2.7 Instructions for Making Decisions\n\n## Compiling if-then-else into Conditional Branches\n\nIn the following code segment, $f$ , $g$ , $h$ , $i$ , and $j$ are variables. If the five variables $f$ through $j$ correspond to the five registers $x19$ through $x23$ , what is the compiled RISC-V code for this C if statement?\n\nc\nif (i == j) f = g + h; else f = g - h;\n```\nFigure 2.9 shows a flowchart of what the RISC-V code should do. The first expression compares for equality between two variables in registers. It would seem that we would want to branch if $I$ and $j$ are equal (beq). In general, the code will be more efficient if we test for the opposite condition to branch over the code that branches if the values are *not* equal (bne). Here is the code:\n\n```c\nbne x22, x23, Else    // go to Else if i ≠ j\n```\nThe next assignment statement performs a single operation, and if all the operands are allocated to registers, it is just one instruction:\n\n```c\nadd x19, x20, x21     // f = g + h (skipped if i ≠ j)\n```\nWe now need to go to the end of the if statement. This example introduces another kind of branch, often called an *unconditional branch*. This instruction says that the processor always follows the branch. One way to express an unconditional branch in RISC-V is to use a conditional branch whose condition is always true:\n\n```c\nbeq x0, x0, Exit      // if 0 == 0, go to Exit\n```\nThe assignment statement in the *else* portion of the if statement can again be compiled into a single instruction. We just need to append the label `Else` to this instruction. We also show the label `Exit` that is after this instruction, showing the end of the if-then-else compiled code:\n\n```c\nElse:sub x19, x20, x21  // f = g - h (skipped if i = j)\nExit:\n```\nNotice that the assembler relieves the compiler and the assembly language programmer from the tedium of calculating addresses for branches, just as it does for calculating data addresses for loads and stores (see Section 2.12).\n\n---\n\n**EXAMPLE**\n\n**ANSWER**",
+      "finish_reason": "stop",
+      "timings": {
+        "total_duration": 63068057800,
+        "load_duration": 555684100,
+        "prompt_eval_count": 2485,
+        "prompt_eval_duration": 15488517000,
+        "eval_count": 537,
+        "eval_duration": 46287713000
+      },
+      "seconds": 63.078
+    },
+    {
+      "id": "doc-002",
+      "kind": "image",
+      "group": "book",
+      "path": "tmp\\gemma4-omni\\document-images\\page-002.png",
+      "source_image": "yanbaor2_ey-is-your-next-step-about-changing-direction-or-directing-change.pdf_4.jpg",
+      "source_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+      "dimensions": [
+        989,
+        1280
+      ],
+      "prompt": "",
+      "max_tokens": 2048,
+      "ground_truth_index": 2,
+      "source": "opendatalab/OmniDocBench",
+      "input_sha256": "c975a7208bebd52e6c1914127460a18cdfb2e2da6b344dc1bd9ac7d98d2d0691",
+      "prediction": "# 2020 Global Private Equity Survey\n\n## Chapter 1\n\n---\n\nBut are CFOs ready? Do they have the requisite skills, tactical as well as technical, to serve as a strategic leader in tomorrow’s private equity firm? As the industry continues to mature and evolve and contend with the forces of disruption, the CFO will increasingly be looked upon to up his or her game and become a leader for the firm. In addition to technical skills, CFOs will also need to display the emotional intelligence required to be effective strategic leaders, for the people on their team as well as the entire organization. That means they will need to balance self-awareness with self-regulation and empathy as they make the tough decisions necessary to remain competitive with other funds.\n\nPrivate equity managers continue to have high expectations for the years ahead, continuing a trend we have seen in this survey for the better part of a decade. More than half of the managers surveyed expect to raise a new fund in the coming year, with more than three of four of those who do expecting that fund to be larger than their last. This is the highest proportion we have seen since we began asking the question in 2013.\n\n### If you are you planning to raise a fund in 2020, will the fund be equal to, smaller than or larger than your last fund raised?\n\nplaintext\n<table>\n  <thead>\n    <tr>\n      <th>Year</th>\n      <th>Firms raising a larger fund</th>\n      <th>Firms raising a fund</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>2016</td>\n      <td>45%</td>\n      <td>45%</td>\n    </tr>\n    <tr>\n      <td>2017</td>\n      <td>55%</td>\n      <td>53%</td>\n    </tr>\n    <tr>\n      <td>2018</td>\n      <td>55%</td>\n      <td>60%</td>\n    </tr>\n    <tr>\n      <td>2019</td>\n      <td>52%</td>\n      <td>65%</td>\n    </tr>\n    <tr>\n      <td>2020</td>\n      <td>58%</td>\n      <td>76%</td>\n    </tr>\n  </tbody>\n</table>\n\n```\n\n---\n\n3",
+      "finish_reason": "stop",
+      "timings": {
+        "total_duration": 61802433200,
+        "load_duration": 460169400,
+        "prompt_eval_count": 2375,
+        "prompt_eval_duration": 14563630000,
+        "eval_count": 527,
+        "eval_duration": 45999848000
+      },
+      "seconds": 61.797
+    },
+    {
+      "id": "doc-003",
+      "kind": "image",
+      "group": "book",
+      "path": "tmp\\gemma4-omni\\document-images\\page-003.png",
+      "source_image": "yanbaor2_46d1322f4302f190a3c973320545b892f3a83f0931f1e3ac158069c324049979.pdf_8.jpg",
+      "source_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+      "dimensions": [
+        989,
+        1280
+      ],
+      "prompt": "",
+      "max_tokens": 2048,
+      "ground_truth_index": 3,
+      "source": "opendatalab/OmniDocBench",
+      "input_sha256": "9cd2b638ae318bda0a9e80a8b470e4e1da8d817fbb730423ae35a75ccd65b6bb",
+      "prediction": "Executives see industrywide investments on the horizon\n\nconsumers opting for care at home, in outpatient or retail settings, or even on the go via mobile devices. With the proliferation of technologies such as AI, we can picture a world where you wake up in the morning and your personalized smart device tells you exactly which supplements to take based on your nutrition profile, environment, activity, and stress levels over the past week. The device might know when you are coming down with the flu before symptoms appear. It might know when you need more sleep, or even predict risks of a mental health disorder, based on changes in speech patterns.\n\nOver the last several years, hospital inpatient revenue has been shrinking as more care shifts to outpatient settings, according to a recent Deloitte analysis of hospital revenue trends.² In the future, we expect some outpatient care will shift to virtual settings. To prepare, health care organizations should think about how these industry trends might line up with their investments in the coming years.\n\n## Three out of four executives think that in the next decade, industrywide investments in virtual health will be significantly higher than today\n\nThe virtual health market in the United States is projected to grow more than 23 percent annually over the next five years, reaching close to US$100 billion by 2025, according to a recent estimate.³ Our surveyed executives predict industrywide investments in the next decade will be significantly higher than today—74 percent anticipate that investments in virtual health will increase by 25 percent or more (figure 3).\n\nSome of our interviewees noted that virtual visits and virtual consults have the potential to offset or\n\n---\n\nFIGURE 3\n\n**By 2030, industrywide investments in virtual health will increase significantly**\n\nIndustrywide investments in virtual health by 2030\n\n<!-- Image: Donut chart with three segments -->\n- Same as today: 4%\n- Slightly higher than today (1% to 25% more): 22%\n- Much higher than today (25% or more): 74%\n\nNote: Total responses = 50.  \nSource: Deloitte analysis.\n\nameliorate the shortages or uneven distribution of specialists such as nutritionists, genetic counselors, and palliative care. Other services ripe for significant virtual health migration include:\n\n- **Behavioral health**: In-person office visits for behavioral health will be the exception, and telehealth visits will be the rule, according to many of our interviewees. Executives discussed the potential of tele-behavioral health to treat depression, anxiety, substance abuse, and weight management, to name a few. Having access to behavioral health could help improve the prevention and treatment of chronic conditions. People who struggle with depression, for example, can find it difficult to adhere to treatment regimens or stick to a healthy diet or fitness plan.\n\n- **Oncology**: Patients who receive cancer treatment, along with their caregivers, can spend a lot of time navigating the health care system. Some advanced health systems have already rolled out virtual check-ins to reduce time spent in waiting rooms. For some patients who do not live near a specialist, telehealth in a\n\n7",
+      "finish_reason": "stop",
+      "timings": {
+        "total_duration": 79634241800,
+        "load_duration": 416978000,
+        "prompt_eval_count": 2375,
+        "prompt_eval_duration": 14694868000,
+        "eval_count": 654,
+        "eval_duration": 63796778000
+      },
+      "seconds": 79.64
+    },
+    {
+      "id": "doc-004",
+      "kind": "image",
+      "group": "book",
+      "path": "tmp\\gemma4-omni\\document-images\\page-004.png",
+      "source_image": "yanbaopptmerge_e60b3b61281e87ddf42f9321a9e6ef9d.pdf_159.jpg",
+      "source_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+      "dimensions": [
+        989,
+        1280
+      ],
+      "prompt": "",
+      "max_tokens": 2048,
+      "ground_truth_index": 4,
+      "source": "opendatalab/OmniDocBench",
+      "input_sha256": "64845241a454f6228bb2e8fd78632b61c0bba7152ca183ed6c9c789ef64ea938",
+      "prediction": "152\n\nChapter 2 | Descriptive Statistics\n\n- first quartile = 528.5 FTES\n- third quartile = 1,447.5 FTES\n- $n = 29$ years\n\n94. A sample of 11 years is taken. About how many are expected to have a FTES of 1014 or above? Explain how you determined your answer.\n\n95. 75% of all years have an FTES:\n    a. at or below: _____\n    b. at or above: _____\n\n96. The population standard deviation = _____\n\n97. What percent of the FTES were from 528.5 to 1447.5? How do you know?\n\n98. What is the IQR? What does the IQR represent?\n\n99. How many standard deviations away from the mean is the median?\n\nAdditional Information: The population FTES for 2005–2006 through 2010–2011 was given in an updated report. The data are reported here.\n\n<table>\n  <tr>\n    <th>Year</th>\n    <td>2005–06</td>\n    <td>2006–07</td>\n    <td>2007–08</td>\n    <td>2008–09</td>\n    <td>2009–10</td>\n    <td>2010–11</td>\n  </tr>\n  <tr>\n    <th>Total FTES</th>\n    <td>1,585</td>\n    <td>1,690</td>\n    <td>1,735</td>\n    <td>1,935</td>\n    <td>2,021</td>\n    <td>1,890</td>\n  </tr>\n</table>\n\nTable 2.73\n\n100. Calculate the mean, median, standard deviation, the first quartile, the third quartile and the IQR. Round to one decimal place.\n\n101. What additional information is needed to construct a box plot for the FTES for 2005-2006 through 2010-2011 and a box plot for the FTES for 1976-1977 through 2004-2005?\n\n102. Compare the IQR for the FTES for 1976–77 through 2004–2005 with the IQR for the FTES for 2005-2006 through 2010–2011. Why do you suppose the IQRs are so different?\n\n103. Three students were applying to the same graduate school. They came from schools with different grading systems. Which student had the best GPA when compared to other students at his school? Explain how you determined your answer.\n\n<table>\n  <tr>\n    <th>Student</th>\n    <th>GPA</th>\n    <th>School Average GPA</th>\n    <th>School Standard Deviation</th>\n  </tr>\n  <tr>\n    <td>Thuy</td>\n    <td>2.7</td>\n    <td>3.2</td>\n    <td>0.8</td>\n  </tr>\n  <tr>\n    <td>Vichet</td>\n    <td>87</td>\n    <td>75</td>\n    <td>20</td>\n  </tr>\n  <tr>\n    <td>Kamala</td>\n    <td>8.6</td>\n    <td>8</td>\n    <td>0.4</td>\n  </tr>\n</table>\n\nTable 2.74\n\n104. A music school has budgeted to purchase three musical instruments. They plan to purchase a piano costing $3,000, a guitar costing $550, and a drum set costing $600. The mean cost for a piano is $4,000 with a standard deviation of $2,500. The mean cost for a guitar is $500 with a standard deviation of $200. The mean cost for drums is $700 with a standard deviation of $100. Which cost is the lowest, when compared to other instruments of the same type? Which cost is the highest when compared to other instruments of the same type. Justify your answer.\n\n105. An elementary school class ran one mile with a mean of 11 minutes and a standard deviation of three minutes. Rachel, a student in the class, ran one mile",
+      "error": "Request exceeded 120-second budget",
+      "finish_reason": "deadline",
+      "seconds": 120.079
+    },
+    {
+      "id": "doc-005",
+      "kind": "image",
+      "group": "book",
+      "path": "tmp\\gemma4-omni\\document-images\\page-005.png",
+      "source_image": "page-a31baeee-95aa-4758-8d3a-ebf33fdc1626.png",
+      "source_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+      "dimensions": [
+        828,
+        1280
+      ],
+      "prompt": "",
+      "max_tokens": 2048,
+      "ground_truth_index": 5,
+      "source": "opendatalab/OmniDocBench",
+      "input_sha256": "04dd980307a4b1a87509fabf67498a1058692bf991c770cd79bd3af1f6b3eeb3",
+      "prediction": "# The Burning Wheel\n\n## Tied Results\n\nUnless the tie can be broken by a call-on trait, another length is run and another roll is made, but you must obey the Let It Ride rules. Test another ability or skill. We recommend making Forte tests for long distance chases.\n\n## Linked Tests for Extended Chases\n\nIf a player wants to undertake an extended, multi-part chase/race, the GM should outline the number of tests required to participate. Winning a test gains +1D to the next test. In an extended chase, two consecutive wins puts the pursued out of reach of the chaser.\n\n532\n\nEdward Ze (Order #44483214)",
+      "finish_reason": "stop",
+      "timings": {
+        "total_duration": 27106388300,
+        "load_duration": 518555200,
+        "prompt_eval_count": 1990,
+        "prompt_eval_duration": 11553657000,
+        "eval_count": 145,
+        "eval_duration": 14392539000
+      },
+      "seconds": 27.125
+    },
+    {
+      "id": "doc-006",
+      "kind": "image",
+      "group": "book",
+      "path": "tmp\\gemma4-omni\\document-images\\page-006.png",
+      "source_image": "page-2329f04a-41b3-435b-993a-a0652294b07d.png",
+      "source_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+      "dimensions": [
+        989,
+        1280
+      ],
+      "prompt": "",
+      "max_tokens": 2048,
+      "ground_truth_index": 6,
+      "source": "opendatalab/OmniDocBench",
+      "input_sha256": "e8477e736327912612253bba36fd3fadaf6e11ce812e54f0c8803ab600a72219",
+      "prediction": "and the restriction of irreducible representations $\\Pi$ of $G$ to the subgroup $G'$ that acts properly on $X$ . Specifically, we demonstrate that this restriction $\\Pi|_{G'}$ is always discretely decomposable with uniformly bounded multiplicities.\n\nThe following theorem bridges the spectral analysis on $X_\\Gamma = \\Gamma \\backslash G/H$ and recent progress of branching problems that we outlined in Sections 2 to 4.\n\n**Theorem 5.13.** Let $X = G/H$ be a reductive symmetric pair. Suppose that a reductive subgroup $G'$ of $G$ acts properly on $X$ and that the complexification $G'_\\mathbb{C}$ acts spherically on $X_\\mathbb{C}$ . Then the restriction $\\Pi|_{G'}$ is $G'$ -admissible (Definition 2.1) for any $H$ -distinguished $\\Pi \\in \\widehat{G}$ (Definition 4.2). Moreover, the multiplicities are uniformly bounded:\n\n$$\n\\sup_{\\Pi \\in \\mathrm{Irr}(G)_H} \\sup_{\\pi \\in \\mathrm{Irr}(G')} [\\Pi|_{G'} : \\pi] < \\infty.\n$$\n\n**5.7.** $H \\subset G \\supset G' \\rightsquigarrow H \\overset{\\mathrm{ind}}{\\nearrow} G \\searrow^{\\mathrm{rest}} G'$ .\n\nThe conclusion of Theorem 5.13 follows from two key aspects of branching problems: $G'$ -admissibility, as discussed in Section 2 and the uniformly bounded multiplicities outlined in Sections 3 and 4.\n\nThe following diagram summarizes the related results:\n\n$$\nG'_\\mathbb{C} \\underset{\\text{spherical}}{\\curvearrowright} G_\\mathbb{C}/B_{G_\\mathbb{C}/H_\\mathbb{C}} \\overset{\\text{Theorem 4.6}}{\\Longleftrightarrow} \\sup_{\\Pi \\in \\mathrm{Irr}(G)_H} \\sup_{\\pi \\in \\mathrm{Irr}(G')} [\\Pi|_{G'} : \\pi] < \\infty\n$$\n\n$$\n\\uparrow \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\uparrow\n$$\n\n$$\n\\begin{cases}\nG'_\\mathbb{C} \\underset{\\text{spherical}}{\\curvearrowright} G_\\mathbb{C}/H_\\mathbb{C} \\\\\nG' \\underset{\\text{proper}}{\\curvearrowright} G/H\n\\end{cases}\n\\overset{\\text{Theorem 5.13}}{\\Longrightarrow}\n\\begin{array}{l}\n\\Pi|_{G'} \\text{ is discretely decomposable} \\\\\n\\text{with uniformly bounded multiplicities} \\\\\n\\text{for all } \\Pi \\in \\mathrm{Irr}(G)_H.\n\\end{array}\n$$\n\nThe proof of Theorem 5.13 ([Ko17], cf. [KK24]) does not rely on the $G'$ -admissibility criterion (Theorem 2.3), which is formulated purely in terms of representation theory. It would be interesting to explore a direct connection between the geometric assumption in Theorem 5.13 and the transversality condition of the two cones (condition (ii) in Theorem 2.3).\n\n27",
+      "finish_reason": "stop",
+      "timings": {
+        "total_duration": 93388044300,
+        "load_duration": 1048283000,
+        "prompt_eval_count": 2375,
+        "prompt_eval_duration": 15803255000,
+        "eval_count": 772,
+        "eval_duration": 75174287000
+      },
+      "seconds": 93.391
+    },
+    {
+      "id": "doc-007",
+      "kind": "image",
+      "group": "book",
+      "path": "tmp\\gemma4-omni\\document-images\\page-007.png",
+      "source_image": "page-9cca07f9-2e06-4da7-b4f4-496c6e305543.png",
+      "source_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+      "dimensions": [
+        989,
+        1280
+      ],
+      "prompt": "",
+      "max_tokens": 2048,
+      "ground_truth_index": 7,
+      "source": "opendatalab/OmniDocBench",
+      "input_sha256": "44cbfcdfd3403edea85d4cdf21ff0f5f7b4d6a4d7bb5bbdb7aa1e8451bc1f109",
+      "prediction": "ON THE CONVERGENCE OF MIN-MAX LANGEVIN DYNAMICS AND ALGORITHM\n\nThen we can compute:\n\n$$\n\\frac{\\partial \\rho_t^{\\mathbf{Z}}}{\\partial t} = \\frac{\\partial}{\\partial t} \\int_{\\mathbb{R}^{2dN}} \\rho_0^{\\mathbf{Z}}(\\mathbf{z}_0) \\, \\rho_{t|0}^{\\mathbf{Z}}(\\cdot \\mid \\mathbf{z}_0) \\, d\\mathbf{z}_0\n$$\n\n$$\n= \\int_{\\mathbb{R}^{2dN}} \\rho_0^{\\mathbf{Z}}(\\mathbf{z}_0) \\, \\frac{\\partial \\rho_{t|0}^{\\mathbf{Z}}(\\cdot \\mid \\mathbf{z}_0)}{\\partial t} \\, d\\mathbf{z}_0\n$$\n\n$$\n= \\int_{\\mathbb{R}^{2dN}} \\rho_0^{\\mathbf{Z}}(\\mathbf{z}_0) \\left( -\\nabla \\cdot \\left( \\rho_{t|0}^{\\mathbf{Z}}(\\cdot \\mid \\mathbf{z}_0) \\, b^{\\mathbf{Z}}(\\mathbf{z}_0) \\right) + \\tau \\Delta \\rho_{t|0}^{\\mathbf{Z}}(\\cdot \\mid \\mathbf{z}_0) \\right) d\\mathbf{z}_0\n$$\n\n$$\n= -\\nabla \\cdot \\left( \\int_{\\mathbb{R}^{2dN}} \\rho_0^{\\mathbf{Z}}(\\mathbf{z}_0) \\, \\rho_{t|0}^{\\mathbf{Z}}(\\cdot \\mid \\mathbf{z}_0) \\, b^{\\mathbf{Z}}(\\mathbf{z}_0) \\, d\\mathbf{z}_0 \\right) + \\tau \\Delta \\left( \\int_{\\mathbb{R}^{2dN}} \\rho_0^{\\mathbf{Z}}(\\mathbf{z}_0) \\, \\rho_{t|0}^{\\mathbf{Z}}(\\cdot \\mid \\mathbf{z}_0) \\, d\\mathbf{z}_0 \\right)\n$$\n\n$$\n= -\\nabla \\cdot \\left( \\rho_t^{\\mathbf{Z}} \\int_{\\mathbb{R}^{2dN}} \\rho_{0|t}^{\\mathbf{Z}}(\\mathbf{z}_0 \\mid \\cdot) \\, b^{\\mathbf{Z}}(\\mathbf{z}_0) \\, d\\mathbf{z}_0 \\right) + \\tau \\Delta \\rho_t^{\\mathbf{Z}}\n$$\n\n$$\n= -\\nabla \\cdot \\left( \\rho_t^{\\mathbf{Z}} \\, \\mathbb{E}_{\\rho_{0|t}^{\\mathbf{Z}}} \\left[ b^{\\mathbf{Z}}(\\mathbf{Z}_0) \\mid \\mathbf{Z}_t = \\cdot \\right] \\right) + \\tau \\Delta \\rho_t^{\\mathbf{Z}}\n$$\n\n$$\n= -\\nabla \\cdot \\left( \\rho_t^{\\mathbf{Z}} \\, b_t^{\\mathbf{Z}} \\right) + \\tau \\Delta \\rho_t^{\\mathbf{Z}},\n$$\n\nas desired.\n\n$\\blacksquare$\n\n## F.2. One-Step Recurrence for the Biased Convergence of the Finite-Particle Algorithm\n\n### F.2.1. ONE-STEP RECURRENCE IN $W_2$ DISTANCE\n\n**Lemma 22** Assume Assumption 1. Let $\\mathbf{z}_k \\sim \\rho_k^{\\mathbf{z},\\eta}$ for any $\\rho_k^{\\mathbf{z},\\eta} \\in \\mathcal{P}(\\mathbb{R}^{2d",
+      "error": "Request exceeded 120-second budget",
+      "finish_reason": "deadline",
+      "seconds": 120.078
+    },
+    {
+      "id": "doc-008",
+      "kind": "image",
+      "group": "book",
+      "path": "tmp\\gemma4-omni\\document-images\\page-008.png",
+      "source_image": "book_en_国外数学教材-非数学专业教材-线性代数-Gilbert Strang—Linear Algebra and Its Applications 4e_0017.png",
+      "source_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+      "dimensions": [
+        905,
+        1280
+      ],
+      "prompt": "",
+      "max_tokens": 2048,
+      "ground_truth_index": 8,
+      "source": "opendatalab/OmniDocBench",
+      "input_sha256": "084df6b062099690066e6fa699f44129c6e84b60df22ea0658e2a137a47f130c",
+      "prediction": "8\n\nChapter 1 Matrices and Gaussian Elimination\n\nOur true goal is to look beyond two or three dimensions into $n$ dimensions. With $n$ equations in $n$ unknowns, there are $n$ planes in the row picture. There are $n$ vectors in the column picture, plus a vector $b$ on the right side. The equations ask for a *linear combination of the $n$ columns that equals $b$ *. For certain equations that will be impossible. Paradoxically, the way to understand the good case is to study the bad one. Therefore we look at the geometry exactly when it breaks down, in the *singular case*.\n\n<table>\n  <tr>\n    <td><em>Row picture</em>: Intersection of planes</td>\n    <td><em>Column picture</em>: Combination of columns</td>\n  </tr>\n</table>\n\n## The Singular Case\n\nSuppose we are again in three dimensions, and the three planes in the row picture *do not intersect*. What can go wrong? One possibility is that two planes may be parallel. The equations $2u + v + w = 5$ and $4u + 2v + 2w = 11$ are inconsistent—and parallel planes give no solution (Figure 1.5a shows an end view). In two dimensions, parallel lines are the only possibility for breakdown. But three planes in three dimensions can be in trouble without being parallel.\n\n<div style=\"display: flex; justify-content: space-around; margin: 20px 0;\">\n  <div style=\"text-align: center;\">\n    ![image](image_1.png)\n    <p>two parallel planes (a)</p>\n  </div>\n  <div style=\"text-align: center;\">\n    ![image](image_2.png)\n    <p>no intersection (b)</p>\n  </div>\n  <div style=\"text-align: center;\">\n    ![image](image_3.png)\n    <p>line of intersection (c)</p>\n  </div>\n  <div style=\"text-align: center;\">\n    ![image](image_4.png)\n    <p>all planes parallel (d)</p>\n  </div>\n</div>\n\nFigure 1.5: Singular cases: no solution for (a), (b), or (d), an infinity of solutions for (c).\n\nThe most common difficulty is shown in Figure 1.5b. From the end view the planes form a triangle. Every pair of planes intersects in a line, and those lines are parallel. The third plane is not parallel to the other planes, but it is parallel to their line of intersection. This corresponds to a singular system with $b = (2, 5, 6)$ :\n\n$$\n\\begin{aligned}\nu + v + w &= 2 \\\\\n2u + 3w &= 5 \\\\\n3u + v + 4w &= 6.\n\\end{aligned}\n$$\n\n$$\n\\quad (3)\n$$\n\n**No solution, as in Figure 1.5b**\n\nThe first two left sides add up to the third. On the right side that fails: $2 + 5 \\ne 6$ . Equation 1 plus equation 2 minus equation 3 is the impossible statement $0 = 1$ . Thus the equations are *inconsistent*, as Gaussian elimination will systematically discover.",
+      "finish_reason": "stop",
+      "timings": {
+        "total_duration": 91983507100,
+        "load_duration": 582786800,
+        "prompt_eval_count": 2155,
+        "prompt_eval_duration": 12927329000,
+        "eval_count": 713,
+        "eval_duration": 77779473000
+      },
+      "seconds": 92.016
+    },
+    {
+      "id": "doc-009",
+      "kind": "image",
+      "group": "book",
+      "path": "tmp\\gemma4-omni\\document-images\\page-009.png",
+      "source_image": "page-21967f5d-667d-488e-a5b3-76b9d6f53656.png",
+      "source_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+      "dimensions": [
+        989,
+        1280
+      ],
+      "prompt": "",
+      "max_tokens": 2048,
+      "ground_truth_index": 9,
+      "source": "opendatalab/OmniDocBench",
+      "input_sha256": "e18311eef17021cedbbba221c495f661cc674c485a8983214687718cf0fde45c",
+      "prediction": "EINSTEIN-YANG-MILLS IN THE LORENZ GAUGE\n\n7\n\n**Lemma 2.1.** We have\n\n$$\nH^{\\mu\\nu} = -h^{\\mu\\nu} + O^{\\mu\\nu}(h^2).\n\\quad (2.4)\n$$\n\nOn one hand, the Einstein-Yang-Mills system in Lorenz gauge imply that\n\n$$\n\\begin{aligned}\ng^{\\lambda\\mu} \\nabla^{(\\mathbf{m})}_\\lambda \\nabla^{(\\mathbf{m})}_\\mu A_\\sigma \\\\\n= (\\nabla^{(\\mathbf{m})}_\\sigma h^{\\alpha\\mu}) \\cdot (\\nabla^{(\\mathbf{m})}_\\alpha A_\\mu) \\\\\n+ \\frac{1}{2} \\big( \\nabla^{(\\mathbf{m})\\mu} h^\\nu_\\sigma + \\nabla^{(\\mathbf{m})}_\\sigma h^{\\nu\\mu} - \\nabla^{(\\mathbf{m})\\nu} h^\\mu_\\sigma \\big) \\cdot \\big( \\nabla^{(\\mathbf{m})}_\\mu A_\\nu - \\nabla^{(\\mathbf{m})}_\\nu A_\\mu \\big) \\\\\n+ \\frac{1}{2} \\big( \\nabla^{(\\mathbf{m})\\mu} h^\\nu_\\sigma + \\nabla^{(\\mathbf{m})}_\\sigma h^{\\nu\\mu} - \\nabla^{(\\mathbf{m})\\nu} h^\\mu_\\sigma \\big) \\cdot [A_\\mu, A_\\nu] \\\\\n- \\big( [A_\\mu, \\nabla^{(\\mathbf{m})\\mu} A_\\sigma] + [A^\\mu, \\nabla^{(\\mathbf{m})}_\\mu A_\\sigma - \\nabla^{(\\mathbf{m})}_\\sigma A_\\mu] + [A^\\mu, [A_\\mu, A_\\sigma]] \\big) \\\\\n+ O(h \\cdot \\nabla^{(\\mathbf{m})} h \\cdot \\nabla^{(\\mathbf{m})} A) + O(h \\cdot \\nabla^{(\\mathbf{m})} h \\cdot A^2) + O(h \\cdot A \\cdot \\nabla^{(\\mathbf{m})} A) + O(h \\cdot A^3).\n\\end{aligned}\n$$\n\n$$\n\\quad (2.5)\n$$\n\nand\n\n$$\n\\begin{aligned}\ng^{\\alpha\\beta} \\nabla^{(\\mathbf{m})}_\\alpha \\nabla^{(\\mathbf{m})}_\\beta h_{\\mu\\nu} \\\\\n= P(\\nabla^{(\\mathbf{m})}_\\mu h, \\nabla^{(\\mathbf{m})}_\\nu h) + Q_{\\mu\\nu}(\\nabla^{(\\mathbf{m})} h, \\nabla^{(\\mathbf{m})} h) + O_{\\mu\\nu}(h \\cdot (\\nabla^{(\\mathbf{m})} h)^2) \\\\\n- 4 < \\nabla^{",
+      "error": "Request exceeded 120-second budget",
+      "finish_reason": "deadline",
+      "seconds": 120.094
+    },
+    {
+      "id": "doc-010",
+      "kind": "image",
+      "group": "colorful_textbook",
+      "path": "tmp\\gemma4-omni\\document-images\\page-010.png",
+      "source_image": "jiaocai_jiaocai_en_595.jpg",
+      "source_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+      "dimensions": [
+        984,
+        1280
+      ],
+      "prompt": "",
+      "max_tokens": 2048,
+      "ground_truth_index": 10,
+      "source": "opendatalab/OmniDocBench",
+      "input_sha256": "22eeee2e52ab676ebda92aa7e68f71d520a6849193c5e14e761fd58550abe81e",
+      "prediction": "高三 / 英语\n\n随堂笔记\n\noff for a few days from the pressures of modern day living as completely as you can in Bruges. Its beauty and peace are perfectly preserved in this medieval town in Europe.\n\n- Two days from only £599 per person (£100 for an extra day)\n- Price Includes: meals in local restaurants; return flights or railway\n\n1. When we take the tour to Georgia, we can ___.\n   A. enjoy the beautiful trees in the countryside\n   B. visit some famous tourist sites in big cities\n   C. taste the peace of medieval town in Europe\n   D. taste the local foods in the restaurants without extra fee\n\n2. What is special about the tour to New England?\n   A. It contains a specialized tour guide service.\n   B. It boasts a beautiful scenery of the mountains.\n   C. It promises free return flights to any places.\n   D. It unfolds the amazing history of whole America.\n\n3. What do the three tours have in common?\n   A. Each tour provides hotel accommodation.\n   B. Superb travel experiences are guaranteed.\n   C. No discounts are offered.\n   D. Only flight transport is provided.\n\n<table>\n  <thead>\n    <tr>\n      <th>序号</th>\n      <th>词汇和短语</th>\n      <th>音标</th>\n      <th>词性和释义</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>stunning</td>\n      <td>/ˈstʌnɪŋ/</td>\n      <td>adj. 绝妙的</td>\n    </tr>\n    <tr>\n      <td>2</td>\n      <td>invaluable</td>\n      <td>/ɪnˈvæljuəbl/</td>\n      <td>adj. 极宝贵的</td>\n    </tr>\n    <tr>\n      <td>3</td>\n      <td>nestle</td>\n      <td>/ˈnesl/</td>\n      <td>v. 位处, 坐落</td>\n    </tr>\n    <tr>\n      <td>4</td>\n      <td>accommodation</td>\n      <td>/əˌkɒməˈdeɪʃn/</td>\n      <td>n. 住处; 住宿</td>\n    </tr>\n    <tr>\n      <td>5</td>\n      <td>carpet</td>\n      <td>/ˈkɑːpɪt/</td>\n      <td>v. 把……厚厚地覆盖<br>n. 地毯</td>\n    </tr>\n    <tr>\n      <td>6</td>\n      <td>stand apart from</td>\n      <td></td>\n      <td>离开; 远离</td>\n    </tr>\n    <tr>\n      <td>7</td>\n      <td>switch off</td>\n      <td></td>\n      <td>关掉; 不再担忧</td>\n    </tr>\n  </tbody>\n</table>\n\n18\n\n公众号【永久学堂】每天辛苦整理、没有任何淘宝、拼多多店铺",
+      "finish_reason": "stop",
+      "timings": {
+        "total_duration": 103172281200,
+        "load_duration": 1101524100,
+        "prompt_eval_count": 2375,
+        "prompt_eval_duration": 15804329000,
+        "eval_count": 706,
+        "eval_duration": 85033862000
+      },
+      "seconds": 103.188
+    },
+    {
+      "id": "doc-011",
+      "kind": "image",
+      "group": "colorful_textbook",
+      "path": "tmp\\gemma4-omni\\document-images\\page-011.png",
+      "source_image": "jiaocaineedrop_biz-96816.pdf_48.jpg",
+      "source_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+      "dimensions": [
+        989,
+        1280
+      ],
+      "prompt": "",
+      "max_tokens": 2048,
+      "ground_truth_index": 11,
+      "source": "opendatalab/OmniDocBench",
+      "input_sha256": "96a260a987fd07bbe2a50aa459751734268839ba9c603b32f6168fcc0931cee0",
+      "prediction": "# LibreTexts™\n\nNOT outline. Think about how you want to organize your essay. Are all issues created equally? What is your plan to address all issues?\n\nA good way to outline is to organize your facts as we discussed above. For example, think back to that table:\n\n<table>\n  <thead>\n    <tr>\n      <th>Rule Element</th>\n      <th>Facts For</th>\n      <th>Facts Against</th>\n      <th>Resolution</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>Self-propelled</td>\n      <td>Motor scooters have an engine and can move without “manpower”</td>\n      <td>Can also move with only manpower, meaning the rider can use their feet to get it to move</td>\n      <td>Which is the predominant use?</td>\n    </tr>\n    <tr>\n      <td>Not running on rails</td>\n      <td>No rails on a motor scooter</td>\n      <td></td>\n      <td></td>\n    </tr>\n    <tr>\n      <td>Runs over land</td>\n      <td>Can’t fly</td>\n      <td></td>\n      <td></td>\n    </tr>\n  </tbody>\n</table>\n\nYou might notice that there isn’t much to talk about with “runs over land.” I mean, a motorized scooter certainly doesn’t fly in the air, so this feels obvious. But “self-propelled” seems to have more to discuss! So that means you will likely want to spend more time on the issue of whether a motor scooter is self-propelled than whether it runs over land.\n\nIf there are multiple issues, you can also use this type of chart to determine which issue requires the most time.\n\nSpeaking of issues, outlining will help you issue spot. You will hear this as a buzzword all around: that you need to “spot the issues” or “issue spot.” But what does that mean? Remember that a hypothetical is essentially a story. So your job is to read the story and determine the “issues” or questions to solve. A professor may ask you a very directed question, such as “Did Defendant commit murder?”, in which case, your issue-spotting just got much easier! However, it is more than likely that the professor will end the hypothetical story with “What are the rights of the parties?” or “What crimes can Bob be charged with?”\n\nThis means that a large part of earning points on your exam is figuring out what issues, or legal problems, to solve. Everyone tackles this in a slightly different way. However, I suggest taking one of the two methods described below and making it your own.\n\n## Issue Spotting Method 1: The Checklist\n\nIn doing the outlining that I mentioned above, you can create a mini-outline or “attack outline,” which is what I just call a checklist. Essentially, it should be a one-page list of the types of law you covered. For example, in a torts class, you are going to cover various types of torts. Therefore, your checklist might look something like this:\n\n1. Intentional Torts\n   a. Assault\n   b. Battery\n   c. False Imprisonment\n   d. Trespass\n   e. Trespass to Chattels\n   f. Conversion\n\n2. Negligence\n\nNote that this is an incomplete checklist, and the complete version will look different depending on your professor and class. The idea is that if I have this memorized, I can quickly go through the fact pattern to see if any of the torts show up. Part of your checklist might also be to add in “activating facts.” What I mean by that is, if you are",
+      "error": "Request exceeded 120-second budget",
+      "finish_reason": "deadline",
+      "seconds": 120.078
+    },
+    {
+      "id": "doc-012",
+      "kind": "image",
+      "group": "colorful_textbook",
+      "path": "tmp\\gemma4-omni\\document-images\\page-012.png",
+      "source_image": "jiaocaineedrop_chem-441760.pdf_165.jpg",
+      "source_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+      "dimensions": [
+        989,
+        1280
+      ],
+      "prompt": "",
+      "max_tokens": 2048,
+      "ground_truth_index": 12,
+      "source": "opendatalab/OmniDocBench",
+      "input_sha256": "5f06bbd88121b0a1e1bc7310abaf3e0338a75077f6a05c1392b0a402e166628a",
+      "prediction": "LibreTexts™\n\nOrganic-Functional-Groups-2016_24ee.pdf Organic-Functional-Groups-2016.pdf\n\n# FUNCTIONAL GROUPS IN ORGANIC CHEMISTRY\n\nFunctional groups are the characteristic groups in organic molecules that give them their reactivity. In the formulae below, R represents the rest of the molecule and X represents any halogen atom.\n\n- Hydrocarbons\n- Halogen-containing groups\n- Oxygen-containing groups\n- Nitrogen-containing groups\n- Sulfur-containing groups\n- Phosphorus-containing groups\n\n<table>\n  <tr>\n    <td>![image](image_1.png)</td>\n    <td>![image](image_2.png)</td>\n    <td>![image](image_3.png)</td>\n    <td>![image](image_4.png)</td>\n    <td>![image](image_5.png)</td>\n    <td>![image](image_6.png)</td>\n    <td>![image](image_7.png)</td>\n    <td>![image](image_8.png)</td>\n    <td>![image](image_9.png)</td>\n  </tr>\n  <tr>\n    <td>ALKANE<br>Naming: -ane<br>e.g. ethane</td>\n    <td>ALKENE<br>Naming: -ene<br>e.g. ethene</td>\n    <td>ALKYNE<br>Naming: -yne<br>e.g. ethyne</td>\n    <td>ARENE<br>Naming: -yl benzene<br>e.g. ethyl benzene</td>\n    <td>HALOALKANE<br>Naming: halo-<br>e.g. chloroethane</td>\n    <td>ALCOHOL<br>Naming: -ol<br>e.g. ethanol</td>\n    <td>ALDEHYDE<br>Naming: -al<br>e.g. ethanal</td>\n    <td>KETONE<br>Naming: -one<br>e.g. propanone</td>\n    <td>CARBOXYLIC ACID<br>Naming: -olic acid<br>e.g. ethanoic acid</td>\n    <td>ACID ANHYDRIDE<br>Naming: -olic anhydride<br>e.g. ethanoic anhydride</td>\n  </tr>\n  <tr>\n    <td>![image](image_10.png)</td>\n    <td>![image](image_11.png)</td>\n    <td>![image](image_12.png)</td>\n    <td>![image](image_13.png)</td>\n    <td>![image](image_14.png)</td>\n    <td>![image](image_15.png)</td>\n    <td>![image](image_16.png)</td>\n    <td>![image](image_17.png)</td>\n    <td>![image](image_18.png)</td>\n    <td>![image](image_19.png)</td>\n  </tr>\n  <tr>\n    <td>ACYL HALIDE<br>Naming: -oyl halide<br>e.g. ethanoyl chloride</td>\n    <td>ESTER<br>Naming: -oyl -oate<br>e.g. ethyl ethanoate</td>\n    <td>ETHER<br>Naming: -oxy -ane<br>e.g. methoxyethane</td>\n    <td>EPOXIDE<br>Naming: -ene oxide<br>e.g. ethene oxide</td>\n    <td>AMINE<br>Naming: -amine<br>e.g. ethanamine</td>\n    <td>AMIDE<br>Naming: -amide<br>e.g. ethanamide</td>\n    <td>NITRATE<br>Naming: -yl nitrate<br>e.g. ethylnitrate</td>\n    <td>NITRITE",
+      "error": "Request exceeded 120-second budget",
+      "finish_reason": "deadline",
+      "seconds": 120.109
+    },
+    {
+      "id": "doc-013",
+      "kind": "image",
+      "group": "colorful_textbook",
+      "path": "tmp\\gemma4-omni\\document-images\\page-013.png",
+      "source_image": "jiaocaineedrop_chem-97961.pdf_128.jpg",
+      "source_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+      "dimensions": [
+        989,
+        1280
+      ],
+      "prompt": "",
+      "max_tokens": 2048,
+      "ground_truth_index": 13,
+      "source": "opendatalab/OmniDocBench",
+      "input_sha256": "ff4236d171945a7f8acc3ad0edfdb84543d874cdef3d4529cbc46ba5abf83e59",
+      "prediction": "LibreTexts™\n\n$$\n\\mathrm{C}_{12} \\mathrm{H}_{22} \\mathrm{O}_{11}(\\mathrm{s}) + \\text{heat} \\rightarrow 12 \\mathrm{C}(\\mathrm{s}) + 11 \\mathrm{H}_{2} \\mathrm{O}(\\mathrm{g})\n\\quad (5.1.2)\n$$\n\n<div style=\"display: flex; align-items: center;\">\n  ![image](image_1.png)\n  <div style=\"background-color: black; padding: 20px; text-align: center;\">\n    <div style=\"background-color: red; color: white; padding: 10px; border-radius: 5px; display: inline-block;\">\n      ▶\n    </div>\n  </div>\n</div>\n\n**Video 5.1.2**: A science experiment in the kitchen shows what happens to sugar molecules when they are heated. The experiment did not disappoint!\n\nAs with salt, sugar has radically different properties (both physical and chemical) than its constituent elements. This difference in properties, of constituent elements and compounds, is a central feature of chemical reactions.\n\n## Contributions & Attributions\n\n- Wikipedia\n\n5.1: Sugar and Salt is shared under a CC BY-NC-SA 4.0 license and was authored, remixed, and/or curated by LibreTexts.\n\n- 5.1: Sugar and Salt by Henry Agnew, Marisa Alviar-Agnew is licensed CK-12. Original source: https://www.ck12.org/c/chemistry/.\n\n---\n\n<div style=\"background-color: #1e70ff; color: white; padding: 5px; text-align: center; display: flex; justify-content: space-between; align-items: center;\">\n  <div style=\"width: 20%; background-color: white; height: 20px; border-radius: 5px;\"></div>\n  <div style=\"font-weight: bold; font-size: 16px;\">5.1.2</div>\n  <div style=\"font-size: 12px;\">https://chem.libretexts.org/@go/page/98005</div>\n</div>",
+      "finish_reason": "stop",
+      "timings": {
+        "total_duration": 65076265000,
+        "load_duration": 650361200,
+        "prompt_eval_count": 2375,
+        "prompt_eval_duration": 14637860000,
+        "eval_count": 477,
+        "eval_duration": 48895543000
+      },
+      "seconds": 65.078
+    },
+    {
+      "id": "doc-014",
+      "kind": "image",
+      "group": "colorful_textbook",
+      "path": "tmp\\gemma4-omni\\document-images\\page-014.png",
+      "source_image": "color_textbook_zhonggaokao_小学_13.人教新起点英语（4-5年级）_人教新起点五年级英语上册_课本_人教新起点英语5A电子课本_page_004.png",
+      "source_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+      "dimensions": [
+        905,
+        1280
+      ],
+      "prompt": "",
+      "max_tokens": 2048,
+      "ground_truth_index": 14,
+      "source": "opendatalab/OmniDocBench",
+      "input_sha256": "fe7150c2d5c07bb68a97edf1d359e1f9e31842eb53ea6ce6e97a23ae6a858a5d",
+      "prediction": "<table>\n  <tr>\n    <td>![image](image_1.png)</td>\n    <td>![image](image_2.png)</td>\n    <td>![image](image_3.png)</td>\n  </tr>\n  <tr>\n    <td>![image](image_4.png)</td>\n    <td>![image](image_5.png)</td>\n    <td>![image](image_6.png)</td>\n  </tr>\n  <tr>\n    <td>![image](image_7.png)</td>\n    <td>![image](image_8.png)</td>\n    <td>![image](image_9.png)</td>\n  </tr>\n</table>",
+      "finish_reason": "stop",
+      "timings": {
+        "total_duration": 29247591900,
+        "load_duration": 495641700,
+        "prompt_eval_count": 2155,
+        "prompt_eval_duration": 13013838000,
+        "eval_count": 156,
+        "eval_duration": 15044062000
+      },
+      "seconds": 29.25
+    }
+  ],
+  "mode": "Automatic GPU offload",
+  "threads": 4,
+  "context": 4096,
+  "num_gpu": -1,
+  "prompt_cache_ram_mib": 0,
+  "hardware": {
+    "cores": 6,
+    "ram_bytes": 17027551232,
+    "cpu": "Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz",
+    "logical_processors": 12
+  },
+  "available_ram_at_start_bytes": 4018503680,
+  "request_timeout_seconds": 120,
+  "memory_cap_gib": 5.5,
+  "peak_private_bytes": 4123840512,
+  "peak_resident_bytes": 1312665600,
+  "cloud_inference_requests": 0,
+  "method": "Exact community package; image-only /api/chat, empty text; private Ollama server/store; unchanged app recognizers.",
+  "model": {
+    "model": "maternion/LightOnOCR-2:1b",
+    "manifest_digest": "sha256:ee7d83c4eb673860b0cacc68401145b37ac2b13004e8d5e0c46f7b8e8dff79c1",
+    "runtime": {
+      "version": "0.32.9"
+    },
+    "assets": [
+      {
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "bytes": 555,
+        "sha256": "sha256:61aadc3ce608c958fbcaa8a4b8d65a4cf12d1d56a5bdb7cc7e339080c2cbffed",
+        "path": "tmp\\lighton-ocr\\models\\blobs\\sha256-61aadc3ce608c958fbcaa8a4b8d65a4cf12d1d56a5bdb7cc7e339080c2cbffed"
+      },
+      {
+        "media_type": "application/vnd.ollama.image.model",
+        "bytes": 639443680,
+        "sha256": "sha256:062cc44af0b922f016b1f73672389087494a893a4cc6f716b672f5c45ffbf000",
+        "path": "tmp\\lighton-ocr\\models\\blobs\\sha256-062cc44af0b922f016b1f73672389087494a893a4cc6f716b672f5c45ffbf000"
+      },
+      {
+        "media_type": "application/vnd.ollama.image.projector",
+        "bytes": 828905856,
+        "sha256": "sha256:b30a935ce0d3d971e5323bf27d8b660f7b8c940f27a1f1c74c158c9b90b79875",
+        "path": "tmp\\lighton-ocr\\models\\blobs\\sha256-b30a935ce0d3d971e5323bf27d8b660f7b8c940f27a1f1c74c158c9b90b79875"
+      },
+      {
+        "media_type": "application/vnd.ollama.image.template",
+        "bytes": 13,
+        "sha256": "sha256:b507b9c2f6ca642bffcd06665ea7c91f235fd32daeefdf875a0f938db05fb315",
+        "path": "tmp\\lighton-ocr\\models\\blobs\\sha256-b507b9c2f6ca642bffcd06665ea7c91f235fd32daeefdf875a0f938db05fb315"
+      },
+      {
+        "media_type": "application/vnd.ollama.image.params",
+        "bytes": 32,
+        "sha256": "sha256:54a429282c75fff84e41128dfff4447ea668674f67c60ce39782c7db91a13d90",
+        "path": "tmp\\lighton-ocr\\models\\blobs\\sha256-54a429282c75fff84e41128dfff4447ea668674f67c60ce39782c7db91a13d90"
+      }
+    ],
+    "details": {
+      "parent_model": "/usr/share/ollama/.ollama/models/blobs/sha256-062cc44af0b922f016b1f73672389087494a893a4cc6f716b672f5c45ffbf000",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3",
+        "clip"
+      ],
+      "parameter_size": "596.05M",
+      "quantization_level": "Q8_0"
+    },
+    "template": "{{ .Prompt }}",
+    "parameters": "temperature                    0.2\ntop_p                          0.9",
+    "capabilities": [
+      "completion",
+      "vision",
+      "tools"
+    ]
+  },
+  "load_seconds": 6.375,
+  "loaded_model": {
+    "models": [
+      {
+        "name": "maternion/LightOnOCR-2:1b",
+        "model": "maternion/LightOnOCR-2:1b",
+        "size": 1389163967,
+        "digest": "ee7d83c4eb673860b0cacc68401145b37ac2b13004e8d5e0c46f7b8e8dff79c1",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3",
+            "clip"
+          ],
+          "parameter_size": "596.05M",
+          "quantization_level": "Q8_0"
+        },
+        "expires_at": "2026-10-02T23:41:41.5846443+05:30",
+        "size_vram": 701895801,
+        "context_length": 4096
+      }
+    ]
+  },
+  "stop_reason": "User explicitly requested stopping the LightOnOCR test.",
+  "stopped_at_utc": "2026-10-02T18:06:21.5197470Z",
+  "interrupted_sample_id": "doc-015",
+  "model_server_confirmed_exited": true
+}

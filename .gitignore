@@ -1,0 +1,17 @@
+node_modules/
+dist/
+tmp/
+*.log
+.env
+.env.*
+!.env.example
+coverage/
+.npm-cache/
+.electron-cache/
+.venv/
+models/
+__pycache__/
+*.pyc
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm

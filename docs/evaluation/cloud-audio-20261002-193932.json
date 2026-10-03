@@ -1,0 +1,1536 @@
+{
+  "date_utc": "20261002-193932",
+  "data_directory": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\audio-integration-groq-20261002-193932",
+  "method": "Real app API/worker, FFmpeg, bundled Silero VAD and Groq verbose transcription; local Tiny fallback when needed",
+  "model": "whisper-large-v3-turbo",
+  "dataset_revision": "85cba6bc97ea02b78e23f562e0ccc8f772c94228",
+  "samples": [
+    {
+      "name": "clean.wav",
+      "group": "authored",
+      "version_id": "82b8a184-97bc-4ba0-9f04-920b95be0ee4",
+      "seconds": 3.813,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "b71bee7d-4d8c-5a6d-83a2-faec372e3c8f",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 9.368
+          },
+          "text": "A triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.",
+          "text_sha256": "b87e871b50363a8fa9ec34700f276470277b811ebadb0143ab3cfbcc308f9531",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "54a49b046479c1824d0766a14ec94cffa171a16b10a591f9fde036295807c0b6",
+              "duration_seconds": 9.368,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 1.72,
+                "text": "A triangle has three sides."
+              },
+              {
+                "start_seconds": 2.74,
+                "end_seconds": 4.86,
+                "text": "Water freezes at zero degrees Celsius."
+              },
+              {
+                "start_seconds": 5.98,
+                "end_seconds": 8.46,
+                "text": "This is an authored audio test for study lens."
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 9.368073,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": "English",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "54a49b046479c1824d0766a14ec94cffa171a16b10a591f9fde036295807c0b6",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.0,
+                    "end": 9.3680625
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 1.7199999,
+                  "avg_logprob": -0.1909694,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                },
+                {
+                  "start": 2.74,
+                  "end": 4.8599997,
+                  "avg_logprob": -0.1909694,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                },
+                {
+                  "start": 5.98,
+                  "end": 8.46,
+                  "avg_logprob": -0.1909694,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                }
+              ],
+              "levels": {
+                "rms": 0.093815,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "known_phrases_recovered": true
+      },
+      "status": "passed"
+    },
+    {
+      "name": "noisy.wav",
+      "group": "authored",
+      "version_id": "3d712598-fe91-4ec5-9155-0fc417102faa",
+      "seconds": 3.125,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "43035290-4bcc-5657-950d-4a1483fdb69d",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 9.368
+          },
+          "text": "A triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.",
+          "text_sha256": "b87e871b50363a8fa9ec34700f276470277b811ebadb0143ab3cfbcc308f9531",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "6400c6b27c402a710789233e08ef7779c1c209239d3cf6a3011ffd4a2e04e3d3",
+              "duration_seconds": 9.368,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 2.64,
+                "text": "A triangle has three sides."
+              },
+              {
+                "start_seconds": 2.64,
+                "end_seconds": 5.9,
+                "text": "Water freezes at zero degrees Celsius."
+              },
+              {
+                "start_seconds": 5.9,
+                "end_seconds": 9.36,
+                "text": "This is an authored audio test for study lens."
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 9.368073,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": "English",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "6400c6b27c402a710789233e08ef7779c1c209239d3cf6a3011ffd4a2e04e3d3",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.0,
+                    "end": 9.3680625
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 2.6399999,
+                  "avg_logprob": -0.17927045,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                },
+                {
+                  "start": 2.6399999,
+                  "end": 5.9,
+                  "avg_logprob": -0.17927045,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                },
+                {
+                  "start": 5.9,
+                  "end": 9.36,
+                  "avg_logprob": -0.17927045,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                }
+              ],
+              "levels": {
+                "rms": 0.070498,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "known_phrases_recovered": true
+      },
+      "status": "passed"
+    },
+    {
+      "name": "silence.wav",
+      "group": "authored",
+      "version_id": "65bdd17b-a264-493c-a51d-b6fa151ad68a",
+      "seconds": 1.093,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "da269fb4-e13b-55e4-b619-8bfa2d05dbda",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 5.0
+          },
+          "text": "",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "empty",
+          "warning": "No speech recognized in this interval. This may be silence, music or missed speech; listen to the original.",
+          "engine": "faster-whisper-1.2.1-tiny-cpu-int8-v1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "6516da2b046a1040ba05a312c042bb45a0329baa73fd8b4907c7904bf367d363",
+              "duration_seconds": 5.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 5.0,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": null,
+              "language_probability": null,
+              "provider": "none",
+              "model": "speech-detection",
+              "cached": false,
+              "input_sha256": null,
+              "fallback_reason": null,
+              "vad": {
+                "method": "exact-zero",
+                "speech_detected": false
+              },
+              "diagnostics": [],
+              "levels": {
+                "rms": 0.0,
+                "clipped_fraction": 0.0,
+                "near_zero": true
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "no_invented_speech": true
+      },
+      "status": "passed"
+    },
+    {
+      "name": "tone.wav",
+      "group": "authored",
+      "version_id": "ff5410ff-5fa7-45e5-bddf-224cd16c40bc",
+      "seconds": 2.547,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "193a3be4-4083-5e43-88b3-eeb502b9661b",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 5.0
+          },
+          "text": "",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "empty",
+          "warning": "No speech recognized in this interval. This may be silence, music or missed speech; listen to the original.",
+          "engine": "faster-whisper-1.2.1-tiny-cpu-int8-v1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "f650e4cd6e480b91094a0e21f3774d2caaa05c7ac0fa11f9ada004165a9d856a",
+              "duration_seconds": 5.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 5.0,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": null,
+              "language_probability": null,
+              "provider": "none",
+              "model": "speech-detection",
+              "cached": false,
+              "input_sha256": null,
+              "fallback_reason": null,
+              "vad": {
+                "regions": [],
+                "method": "silero-vad",
+                "speech_detected": false
+              },
+              "diagnostics": [],
+              "levels": {
+                "rms": 0.258942,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "no_invented_speech": true
+      },
+      "status": "passed"
+    },
+    {
+      "name": "intervals.wav",
+      "group": "authored",
+      "version_id": "76aa113c-abe8-42b2-9d1e-30ef47c44afa",
+      "seconds": 10.937,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "4151bbf2-4283-5afe-8a7c-aa1d9f730a37",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 30.0
+          },
+          "text": "A triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.",
+          "text_sha256": "b87e871b50363a8fa9ec34700f276470277b811ebadb0143ab3cfbcc308f9531",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "216c54f29bcaafaa18c178579ce3642b808da4ceb6b87a9c6fba7e6e80bafb9a",
+              "duration_seconds": 30.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 1.72,
+                "text": "A triangle has three sides."
+              },
+              {
+                "start_seconds": 2.74,
+                "end_seconds": 4.86,
+                "text": "Water freezes at zero degrees Celsius."
+              },
+              {
+                "start_seconds": 5.98,
+                "end_seconds": 8.46,
+                "text": "This is an authored audio test for study lens."
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 65.0,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": "English",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "216c54f29bcaafaa18c178579ce3642b808da4ceb6b87a9c6fba7e6e80bafb9a",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.0,
+                    "end": 9.04
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 1.7199999,
+                  "avg_logprob": -0.1909694,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                },
+                {
+                  "start": 2.74,
+                  "end": 4.8599997,
+                  "avg_logprob": -0.1909694,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                },
+                {
+                  "start": 5.98,
+                  "end": 8.46,
+                  "avg_logprob": -0.1909694,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                }
+              ],
+              "levels": {
+                "rms": 0.052425,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        },
+        {
+          "id": "0589e147-d6e8-5cb8-93e5-3b92364d276d",
+          "ordinal": 2,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 30,
+            "end_seconds": 60.0
+          },
+          "text": "A triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.",
+          "text_sha256": "b87e871b50363a8fa9ec34700f276470277b811ebadb0143ab3cfbcc308f9531",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "e38668098eb55ffa7b695139da5d4b86b7cb87617c14733eeecd2925221a226d",
+              "duration_seconds": 30.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 30.0,
+                "end_seconds": 33.72,
+                "text": "A triangle has three sides."
+              },
+              {
+                "start_seconds": 34.74,
+                "end_seconds": 36.86,
+                "text": "Water freezes at zero degrees Celsius."
+              },
+              {
+                "start_seconds": 38.0,
+                "end_seconds": 40.46,
+                "text": "This is an authored audio test for study lens."
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 65.0,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": "English",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "e38668098eb55ffa7b695139da5d4b86b7cb87617c14733eeecd2925221a226d",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 1.712,
+                    "end": 11.024
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 3.72,
+                  "avg_logprob": -0.26027957,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                },
+                {
+                  "start": 4.74,
+                  "end": 6.8599997,
+                  "avg_logprob": -0.26027957,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                },
+                {
+                  "start": 8,
+                  "end": 10.46,
+                  "avg_logprob": -0.26027957,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                }
+              ],
+              "levels": {
+                "rms": 0.052425,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        },
+        {
+          "id": "baa10523-3406-59f0-a052-71edacd2f0d5",
+          "ordinal": 3,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 60,
+            "end_seconds": 65.0
+          },
+          "text": "",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "empty",
+          "warning": "No speech recognized in this interval. This may be silence, music or missed speech; listen to the original.",
+          "engine": "faster-whisper-1.2.1-tiny-cpu-int8-v1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "6516da2b046a1040ba05a312c042bb45a0329baa73fd8b4907c7904bf367d363",
+              "duration_seconds": 5.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 65.0,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": null,
+              "language_probability": null,
+              "provider": "none",
+              "model": "speech-detection",
+              "cached": false,
+              "input_sha256": null,
+              "fallback_reason": null,
+              "vad": {
+                "method": "exact-zero",
+                "speech_detected": false
+              },
+              "diagnostics": [],
+              "levels": {
+                "rms": 0.0,
+                "clipped_fraction": 0.0,
+                "near_zero": true
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "gold_interval_boundaries": true,
+        "second_chunk_absolute_time": true
+      },
+      "status": "passed"
+    },
+    {
+      "name": "corrupt.wav",
+      "group": "authored",
+      "version_id": "e94ae96c-9ec8-46de-97b7-9aec2f087e6c",
+      "seconds": 0.672,
+      "state": "failed",
+      "error": "The local audio helper could not decode or transcribe this source. It may be damaged or unsupported; check FFmpeg/speech setup or import an exported audio copy. Saved intervals remain.",
+      "units": [],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "corrupt_declined": true
+      },
+      "status": "passed"
+    },
+    {
+      "name": "hinglish-0.wav",
+      "group": "hinglish",
+      "reference": "दो siblings रहते थे Veer और Diya veer बड़े भाई known for",
+      "sha256": "68e2e55668d5ab5aa79645cdc7115642d9361aa521db80c7a41eaf560f7e6d13",
+      "dataset_file": "v1_hiacc_adult_test_AD42094.wav",
+      "version_id": "756f82d8-b9e9-4721-86e2-9d04b5db439d",
+      "seconds": 3.016,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "844ea597-cbea-55f2-83a1-aa53a493ef56",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 4.383
+          },
+          "text": "दोस्ट सिब्लिंग रहते थे वी और दिया, वीर बड़े भाई, नोन फॉर इस",
+          "text_sha256": "a04d07e426f876cd8ef83c9f68580c6ebab531268958ada81ef7560e5c6b3c1f",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "125b506f8faf4269c18314afff34499921739af40aa5cc342259dadc8a7ea406",
+              "duration_seconds": 4.383,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 4.38,
+                "text": "दोस्ट सिब्लिंग रहते थे वी और दिया, वीर बड़े भाई, नोन फॉर इस"
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 4.382937,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "16000",
+              "language": "Hindi",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "125b506f8faf4269c18314afff34499921739af40aa5cc342259dadc8a7ea406",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.0,
+                    "end": 4.3829375
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 4.38,
+                  "avg_logprob": -0.120774515,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.3888888
+                }
+              ],
+              "levels": {
+                "rms": 0.114025,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "speech_transcript_saved": true
+      },
+      "error_metrics": {
+        "edit_errors": 16,
+        "reference_words": 13,
+        "raw_wer": 1.2307692307692308
+      },
+      "status": "passed"
+    },
+    {
+      "name": "hinglish-1.wav",
+      "group": "hinglish",
+      "reference": "उधर cold temperature रहता है",
+      "sha256": "64ec28c4f89f7e2736bc2dc7353f18d906f75ac421150c2ae7243144b18c0201",
+      "dataset_file": "v1_hiacc_adult_test_AD34058.wav",
+      "version_id": "7704ac61-e9af-4de0-b38f-55b1d6da53cd",
+      "seconds": 5.828,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "79d7022b-40b0-559c-9605-7c4c7711c419",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 2.612
+          },
+          "text": "It's cold temperature.",
+          "text_sha256": "c9e0fd0a0d0cfa872123fa12883872bd739cda4bda55818e81c47e01e4ce4a29",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "0370a75be53ed0cd6ad709bcecc32512bd9778367a0c3b89640d5f173a1e9df7",
+              "duration_seconds": 2.612,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 2.612,
+                "text": "It's cold temperature."
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 2.612062,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "16000",
+              "language": "English",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "0370a75be53ed0cd6ad709bcecc32512bd9778367a0c3b89640d5f173a1e9df7",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.0,
+                    "end": 2.6120625
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 2.62,
+                  "avg_logprob": -0.88492304,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 0.7419355
+                }
+              ],
+              "levels": {
+                "rms": 0.071469,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "speech_transcript_saved": true
+      },
+      "error_metrics": {
+        "edit_errors": 4,
+        "reference_words": 5,
+        "raw_wer": 0.8
+      },
+      "status": "passed"
+    },
+    {
+      "name": "hi-0.wav",
+      "group": "hi",
+      "reference": "क्या इस बार मॉनसून में डूब जाएगी दिल्ली, नालियों की अबतक नहीं हुई सफाई",
+      "sha256": "84d8edbc4058628b1f90ef6d1f1360b204eb38f12ae642eec846b649f1e58f33",
+      "dataset_file": "v1_commonvoice_test_11.wav",
+      "version_id": "ba08f8c2-c4f0-4ffd-b6cf-045c68334c13",
+      "seconds": 6.375,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "a45cb9eb-da2d-5bd9-9391-75fd67fd3d8d",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 6.66
+          },
+          "text": "کیا اس بار مونسون میں ڈوب چائے گی ڈلی نالیوں کی اب تک نہیں ہوئی صفائی؟",
+          "text_sha256": "c70bb1728f128267dedd5d2d0bce237c71dabb260f4a55403c578dc0925372b5",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "0f1b6f3dbcace50cd070e91eca002ee892ac350d396b11f6a6810a5b2ad991f4",
+              "duration_seconds": 6.66,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 6.66,
+                "text": "کیا اس بار مونسون میں ڈوب چائے گی ڈلی نالیوں کی اب تک نہیں ہوئی صفائی؟"
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 6.66,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "16000",
+              "language": "Urdu",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "0f1b6f3dbcace50cd070e91eca002ee892ac350d396b11f6a6810a5b2ad991f4",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.0,
+                    "end": 6.66
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 6.66,
+                  "avg_logprob": -0.041897226,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.2727273
+                }
+              ],
+              "levels": {
+                "rms": 0.115518,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "speech_transcript_saved": true
+      },
+      "error_metrics": {
+        "edit_errors": 26,
+        "reference_words": 26,
+        "raw_wer": 1.0
+      },
+      "status": "passed"
+    },
+    {
+      "name": "hi-1.wav",
+      "group": "hi",
+      "reference": "वह वहाँ किसने डाल दिया?",
+      "sha256": "3e9b6cfa0e9eb51dc2c3ffddab765b512f74f988e3f93bef777109413e98662f",
+      "dataset_file": "v1_commonvoice_test_1.wav",
+      "version_id": "c4a380cf-1248-4e55-94fc-a61bcce6c6c6",
+      "seconds": 6.469,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "78933464-1ee0-53a2-bd38-c8a5f8a3050c",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 3.276
+          },
+          "text": "वो वहां किसने डाल दिया?",
+          "text_sha256": "fe41d51a09b1befca319c38d1ef99a42d7dce505f4a62c8a4a25630e4c3d9cf7",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "d1747f3e5ac32f38b3046e5e6d2a6e612777432b3f4d371d414e3854e8dd7d2e",
+              "duration_seconds": 3.276,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 2.08,
+                "text": "वो वहां किसने डाल दिया?"
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 3.276,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "16000",
+              "language": "Hindi",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "d1747f3e5ac32f38b3046e5e6d2a6e612777432b3f4d371d414e3854e8dd7d2e",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.336,
+                    "end": 3.276
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 2.08,
+                  "avg_logprob": -0.20541683,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.0344827
+                }
+              ],
+              "levels": {
+                "rms": 0.007866,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "speech_transcript_saved": true
+      },
+      "error_metrics": {
+        "edit_errors": 1,
+        "reference_words": 8,
+        "raw_wer": 0.125
+      },
+      "status": "passed"
+    },
+    {
+      "name": "noisy_hi-0.wav",
+      "group": "noisy_hi",
+      "reference": "और कितना हाँ हाँ कितना किलोमीटर है यहाँ से",
+      "sha256": "5fd62e4e92910cb8316dd9faeb59e4f24887b672a2fbdaee7b4af02fa6df1a43",
+      "dataset_file": "noisy_bench_indic_70.wav",
+      "version_id": "ab7d9061-1f66-46ae-a585-01d805268409",
+      "seconds": 6.656,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "03ef2c0e-6c89-529d-9476-55e8bb2c2e43",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 4.932
+          },
+          "text": "How many kilometers are here?",
+          "text_sha256": "16065248b55656d9247c3c3d7665ecdc415524e87a32d1ee1ad8f80900620794",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "2324340f2a028343eb64e657ffdf798f867b3b70b588ee715fb2ea24a99764cb",
+              "duration_seconds": 4.932,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 4.932,
+                "text": "How many kilometers are here?"
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 4.931938,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "16000",
+              "language": "English",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "2324340f2a028343eb64e657ffdf798f867b3b70b588ee715fb2ea24a99764cb",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.208,
+                    "end": 4.9319375
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 4.94,
+                  "avg_logprob": -0.5147426,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 0.7894737
+                }
+              ],
+              "levels": {
+                "rms": 0.076508,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "speech_transcript_saved": true
+      },
+      "error_metrics": {
+        "edit_errors": 14,
+        "reference_words": 14,
+        "raw_wer": 1.0
+      },
+      "status": "passed"
+    },
+    {
+      "name": "noisy_hi-1.wav",
+      "group": "noisy_hi",
+      "reference": "हाँ",
+      "sha256": "e44518c495a031e1eaa3c2598093e19d6180618318157dd010a02b29dc79fb46",
+      "dataset_file": "noisy_bench_indic_126.wav",
+      "version_id": "317ae48f-6c45-45d9-b239-b66c06124cff",
+      "seconds": 6.063,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "43161dc4-0c73-5556-bc7e-53e935b4da5c",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 0.833
+          },
+          "text": "ありがとうございました",
+          "text_sha256": "74db213e6b5a5f91c17e43e0cce213f69339609e227c6df99f8891c0db2bd434",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "9a73eb1adf29705010ff62120d715cf1a83ff1d2726108d8992af7af26734229",
+              "duration_seconds": 0.833,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 0.82,
+                "text": "ありがとうございました"
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 0.833,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "16000",
+              "language": "Japanese",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "9a73eb1adf29705010ff62120d715cf1a83ff1d2726108d8992af7af26734229",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.0,
+                    "end": 0.833
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 0.82,
+                  "avg_logprob": -1.0453012,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 0.75
+                }
+              ],
+              "levels": {
+                "rms": 0.06338,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "speech_transcript_saved": true
+      },
+      "error_metrics": {
+        "edit_errors": 1,
+        "reference_words": 1,
+        "raw_wer": 1.0
+      },
+      "status": "passed"
+    },
+    {
+      "name": "neutral-0.wav",
+      "group": "neutral",
+      "reference": "",
+      "sha256": "a3596b624b40219b569828db663574d289d54a58f28a51a8cec7bcbe95513ad4",
+      "dataset_file": "negative_test_190.wav",
+      "version_id": "f563abbc-9b5c-48f0-acca-05ce4a42b9eb",
+      "seconds": 1.188,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "fd4372eb-6ac4-5c12-98b3-14264168337b",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 5.914
+          },
+          "text": "",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "empty",
+          "warning": "No speech recognized in this interval. This may be silence, music or missed speech; listen to the original.",
+          "engine": "faster-whisper-1.2.1-tiny-cpu-int8-v1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "b587133e3a8e51285b63ebb5ea4d92d662cfa3eb0d099f474ca0053f8dd6ec7d",
+              "duration_seconds": 5.914,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 5.913625,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "16000",
+              "language": null,
+              "language_probability": null,
+              "provider": "none",
+              "model": "speech-detection",
+              "cached": false,
+              "input_sha256": null,
+              "fallback_reason": null,
+              "vad": {
+                "method": "exact-zero",
+                "speech_detected": false
+              },
+              "diagnostics": [],
+              "levels": {
+                "rms": 0.0,
+                "clipped_fraction": 0.0,
+                "near_zero": true
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "no_invented_speech": true
+      },
+      "error_metrics": {
+        "edit_errors": 0,
+        "reference_words": 0,
+        "raw_wer": null
+      },
+      "status": "passed"
+    },
+    {
+      "name": "neutral-1.wav",
+      "group": "neutral",
+      "reference": "",
+      "sha256": "ebba67123564fa086f3acef019abe9f44c35fc4ca0d07e5df96bbdabb2fb5697",
+      "dataset_file": "negative_test_226.wav",
+      "version_id": "8801a87c-cd37-46bc-b148-1dfd135641ed",
+      "seconds": 1.25,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "7a8d7df5-20b5-5451-91f3-39ce0d894917",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 1.942
+          },
+          "text": "",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "empty",
+          "warning": "No speech recognized in this interval. This may be silence, music or missed speech; listen to the original.",
+          "engine": "faster-whisper-1.2.1-tiny-cpu-int8-v1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "a8fcb9c16f02d3ee3679e0333830ffa94819f8187e11481382f4f9dd5b10f1e9",
+              "duration_seconds": 1.942,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 1.94175,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "16000",
+              "language": null,
+              "language_probability": null,
+              "provider": "none",
+              "model": "speech-detection",
+              "cached": false,
+              "input_sha256": null,
+              "fallback_reason": null,
+              "vad": {
+                "method": "exact-zero",
+                "speech_detected": false
+              },
+              "diagnostics": [],
+              "levels": {
+                "rms": 0.0,
+                "clipped_fraction": 0.0,
+                "near_zero": true
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "no_invented_speech": true
+      },
+      "error_metrics": {
+        "edit_errors": 0,
+        "reference_words": 0,
+        "raw_wer": null
+      },
+      "status": "passed"
+    }
+  ],
+  "requests": [
+    {
+      "seconds": 0.562,
+      "status": "received"
+    },
+    {
+      "seconds": 0.469,
+      "status": "received"
+    },
+    {
+      "seconds": 0.61,
+      "status": "received"
+    },
+    {
+      "seconds": 0.422,
+      "status": "received"
+    },
+    {
+      "seconds": 0.391,
+      "status": "received"
+    },
+    {
+      "seconds": 0.297,
+      "status": "received"
+    },
+    {
+      "seconds": 0.391,
+      "status": "received"
+    },
+    {
+      "seconds": 0.328,
+      "status": "received"
+    },
+    {
+      "seconds": 0.391,
+      "status": "received"
+    },
+    {
+      "seconds": 0.36,
+      "status": "received"
+    }
+  ],
+  "limitations": [
+    "Six known authored fixtures and eight selected public clips are a smoke pilot, not held-out accuracy evidence.",
+    "WER compares dataset scripts literally; Hindi/Latin script differences affect results. References are not human-audited.",
+    "No whole-app 8 GB measurement; development machine has 16 GB.",
+    "Chunk boundaries can split words; no speaker separation."
+  ],
+  "usage": {
+    "hour": 497491,
+    "day": 20728,
+    "hour_seconds": 140.0,
+    "day_seconds": 140.0,
+    "day_requests": 10,
+    "next_request_at": 1790970033.114987
+  },
+  "status": "passed"
+}

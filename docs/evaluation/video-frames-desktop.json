@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checks": {
+    "frame_review_without_asr": true,
+    "real_previews_decoded": true,
+    "source_timestamp_seek": true,
+    "whiteboard_page_two": true,
+    "coverage_labels": true
+  },
+  "slide_source": {
+    "width": 640,
+    "duration": 12
+  },
+  "seek_seconds": 8,
+  "screenshot": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\docs\\evaluation\\screenshots\\phase-07b-frames-desktop.png",
+  "data_directory": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\video-frames-integration-20261003-080329"
+}

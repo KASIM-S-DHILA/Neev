@@ -1,0 +1,5 @@
+file 'slide-a.png'
+duration 4
+file 'slide-b.png'
+duration 4
+file 'slide-b.png'

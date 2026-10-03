@@ -1,0 +1,141 @@
+{
+  "method": "Known seven-image pilot, fixed provisional heuristics; not a calibrated routing accuracy benchmark.",
+  "cloud_calls": 0,
+  "opencv_version": "5.0.0",
+  "samples": [
+    {
+      "sample": "blank",
+      "sha256": "303a3f5bd4fe81cf1c3bb82c7ef768e8cf17171fe33b59c3599be39fdb3496bc",
+      "decision": "skip-blank",
+      "reasons": [
+        "Pure-white fixture and no detected text"
+      ],
+      "seconds": 0.0523,
+      "signals": {
+        "foreground_fraction": 0.0,
+        "ocr_box_count": 0,
+        "mean_ocr_confidence": null,
+        "low_confidence_fraction": null,
+        "numeric_tokens": 0,
+        "long_horizontal_segments": 0,
+        "long_diagonal_segments": 0
+      }
+    },
+    {
+      "sample": "equation",
+      "sha256": "ec4d9ad96f6f317491023e9b619c4f983dcdf6e5fa31403ca4945fa163e1ad66",
+      "decision": "vision-candidate",
+      "reasons": [
+        "Stacked-math candidate: mathematical expressions and long horizontal stroke"
+      ],
+      "seconds": 0.1154,
+      "signals": {
+        "foreground_fraction": 0.0163,
+        "ocr_box_count": 5,
+        "mean_ocr_confidence": 0.9923020000000001,
+        "low_confidence_fraction": 0.0,
+        "numeric_tokens": 0,
+        "long_horizontal_segments": 41,
+        "long_diagonal_segments": 0
+      }
+    },
+    {
+      "sample": "figure",
+      "sha256": "5822c0c5348073951d2fe44129996b2d74718a8b186e3179017192ad973ed8fd",
+      "decision": "vision-candidate",
+      "reasons": [
+        "Diagram candidate: multiple long diagonal connections"
+      ],
+      "seconds": 0.1654,
+      "signals": {
+        "foreground_fraction": 0.0282,
+        "ocr_box_count": 5,
+        "mean_ocr_confidence": 0.9946179999999998,
+        "low_confidence_fraction": 0.0,
+        "numeric_tokens": 2,
+        "long_horizontal_segments": 40,
+        "long_diagonal_segments": 7
+      }
+    },
+    {
+      "sample": "hindi-mixed",
+      "sha256": "245fd4add87d416b3f29a6412bcb898be5c29dfcf844821fc3620d83d9382527",
+      "decision": "local-language-retry",
+      "reasons": [
+        "More than 25% of recognized lines below provisional 0.8 confidence",
+        "Selected Hindi language is outside this recognizer's supported scripts; try a capable local recognizer first"
+      ],
+      "seconds": 0.1355,
+      "signals": {
+        "foreground_fraction": 0.0158,
+        "ocr_box_count": 3,
+        "mean_ocr_confidence": 0.7138366666666666,
+        "low_confidence_fraction": 0.6666666666666666,
+        "numeric_tokens": 1,
+        "long_horizontal_segments": 20,
+        "long_diagonal_segments": 0
+      }
+    },
+    {
+      "sample": "scan-degraded",
+      "sha256": "f2b39f0478e48df43d9a3dbb48cbab68d0c9f0a8f45d35af309631540bc7432f",
+      "decision": "local-ocr",
+      "reasons": [
+        "No structural or low-quality trigger in this pilot"
+      ],
+      "seconds": 0.1015,
+      "signals": {
+        "foreground_fraction": 0.0315,
+        "ocr_box_count": 4,
+        "mean_ocr_confidence": 0.98978,
+        "low_confidence_fraction": 0.0,
+        "numeric_tokens": 3,
+        "long_horizontal_segments": 66,
+        "long_diagonal_segments": 0
+      }
+    },
+    {
+      "sample": "scan",
+      "sha256": "a9cb4fe0b209b1b6fa5617101ba1a06a3cd3726a02186219630499c3417a6832",
+      "decision": "local-ocr",
+      "reasons": [
+        "No structural or low-quality trigger in this pilot"
+      ],
+      "seconds": 0.1819,
+      "signals": {
+        "foreground_fraction": 0.0189,
+        "ocr_box_count": 4,
+        "mean_ocr_confidence": 0.9892475,
+        "low_confidence_fraction": 0.0,
+        "numeric_tokens": 3,
+        "long_horizontal_segments": 61,
+        "long_diagonal_segments": 0
+      }
+    },
+    {
+      "sample": "table-slide-12",
+      "sha256": "6993cf72d4ab41925c9f12a955fc517db93df2cb9660cbb4ed86a5a509cc0db6",
+      "decision": "vision-candidate",
+      "reasons": [
+        "Table candidate: repeated numeric values and long horizontal boundaries"
+      ],
+      "seconds": 0.1986,
+      "signals": {
+        "foreground_fraction": 0.7314,
+        "ocr_box_count": 25,
+        "mean_ocr_confidence": 0.9987768,
+        "low_confidence_fraction": 0.0,
+        "numeric_tokens": 10,
+        "long_horizontal_segments": 108,
+        "long_diagonal_segments": 0
+      }
+    }
+  ],
+  "limitations": [
+    "Uses cached OCR; timings exclude initial OCR.",
+    "Hindi is an explicit selected-language input in its fixture, not inferred from its filename in the router.",
+    "Only pure-white blank detection is validated.",
+    "Borderless tables, photographs, handwriting, faint content, rotated pages and densely packed diagrams remain untested.",
+    "These fixture rules must be evaluated on held-out course pages before enabling automatic routing."
+  ]
+}

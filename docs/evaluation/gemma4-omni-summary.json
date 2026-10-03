@@ -1,0 +1,361 @@
+{
+  "model": {
+    "repo": "ggml-org/gemma-4-E2B-it-GGUF",
+    "revision": "b4243c156154b6dca9324415f8c7ccc098b4aed1",
+    "files": [
+      {
+        "name": "gemma-4-E2B-it-Q4_0.gguf",
+        "bytes": 2841481184,
+        "sha256": "8e30dff3ac4c8434c49a7036fa15564bdbb6044e42bf04550bf1a096ad7e6a52"
+      },
+      {
+        "name": "mmproj-gemma-4-E2B-it-BF16.gguf",
+        "bytes": 986833664,
+        "sha256": "711e1e8f43fa0664adbac493129be1e6c25b81af4b4cdea97c7d798b25c0a3a4"
+      }
+    ],
+    "runtime": "llama.cpp b11303 (60e9cf7a7)"
+  },
+  "cloud_inference_requests": 0,
+  "production_app_modified": false,
+  "audio": {
+    "report": "docs\\evaluation\\gemma4-audio.json",
+    "inference_status": "completed",
+    "groups": {
+      "en": {
+        "clips": 20,
+        "raw_wer_percent": 5.44,
+        "paired_tiny_raw_wer_percent": 5.73,
+        "cer_percent": 3.42,
+        "reference_words": 349,
+        "word_errors": 19,
+        "median_request_seconds": 7.578,
+        "audio_seconds": 107.216,
+        "request_seconds": 156.39,
+        "request_failures": 0,
+        "output_truncations": 0,
+        "negative_clips": 0,
+        "nonempty_outputs_on_negative_clips": 0,
+        "script_pairs": {
+          "latin -> latin": 20
+        }
+      },
+      "hi": {
+        "clips": 20,
+        "raw_wer_percent": 24.52,
+        "paired_tiny_raw_wer_percent": 125.29,
+        "cer_percent": 15.84,
+        "reference_words": 261,
+        "word_errors": 64,
+        "median_request_seconds": 5.156,
+        "audio_seconds": 100.244,
+        "request_seconds": 110.405,
+        "request_failures": 0,
+        "output_truncations": 0,
+        "negative_clips": 0,
+        "nonempty_outputs_on_negative_clips": 0,
+        "script_pairs": {
+          "devanagari -> devanagari": 17,
+          "devanagari -> latin": 2,
+          "mixed -> devanagari": 1
+        }
+      },
+      "hinglish": {
+        "clips": 40,
+        "raw_wer_percent": 24.93,
+        "paired_tiny_raw_wer_percent": 93.91,
+        "cer_percent": 24.21,
+        "reference_words": 361,
+        "word_errors": 90,
+        "median_request_seconds": 3.82,
+        "audio_seconds": 133.064,
+        "request_seconds": 173.265,
+        "request_failures": 0,
+        "output_truncations": 0,
+        "negative_clips": 0,
+        "nonempty_outputs_on_negative_clips": 0,
+        "script_pairs": {
+          "latin -> latin": 12,
+          "mixed -> devanagari": 11,
+          "mixed -> mixed": 2,
+          "mixed -> latin": 3,
+          "latin -> devanagari": 1,
+          "devanagari -> devanagari": 9,
+          "devanagari -> latin": 2
+        }
+      },
+      "neutral": {
+        "clips": 20,
+        "raw_wer_percent": null,
+        "paired_tiny_raw_wer_percent": null,
+        "cer_percent": null,
+        "reference_words": 0,
+        "word_errors": 30,
+        "median_request_seconds": 4.203,
+        "audio_seconds": 81.649,
+        "request_seconds": 88.125,
+        "request_failures": 0,
+        "output_truncations": 0,
+        "negative_clips": 20,
+        "nonempty_outputs_on_negative_clips": 4,
+        "script_pairs": {
+          "empty_or_other -> empty_or_other": 16,
+          "empty_or_other -> devanagari": 4
+        }
+      },
+      "noisy_hi": {
+        "clips": 20,
+        "raw_wer_percent": 36.43,
+        "paired_tiny_raw_wer_percent": 178.01,
+        "cer_percent": 25.41,
+        "reference_words": 291,
+        "word_errors": 106,
+        "median_request_seconds": 6.102,
+        "audio_seconds": 109.629,
+        "request_seconds": 125.892,
+        "request_failures": 0,
+        "output_truncations": 0,
+        "negative_clips": 0,
+        "nonempty_outputs_on_negative_clips": 0,
+        "script_pairs": {
+          "devanagari -> mixed": 2,
+          "devanagari -> devanagari": 13,
+          "devanagari -> latin": 3,
+          "mixed -> mixed": 1,
+          "latin -> empty_or_other": 1
+        }
+      }
+    },
+    "normalization": "Same NFKC, casefold, punctuation/symbol to spaces, collapsed whitespace as Tiny; no translation/transliteration/reference rewriting.",
+    "timing_caveat": "Gemma is a persistent 4-thread server; per-request timings exclude cold loading. Tiny used 2 threads and started a new helper per interval. No identical-runtime speed claim.",
+    "alignment_caveat": "Gemma returns plain text here, without aligned segment timestamps. Raw recognition only, not an integrated app-output score.",
+    "peak_private_mib": 1892.58,
+    "peak_resident_mib": 2717.06
+  },
+  "documents": {
+    "tesseract": {
+      "inference_status": "completed",
+      "attempted_pages": 50,
+      "finish_reasons": {
+        "stop": 50
+      },
+      "request_errors": 0,
+      "median_request_seconds": 1.672,
+      "total_request_seconds": 86.89,
+      "groups": {
+        "PPT2PDF": {
+          "pages": 13,
+          "request_errors": 0,
+          "median_request_seconds": 1.14
+        },
+        "book": {
+          "pages": 14,
+          "request_errors": 0,
+          "median_request_seconds": 1.875
+        },
+        "colorful_textbook": {
+          "pages": 10,
+          "request_errors": 0,
+          "median_request_seconds": 1.446
+        },
+        "exam_paper": {
+          "pages": 12,
+          "request_errors": 0,
+          "median_request_seconds": 2.476
+        },
+        "note": {
+          "pages": 1,
+          "request_errors": 0,
+          "median_request_seconds": 0.766
+        }
+      },
+      "peak_private_mib": null,
+      "peak_resident_mib": null,
+      "text_edit_distance": 0.0947960527214574,
+      "formula_edit_distance": 0.8245494790126293,
+      "reading_order_edit_distance": 0.19207540616370597,
+      "table_teds": 0.0,
+      "table_structure_teds": 0.0,
+      "metric_page_denominators": {
+        "display_formula": {
+          "Edit_dist": {
+            "ALL": 22
+          }
+        },
+        "reading_order": {
+          "Edit_dist": {
+            "ALL": 48
+          }
+        },
+        "table": {
+          "TEDS": {
+            "ALL": 4
+          },
+          "Edit_dist": {
+            "ALL": 4
+          },
+          "TEDS_structure_only": {
+            "ALL": 4
+          }
+        },
+        "text_block": {
+          "Edit_dist": {
+            "ALL": 48
+          }
+        }
+      },
+      "evaluator_stage_execution": {
+        "page_match": {
+          "workers": 1,
+          "page_count": 50,
+          "quick_match_truncated_timeout_sec": 60,
+          "match_timeout_sec": 90,
+          "fallbacks": {
+            "quick_match_timeout": {
+              "count": 0,
+              "cases": []
+            },
+            "page_timeout": {
+              "count": 0,
+              "cases": []
+            }
+          }
+        },
+        "metrics": {
+          "table": {
+            "TEDS": {
+              "workers": 1,
+              "timeout_sec": 120.0,
+              "sample_count": 5,
+              "timeout_case_count": 0,
+              "timeout_cases": [],
+              "error_case_count": 0,
+              "error_cases": [],
+              "exception_case_count": 0,
+              "exception_cases": []
+            }
+          }
+        }
+      },
+      "formula_cdm": false,
+      "overall_leaderboard_score": null
+    },
+    "gemma4_280_image_tokens": {
+      "inference_status": "completed",
+      "attempted_pages": 50,
+      "finish_reasons": {
+        "deadline": 18,
+        "stop": 32
+      },
+      "request_errors": 18,
+      "median_request_seconds": 82.25,
+      "total_request_seconds": 3974.328,
+      "groups": {
+        "PPT2PDF": {
+          "pages": 13,
+          "request_errors": 0,
+          "median_request_seconds": 41.25
+        },
+        "book": {
+          "pages": 14,
+          "request_errors": 7,
+          "median_request_seconds": 101.164
+        },
+        "colorful_textbook": {
+          "pages": 10,
+          "request_errors": 1,
+          "median_request_seconds": 52.305
+        },
+        "exam_paper": {
+          "pages": 12,
+          "request_errors": 10,
+          "median_request_seconds": 120.078
+        },
+        "note": {
+          "pages": 1,
+          "request_errors": 0,
+          "median_request_seconds": 18.984
+        }
+      },
+      "peak_private_mib": 1933.96,
+      "peak_resident_mib": 2779.82,
+      "text_edit_distance": 0.4592409653761586,
+      "formula_edit_distance": 0.541317348181897,
+      "reading_order_edit_distance": 0.4271557457844062,
+      "table_teds": 0.16765149276662433,
+      "table_structure_teds": 0.22982456140350876,
+      "metric_page_denominators": {
+        "display_formula": {
+          "Edit_dist": {
+            "ALL": 22
+          }
+        },
+        "reading_order": {
+          "Edit_dist": {
+            "ALL": 48
+          }
+        },
+        "table": {
+          "TEDS": {
+            "ALL": 4
+          },
+          "Edit_dist": {
+            "ALL": 4
+          },
+          "TEDS_structure_only": {
+            "ALL": 4
+          }
+        },
+        "text_block": {
+          "Edit_dist": {
+            "ALL": 48
+          }
+        }
+      },
+      "evaluator_stage_execution": {
+        "page_match": {
+          "workers": 1,
+          "page_count": 50,
+          "quick_match_truncated_timeout_sec": 60,
+          "match_timeout_sec": 90,
+          "fallbacks": {
+            "quick_match_timeout": {
+              "count": 0,
+              "cases": []
+            },
+            "page_timeout": {
+              "count": 0,
+              "cases": []
+            }
+          }
+        },
+        "metrics": {
+          "table": {
+            "TEDS": {
+              "workers": 1,
+              "timeout_sec": 120.0,
+              "sample_count": 5,
+              "timeout_case_count": 0,
+              "timeout_cases": [],
+              "error_case_count": 0,
+              "error_cases": [],
+              "exception_case_count": 0,
+              "exception_cases": []
+            }
+          }
+        }
+      },
+      "formula_cdm": false,
+      "overall_leaderboard_score": null
+    }
+  },
+  "document_groups": {
+    "book": 14,
+    "colorful_textbook": 10,
+    "PPT2PDF": 13,
+    "exam_paper": 12,
+    "note": 1
+  },
+  "evaluator_revision": "f133a71e9e91c3621c7ce8994200a7b394a06eb3",
+  "recommendation": "Promising Hindi/Hinglish recognition experiment; universal replacement not justified. Retain native extraction and source validation."
+}

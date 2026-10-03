@@ -1,0 +1,837 @@
+{
+  "date_utc": "20261002-194327",
+  "data_directory": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\audio-integration-groq-20261002-194327",
+  "method": "Real app API/worker, FFmpeg, bundled Silero VAD and Groq verbose transcription; local Tiny fallback when needed",
+  "model": "whisper-large-v3-turbo",
+  "language_hint": "hi",
+  "dataset_revision": "85cba6bc97ea02b78e23f562e0ccc8f772c94228",
+  "samples": [
+    {
+      "name": "hinglish-0.wav",
+      "group": "hinglish",
+      "reference": "दो siblings रहते थे Veer और Diya veer बड़े भाई known for",
+      "sha256": "68e2e55668d5ab5aa79645cdc7115642d9361aa521db80c7a41eaf560f7e6d13",
+      "dataset_file": "v1_hiacc_adult_test_AD42094.wav",
+      "version_id": "af782133-8348-4acf-95ab-30fc5976478a",
+      "seconds": 3.094,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "ad467d4d-8fa6-5a09-887d-59ecdb846b6a",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 4.383
+          },
+          "text": "दोस्ट सिब्लिंग रहते थे वी और दिया, वीर बड़े भाई, नोन फॉर इस",
+          "text_sha256": "a04d07e426f876cd8ef83c9f68580c6ebab531268958ada81ef7560e5c6b3c1f",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "125b506f8faf4269c18314afff34499921739af40aa5cc342259dadc8a7ea406",
+              "duration_seconds": 4.383,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 4.38,
+                "text": "दोस्ट सिब्लिंग रहते थे वी और दिया, वीर बड़े भाई, नोन फॉर इस"
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "hi",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 4.382937,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "16000",
+              "language": "Hindi",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "125b506f8faf4269c18314afff34499921739af40aa5cc342259dadc8a7ea406",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.0,
+                    "end": 4.3829375
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 4.38,
+                  "avg_logprob": -0.120774515,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.3888888
+                }
+              ],
+              "levels": {
+                "rms": 0.114025,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "speech_transcript_saved": true
+      },
+      "error_metrics": {
+        "edit_errors": 16,
+        "reference_words": 13,
+        "raw_wer": 1.2307692307692308
+      },
+      "status": "passed"
+    },
+    {
+      "name": "hinglish-1.wav",
+      "group": "hinglish",
+      "reference": "उधर cold temperature रहता है",
+      "sha256": "64ec28c4f89f7e2736bc2dc7353f18d906f75ac421150c2ae7243144b18c0201",
+      "dataset_file": "v1_hiacc_adult_test_AD34058.wav",
+      "version_id": "d79b0a5c-c2f6-4d87-9f1b-995aa08d225d",
+      "seconds": 6.578,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "4301b802-3c5d-5c50-839f-d741bdb2ab3b",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 2.612
+          },
+          "text": "वोदर अपना गोल्ड टेंपरेचर हता है",
+          "text_sha256": "f462f506f85a5e3b99d1dd346b7c8f37d383b87e3a882939ba7c9ee6a763f9ef",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "0370a75be53ed0cd6ad709bcecc32512bd9778367a0c3b89640d5f173a1e9df7",
+              "duration_seconds": 2.612,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 2.612,
+                "text": "वोदर अपना गोल्ड टेंपरेचर हता है"
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "hi",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 2.612062,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "16000",
+              "language": "Hindi",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "0370a75be53ed0cd6ad709bcecc32512bd9778367a0c3b89640d5f173a1e9df7",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.0,
+                    "end": 2.6120625
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 2.62,
+                  "avg_logprob": -0.26794428,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.150685
+                }
+              ],
+              "levels": {
+                "rms": 0.071469,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "speech_transcript_saved": true
+      },
+      "error_metrics": {
+        "edit_errors": 10,
+        "reference_words": 5,
+        "raw_wer": 2.0
+      },
+      "status": "passed"
+    },
+    {
+      "name": "hi-0.wav",
+      "group": "hi",
+      "reference": "क्या इस बार मॉनसून में डूब जाएगी दिल्ली, नालियों की अबतक नहीं हुई सफाई",
+      "sha256": "84d8edbc4058628b1f90ef6d1f1360b204eb38f12ae642eec846b649f1e58f33",
+      "dataset_file": "v1_commonvoice_test_11.wav",
+      "version_id": "7ba1704f-fbf2-40ac-9608-aee02a12c8e2",
+      "seconds": 6.531,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "fd8ed82a-0cfa-57e2-bf03-c4b387a58bd5",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 6.66
+          },
+          "text": "क्या इस बार मौनसून में डूब चायेगी डिल्ली नालियों के अब तक नहीं हुई सफाई।",
+          "text_sha256": "d881a96f7d09d351710ef4e1eb10a3418e5ef26b49f28bcfd8c1560140e734d2",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "0f1b6f3dbcace50cd070e91eca002ee892ac350d396b11f6a6810a5b2ad991f4",
+              "duration_seconds": 6.66,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 6.66,
+                "text": "क्या इस बार मौनसून में डूब चायेगी डिल्ली नालियों के अब तक नहीं हुई सफाई।"
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "hi",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 6.66,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "16000",
+              "language": "Hindi",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "0f1b6f3dbcace50cd070e91eca002ee892ac350d396b11f6a6810a5b2ad991f4",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.0,
+                    "end": 6.66
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 6.66,
+                  "avg_logprob": -0.06682963,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.575
+                }
+              ],
+              "levels": {
+                "rms": 0.115518,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "speech_transcript_saved": true
+      },
+      "error_metrics": {
+        "edit_errors": 6,
+        "reference_words": 26,
+        "raw_wer": 0.23076923076923078
+      },
+      "status": "passed"
+    },
+    {
+      "name": "hi-1.wav",
+      "group": "hi",
+      "reference": "वह वहाँ किसने डाल दिया?",
+      "sha256": "3e9b6cfa0e9eb51dc2c3ffddab765b512f74f988e3f93bef777109413e98662f",
+      "dataset_file": "v1_commonvoice_test_1.wav",
+      "version_id": "9d9ce8c7-d509-4439-93a5-b466ac8fa6cc",
+      "seconds": 6.688,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "1b22daa5-b210-55a9-a45e-42dd880dad3f",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 3.276
+          },
+          "text": "वो वहां किसने डाल दिया?",
+          "text_sha256": "fe41d51a09b1befca319c38d1ef99a42d7dce505f4a62c8a4a25630e4c3d9cf7",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "d1747f3e5ac32f38b3046e5e6d2a6e612777432b3f4d371d414e3854e8dd7d2e",
+              "duration_seconds": 3.276,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 2.08,
+                "text": "वो वहां किसने डाल दिया?"
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "hi",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 3.276,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "16000",
+              "language": "Hindi",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "d1747f3e5ac32f38b3046e5e6d2a6e612777432b3f4d371d414e3854e8dd7d2e",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.336,
+                    "end": 3.276
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 2.08,
+                  "avg_logprob": -0.20541683,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.0344827
+                }
+              ],
+              "levels": {
+                "rms": 0.007866,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "speech_transcript_saved": true
+      },
+      "error_metrics": {
+        "edit_errors": 1,
+        "reference_words": 8,
+        "raw_wer": 0.125
+      },
+      "status": "passed"
+    },
+    {
+      "name": "noisy_hi-0.wav",
+      "group": "noisy_hi",
+      "reference": "और कितना हाँ हाँ कितना किलोमीटर है यहाँ से",
+      "sha256": "5fd62e4e92910cb8316dd9faeb59e4f24887b672a2fbdaee7b4af02fa6df1a43",
+      "dataset_file": "noisy_bench_indic_70.wav",
+      "version_id": "ddcfdc71-4104-4ed6-8d6b-e4ba17ec199e",
+      "seconds": 6.282,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "a214f717-255f-5b3c-986e-1cbb6b9c020b",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 4.932
+          },
+          "text": "कितना किलोमेटर है यहां से?",
+          "text_sha256": "c1ddd49206083be1fa0886eed36bc2e91adf3bb9b63648d926c7916543b53e5d",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "2324340f2a028343eb64e657ffdf798f867b3b70b588ee715fb2ea24a99764cb",
+              "duration_seconds": 4.932,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 4.932,
+                "text": "कितना किलोमेटर है यहां से?"
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "hi",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 4.931938,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "16000",
+              "language": "Hindi",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "2324340f2a028343eb64e657ffdf798f867b3b70b588ee715fb2ea24a99764cb",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.208,
+                    "end": 4.9319375
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 4.94,
+                  "avg_logprob": -0.2144348,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.0147059
+                }
+              ],
+              "levels": {
+                "rms": 0.076508,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "speech_transcript_saved": true
+      },
+      "error_metrics": {
+        "edit_errors": 5,
+        "reference_words": 14,
+        "raw_wer": 0.35714285714285715
+      },
+      "status": "passed"
+    },
+    {
+      "name": "noisy_hi-1.wav",
+      "group": "noisy_hi",
+      "reference": "हाँ",
+      "sha256": "e44518c495a031e1eaa3c2598093e19d6180618318157dd010a02b29dc79fb46",
+      "dataset_file": "noisy_bench_indic_126.wav",
+      "version_id": "ff79688b-247b-424b-9d5a-52321c815fb8",
+      "seconds": 6.344,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "b52c7851-0e6a-5260-8afb-9c5b56ecfcdf",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 0.833
+          },
+          "text": "झाल",
+          "text_sha256": "a073234300372ab2a577eb917f1f56b62cbddd7bf8ccae03edb50c8db2ebd398",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "9a73eb1adf29705010ff62120d715cf1a83ff1d2726108d8992af7af26734229",
+              "duration_seconds": 0.833,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 0.82,
+                "text": "झाल"
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "hi",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 0.833,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "16000",
+              "language": "Hindi",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "9a73eb1adf29705010ff62120d715cf1a83ff1d2726108d8992af7af26734229",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.0,
+                    "end": 0.833
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 0.82,
+                  "avg_logprob": -0.8026232,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 0.5263158
+                }
+              ],
+              "levels": {
+                "rms": 0.06338,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "speech_transcript_saved": true
+      },
+      "error_metrics": {
+        "edit_errors": 2,
+        "reference_words": 1,
+        "raw_wer": 2.0
+      },
+      "status": "passed"
+    },
+    {
+      "name": "neutral-0.wav",
+      "group": "neutral",
+      "reference": "",
+      "sha256": "a3596b624b40219b569828db663574d289d54a58f28a51a8cec7bcbe95513ad4",
+      "dataset_file": "negative_test_190.wav",
+      "version_id": "0559f89f-135a-4848-9b4a-9fdddddfb814",
+      "seconds": 1.125,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "6f6b423b-55fa-56f3-8294-a43a95b97b67",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 5.914
+          },
+          "text": "",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "empty",
+          "warning": "No speech recognized in this interval. This may be silence, music or missed speech; listen to the original.",
+          "engine": "faster-whisper-1.2.1-tiny-cpu-int8-v1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "b587133e3a8e51285b63ebb5ea4d92d662cfa3eb0d099f474ca0053f8dd6ec7d",
+              "duration_seconds": 5.914,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "hi",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 5.913625,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "16000",
+              "language": null,
+              "language_probability": null,
+              "provider": "none",
+              "model": "speech-detection",
+              "cached": false,
+              "input_sha256": null,
+              "fallback_reason": null,
+              "vad": {
+                "method": "exact-zero",
+                "speech_detected": false
+              },
+              "diagnostics": [],
+              "levels": {
+                "rms": 0.0,
+                "clipped_fraction": 0.0,
+                "near_zero": true
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "no_invented_speech": true
+      },
+      "error_metrics": {
+        "edit_errors": 0,
+        "reference_words": 0,
+        "raw_wer": null
+      },
+      "status": "passed"
+    },
+    {
+      "name": "neutral-1.wav",
+      "group": "neutral",
+      "reference": "",
+      "sha256": "ebba67123564fa086f3acef019abe9f44c35fc4ca0d07e5df96bbdabb2fb5697",
+      "dataset_file": "negative_test_226.wav",
+      "version_id": "90f1d5ce-b9e9-4ed0-a343-1f278f38df50",
+      "seconds": 1.0,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "f38077f4-23cb-53f1-8522-dac24c2ac75f",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 1.942
+          },
+          "text": "",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "empty",
+          "warning": "No speech recognized in this interval. This may be silence, music or missed speech; listen to the original.",
+          "engine": "faster-whisper-1.2.1-tiny-cpu-int8-v1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "a8fcb9c16f02d3ee3679e0333830ffa94819f8187e11481382f4f9dd5b10f1e9",
+              "duration_seconds": 1.942,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "hi",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "duration_seconds": 1.94175,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "16000",
+              "language": null,
+              "language_probability": null,
+              "provider": "none",
+              "model": "speech-detection",
+              "cached": false,
+              "input_sha256": null,
+              "fallback_reason": null,
+              "vad": {
+                "method": "exact-zero",
+                "speech_detected": false
+              },
+              "diagnostics": [],
+              "levels": {
+                "rms": 0.0,
+                "clipped_fraction": 0.0,
+                "near_zero": true
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "no_invented_speech": true
+      },
+      "error_metrics": {
+        "edit_errors": 0,
+        "reference_words": 0,
+        "raw_wer": null
+      },
+      "status": "passed"
+    }
+  ],
+  "requests": [
+    {
+      "seconds": 0.5,
+      "status": "received"
+    },
+    {
+      "seconds": 0.407,
+      "status": "received"
+    },
+    {
+      "seconds": 0.375,
+      "status": "received"
+    },
+    {
+      "seconds": 0.359,
+      "status": "received"
+    },
+    {
+      "seconds": 0.438,
+      "status": "received"
+    },
+    {
+      "seconds": 0.266,
+      "status": "received"
+    }
+  ],
+  "limitations": [
+    "Six known authored fixtures and eight selected public clips are a smoke pilot, not held-out accuracy evidence.",
+    "WER compares dataset scripts literally; Hindi/Latin script differences affect results. References are not human-audited.",
+    "No whole-app 8 GB measurement; development machine has 16 GB.",
+    "Chunk boundaries can split words; no speaker separation."
+  ],
+  "usage": {
+    "hour": 497491,
+    "day": 20728,
+    "hour_seconds": 60,
+    "day_seconds": 60,
+    "day_requests": 6,
+    "next_request_at": 1790970246.3747804
+  },
+  "status": "passed",
+  "pipeline_status": "passed",
+  "quality_status": "requires-human-review"
+}

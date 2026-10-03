@@ -1,0 +1,4474 @@
+{
+  "status": "completed",
+  "model": {
+    "repo": "ggml-org/gemma-4-E2B-it-GGUF",
+    "revision": "b4243c156154b6dca9324415f8c7ccc098b4aed1",
+    "files": [
+      {
+        "name": "gemma-4-E2B-it-Q4_0.gguf",
+        "bytes": 2841481184,
+        "sha256": "8e30dff3ac4c8434c49a7036fa15564bdbb6044e42bf04550bf1a096ad7e6a52"
+      },
+      {
+        "name": "mmproj-gemma-4-E2B-it-BF16.gguf",
+        "bytes": 986833664,
+        "sha256": "711e1e8f43fa0664adbac493129be1e6c25b81af4b4cdea97c7d798b25c0a3a4"
+      }
+    ],
+    "runtime": "llama.cpp b11303 (60e9cf7a7)"
+  },
+  "mode": "CPU only",
+  "threads": 4,
+  "context": 4096,
+  "request_timeout_seconds": 120,
+  "image_max_tokens": 280,
+  "memory_cap_gib": 5.5,
+  "peak_private_bytes": 1984516096,
+  "peak_resident_bytes": 2849042432,
+  "cloud_inference_requests": 0,
+  "samples": [
+    {
+      "id": "asr-hinglish-0-864",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0864.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "What do you feel about that?",
+      "duration_seconds": 1.5948125,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 864,
+      "max_tokens": 512,
+      "input_sha256": "9a549cab441702daf2b8e76967960f0908139da1ca03fb57d095a92c08d28a74",
+      "prediction": "What do you feel about that",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 95,
+        "total_tokens": 102,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 95,
+        "prompt_ms": 1445.135,
+        "prompt_per_token_ms": 15.211947368421052,
+        "prompt_per_second": 65.73780304262232,
+        "predicted_n": 7,
+        "predicted_ms": 589.312,
+        "predicted_per_token_ms": 98.21866666666666,
+        "predicted_per_second": 10.18136403127715
+      },
+      "seconds": 2.062
+    },
+    {
+      "id": "asr-hinglish-0-687",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0687.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "Excited by their discovery they spent hours",
+      "duration_seconds": 2.755,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 687,
+      "max_tokens": 512,
+      "input_sha256": "725e57dde7953fdab7879077803af017d7f8a9f431fdd494b35caa542ac80bac",
+      "prediction": "excited by their discovery they spent hours",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 124,
+        "total_tokens": 132,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 124,
+        "prompt_ms": 1762.781,
+        "prompt_per_token_ms": 14.215975806451613,
+        "prompt_per_second": 70.34339489704053,
+        "predicted_n": 8,
+        "predicted_ms": 722.059,
+        "predicted_per_token_ms": 103.1512857142857,
+        "predicted_per_second": 9.694498649002368
+      },
+      "seconds": 2.5
+    },
+    {
+      "id": "asr-hinglish-1-91",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0091.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "दो siblings रहते थे Veer और Diya veer बड़े भाई known for",
+      "duration_seconds": 4.3829375,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 91,
+      "max_tokens": 512,
+      "input_sha256": "68e2e55668d5ab5aa79645cdc7115642d9361aa521db80c7a41eaf560f7e6d13",
+      "prediction": "दो सिब्लिंग रहते थे वी और दिया वीर बड़े भाई नॉन फॉर",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 165,
+        "total_tokens": 180,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 165,
+        "prompt_ms": 2470.034,
+        "prompt_per_token_ms": 14.969903030303032,
+        "prompt_per_second": 66.80069990939396,
+        "predicted_n": 15,
+        "predicted_ms": 1421.799,
+        "predicted_per_token_ms": 101.55707142857143,
+        "predicted_per_second": 9.846680156618481
+      },
+      "seconds": 3.922
+    },
+    {
+      "id": "asr-hinglish-1-29",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0029.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "उधर cold temperature रहता है",
+      "duration_seconds": 2.6120625,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 29,
+      "max_tokens": 512,
+      "input_sha256": "64ec28c4f89f7e2736bc2dc7353f18d906f75ac421150c2ae7243144b18c0201",
+      "prediction": "और अगर अपना कोल्ड टेंपरेचर रहता है",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 121,
+        "total_tokens": 129,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 121,
+        "prompt_ms": 1540.965,
+        "prompt_per_token_ms": 12.735247933884297,
+        "prompt_per_second": 78.52222470984091,
+        "predicted_n": 8,
+        "predicted_ms": 646.604,
+        "predicted_per_token_ms": 92.372,
+        "predicted_per_second": 10.825791365348806
+      },
+      "seconds": 2.203
+    },
+    {
+      "id": "asr-hinglish-0-1093",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-1093.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "The reason for that is",
+      "duration_seconds": 1.42525,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 1093,
+      "max_tokens": 512,
+      "input_sha256": "614d755693f3348149d621e2c79ee6267101d8f0a30f2a8d4d5f146500fae1c1",
+      "prediction": "the reason for that is",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 91,
+        "total_tokens": 97,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 91,
+        "prompt_ms": 1277.037,
+        "prompt_per_token_ms": 14.033373626373626,
+        "prompt_per_second": 71.25870276272339,
+        "predicted_n": 6,
+        "predicted_ms": 716.085,
+        "predicted_per_token_ms": 143.217,
+        "predicted_per_second": 6.982411305920387
+      },
+      "seconds": 2.0
+    },
+    {
+      "id": "asr-hinglish-0-921",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0921.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "So favourite destination for the holiday is",
+      "duration_seconds": 3.5525625,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 921,
+      "max_tokens": 512,
+      "input_sha256": "9d02c481d048a59632f2756c187dc3034c0e4098e268133b6c24a63a0a4ceb53",
+      "prediction": "So favorite destination for the holidays uh",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 144,
+        "total_tokens": 152,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 144,
+        "prompt_ms": 2265.256,
+        "prompt_per_token_ms": 15.730944444444443,
+        "prompt_per_second": 63.56897410270628,
+        "predicted_n": 8,
+        "predicted_ms": 956.376,
+        "predicted_per_token_ms": 136.62514285714286,
+        "predicted_per_second": 7.319297012890328
+      },
+      "seconds": 3.266
+    },
+    {
+      "id": "asr-hinglish-0-845",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0845.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "वह साइंस को लेकर बहुत ज्यादा couriousity है उसमें कि मैं देखूं क्या चीज हो रही है क्या नहीं हो रही है",
+      "duration_seconds": 6.3798125,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 845,
+      "max_tokens": 512,
+      "input_sha256": "5ee51ab87b69b39af35d694429322755bf679d700f28ff81787b14d958e3cafa",
+      "prediction": "वो साइंस को लेके बहुत ज्यादा क्यूर क्यूर सिटी है उसमें कि मैं देखूं क्या चीज हो रही है कैसे हो रही है",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 215,
+        "total_tokens": 242,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 215,
+        "prompt_ms": 2368.642,
+        "prompt_per_token_ms": 11.01693953488372,
+        "prompt_per_second": 90.76931000970177,
+        "predicted_n": 27,
+        "predicted_ms": 2758.734,
+        "predicted_per_token_ms": 106.10515384615384,
+        "predicted_per_second": 9.42461288402579
+      },
+      "seconds": 5.171
+    },
+    {
+      "id": "asr-hinglish-0-814",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0814.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "Veer बड़े भाई known for his curiosityand Diya  छोटी बहन",
+      "duration_seconds": 5.965375,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 814,
+      "max_tokens": 512,
+      "input_sha256": "5bba0305a1a72c8815f0b9057f65eba435bc3a7ae36cd381dc37f8755c87869d",
+      "prediction": "वीर बड़े भाई नोन for his curiosity and दिया छोटी बहन admired for her creativity",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 204,
+        "total_tokens": 220,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 204,
+        "prompt_ms": 3011.162,
+        "prompt_per_token_ms": 14.760598039215685,
+        "prompt_per_second": 67.747932525716,
+        "predicted_n": 16,
+        "predicted_ms": 1484.047,
+        "predicted_per_token_ms": 98.93646666666667,
+        "predicted_per_second": 10.10749659545823
+      },
+      "seconds": 4.547
+    },
+    {
+      "id": "asr-hinglish-1-392",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0392.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "in the heart of city दो siblings रहते थे वीर and दया",
+      "duration_seconds": 4.4535,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 392,
+      "max_tokens": 512,
+      "input_sha256": "f3709ef99304f16c6d4da1d7a224efefa2edcf70d3f94611d8c29971b9ffce05",
+      "prediction": "In the heart of city those siblings rehte the Veer and Daya",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 167,
+        "total_tokens": 181,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 167,
+        "prompt_ms": 2347.181,
+        "prompt_per_token_ms": 14.054976047904193,
+        "prompt_per_second": 71.14917852521812,
+        "predicted_n": 14,
+        "predicted_ms": 1331.441,
+        "predicted_per_token_ms": 102.41853846153846,
+        "predicted_per_second": 9.763857354550446
+      },
+      "seconds": 3.718
+    },
+    {
+      "id": "asr-hinglish-0-701",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0701.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "Thank you",
+      "duration_seconds": 0.6716875,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 701,
+      "max_tokens": 512,
+      "input_sha256": "8a4d9dc6458318e93305a3c6e1d23c39594f68e455e7d9d337b8d92805cd92ee",
+      "prediction": "Thank you",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 72,
+        "total_tokens": 75,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 72,
+        "prompt_ms": 1757.137,
+        "prompt_per_token_ms": 24.404680555555554,
+        "prompt_per_second": 40.9757463419187,
+        "predicted_n": 3,
+        "predicted_ms": 187.569,
+        "predicted_per_token_ms": 93.7845,
+        "predicted_per_second": 10.662742777324612
+      },
+      "seconds": 1.953
+    },
+    {
+      "id": "asr-hinglish-0-697",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0697.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "he is acting for something",
+      "duration_seconds": 2.007625,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 697,
+      "max_tokens": 512,
+      "input_sha256": "c7e962129984a25dae122d955646a613044ab6d8ebe0651647aeac965a22b40b",
+      "prediction": "He's acting for something",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 105,
+        "total_tokens": 112,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 105,
+        "prompt_ms": 1380.972,
+        "prompt_per_token_ms": 13.152114285714285,
+        "prompt_per_second": 76.03340255993605,
+        "predicted_n": 7,
+        "predicted_ms": 621.565,
+        "predicted_per_token_ms": 103.59416666666668,
+        "predicted_per_second": 9.65305318027881
+      },
+      "seconds": 2.032
+    },
+    {
+      "id": "asr-hinglish-0-827",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0827.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "veer and diya",
+      "duration_seconds": 1.4894375,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 827,
+      "max_tokens": 512,
+      "input_sha256": "dcede42d3b7d7bac9469e067e77a6b3b6dd3e68cec94a1414f267282f799cdc5",
+      "prediction": "वीर एंड दे",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 92,
+        "total_tokens": 96,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 92,
+        "prompt_ms": 1218.743,
+        "prompt_per_token_ms": 13.24720652173913,
+        "prompt_per_second": 75.48761305705962,
+        "predicted_n": 4,
+        "predicted_ms": 267.882,
+        "predicted_per_token_ms": 89.294,
+        "predicted_per_second": 11.198960736443658
+      },
+      "seconds": 1.515
+    },
+    {
+      "id": "asr-hinglish-0-1083",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-1083.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "Okay can you describe the image what are your thoughts about it so there is guy",
+      "duration_seconds": 6.7251875,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 1083,
+      "max_tokens": 512,
+      "input_sha256": "cdf7141b997282e51c8f9ba52bd777256eae9724820c3d519e3109b23e7f5b64",
+      "prediction": "Okay can you describe the image what are your thoughts about it so there is a guy",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 223,
+        "total_tokens": 241,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 223,
+        "prompt_ms": 2371.428,
+        "prompt_per_token_ms": 10.634206278026905,
+        "prompt_per_second": 94.03616723763066,
+        "predicted_n": 18,
+        "predicted_ms": 1955.91,
+        "predicted_per_token_ms": 115.05352941176471,
+        "predicted_per_second": 8.691606464510125
+      },
+      "seconds": 4.375
+    },
+    {
+      "id": "asr-hinglish-1-4",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0004.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "four to five days",
+      "duration_seconds": 0.8411875,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 4,
+      "max_tokens": 512,
+      "input_sha256": "7f241c82147692e51eef3b71d596dee7d4e605f610452874e7e2fb01c6d0f5b3",
+      "prediction": "4 to 5",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 76,
+        "total_tokens": 81,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 76,
+        "prompt_ms": 2077.458,
+        "prompt_per_token_ms": 27.334973684210528,
+        "prompt_per_second": 36.58317039381783,
+        "predicted_n": 5,
+        "predicted_ms": 444.823,
+        "predicted_per_token_ms": 111.20575,
+        "predicted_per_second": 8.992340773745962
+      },
+      "seconds": 2.547
+    },
+    {
+      "id": "asr-hinglish-1-562",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0562.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "इस जगह में ऐसा क्या special है? क्या आप",
+      "duration_seconds": 3.6985625,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 562,
+      "max_tokens": 512,
+      "input_sha256": "e0530d962103dd1ec3d4b192b277cc11cc0c671cb4a8a326ef3b28dee5c5cf8a",
+      "prediction": "इस जगह में ऐसा क्या स्पेशल है क्या आप",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 148,
+        "total_tokens": 158,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 148,
+        "prompt_ms": 2695.522,
+        "prompt_per_token_ms": 18.212986486486486,
+        "prompt_per_second": 54.90587722897457,
+        "predicted_n": 10,
+        "predicted_ms": 1435.172,
+        "predicted_per_token_ms": 159.46355555555556,
+        "predicted_per_second": 6.271025354452288
+      },
+      "seconds": 4.156
+    },
+    {
+      "id": "asr-hinglish-0-690",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0690.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "how do i celebrate holi",
+      "duration_seconds": 1.8208125,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 690,
+      "max_tokens": 512,
+      "input_sha256": "355a12e05f8fc549f09922e08da13ec71f1ed2a190481d9ef4f1fb9c06969e35",
+      "prediction": "How do I celebrate Holi?",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 101,
+        "total_tokens": 108,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 101,
+        "prompt_ms": 1870.846,
+        "prompt_per_token_ms": 18.523227722772276,
+        "prompt_per_second": 53.986271451525134,
+        "predicted_n": 7,
+        "predicted_ms": 1391.321,
+        "predicted_per_token_ms": 231.88683333333333,
+        "predicted_per_second": 4.312448385383388
+      },
+      "seconds": 3.282
+    },
+    {
+      "id": "asr-hinglish-0-1043",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-1043.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "christmans tree है",
+      "duration_seconds": 1.5374375,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 1043,
+      "max_tokens": 512,
+      "input_sha256": "fa2d91a33555412b4ca25aa3c6bfd73cb606096ddfd1ec534b2f77738cbdacca",
+      "prediction": "Christmas tree hai",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 94,
+        "total_tokens": 98,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 94,
+        "prompt_ms": 2570.768,
+        "prompt_per_token_ms": 27.34859574468085,
+        "prompt_per_second": 36.56494868459542,
+        "predicted_n": 4,
+        "predicted_ms": 670.52,
+        "predicted_per_token_ms": 223.50666666666666,
+        "predicted_per_second": 4.474139473841198
+      },
+      "seconds": 3.25
+    },
+    {
+      "id": "asr-hinglish-1-387",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0387.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "उसमें कमल के फूल उगते हैं और वो जो view है मुझे बहुत अच्छा लगता है इसलिए मुझे वहां जाना पसंद",
+      "duration_seconds": 5.61725,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 387,
+      "max_tokens": 512,
+      "input_sha256": "3d22e6c049cae039f6c2d82425bd8769fed1e24fcb71cb2e9f9b4859821d7efb",
+      "prediction": "उसमें कमल के फूल उगते हैं और वो जो व्यू है वो मुझे बहुत अच्छा लगता है इसलिए मुझे वहां जाना पसंद है",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 196,
+        "total_tokens": 222,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 196,
+        "prompt_ms": 5410.505,
+        "prompt_per_token_ms": 27.604617346938777,
+        "prompt_per_second": 36.225823652320805,
+        "predicted_n": 26,
+        "predicted_ms": 4219.104,
+        "predicted_per_token_ms": 168.76416,
+        "predicted_per_second": 5.925428716618504
+      },
+      "seconds": 9.703
+    },
+    {
+      "id": "asr-hinglish-0-1087",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-1087.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "खोज निकाला।",
+      "duration_seconds": 0.7846875,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 1087,
+      "max_tokens": 512,
+      "input_sha256": "66224352eeff20e43e8d6c7c80130c5311eb50b6314001334e9d594d72f0fd73",
+      "prediction": "कोजी निकाला",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 75,
+        "total_tokens": 79,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 75,
+        "prompt_ms": 2711.489,
+        "prompt_per_token_ms": 36.15318666666667,
+        "prompt_per_second": 27.660079019313745,
+        "predicted_n": 4,
+        "predicted_ms": 370.748,
+        "predicted_per_token_ms": 123.58266666666667,
+        "predicted_per_second": 8.091749652054766
+      },
+      "seconds": 3.109
+    },
+    {
+      "id": "asr-hinglish-1-447",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0447.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "और ये शायद कहीं जा रखा है घूमने के लिए",
+      "duration_seconds": 2.2615625,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 447,
+      "max_tokens": 512,
+      "input_sha256": "4f49d4cc44e0018aa494c320a52ad3d054e063ee34c03323a7f8ffa9c0d28551",
+      "prediction": "और ये शायद कहीं जा रहा है घूमने के लिए",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 112,
+        "total_tokens": 123,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 112,
+        "prompt_ms": 1578.889,
+        "prompt_per_token_ms": 14.097223214285714,
+        "prompt_per_second": 70.93595559915866,
+        "predicted_n": 11,
+        "predicted_ms": 1469.115,
+        "predicted_per_token_ms": 146.9115,
+        "predicted_per_second": 6.806819071345674
+      },
+      "seconds": 3.063
+    },
+    {
+      "id": "asr-hinglish-1-97",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0097.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "के बारे में सब कुछ",
+      "duration_seconds": 2.00925,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 97,
+      "max_tokens": 512,
+      "input_sha256": "d2477c43cf1454b2866b78b072a35ebba959450d453fa482d2feeedcd7450d5d",
+      "prediction": "के बारे में सब कुछ",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 105,
+        "total_tokens": 111,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 105,
+        "prompt_ms": 1572.985,
+        "prompt_per_token_ms": 14.980809523809523,
+        "prompt_per_second": 66.75206693007244,
+        "predicted_n": 6,
+        "predicted_ms": 582.507,
+        "predicted_per_token_ms": 116.50139999999999,
+        "predicted_per_second": 8.583587836712693
+      },
+      "seconds": 2.171
+    },
+    {
+      "id": "asr-hinglish-0-619",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0619.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "क्योंकि क्योंकि क्योंकि I mean I have nobody to give you advice and nobody to give you advice लेकिन जो चले गए",
+      "duration_seconds": 5.852,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 619,
+      "max_tokens": 512,
+      "input_sha256": "91f9d8441320fb881f742494154f86108e6da422913291a51eb6980e17e76358",
+      "prediction": "तो मैंने said protect kare i mean i'm nobody to give you advice and nobody to give you advice लेकिन जो चले गए",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 202,
+        "total_tokens": 228,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 202,
+        "prompt_ms": 3304.836,
+        "prompt_per_token_ms": 16.360574257425743,
+        "prompt_per_second": 61.12254889501325,
+        "predicted_n": 26,
+        "predicted_ms": 4341.05,
+        "predicted_per_token_ms": 173.642,
+        "predicted_per_second": 5.758975363103396
+      },
+      "seconds": 7.688
+    },
+    {
+      "id": "asr-hinglish-0-962",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0962.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "So अगर आप हमरे तरफ visit करते हैं तो घी ज़रूर खायें दही खायें",
+      "duration_seconds": 5.061125,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 962,
+      "max_tokens": 512,
+      "input_sha256": "8cf99d259ab46b1070bd6a1bdf1d96ca67f39e4f04fcf5e661b48c4e61950e9d",
+      "prediction": "सो अगर आप हमारे तरफ विजिट करते हैं तो घी जरूर खाएं दही खाएं",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 182,
+        "total_tokens": 199,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 182,
+        "prompt_ms": 2902.506,
+        "prompt_per_token_ms": 15.947835164835164,
+        "prompt_per_second": 62.704435408574525,
+        "predicted_n": 17,
+        "predicted_ms": 3150.692,
+        "predicted_per_token_ms": 196.91825,
+        "predicted_per_second": 5.078249476622913
+      },
+      "seconds": 6.094
+    },
+    {
+      "id": "asr-hinglish-1-393",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0393.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "यात्रा पर निकलने का फैसला किया",
+      "duration_seconds": 2.660625,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 393,
+      "max_tokens": 512,
+      "input_sha256": "5f481139372eceaa65d579b9f0d05040fd6cff0fba39bdc976fe0d17c0652d5e",
+      "prediction": "यात्रा पर निकलने का फैसला किया",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 122,
+        "total_tokens": 129,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 122,
+        "prompt_ms": 2434.88,
+        "prompt_per_token_ms": 19.958032786885248,
+        "prompt_per_second": 50.10513865159679,
+        "predicted_n": 7,
+        "predicted_ms": 1171.122,
+        "predicted_per_token_ms": 195.187,
+        "predicted_per_second": 5.123292022521991
+      },
+      "seconds": 3.641
+    },
+    {
+      "id": "asr-hinglish-1-224",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0224.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "एक लड़का यहां पर हंस रहा है",
+      "duration_seconds": 1.7741875,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 224,
+      "max_tokens": 512,
+      "input_sha256": "28b52b41a838941434acf8b521b3845e35449a8f9500ef767ff70d31813b85e7",
+      "prediction": "एक लड़का यहां पर हंस रहा है",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 100,
+        "total_tokens": 108,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 100,
+        "prompt_ms": 2368.578,
+        "prompt_per_token_ms": 23.68578,
+        "prompt_per_second": 42.21942448169324,
+        "predicted_n": 8,
+        "predicted_ms": 1319.125,
+        "predicted_per_token_ms": 188.44642857142858,
+        "predicted_per_second": 5.306547901070786
+      },
+      "seconds": 3.703
+    },
+    {
+      "id": "asr-hinglish-0-954",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0954.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "and the bond of siblings is the strongest magic of all",
+      "duration_seconds": 4.0760625,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 954,
+      "max_tokens": 512,
+      "input_sha256": "46eabf7e6dd25ff255e7808ef87129364cb2b8867e906cf63faff9d368b29220",
+      "prediction": "And the bond of siblings is the strongest magic of all",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 157,
+        "total_tokens": 169,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 157,
+        "prompt_ms": 4415.728,
+        "prompt_per_token_ms": 28.125656050955413,
+        "prompt_per_second": 35.55472619690343,
+        "predicted_n": 12,
+        "predicted_ms": 1481.395,
+        "predicted_per_token_ms": 134.6722727272727,
+        "predicted_per_second": 7.425433459678209
+      },
+      "seconds": 5.922
+    },
+    {
+      "id": "asr-hinglish-0-1076",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-1076.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "Dusty book मिली old book मिली filled with mysterious symbol and ancient drawing. Excited by their discovery they spent hours",
+      "duration_seconds": 9.5675625,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 1076,
+      "max_tokens": 512,
+      "input_sha256": "458b3e5edf7a5f0fcaa67297b9d6c4c91abb9e7f5835a86cec3810ceb5ce8f68",
+      "prediction": "Dusty book, Mili, old book, Mili, filled with mysterious symbol and ancient drawing. Excited by their discovery, they spent hours",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 28,
+        "prompt_tokens": 294,
+        "total_tokens": 322,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 294,
+        "prompt_ms": 4785.127,
+        "prompt_per_token_ms": 16.27594217687075,
+        "prompt_per_second": 61.44037556369977,
+        "predicted_n": 28,
+        "predicted_ms": 4301.136,
+        "predicted_per_token_ms": 159.30133333333336,
+        "predicted_per_second": 6.277411362951554
+      },
+      "seconds": 9.141
+    },
+    {
+      "id": "asr-hinglish-1-217",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0217.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "एक गर्मी के दिन के दोपहर में while exploring the",
+      "duration_seconds": 5.8191875,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 217,
+      "max_tokens": 512,
+      "input_sha256": "8b3cd96398d1e57f4dd1c2d458c07127da7bbaa866b94e1c7123a2845dbe4ce2",
+      "prediction": "एक गर्मी के दिन के दोपहर में व्हाई एक्सप्लोरिंग द एक्ट",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 201,
+        "total_tokens": 217,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 201,
+        "prompt_ms": 4002.739,
+        "prompt_per_token_ms": 19.914124378109452,
+        "prompt_per_second": 50.21561485772617,
+        "predicted_n": 16,
+        "predicted_ms": 2056.013,
+        "predicted_per_token_ms": 137.06753333333333,
+        "predicted_per_second": 7.295673714125349
+      },
+      "seconds": 6.094
+    },
+    {
+      "id": "asr-hinglish-0-825",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0825.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "जब वो गुफा तक पहुंच गए उन्हें गुफा से एक अजीब सी आवाज आई",
+      "duration_seconds": 3.9501875,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 825,
+      "max_tokens": 512,
+      "input_sha256": "34f325f73bc325b940ab37a249f320537ab9fdc69749ce87401700814531c964",
+      "prediction": "जब वो गुफा तक पहुंच गए उन्हें गुफा से एक अजीब सी आवाज आई",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 154,
+        "total_tokens": 171,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 154,
+        "prompt_ms": 5840.188,
+        "prompt_per_token_ms": 37.923298701298705,
+        "prompt_per_second": 26.369014148174678,
+        "predicted_n": 17,
+        "predicted_ms": 2139.806,
+        "predicted_per_token_ms": 133.737875,
+        "predicted_per_second": 7.477313363921776
+      },
+      "seconds": 8.0
+    },
+    {
+      "id": "asr-hinglish-1-306",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0306.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "जिसे सुनकर दोनों ने सोचा कि ये",
+      "duration_seconds": 4.23325,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 306,
+      "max_tokens": 512,
+      "input_sha256": "d46ed9d33e9416a53c42eb893eb5f3f0c870eb4c65632a304cd42df33b33ac98",
+      "prediction": "जिससे सुनकर दोनों ने सोचा कि ये",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 161,
+        "total_tokens": 170,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 161,
+        "prompt_ms": 3705.113,
+        "prompt_per_token_ms": 23.013124223602482,
+        "prompt_per_second": 43.45346552183429,
+        "predicted_n": 9,
+        "predicted_ms": 794.551,
+        "predicted_per_token_ms": 99.318875,
+        "predicted_per_second": 10.068579612888286
+      },
+      "seconds": 4.563
+    },
+    {
+      "id": "asr-hinglish-0-834",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0834.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "थका हुआ है",
+      "duration_seconds": 1.06725,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 834,
+      "max_tokens": 512,
+      "input_sha256": "7f4bd02b4130fdf56f46882d5dc3f75deda55a48b7f962d02a3fe90012e5e8bb",
+      "prediction": "तका हुआ है",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 82,
+        "total_tokens": 87,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 82,
+        "prompt_ms": 2120.171,
+        "prompt_per_token_ms": 25.855743902439023,
+        "prompt_per_second": 38.676125652129,
+        "predicted_n": 5,
+        "predicted_ms": 363.71,
+        "predicted_per_token_ms": 90.9275,
+        "predicted_per_second": 10.997772950977428
+      },
+      "seconds": 2.484
+    },
+    {
+      "id": "asr-hinglish-1-263",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0263.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "और teddy bear भी है",
+      "duration_seconds": 1.80275,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 263,
+      "max_tokens": 512,
+      "input_sha256": "22afff5aafbf68d6461b19fe8f3dfcb57496d9332916a403a643e07675cd9d3b",
+      "prediction": "और टैडी बियर भी है",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 100,
+        "total_tokens": 108,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 100,
+        "prompt_ms": 1396.913,
+        "prompt_per_token_ms": 13.96913,
+        "prompt_per_second": 71.58641948353261,
+        "predicted_n": 8,
+        "predicted_ms": 699.094,
+        "predicted_per_token_ms": 99.87057142857144,
+        "predicted_per_second": 10.012959630607615
+      },
+      "seconds": 2.109
+    },
+    {
+      "id": "asr-hinglish-1-232",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0232.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "हमें ऐसी मीठी मीठी चीजे मिलती है जैसे sweets में हमें मिलता है",
+      "duration_seconds": 3.93075,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 232,
+      "max_tokens": 512,
+      "input_sha256": "96bbd687349b6155a171b92a2a6c3144d6752674089ea0c1d4404a2450d983a5",
+      "prediction": "हमें ऐसी मीठी-मीठी चीजें मिलती जैसे स्वीट्स में हमें मिलता है",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 154,
+        "total_tokens": 171,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 154,
+        "prompt_ms": 3773.835,
+        "prompt_per_token_ms": 24.505422077922077,
+        "prompt_per_second": 40.807295496490966,
+        "predicted_n": 17,
+        "predicted_ms": 2198.736,
+        "predicted_per_token_ms": 137.421,
+        "predicted_per_second": 7.2769081872494015
+      },
+      "seconds": 6.016
+    },
+    {
+      "id": "asr-hinglish-1-69",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0069.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "is the strongest",
+      "duration_seconds": 1.1615,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 69,
+      "max_tokens": 512,
+      "input_sha256": "3ea4ee6c265e2c117f3f82eba98b97abfe51c8c272614341eb6dae4b5c26d9bc",
+      "prediction": "is the strongest",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 84,
+        "total_tokens": 88,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 84,
+        "prompt_ms": 3407.014,
+        "prompt_per_token_ms": 40.559690476190475,
+        "prompt_per_second": 24.655020495953345,
+        "predicted_n": 4,
+        "predicted_ms": 622.458,
+        "predicted_per_token_ms": 207.486,
+        "predicted_per_second": 4.819602286419324
+      },
+      "seconds": 4.047
+    },
+    {
+      "id": "asr-hinglish-0-724",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0724.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "चिंटू और राजू ने इस राज को समझा",
+      "duration_seconds": 2.832875,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 724,
+      "max_tokens": 512,
+      "input_sha256": "013aabb8505ef94719820130e67b194ae3fdad3d077fe1be1011100d1cf04a9f",
+      "prediction": "चिंटू और राजू ने इस राज को समझा",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 126,
+        "total_tokens": 137,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 126,
+        "prompt_ms": 2106.659,
+        "prompt_per_token_ms": 16.719515873015872,
+        "prompt_per_second": 59.810344246505956,
+        "predicted_n": 11,
+        "predicted_ms": 1478.717,
+        "predicted_per_token_ms": 147.8717,
+        "predicted_per_second": 6.762619216523513
+      },
+      "seconds": 3.609
+    },
+    {
+      "id": "asr-hinglish-1-468",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0468.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "क्या आप इस image  को describe कर सकते हैं? इसके बारे में आपके क्या thoughts हैं?",
+      "duration_seconds": 6.5923125,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 468,
+      "max_tokens": 512,
+      "input_sha256": "647e4b8ff851851ae13bf360db3ff162d807acd30ac5e070b20509460add053c",
+      "prediction": "क्या आप इस इमेज को डिस्क्राइब कर सकते हैं इसके बारे में आपके क्या थॉट्स हैं",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 220,
+        "total_tokens": 240,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 220,
+        "prompt_ms": 3261.773,
+        "prompt_per_token_ms": 14.82624090909091,
+        "prompt_per_second": 67.44797997898688,
+        "predicted_n": 20,
+        "predicted_ms": 2865.822,
+        "predicted_per_token_ms": 150.83273684210528,
+        "predicted_per_second": 6.629860472841649
+      },
+      "seconds": 6.156
+    },
+    {
+      "id": "asr-hinglish-0-891",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0891.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "as they walked through the jungle they felt as if someone was watching them",
+      "duration_seconds": 3.793125,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 891,
+      "max_tokens": 512,
+      "input_sha256": "47a50f1ca45c433665015d02029d10a6f19dbbc076746acb238f7bcf983ba53e",
+      "prediction": "As they walked through the jungle they felt as if someone was watching them",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 150,
+        "total_tokens": 165,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 150,
+        "prompt_ms": 4896.324,
+        "prompt_per_token_ms": 32.64216,
+        "prompt_per_second": 30.63522757072449,
+        "predicted_n": 15,
+        "predicted_ms": 2662.615,
+        "predicted_per_token_ms": 190.1867857142857,
+        "predicted_per_second": 5.25798885681933
+      },
+      "seconds": 7.578
+    },
+    {
+      "id": "asr-hinglish-1-303",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0303.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "चिंटू और राजू। दोनो",
+      "duration_seconds": 3.22675,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 303,
+      "max_tokens": 512,
+      "input_sha256": "c4d171a994ceac83fd30d58ef2ddf10300aee63c4ff880a8b0db42651e50f318",
+      "prediction": "Jintu or Raju dono",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 136,
+        "total_tokens": 142,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 136,
+        "prompt_ms": 3431.873,
+        "prompt_per_token_ms": 25.234360294117646,
+        "prompt_per_second": 39.628506066512365,
+        "predicted_n": 6,
+        "predicted_ms": 2252.84,
+        "predicted_per_token_ms": 450.56800000000004,
+        "predicted_per_second": 2.2194208199428274
+      },
+      "seconds": 5.719
+    },
+    {
+      "id": "asr-hinglish-0-797",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0797.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "वह मुझे काफी अच्छा लगता है",
+      "duration_seconds": 1.2745,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 797,
+      "max_tokens": 512,
+      "input_sha256": "e745dde704947637554cfb925a4bf7401ca4b9df2357729caec8fa74e5075fa3",
+      "prediction": "Humko coffee accha lagta hai",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 87,
+        "total_tokens": 96,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 87,
+        "prompt_ms": 2930.699,
+        "prompt_per_token_ms": 33.68619540229885,
+        "prompt_per_second": 29.68575073728145,
+        "predicted_n": 9,
+        "predicted_ms": 2299.127,
+        "predicted_per_token_ms": 287.390875,
+        "predicted_per_second": 3.479581597710783
+      },
+      "seconds": 5.266
+    },
+    {
+      "id": "asr-hinglish-1-128",
+      "kind": "audio",
+      "group": "hinglish",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0128.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "तो इसीलिए उन्होंने उसको develop करा था",
+      "duration_seconds": 1.802,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 128,
+      "max_tokens": 512,
+      "input_sha256": "a0be43aab7fbf0ec3de4a920552b9c238094310f91ab590702d5c249362f97fc",
+      "prediction": "तो इसीलिए उन्होंने उसको डेवलप करा था",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 100,
+        "total_tokens": 108,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 100,
+        "prompt_ms": 3147.22,
+        "prompt_per_token_ms": 31.472199999999997,
+        "prompt_per_second": 31.77407362688341,
+        "predicted_n": 8,
+        "predicted_ms": 1710.528,
+        "predicted_per_token_ms": 244.36114285714285,
+        "predicted_per_second": 4.092303662962547
+      },
+      "seconds": 4.89
+    },
+    {
+      "id": "asr-hi-2-22",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0022.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "क्या इस बार मॉनसून में डूब जाएगी दिल्ली, नालियों की अबतक नहीं हुई सफाई",
+      "duration_seconds": 6.66,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 2,
+      "row": 22,
+      "max_tokens": 512,
+      "input_sha256": "84d8edbc4058628b1f90ef6d1f1360b204eb38f12ae642eec846b649f1e58f33",
+      "prediction": "क्या इस बार मॉनसून में डूब जाएगी दिल्ली नालियों की अब तक नहीं हुई सफाई",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 222,
+        "total_tokens": 241,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 222,
+        "prompt_ms": 4855.318,
+        "prompt_per_token_ms": 21.870801801801804,
+        "prompt_per_second": 45.72306077583384,
+        "predicted_n": 19,
+        "predicted_ms": 2412.157,
+        "predicted_per_token_ms": 134.00872222222222,
+        "predicted_per_second": 7.462200843477435
+      },
+      "seconds": 7.344
+    },
+    {
+      "id": "asr-hi-2-12",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0012.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "वह वहाँ किसने डाल दिया?",
+      "duration_seconds": 3.276,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 2,
+      "row": 12,
+      "max_tokens": 512,
+      "input_sha256": "3e9b6cfa0e9eb51dc2c3ffddab765b512f74f988e3f93bef777109413e98662f",
+      "prediction": "को वहां किसने डाल दिया",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 137,
+        "total_tokens": 143,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 137,
+        "prompt_ms": 2157.783,
+        "prompt_per_token_ms": 15.750240875912407,
+        "prompt_per_second": 63.49109247778855,
+        "predicted_n": 6,
+        "predicted_ms": 589.508,
+        "predicted_per_token_ms": 117.9016,
+        "predicted_per_second": 8.481649103998588
+      },
+      "seconds": 2.765
+    },
+    {
+      "id": "asr-hi-1-818",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0818.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "जी",
+      "duration_seconds": 0.547,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 818,
+      "max_tokens": 512,
+      "input_sha256": "de322827a78671eb71789bc5fabe27e19a66472cc1f30429461fb8b73bd14e2c",
+      "prediction": "एक",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 69,
+        "total_tokens": 71,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 69,
+        "prompt_ms": 1781.886,
+        "prompt_per_token_ms": 25.824434782608694,
+        "prompt_per_second": 38.72301595051535,
+        "predicted_n": 2,
+        "predicted_ms": 129.952,
+        "predicted_per_token_ms": 129.952,
+        "predicted_per_second": 7.695148978084216
+      },
+      "seconds": 1.922
+    },
+    {
+      "id": "asr-hi-1-1039",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-1039.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "हूँ",
+      "duration_seconds": 0.45,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 1039,
+      "max_tokens": 512,
+      "input_sha256": "a79e6c141d607b67261135e936021b98c8143fc005ad8c36af6234c22a36213d",
+      "prediction": "हम्म",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 66,
+        "total_tokens": 69,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 66,
+        "prompt_ms": 1599.981,
+        "prompt_per_token_ms": 24.242136363636362,
+        "prompt_per_second": 41.25048984956697,
+        "predicted_n": 3,
+        "predicted_ms": 248.677,
+        "predicted_per_token_ms": 124.3385,
+        "predicted_per_second": 8.042561234050597
+      },
+      "seconds": 1.86
+    },
+    {
+      "id": "asr-hi-1-644",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0644.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "हाँ इतना महंगा आप ही लगा देंगे तो उतनी दूर से ले आय तो हमको तनी चार पैसा मिल जा",
+      "duration_seconds": 6.081,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 644,
+      "max_tokens": 512,
+      "input_sha256": "2bfc8d5bc9adc6e7bf32194fb385e4d7f51cbd5c8bb9a235cc839cb6beb85211",
+      "prediction": "हम्म इतना मंगाया आप ही लगा देंगे उतने दूर से लाए हैं कि हम होटल में 459 में",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 207,
+        "total_tokens": 232,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 207,
+        "prompt_ms": 3611.056,
+        "prompt_per_token_ms": 17.44471497584541,
+        "prompt_per_second": 57.3239517747717,
+        "predicted_n": 25,
+        "predicted_ms": 3000.54,
+        "predicted_per_token_ms": 125.0225,
+        "predicted_per_second": 7.9985602591533524
+      },
+      "seconds": 6.64
+    },
+    {
+      "id": "asr-hi-2-100",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0100.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "वैसा करने से कुछ नहीं सुलझने वाला.",
+      "duration_seconds": 3.744,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 2,
+      "row": 100,
+      "max_tokens": 512,
+      "input_sha256": "ed98b6b5197ef28d325371f203e6f79d0b90a61b8334dbc384387121077c29a2",
+      "prediction": "वैसा करने से कुछ नहीं सुल्झने वाला",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 149,
+        "total_tokens": 161,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 149,
+        "prompt_ms": 3548.203,
+        "prompt_per_token_ms": 23.813442953020132,
+        "prompt_per_second": 41.993087768653595,
+        "predicted_n": 12,
+        "predicted_ms": 1675.664,
+        "predicted_per_token_ms": 152.3330909090909,
+        "predicted_per_second": 6.564561869205282
+      },
+      "seconds": 5.266
+    },
+    {
+      "id": "asr-hi-0-514",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0514.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "मिलता है पूरे पॉडकास्ट का कोर",
+      "duration_seconds": 3.132,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 514,
+      "max_tokens": 512,
+      "input_sha256": "49255b76d7f927902624087c7571e5f0cc3538242607fa422a417742411b800f",
+      "prediction": "मिलता है पूरे पॉडकास्ट का कोर्स",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 134,
+        "total_tokens": 145,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 134,
+        "prompt_ms": 2353.729,
+        "prompt_per_token_ms": 17.565141791044773,
+        "prompt_per_second": 56.930938098651126,
+        "predicted_n": 11,
+        "predicted_ms": 1695.753,
+        "predicted_per_token_ms": 169.5753,
+        "predicted_per_second": 5.897085247674632
+      },
+      "seconds": 4.078
+    },
+    {
+      "id": "asr-hi-0-323",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0323.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "ठीक है ना लेकिन मतलब मैं आप जानते हैं कि मैं रिलेटिवली एक ऐतिहासिक व्यक्ति हूँ तो मैं इस इसको उस चीज़ पर नहीं छोड़ता लेकिन",
+      "duration_seconds": 8.412,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 323,
+      "max_tokens": 512,
+      "input_sha256": "c8be8ad48cd7386851c4b02a5baec2f8f4f0c7aa9b5ec96434388ed453f8a727",
+      "prediction": "ठीक है ना लेकिन मतलब आप जानते हैं कि मैं रिलेटिवली एक एथिस व्यक्ति हूं तो मैं इस इसको उस चीज पर नहीं छोड़ता लेकिन",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 31,
+        "prompt_tokens": 266,
+        "total_tokens": 297,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 266,
+        "prompt_ms": 4345.485,
+        "prompt_per_token_ms": 16.33640977443609,
+        "prompt_per_second": 61.21296011837575,
+        "predicted_n": 31,
+        "predicted_ms": 5583.991,
+        "predicted_per_token_ms": 186.13303333333334,
+        "predicted_per_second": 5.3725014957939585
+      },
+      "seconds": 9.985
+    },
+    {
+      "id": "asr-hi-2-56",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0056.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "मोहाली में सीरीज जीतना चाहेगी टीम इंडिया",
+      "duration_seconds": 4.248,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 2,
+      "row": 56,
+      "max_tokens": 512,
+      "input_sha256": "37f5869509059fdba1922827ae5f31808b3d729a6b0f3442a203e2e23d3f5c96",
+      "prediction": "Mohali mein series jeetna chahegi team India",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 161,
+        "total_tokens": 173,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 161,
+        "prompt_ms": 5469.345,
+        "prompt_per_token_ms": 33.97108695652174,
+        "prompt_per_second": 29.43679727645632,
+        "predicted_n": 12,
+        "predicted_ms": 1602.921,
+        "predicted_per_token_ms": 145.7200909090909,
+        "predicted_per_second": 6.8624717001025
+      },
+      "seconds": 7.094
+    },
+    {
+      "id": "asr-hi-1-681",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0681.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "बिल्कुल अब तो गर्मी भी आने वाली है तो साथ में गर्मी का भी लाए हैं ठंड का भी है",
+      "duration_seconds": 5.44,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 681,
+      "max_tokens": 512,
+      "input_sha256": "c224bf8de1d6b9aeb2cba2b52aa757a02d086a723cbd0d79e30741ef3638c574",
+      "prediction": "बिल्कुल आपको गर्मी ही आने वाली है तो साथ में गर्मी का भी लाए हैं ठंड का भी है",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 191,
+        "total_tokens": 213,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 191,
+        "prompt_ms": 2762.301,
+        "prompt_per_token_ms": 14.46230890052356,
+        "prompt_per_second": 69.14525245438494,
+        "predicted_n": 22,
+        "predicted_ms": 2748.829,
+        "predicted_per_token_ms": 130.89661904761905,
+        "predicted_per_second": 7.639616724066865
+      },
+      "seconds": 5.562
+    },
+    {
+      "id": "asr-hi-2-170",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0170.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "कम बारिश से बढ़ेगा मुद्रास्फीतिक दबाव: रिजर्व बैंक",
+      "duration_seconds": 6.228,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 2,
+      "row": 170,
+      "max_tokens": 512,
+      "input_sha256": "174cd71e972bad43e90a5d0e044eb39ecef9439e1b1bc5c8ed5578873fdaf399",
+      "prediction": "कम बारिश से बढ़ेगा मुद्रास्फीति दबाव रिजर्व बैंक",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 211,
+        "total_tokens": 223,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 211,
+        "prompt_ms": 4018.015,
+        "prompt_per_token_ms": 19.04272511848341,
+        "prompt_per_second": 52.51349235878911,
+        "predicted_n": 12,
+        "predicted_ms": 1357.203,
+        "predicted_per_token_ms": 123.3820909090909,
+        "predicted_per_second": 8.104903982676136
+      },
+      "seconds": 5.422
+    },
+    {
+      "id": "asr-hi-1-744",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0744.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "हाँ पूजा हो जाएगी",
+      "duration_seconds": 1.215,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 744,
+      "max_tokens": 512,
+      "input_sha256": "e6d936ae4a4cc09d6311e31445ae6dd239d86d6fe9a34a35bba1f5b540f59527",
+      "prediction": "हां पूजा हो जाएगी",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 86,
+        "total_tokens": 91,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 86,
+        "prompt_ms": 2504.852,
+        "prompt_per_token_ms": 29.126186046511627,
+        "prompt_per_second": 34.33336580364828,
+        "predicted_n": 5,
+        "predicted_ms": 478.858,
+        "predicted_per_token_ms": 119.7145,
+        "predicted_per_second": 8.353207004999394
+      },
+      "seconds": 3.0
+    },
+    {
+      "id": "asr-hi-0-586",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0586.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "सोच के देखिए उस पेड़ की जिंदगी में क्या हुआ कि ट्रीटिंग आया?",
+      "duration_seconds": 3.132,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 586,
+      "max_tokens": 512,
+      "input_sha256": "f6b0dab76c28f49d4057f270bc9d4b0e9d03f631d417c6962fb7cee051df9915",
+      "prediction": "सोच के देखिए उस पेड़ की जिंदगी में क्या हुआ कि ट्री रिंग आया",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 134,
+        "total_tokens": 151,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 134,
+        "prompt_ms": 1843.58,
+        "prompt_per_token_ms": 13.758059701492536,
+        "prompt_per_second": 72.68466787446165,
+        "predicted_n": 17,
+        "predicted_ms": 1980.309,
+        "predicted_per_token_ms": 123.7693125,
+        "predicted_per_second": 8.079547181778198
+      },
+      "seconds": 3.843
+    },
+    {
+      "id": "asr-hi-1-686",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0686.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "अब हर क्षेत्र की लड़कियाँ आई एस पी सी एस तक लेबल तक पहुँच रही हैं",
+      "duration_seconds": 5.72,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 686,
+      "max_tokens": 512,
+      "input_sha256": "b39534b4128a4630a714904ad9d4a2c0903339f1bdc329c9f2f52ee08c0742fc",
+      "prediction": "अब हर क्षेत्र की लड़कियां आईएसपीएस तक लेबल तक पहुंच रही हैं",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 198,
+        "total_tokens": 213,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 198,
+        "prompt_ms": 3086.429,
+        "prompt_per_token_ms": 15.588025252525252,
+        "prompt_per_second": 64.15180780118384,
+        "predicted_n": 15,
+        "predicted_ms": 1923.351,
+        "predicted_per_token_ms": 137.3822142857143,
+        "predicted_per_second": 7.278962602249926
+      },
+      "seconds": 5.047
+    },
+    {
+      "id": "asr-hi-0-610",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0610.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "तब आप उन उनके उस व्यक्तित्व के रेशों को देख पाते हैं।",
+      "duration_seconds": 4.06,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 610,
+      "max_tokens": 512,
+      "input_sha256": "aaa7ffc4a90f0a9b803f429d694e2f00f85c15d439c9d07a1559f50e31c5ee52",
+      "prediction": "तब आप उन उनके उस व्यक्तित्व के रेशों को देख पाते",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 157,
+        "total_tokens": 170,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 157,
+        "prompt_ms": 4168.515,
+        "prompt_per_token_ms": 26.551050955414016,
+        "prompt_per_second": 37.663292563418864,
+        "predicted_n": 13,
+        "predicted_ms": 1374.672,
+        "predicted_per_token_ms": 114.556,
+        "predicted_per_second": 8.72935507524704
+      },
+      "seconds": 5.578
+    },
+    {
+      "id": "asr-hi-1-837",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0837.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "<unintelligible> सी पी",
+      "duration_seconds": 0.834,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 837,
+      "max_tokens": 512,
+      "input_sha256": "b376929000aa3f762433789d341cd1582298ec29108de1d3bf911ab5b3f4a59e",
+      "prediction": "बस इसी",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 76,
+        "total_tokens": 79,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 76,
+        "prompt_ms": 2048.688,
+        "prompt_per_token_ms": 26.95642105263158,
+        "prompt_per_second": 37.096912755871074,
+        "predicted_n": 3,
+        "predicted_ms": 223.267,
+        "predicted_per_token_ms": 111.6335,
+        "predicted_per_second": 8.957884505995064
+      },
+      "seconds": 2.281
+    },
+    {
+      "id": "asr-hi-1-732",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0732.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "और लोग बहुत ज़्यादा उनकी मांगें हैं लस्सी की और उन्हें खाते हैं स्वादिष्ट लगती है और टेस्टी भी लगती है और सेहत के लिए बहुत ही लाभदायक है",
+      "duration_seconds": 12.284,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 732,
+      "max_tokens": 512,
+      "input_sha256": "8099718ebbc50e459cf94ba11c82dc7224b4c54dd0ef63c9154085a299a7a46d",
+      "prediction": "और लोग बहुत ज्यादा उनकी मांगी है लस्सी की और उन्हें खाते हैं स्वादिष्ट लगती है और टेस्टी भी लगती है और सेहत के लिए बहुत ही लाभदायक है",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 32,
+        "prompt_tokens": 362,
+        "total_tokens": 394,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 362,
+        "prompt_ms": 4303.219,
+        "prompt_per_token_ms": 11.887345303867404,
+        "prompt_per_second": 84.12307158896631,
+        "predicted_n": 32,
+        "predicted_ms": 4022.741,
+        "predicted_per_token_ms": 129.7658387096774,
+        "predicted_per_second": 7.70618839244187
+      },
+      "seconds": 8.375
+    },
+    {
+      "id": "asr-hi-1-912",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0912.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "और सूट चाहिए",
+      "duration_seconds": 1.268,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 912,
+      "max_tokens": 512,
+      "input_sha256": "e700b53b603358e287adf9b772495ee6a4faedaa3c389b7605b036ce0dab3e8c",
+      "prediction": "और सूट चाहिए",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 87,
+        "total_tokens": 91,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 87,
+        "prompt_ms": 1697.771,
+        "prompt_per_token_ms": 19.514609195402297,
+        "prompt_per_second": 51.24366006958536,
+        "predicted_n": 4,
+        "predicted_ms": 486.096,
+        "predicted_per_token_ms": 162.032,
+        "predicted_per_second": 6.171620420657647
+      },
+      "seconds": 2.203
+    },
+    {
+      "id": "asr-hi-2-29",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0029.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "हेरोइन हो सकता है।",
+      "duration_seconds": 2.52,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 2,
+      "row": 29,
+      "max_tokens": 512,
+      "input_sha256": "780d8c5c7d1ec54df6de0d5b3f4478b3d02a40c1d8b08815e980a825c27f5353",
+      "prediction": "Heroin ho sakta hai",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 118,
+        "total_tokens": 124,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 118,
+        "prompt_ms": 1836.052,
+        "prompt_per_token_ms": 15.559762711864407,
+        "prompt_per_second": 64.26833226945642,
+        "predicted_n": 6,
+        "predicted_ms": 649.609,
+        "predicted_per_token_ms": 129.92180000000002,
+        "predicted_per_second": 7.696937696368122
+      },
+      "seconds": 2.5
+    },
+    {
+      "id": "asr-hi-1-821",
+      "kind": "audio",
+      "group": "hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-1-0821.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "दौड़ने से हमारे मानसिक और शारीरिक स्वास्थ्य बहुत ही सकारात्मक प्रभाव पड़ता है जब आप कभी दौड़ कर आते हैं तो आप देखिएगा जो आपका शरीर में एक ब्लड सरकुलेसन आपका हाय हो जाता है और शरीर में एक बहुत उर्जा आप महसूस करते हैं तो इस तरह आपका शारीरक और मानसिक दोनों रूप से आप बहुत ही आपको फयदा मिलता है",
+      "duration_seconds": 20.993,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 1,
+      "row": 821,
+      "max_tokens": 512,
+      "input_sha256": "9f00c71515d6f8c5fd5b3fa855d7bab1c427eccfc180e7cd9a5fb86d760e6e38",
+      "prediction": "दौड़ने से हमारे मानसिक और शारीरिक स्वास्थ्य पे बहुत ही सकारात्मक प्रभाव पड़ता है जब आप कभी दौड़ के आते हैं तो आप देखिएगा जो आपका शरीर में एक ब्लड सर्कुलेशन आपका है हो जाता है और शरीर में एक बहुत ऊर्जा आप महसूस करते हैं तो इस तरह आपका शारीरिक और मानसिक दोनों रूप से आप बहुत ही आपको फायदा मिलता है",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 68,
+        "prompt_tokens": 580,
+        "total_tokens": 648,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 580,
+        "prompt_ms": 8256.555,
+        "prompt_per_token_ms": 14.235439655172414,
+        "prompt_per_second": 70.2472156971037,
+        "predicted_n": 68,
+        "predicted_ms": 11213.92,
+        "predicted_per_token_ms": 167.37194029850747,
+        "predicted_per_second": 5.974717137272247
+      },
+      "seconds": 19.64
+    },
+    {
+      "id": "asr-en-0-83",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0083.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "That's because we are not following scientific techniques. Oh my God! In Olympics.",
+      "duration_seconds": 5.468,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 83,
+      "max_tokens": 512,
+      "input_sha256": "b3751053a98421762dce661be5bc18910c44ae9a1af7db12e5c65052d44cd8c0",
+      "prediction": "That's because we are not following scientific techniques and oh my god let me tell you olympics",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 192,
+        "total_tokens": 213,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 192,
+        "prompt_ms": 3205.409,
+        "prompt_per_token_ms": 16.694838541666666,
+        "prompt_per_second": 59.898752390100604,
+        "predicted_n": 21,
+        "predicted_ms": 2521.741,
+        "predicted_per_token_ms": 126.08705,
+        "predicted_per_second": 7.931028602858104
+      },
+      "seconds": 5.765
+    },
+    {
+      "id": "asr-en-0-228",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0228.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "Which, by the way, is also the way when you are driving long distances on a highway. You know, actually, your theta waves get activated.",
+      "duration_seconds": 7.068,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 228,
+      "max_tokens": 512,
+      "input_sha256": "456128238ff502fcd06d370d2245bcb5e354a73e684e95c00a4fca3b41b1e3d6",
+      "prediction": "which by the way is also the way when you are driving long distances on a highway you know actually your theta waves get activated",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 232,
+        "total_tokens": 258,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 232,
+        "prompt_ms": 4146.469,
+        "prompt_per_token_ms": 17.87271120689655,
+        "prompt_per_second": 55.95122018276273,
+        "predicted_n": 26,
+        "predicted_ms": 5782.019,
+        "predicted_per_token_ms": 231.28076000000001,
+        "predicted_per_second": 4.323749195566462
+      },
+      "seconds": 9.953
+    },
+    {
+      "id": "asr-en-0-220",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0220.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "It's also actually the biggest villain because people use words and language.",
+      "duration_seconds": 4.06,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 220,
+      "max_tokens": 512,
+      "input_sha256": "e4115f9ce5953c42f8b27df93699abd8e9b6c5a34a541099e069741567c74c05",
+      "prediction": "It's also actually the biggest villain because people use words and language",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 157,
+        "total_tokens": 172,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 157,
+        "prompt_ms": 4921.494,
+        "prompt_per_token_ms": 31.347095541401274,
+        "prompt_per_second": 31.900882130507526,
+        "predicted_n": 15,
+        "predicted_ms": 1757.527,
+        "predicted_per_token_ms": 125.53764285714286,
+        "predicted_per_second": 7.965738221944813
+      },
+      "seconds": 6.703
+    },
+    {
+      "id": "asr-en-0-108",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0108.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "The app usage is very high. Transactions are growing, but reviews are not growing.",
+      "duration_seconds": 4.956,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 108,
+      "max_tokens": 512,
+      "input_sha256": "80aa376854de90a9104004bdd0d4e7d6df0e1c15f5decaef7c7bc2706e993a36",
+      "prediction": "uh the app usage is very high transactions are growing but reviews are not growing",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 179,
+        "total_tokens": 195,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 179,
+        "prompt_ms": 2605.368,
+        "prompt_per_token_ms": 14.555128491620112,
+        "prompt_per_second": 68.70430587924623,
+        "predicted_n": 16,
+        "predicted_ms": 2311.983,
+        "predicted_per_token_ms": 154.1322,
+        "predicted_per_second": 6.4879369787753625
+      },
+      "seconds": 4.969
+    },
+    {
+      "id": "asr-en-0-422",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0422.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "People can just sense that through your actions, or people can just sense that through how.",
+      "duration_seconds": 3.9,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 422,
+      "max_tokens": 512,
+      "input_sha256": "94311ec7a86b01097ae6a72dc72a479e96f89455c055701831d67f2cdcb1b99b",
+      "prediction": "People can just sense that through your actions or people can just sense that through how",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 153,
+        "total_tokens": 170,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 153,
+        "prompt_ms": 5132.323,
+        "prompt_per_token_ms": 33.54459477124183,
+        "prompt_per_second": 29.81106216424804,
+        "predicted_n": 17,
+        "predicted_ms": 2326.71,
+        "predicted_per_token_ms": 145.419375,
+        "predicted_per_second": 6.876662755564724
+      },
+      "seconds": 7.484
+    },
+    {
+      "id": "asr-en-0-175",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0175.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "And it will be soon. We invested tens of billions of dollars before it really happened. No, that's very good. You did some research, but the big breakthrough, I would say.",
+      "duration_seconds": 9.148,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 175,
+      "max_tokens": 512,
+      "input_sha256": "ac7dfa17f538a3ab56166c0decf469ea844cca5e57a9c8992585f74622058d20",
+      "prediction": "and it would be soon we invested tens of billions of dollars before it really happened no that's very good you did some research but the big breakthrough i would say",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 284,
+        "total_tokens": 318,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 284,
+        "prompt_ms": 4502.884,
+        "prompt_per_token_ms": 15.855225352112676,
+        "prompt_per_second": 63.07068980679938,
+        "predicted_n": 34,
+        "predicted_ms": 7730.917,
+        "predicted_per_token_ms": 234.27021212121213,
+        "predicted_per_second": 4.268575125046614
+      },
+      "seconds": 12.281
+    },
+    {
+      "id": "asr-en-0-438",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0438.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "Wanting to become effective communicators, I actually think it's a",
+      "duration_seconds": 3.036,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 438,
+      "max_tokens": 512,
+      "input_sha256": "55b4250388c7e62f2f8577f3b4d8cee8b0c9a986b946f0482fa10ca2b20a977e",
+      "prediction": "Wanting to become effective communicators I actually think it's a",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 131,
+        "total_tokens": 146,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 131,
+        "prompt_ms": 2256.144,
+        "prompt_per_token_ms": 17.222473282442746,
+        "prompt_per_second": 58.06366969484218,
+        "predicted_n": 15,
+        "predicted_ms": 2204.915,
+        "predicted_per_token_ms": 157.49392857142857,
+        "predicted_per_second": 6.349451112627925
+      },
+      "seconds": 4.484
+    },
+    {
+      "id": "asr-en-0-566",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0566.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "Building a system to be able to follow that calendar becomes extremely difficult.",
+      "duration_seconds": 3.452,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 566,
+      "max_tokens": 512,
+      "input_sha256": "72da50a4d8c826357beaa7836d5ac2601671293c86e04845aa1cb2f36e26f674",
+      "prediction": "Building a system to be able to follow that calendar becomes extremely difficult",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 142,
+        "total_tokens": 156,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 142,
+        "prompt_ms": 2742.8,
+        "prompt_per_token_ms": 19.31549295774648,
+        "prompt_per_second": 51.771911914831556,
+        "predicted_n": 14,
+        "predicted_ms": 2037.489,
+        "predicted_per_token_ms": 156.7299230769231,
+        "predicted_per_second": 6.380402544504535
+      },
+      "seconds": 4.797
+    },
+    {
+      "id": "asr-en-0-428",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0428.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "Observe what the power dynamics are within the office.",
+      "duration_seconds": 3.132,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 428,
+      "max_tokens": 512,
+      "input_sha256": "b18d3fa71d361919bc5e4a440f950c3048cb61980019c4bac1fb6fc2094732be",
+      "prediction": "Observe what the power dynamics are within the office.",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 134,
+        "total_tokens": 145,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 134,
+        "prompt_ms": 2784.514,
+        "prompt_per_token_ms": 20.7799552238806,
+        "prompt_per_second": 48.12329907481162,
+        "predicted_n": 11,
+        "predicted_ms": 1889.836,
+        "predicted_per_token_ms": 188.9836,
+        "predicted_per_second": 5.291464444533811
+      },
+      "seconds": 4.703
+    },
+    {
+      "id": "asr-en-0-410",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0410.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "Problem with so many of us is that we end up translating.",
+      "duration_seconds": 3.708,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 410,
+      "max_tokens": 512,
+      "input_sha256": "17920e12b81f97fa1eae3e3ad5b2bade41a202e5ce2a56228b2e4999d023dcb0",
+      "prediction": "problem with so many of us is that we end up translating",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 148,
+        "total_tokens": 161,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 148,
+        "prompt_ms": 4171.215,
+        "prompt_per_token_ms": 28.183885135135135,
+        "prompt_per_second": 35.48126864714477,
+        "predicted_n": 13,
+        "predicted_ms": 2634.956,
+        "predicted_per_token_ms": 219.57966666666667,
+        "predicted_per_second": 4.554155743018099
+      },
+      "seconds": 6.844
+    },
+    {
+      "id": "asr-en-0-36",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0036.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "Look, we have a comprehensive view of how we look at data across the board. There's a lot of that can be a lot of noise in search data.",
+      "duration_seconds": 7.004,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 36,
+      "max_tokens": 512,
+      "input_sha256": "0ed3e12fa0adc7cf57d8204247785cb27f861f9607bc96980294152d3ec9aebd",
+      "prediction": "Look we have a comprehensive view of how we look at data across the board there's a lot of that can be a lot of noise in search data",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 32,
+        "prompt_tokens": 230,
+        "total_tokens": 262,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 230,
+        "prompt_ms": 4406.673,
+        "prompt_per_token_ms": 19.159447826086957,
+        "prompt_per_second": 52.193570977469854,
+        "predicted_n": 32,
+        "predicted_ms": 4902.071,
+        "predicted_per_token_ms": 158.13132258064516,
+        "predicted_per_second": 6.323857814380901
+      },
+      "seconds": 9.391
+    },
+    {
+      "id": "asr-en-0-390",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0390.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "Versus simply broadcasting information or talking at people.",
+      "duration_seconds": 4.188,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 390,
+      "max_tokens": 512,
+      "input_sha256": "ac9e2a721037f60bcdd6afc6ae6c8375bd983418c2d23f9829c86ffc9adf6a11",
+      "prediction": "버스 simply broadcasting information or talking at people",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 160,
+        "total_tokens": 169,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 160,
+        "prompt_ms": 5620.354,
+        "prompt_per_token_ms": 35.1272125,
+        "prompt_per_second": 28.467957712272213,
+        "predicted_n": 9,
+        "predicted_ms": 1205.628,
+        "predicted_per_token_ms": 150.7035,
+        "predicted_per_second": 6.635545956132406
+      },
+      "seconds": 6.875
+    },
+    {
+      "id": "asr-en-0-404",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0404.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "This obsessive desire to ensure that what I am saying or the word that I am saying absolutely lands smoothly the way I want it to.",
+      "duration_seconds": 8.956,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 404,
+      "max_tokens": 512,
+      "input_sha256": "097e05812e42252b5045f82dd2b76278ac1bec5a259bfcf361d53cbdf6b8efa5",
+      "prediction": "This obsessive desire to ensure that what I am saying or the word that I am saying absolutely lands smoothly the way I wanted to",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 279,
+        "total_tokens": 305,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 279,
+        "prompt_ms": 3843.069,
+        "prompt_per_token_ms": 13.774440860215053,
+        "prompt_per_second": 72.59822813485785,
+        "predicted_n": 26,
+        "predicted_ms": 3771.814,
+        "predicted_per_token_ms": 150.87256,
+        "predicted_per_second": 6.628110505979351
+      },
+      "seconds": 7.672
+    },
+    {
+      "id": "asr-en-0-87",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0087.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "That the disease or pest attack does not happen, which.",
+      "duration_seconds": 3.356,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 87,
+      "max_tokens": 512,
+      "input_sha256": "2e04472b944c01334e4fce8c3b91480102af475c3d9a3a5faa2aca12915fd4bd",
+      "prediction": "that the disease or pest attack does not happen which",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 139,
+        "total_tokens": 150,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 139,
+        "prompt_ms": 2739.821,
+        "prompt_per_token_ms": 19.710942446043166,
+        "prompt_per_second": 50.73324133218922,
+        "predicted_n": 11,
+        "predicted_ms": 1905.453,
+        "predicted_per_token_ms": 190.5453,
+        "predicted_per_second": 5.248095859619734
+      },
+      "seconds": 4.672
+    },
+    {
+      "id": "asr-en-0-339",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0339.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "The price they have paid for this success is is more than what is worth.",
+      "duration_seconds": 5.916,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 339,
+      "max_tokens": 512,
+      "input_sha256": "41d9f76f970ba611a32116275e5de6b931a47ece05a53295ce22b93393c9c2fa",
+      "prediction": "The price they have paid for this success is uh is more than what is worth",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 203,
+        "total_tokens": 220,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 203,
+        "prompt_ms": 5201.508,
+        "prompt_per_token_ms": 25.6231921182266,
+        "prompt_per_second": 39.02714366679817,
+        "predicted_n": 17,
+        "predicted_ms": 2934.634,
+        "predicted_per_token_ms": 183.414625,
+        "predicted_per_second": 5.4521279314558475
+      },
+      "seconds": 8.219
+    },
+    {
+      "id": "asr-en-0-452",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0452.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "And that's their compounding game. So for wealth, like people who end up getting wealthy.",
+      "duration_seconds": 5.436,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 452,
+      "max_tokens": 512,
+      "input_sha256": "45cd84d7e2a085f1e5550f0ebc87acbaefc9a5bf6a544946039c6d8469a75775",
+      "prediction": "And that's their compounding game. So for wealth like people who end up getting wealthy. Hmm",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 191,
+        "total_tokens": 212,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 191,
+        "prompt_ms": 4174.494,
+        "prompt_per_token_ms": 21.85598952879581,
+        "prompt_per_second": 45.754048275072385,
+        "predicted_n": 21,
+        "predicted_ms": 3851.367,
+        "predicted_per_token_ms": 192.56835,
+        "predicted_per_second": 5.192961356318419
+      },
+      "seconds": 8.094
+    },
+    {
+      "id": "asr-en-0-129",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0129.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "Facing it, being aware, writing it down. Today I had this conversation. It was very difficult. I got angry. I got sad. I got frustrated. Writing it down and let's see why it was. Is there any past trauma?",
+      "duration_seconds": 12.028,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 129,
+      "max_tokens": 512,
+      "input_sha256": "a52745224246c5c4cdd6aeb087c15d4d3056a2b9139264627d46a039a94f8bcb",
+      "prediction": "facing it being aware writing it down today i had this conversation it was very difficult i got angry i got sad i got frustrated writing it down and let's see why it was is any past trauma",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 41,
+        "prompt_tokens": 356,
+        "total_tokens": 397,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 356,
+        "prompt_ms": 5368.619,
+        "prompt_per_token_ms": 15.080390449438202,
+        "prompt_per_second": 66.31128042425809,
+        "predicted_n": 41,
+        "predicted_ms": 8806.046,
+        "predicted_per_token_ms": 220.15115,
+        "predicted_per_second": 4.542333755694667
+      },
+      "seconds": 14.266
+    },
+    {
+      "id": "asr-en-0-276",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0276.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "Now, for the end user who's listening to this podcast from a practical perspective.",
+      "duration_seconds": 4.732,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 276,
+      "max_tokens": 512,
+      "input_sha256": "d35be0f7d64d0494b41a814a870bbba5e0c2ad6f915e205444ee373609260cd0",
+      "prediction": "Uh now for the end users listening to this podcast from a practical perspective",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 174,
+        "total_tokens": 189,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 174,
+        "prompt_ms": 5609.882,
+        "prompt_per_token_ms": 32.240701149425284,
+        "prompt_per_second": 31.016695181823792,
+        "predicted_n": 15,
+        "predicted_ms": 3339.575,
+        "predicted_per_token_ms": 238.54107142857143,
+        "predicted_per_second": 4.192150198752835
+      },
+      "seconds": 9.015
+    },
+    {
+      "id": "asr-en-0-233",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0233.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "Has not changed a little bit. In fact, it's just got enhanced.",
+      "duration_seconds": 3.868,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 233,
+      "max_tokens": 512,
+      "input_sha256": "4190e4bcb7c05e3aaab14c8e82ba15b877c51a1d0c6e85f5e5c1cb709bc066a1",
+      "prediction": "has not changed a little bit in fact it's just got enhanced thank you",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 152,
+        "total_tokens": 169,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 152,
+        "prompt_ms": 7045.549,
+        "prompt_per_token_ms": 46.35229605263158,
+        "prompt_per_second": 21.573904318882747,
+        "predicted_n": 17,
+        "predicted_ms": 3303.722,
+        "predicted_per_token_ms": 206.482625,
+        "predicted_per_second": 4.843022506130963
+      },
+      "seconds": 10.406
+    },
+    {
+      "id": "asr-en-0-177",
+      "kind": "audio",
+      "group": "en",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-0-0177.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "Keep the profit, or you know whatever it is, improve the share price, or whatever it is.",
+      "duration_seconds": 3.804,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "clean",
+      "shard": 0,
+      "row": 177,
+      "max_tokens": 512,
+      "input_sha256": "815dfc783c81a22e97a0aaa62f657a5663a4e6ab95973cf52416485bcac681a7",
+      "prediction": "keep the profit or you know whatever it is improve the share price or whatever it is",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 150,
+        "total_tokens": 168,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 150,
+        "prompt_ms": 6755.485,
+        "prompt_per_token_ms": 45.036566666666666,
+        "prompt_per_second": 22.20417927062232,
+        "predicted_n": 18,
+        "predicted_ms": 3008.566,
+        "predicted_per_token_ms": 176.97447058823528,
+        "predicted_per_second": 5.650532512831695
+      },
+      "seconds": 9.797
+    },
+    {
+      "id": "asr-neutral-2-601",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0601.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 5.913625,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "pure_silence",
+      "shard": 2,
+      "row": 601,
+      "max_tokens": 512,
+      "input_sha256": "a3596b624b40219b569828db663574d289d54a58f28a51a8cec7bcbe95513ad4",
+      "prediction": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1,
+        "prompt_tokens": 203,
+        "total_tokens": 204,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 203,
+        "prompt_ms": 4825.799,
+        "prompt_per_token_ms": 23.772408866995075,
+        "prompt_per_second": 42.06557297558394,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "seconds": 4.875
+    },
+    {
+      "id": "asr-neutral-2-637",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0637.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 1.94175,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "pure_silence",
+      "shard": 2,
+      "row": 637,
+      "max_tokens": 512,
+      "input_sha256": "ebba67123564fa086f3acef019abe9f44c35fc4ca0d07e5df96bbdabb2fb5697",
+      "prediction": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1,
+        "prompt_tokens": 104,
+        "total_tokens": 105,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 104,
+        "prompt_ms": 2424.142,
+        "prompt_per_token_ms": 23.30905769230769,
+        "prompt_per_second": 42.90177720612077,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "seconds": 2.453
+    },
+    {
+      "id": "asr-neutral-2-530",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0530.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 3.6998125,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "pure_silence",
+      "shard": 2,
+      "row": 530,
+      "max_tokens": 512,
+      "input_sha256": "af00661c5621d6ecadd83d4423a0af3b2801f2202a87bbf519f9654b94acaa4d",
+      "prediction": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1,
+        "prompt_tokens": 148,
+        "total_tokens": 149,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 148,
+        "prompt_ms": 4647.655,
+        "prompt_per_token_ms": 31.403074324324322,
+        "prompt_per_second": 31.84401596073719,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "seconds": 4.703
+    },
+    {
+      "id": "asr-neutral-2-328",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0328.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 4.71075,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "pure_silence",
+      "shard": 2,
+      "row": 328,
+      "max_tokens": 512,
+      "input_sha256": "cd85e60cc4e52d8e948e50a231e60d569fd9d76709987adcab830e6e283ea9c5",
+      "prediction": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1,
+        "prompt_tokens": 173,
+        "total_tokens": 174,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 173,
+        "prompt_ms": 3292.081,
+        "prompt_per_token_ms": 19.02936994219653,
+        "prompt_per_second": 52.55034733349513,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "seconds": 3.328
+    },
+    {
+      "id": "asr-neutral-2-636",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0636.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 5.4548125,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "pure_silence",
+      "shard": 2,
+      "row": 636,
+      "max_tokens": 512,
+      "input_sha256": "d2c7ca4e22fc68403a3e0f073a142bb5873191d6341299ebd501c0d741f26020",
+      "prediction": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1,
+        "prompt_tokens": 192,
+        "total_tokens": 193,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 192,
+        "prompt_ms": 3518.742,
+        "prompt_per_token_ms": 18.32678125,
+        "prompt_per_second": 54.56495531641706,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "seconds": 3.563
+    },
+    {
+      "id": "asr-neutral-2-377",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0377.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 1.92075,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "pure_silence",
+      "shard": 2,
+      "row": 377,
+      "max_tokens": 512,
+      "input_sha256": "ebfe51cd124f26f23cbcbc07d4a7f99c79a50ff2bd812a6b5a9ef1786d72a9a6",
+      "prediction": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1,
+        "prompt_tokens": 103,
+        "total_tokens": 104,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 103,
+        "prompt_ms": 1824.767,
+        "prompt_per_token_ms": 17.716184466019417,
+        "prompt_per_second": 56.4455626389561,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "seconds": 1.844
+    },
+    {
+      "id": "asr-neutral-2-243",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0243.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 5.666375,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "pure_silence",
+      "shard": 2,
+      "row": 243,
+      "max_tokens": 512,
+      "input_sha256": "5f03a70e745eb908c94871e193ad427408ee5d8344b777ad51ff8c208ee7393f",
+      "prediction": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1,
+        "prompt_tokens": 197,
+        "total_tokens": 198,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 197,
+        "prompt_ms": 4343.841,
+        "prompt_per_token_ms": 22.049954314720814,
+        "prompt_per_second": 45.3515678865778,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "seconds": 4.375
+    },
+    {
+      "id": "asr-neutral-2-330",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0330.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 4.146875,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "pure_silence",
+      "shard": 2,
+      "row": 330,
+      "max_tokens": 512,
+      "input_sha256": "b231ab3a32e1fe1294dd1aa38969c8f414e7e6af513b12d6477bc7a10f8d0340",
+      "prediction": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1,
+        "prompt_tokens": 159,
+        "total_tokens": 160,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 159,
+        "prompt_ms": 6875.693,
+        "prompt_per_token_ms": 43.24335220125786,
+        "prompt_per_second": 23.124941733146027,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "seconds": 6.907
+    },
+    {
+      "id": "asr-neutral-2-226",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0226.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 2.0200625,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "pure_silence",
+      "shard": 2,
+      "row": 226,
+      "max_tokens": 512,
+      "input_sha256": "f05c344d1858854325e207cc39172f0b1790fa7560e0ab3ef976b8fe9e834356",
+      "prediction": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1,
+        "prompt_tokens": 106,
+        "total_tokens": 107,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 106,
+        "prompt_ms": 2121.583,
+        "prompt_per_token_ms": 20.014933962264152,
+        "prompt_per_second": 49.962692951442385,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "seconds": 2.141
+    },
+    {
+      "id": "asr-neutral-2-374",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0374.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 4.2225,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "pure_silence",
+      "shard": 2,
+      "row": 374,
+      "max_tokens": 512,
+      "input_sha256": "e3149b2d0eeb2c643868d4530e5d53b533c713024f3a91f73e32b6aad0a9a537",
+      "prediction": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1,
+        "prompt_tokens": 161,
+        "total_tokens": 162,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 161,
+        "prompt_ms": 7479.264,
+        "prompt_per_token_ms": 46.45505590062112,
+        "prompt_per_second": 21.526182255366304,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "seconds": 7.515
+    },
+    {
+      "id": "asr-neutral-2-568",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0568.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 5.027125,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "room_background",
+      "shard": 2,
+      "row": 568,
+      "max_tokens": 512,
+      "input_sha256": "d59017a9408fb5931b9f5de51f7385173af8726a6b3edb9e98d5abc84b5700c8",
+      "prediction": "याद में रहेगा ग़लत नहीं रहेगा ये रहेगा नहीं रहेगा ये",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 181,
+        "total_tokens": 196,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 181,
+        "prompt_ms": 4076.801,
+        "prompt_per_token_ms": 22.523762430939225,
+        "prompt_per_second": 44.3975558287,
+        "predicted_n": 15,
+        "predicted_ms": 2629.484,
+        "predicted_per_token_ms": 187.82028571428572,
+        "predicted_per_second": 5.3242385198008435
+      },
+      "seconds": 6.75
+    },
+    {
+      "id": "asr-neutral-2-471",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0471.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 4.589125,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "room_background",
+      "shard": 2,
+      "row": 471,
+      "max_tokens": 512,
+      "input_sha256": "70362143ddc7f69a18875943cc0f7affb616714c93e3e2e2e418001b01b23e41",
+      "prediction": "ये बोलो मतलब ये करा क्यों नहीं",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 170,
+        "total_tokens": 178,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 170,
+        "prompt_ms": 3762.228,
+        "prompt_per_token_ms": 22.13075294117647,
+        "prompt_per_second": 45.18599085435545,
+        "predicted_n": 8,
+        "predicted_ms": 1331.671,
+        "predicted_per_token_ms": 190.23871428571428,
+        "predicted_per_second": 5.256553608211037
+      },
+      "seconds": 5.14
+    },
+    {
+      "id": "asr-neutral-2-283",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0283.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 4.45425,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "room_background",
+      "shard": 2,
+      "row": 283,
+      "max_tokens": 512,
+      "input_sha256": "6cbca342fbb739c316980a35aa4fe50a67c5af35ebc9bd7ba8275aa15ff7d06e",
+      "prediction": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1,
+        "prompt_tokens": 167,
+        "total_tokens": 168,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 167,
+        "prompt_ms": 4041.028,
+        "prompt_per_token_ms": 24.19777245508982,
+        "prompt_per_second": 41.32611800759609,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "seconds": 4.078
+    },
+    {
+      "id": "asr-neutral-2-427",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0427.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 3.418875,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "room_background",
+      "shard": 2,
+      "row": 427,
+      "max_tokens": 512,
+      "input_sha256": "4516fcb9765662cf7b5148a5824535d62266e5711128de1fa89bd85b84435dad",
+      "prediction": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1,
+        "prompt_tokens": 141,
+        "total_tokens": 142,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 141,
+        "prompt_ms": 3529.384,
+        "prompt_per_token_ms": 25.03109219858156,
+        "prompt_per_second": 39.95031427580564,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "seconds": 3.593
+    },
+    {
+      "id": "asr-neutral-2-508",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0508.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 3.4314375,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "room_background",
+      "shard": 2,
+      "row": 508,
+      "max_tokens": 512,
+      "input_sha256": "4b9fe6a864ddd927180b1b1bffa4942acd017ae376d98df61916984c1066cd76",
+      "prediction": "मैं मैं इसे मतलब ये क्या बात है यार",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 141,
+        "total_tokens": 151,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 141,
+        "prompt_ms": 3464.955,
+        "prompt_per_token_ms": 24.57414893617021,
+        "prompt_per_second": 40.693169175357255,
+        "predicted_n": 10,
+        "predicted_ms": 1844.187,
+        "predicted_per_token_ms": 204.90966666666665,
+        "predicted_per_second": 4.8801992422677305
+      },
+      "seconds": 5.344
+    },
+    {
+      "id": "asr-neutral-2-644",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0644.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 5.1925,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "room_background",
+      "shard": 2,
+      "row": 644,
+      "max_tokens": 512,
+      "input_sha256": "52ae07d0187a52cf10e9158ee4bc262345f9c5d3ff422651de61d631c6b70f7c",
+      "prediction": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1,
+        "prompt_tokens": 185,
+        "total_tokens": 186,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 185,
+        "prompt_ms": 3558.726,
+        "prompt_per_token_ms": 19.236356756756756,
+        "prompt_per_second": 51.984895718299185,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "seconds": 3.625
+    },
+    {
+      "id": "asr-neutral-2-563",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0563.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 4.392875,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "room_background",
+      "shard": 2,
+      "row": 563,
+      "max_tokens": 512,
+      "input_sha256": "b503345eaaa0a75e0b63fa132f38a92ad87f19e10ca2bf9af890486b4cc1f5e1",
+      "prediction": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1,
+        "prompt_tokens": 165,
+        "total_tokens": 166,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 165,
+        "prompt_ms": 4283.585,
+        "prompt_per_token_ms": 25.961121212121213,
+        "prompt_per_second": 38.51913759152673,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "seconds": 4.328
+    },
+    {
+      "id": "asr-neutral-2-614",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0614.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 3.857125,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "room_background",
+      "shard": 2,
+      "row": 614,
+      "max_tokens": 512,
+      "input_sha256": "a3ca50c8cba5c9747d141ff945480c86a6a457c45a41d69b98422ace0b742195",
+      "prediction": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1,
+        "prompt_tokens": 152,
+        "total_tokens": 153,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 152,
+        "prompt_ms": 6922.576,
+        "prompt_per_token_ms": 45.543263157894735,
+        "prompt_per_second": 21.957144276928126,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "seconds": 6.984
+    },
+    {
+      "id": "asr-neutral-2-355",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0355.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 5.2416875,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "room_background",
+      "shard": 2,
+      "row": 355,
+      "max_tokens": 512,
+      "input_sha256": "c20fcbfad3277c5309fb3dd89ba1d0675c36cb88519d4da3efdcec73093d4c4a",
+      "prediction": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1,
+        "prompt_tokens": 186,
+        "total_tokens": 187,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 186,
+        "prompt_ms": 3471.392,
+        "prompt_per_token_ms": 18.663397849462363,
+        "prompt_per_second": 53.58081138632572,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "seconds": 3.516
+    },
+    {
+      "id": "asr-neutral-2-467",
+      "kind": "audio",
+      "group": "neutral",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-2-0467.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "",
+      "duration_seconds": 2.346375,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "room_background",
+      "shard": 2,
+      "row": 467,
+      "max_tokens": 512,
+      "input_sha256": "0df1357af086041b3236c816651b4d4eeb7194adb18dd3482aee8729db92fa0e",
+      "prediction": "मैं मम्मी से",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 114,
+        "total_tokens": 118,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 114,
+        "prompt_ms": 2400.089,
+        "prompt_per_token_ms": 21.053412280701753,
+        "prompt_per_second": 47.49823860698499,
+        "predicted_n": 4,
+        "predicted_ms": 634.269,
+        "predicted_per_token_ms": 211.423,
+        "predicted_per_second": 4.729854367784016
+      },
+      "seconds": 3.063
+    },
+    {
+      "id": "asr-noisy_hi-3-35",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0035.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "और कितना हाँ हाँ कितना किलोमीटर है यहाँ से",
+      "duration_seconds": 4.9319375,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 35,
+      "max_tokens": 512,
+      "input_sha256": "5fd62e4e92910cb8316dd9faeb59e4f24887b672a2fbdaee7b4af02fa6df1a43",
+      "prediction": "कितना ah कितना किलोमीटर है यहां से",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 179,
+        "total_tokens": 188,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 179,
+        "prompt_ms": 3621.009,
+        "prompt_per_token_ms": 20.22910055865922,
+        "prompt_per_second": 49.43373518265213,
+        "predicted_n": 9,
+        "predicted_ms": 2337.232,
+        "predicted_per_token_ms": 292.154,
+        "predicted_per_second": 3.422852331304723
+      },
+      "seconds": 6.016
+    },
+    {
+      "id": "asr-noisy_hi-3-63",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0063.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "हाँ",
+      "duration_seconds": 0.833,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 63,
+      "max_tokens": 512,
+      "input_sha256": "e44518c495a031e1eaa3c2598093e19d6180618318157dd010a02b29dc79fb46",
+      "prediction": "हाँ",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 76,
+        "total_tokens": 78,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 76,
+        "prompt_ms": 3934.074,
+        "prompt_per_token_ms": 51.76413157894737,
+        "prompt_per_second": 19.318396146081646,
+        "predicted_n": 2,
+        "predicted_ms": 209.791,
+        "predicted_per_token_ms": 209.791,
+        "predicted_per_second": 4.76664871228985
+      },
+      "seconds": 4.156
+    },
+    {
+      "id": "asr-noisy_hi-3-190",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0190.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "पन्द्रह अप्रैल दो हज़ार तेइस",
+      "duration_seconds": 4.176,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 190,
+      "max_tokens": 512,
+      "input_sha256": "8c5a0f841e5f40447ee102e7c8932bf733a8f3acef6372c72823f5dce7906d26",
+      "prediction": "15 April 2023",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 160,
+        "total_tokens": 169,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 160,
+        "prompt_ms": 6316.503,
+        "prompt_per_token_ms": 39.47814375,
+        "prompt_per_second": 25.33047162330169,
+        "predicted_n": 9,
+        "predicted_ms": 1440.565,
+        "predicted_per_token_ms": 180.070625,
+        "predicted_per_second": 5.553376626531951
+      },
+      "seconds": 7.797
+    },
+    {
+      "id": "asr-noisy_hi-3-143",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0143.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "ठीक है ठीक",
+      "duration_seconds": 2.629,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 143,
+      "max_tokens": 512,
+      "input_sha256": "f1a5e15135eb0a921bde680ab633659a7a32de8b56b9743b9cd5d5a979377920",
+      "prediction": "We had to",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 121,
+        "total_tokens": 125,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 121,
+        "prompt_ms": 2387.525,
+        "prompt_per_token_ms": 19.731611570247935,
+        "prompt_per_second": 50.68009759060114,
+        "predicted_n": 4,
+        "predicted_ms": 524.417,
+        "predicted_per_token_ms": 174.80566666666667,
+        "predicted_per_second": 5.720638346964343
+      },
+      "seconds": 2.953
+    },
+    {
+      "id": "asr-noisy_hi-3-137",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0137.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "अच्छा मैम",
+      "duration_seconds": 1.024,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 137,
+      "max_tokens": 512,
+      "input_sha256": "43a1a886672d38bf0453d14f0ad9f1233c0745d082daff4886e7834ad0816fc3",
+      "prediction": "अच्छा मैं",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 81,
+        "total_tokens": 84,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 81,
+        "prompt_ms": 3320.101,
+        "prompt_per_token_ms": 40.988901234567905,
+        "prompt_per_second": 24.396848168173197,
+        "predicted_n": 3,
+        "predicted_ms": 358.492,
+        "predicted_per_token_ms": 179.246,
+        "predicted_per_second": 5.578925052720842
+      },
+      "seconds": 3.688
+    },
+    {
+      "id": "asr-noisy_hi-3-67",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0067.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "तो आप चंडिका देवी चंडिका देवी जाना है",
+      "duration_seconds": 5.055,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 67,
+      "max_tokens": 512,
+      "input_sha256": "b9782897df85a9c3e0a3e93964045d1c3ee11de191332b2d9963f9b0b1c83dfa",
+      "prediction": "तो आप चंडिका देवी चंडिका देवी जाना है",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 182,
+        "total_tokens": 195,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 182,
+        "prompt_ms": 3077.671,
+        "prompt_per_token_ms": 16.91028021978022,
+        "prompt_per_second": 59.13562560780538,
+        "predicted_n": 13,
+        "predicted_ms": 1937.512,
+        "predicted_per_token_ms": 161.45933333333332,
+        "predicted_per_second": 6.193510027292734
+      },
+      "seconds": 5.063
+    },
+    {
+      "id": "asr-noisy_hi-3-191",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0191.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "वर्तमान वर्तमान हमेशा भूत भविष्य को लेकर चलता है इसे हमारी इससे हमारी जीवन सरल हो जाती है",
+      "duration_seconds": 10.337,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 191,
+      "max_tokens": 512,
+      "input_sha256": "141f9f000c8654181e76b115cc083ed7b642f567c1e93dc7f2ac338cb41d281a",
+      "prediction": "वर्टमान है वर्तमान में वर्तमान में सब भूत भविष्य को लेकर चलता है इससे हमारी इससे हमारी जीवन सरल हो जाती है",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 314,
+        "total_tokens": 339,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 314,
+        "prompt_ms": 5151.322,
+        "prompt_per_token_ms": 16.405484076433122,
+        "prompt_per_second": 60.95522663890939,
+        "predicted_n": 25,
+        "predicted_ms": 4085.624,
+        "predicted_per_token_ms": 170.23433333333332,
+        "predicted_per_second": 5.874255682852851
+      },
+      "seconds": 9.313
+    },
+    {
+      "id": "asr-noisy_hi-3-149",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0149.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "हम लोग वहाँ जाकर काशी विश्वनाथ में <unintelligible> अच्छा दर्शन करके वहाँ के मंदिर उंदिर बहुत ही अच्छा है बहुत ही बहुत सी दूर दूर से बहुत ही आते हैं सब घूमने वह बहुत ही अच्छा मन मंदिर उंदिर वहाँ पर",
+      "duration_seconds": 13.631,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 149,
+      "max_tokens": 512,
+      "input_sha256": "bf6a651fecd2e72ad5975a4e8cbac8494f0d4a4b61066a88ef89a27344139d5d",
+      "prediction": "लोग हमें um जाके काशी में सोना देना अच्छा दर्शन का सौभाग्य मंदिर मंदिर बहुत ही अच्छा है बहुत ही बहुत ही दूर-दूर बहुत ही आते हैं सब जगह वो बहुत ही अच्छा मंदिर मंदिर है वहां पे",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 42,
+        "prompt_tokens": 396,
+        "total_tokens": 438,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 396,
+        "prompt_ms": 6138.349,
+        "prompt_per_token_ms": 15.500881313131314,
+        "prompt_per_second": 64.51246092393899,
+        "predicted_n": 42,
+        "predicted_ms": 6208.92,
+        "predicted_per_token_ms": 151.4370731707317,
+        "predicted_per_second": 6.603402846227685
+      },
+      "seconds": 12.454
+    },
+    {
+      "id": "asr-noisy_hi-3-109",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0109.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "हम लोग गुल्ली डंडा खेलते थे कबड्डी कबड्डी खेलते थे और अगैरा वगैरह भी सब खेलते थे",
+      "duration_seconds": 6.25,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 109,
+      "max_tokens": 512,
+      "input_sha256": "f415caa54aa5f2612b8705652709fd7d6b4d5db2252ccea21e61e6536ca6ae11",
+      "prediction": "हम लोग गुल्ली डंडा खेलते थे कबड्डी कबड्डी खेलते थे और अगर अगर अगर सब खेलते थे",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 211,
+        "total_tokens": 231,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 211,
+        "prompt_ms": 4738.656,
+        "prompt_per_token_ms": 22.458085308056873,
+        "prompt_per_second": 44.527393421257,
+        "predicted_n": 20,
+        "predicted_ms": 2611.58,
+        "predicted_per_token_ms": 137.4515789473684,
+        "predicted_per_second": 7.275289288476708
+      },
+      "seconds": 7.406
+    },
+    {
+      "id": "asr-noisy_hi-3-229",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0229.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "हाँ वोल्टेज कम रहता है यह पर",
+      "duration_seconds": 1.887,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 229,
+      "max_tokens": 512,
+      "input_sha256": "d6d9369839ca6bbc0b32d9ab5ce082ede48d361aba415c545aacd32eba4bec4c",
+      "prediction": "और बोलते हैं हम देखते हैं",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 102,
+        "total_tokens": 109,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 102,
+        "prompt_ms": 1667.554,
+        "prompt_per_token_ms": 16.34856862745098,
+        "prompt_per_second": 61.167434457894615,
+        "predicted_n": 7,
+        "predicted_ms": 786.307,
+        "predicted_per_token_ms": 131.05116666666666,
+        "predicted_per_second": 7.630607383630059
+      },
+      "seconds": 2.5
+    },
+    {
+      "id": "asr-noisy_hi-3-102",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0102.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "तो आपके आप घर पर खुद सजान सजाना है या खुद दूसरे के यहाँ आप आप सजवाती हैं",
+      "duration_seconds": 5.357,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 102,
+      "max_tokens": 512,
+      "input_sha256": "88fd2002abeea926404bb89e2922d5e8ded8506a4bb8c57e99002c7aaf6dd172",
+      "prediction": "तो आपको आप घर पे कुछ सजाना है या आप खुद दूसरे के आप सजावती",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 189,
+        "total_tokens": 207,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 189,
+        "prompt_ms": 3655.689,
+        "prompt_per_token_ms": 19.34226984126984,
+        "prompt_per_second": 51.70024036508577,
+        "predicted_n": 18,
+        "predicted_ms": 2471.968,
+        "predicted_per_token_ms": 145.40988235294117,
+        "predicted_per_second": 6.877111677821073
+      },
+      "seconds": 6.188
+    },
+    {
+      "id": "asr-noisy_hi-3-92",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0092.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "<unintelligible>",
+      "duration_seconds": 0.357,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 92,
+      "max_tokens": 512,
+      "input_sha256": "dc26521570910bc36ae56c6b08fcbef203115e9ff2f2932c4c2d468b29c3b843",
+      "prediction": "",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1,
+        "prompt_tokens": 64,
+        "total_tokens": 65,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 64,
+        "prompt_ms": 1990.308,
+        "prompt_per_token_ms": 31.0985625,
+        "prompt_per_second": 32.15582713831226,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "seconds": 2.016
+    },
+    {
+      "id": "asr-noisy_hi-3-56",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0056.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "आप कौन सी क्लास का टी मतलब वो क्या पढ़ाते हैं सर आप",
+      "duration_seconds": 4.96,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 56,
+      "max_tokens": 512,
+      "input_sha256": "549b8a0187ac802d4bf8606bb8b86ad31f01dd32a98dc8e3ead1ea0a34b805d9",
+      "prediction": "अह आप कौन सी क्लास का है मतलब क्या पढ़ाते हैं सर आप",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 179,
+        "total_tokens": 195,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 179,
+        "prompt_ms": 3422.943,
+        "prompt_per_token_ms": 19.122586592178774,
+        "prompt_per_second": 52.29418076783633,
+        "predicted_n": 16,
+        "predicted_ms": 2788.055,
+        "predicted_per_token_ms": 185.87033333333332,
+        "predicted_per_second": 5.380094725534468
+      },
+      "seconds": 6.25
+    },
+    {
+      "id": "asr-noisy_hi-3-130",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0130.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "इसलिए",
+      "duration_seconds": 1.024,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 130,
+      "max_tokens": 512,
+      "input_sha256": "29f398c26b4338905d654a17138b4f3c4b2a2394d4606da8194875c2564fdaee",
+      "prediction": "इसलिए",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 81,
+        "total_tokens": 83,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 81,
+        "prompt_ms": 3455.828,
+        "prompt_per_token_ms": 42.66454320987654,
+        "prompt_per_second": 23.438666507708138,
+        "predicted_n": 2,
+        "predicted_ms": 156.917,
+        "predicted_per_token_ms": 156.917,
+        "predicted_per_second": 6.372795809249475
+      },
+      "seconds": 3.64
+    },
+    {
+      "id": "asr-noisy_hi-3-126",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0126.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "अच्छा",
+      "duration_seconds": 0.505,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 126,
+      "max_tokens": 512,
+      "input_sha256": "cf6aa64073192e61c4530a8ecd7434f0446bfa04bad217121fc9385941f3127d",
+      "prediction": "अत",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 68,
+        "total_tokens": 71,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 68,
+        "prompt_ms": 2077.31,
+        "prompt_per_token_ms": 30.548676470588234,
+        "prompt_per_second": 32.73464239810139,
+        "predicted_n": 3,
+        "predicted_ms": 237.208,
+        "predicted_per_token_ms": 118.604,
+        "predicted_per_second": 8.431418839162255
+      },
+      "seconds": 2.329
+    },
+    {
+      "id": "asr-noisy_hi-3-23",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0023.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "मुख्य रूप से माँ दुर्गा की प्रतिमा माँ भगवान गणेश की प्रतिमा जैसी मूर्तियाँ बनाई जाती हैं इसके साथ साथ कई प्रकार की कलाएँ हैं जैसे कि",
+      "duration_seconds": 10.337,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 23,
+      "max_tokens": 512,
+      "input_sha256": "ba0bd3e13b005129ded314675e7487bc7f64464e28c5bbc39c3e4e9f0dac4975",
+      "prediction": "मुख्य रूप से मां दुर्गा की प्रतिमा मां भगवान गणेश की प्रतिमा जैसी मूर्तियां बनाई जाती हैं इसके साथ-साथ कई प्रकार की कलाएं हैं जैसे कि",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 31,
+        "prompt_tokens": 314,
+        "total_tokens": 345,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 314,
+        "prompt_ms": 4462.16,
+        "prompt_per_token_ms": 14.210700636942674,
+        "prompt_per_second": 70.36950714452193,
+        "predicted_n": 31,
+        "predicted_ms": 4274.83,
+        "predicted_per_token_ms": 142.49433333333334,
+        "predicted_per_second": 7.017822930970354
+      },
+      "seconds": 8.812
+    },
+    {
+      "id": "asr-noisy_hi-3-193",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0193.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "हेलो",
+      "duration_seconds": 0.507,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 193,
+      "max_tokens": 512,
+      "input_sha256": "e07863ae23b2e7278b49f16b089eac953af13acc75688b4412639baae4c4d9c0",
+      "prediction": "Hello",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 68,
+        "total_tokens": 70,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 68,
+        "prompt_ms": 1945.709,
+        "prompt_per_token_ms": 28.613367647058823,
+        "prompt_per_second": 34.94869993406002,
+        "predicted_n": 2,
+        "predicted_ms": 130.115,
+        "predicted_per_token_ms": 130.115,
+        "predicted_per_second": 7.685508972831725
+      },
+      "seconds": 2.078
+    },
+    {
+      "id": "asr-noisy_hi-3-12",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0012.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "सनातनों धर्म में चला आ रहा है जिससे कि हम अपने आप को उस उनके माध्यम से जो भी हमारे पूर्वज है उनके माध्यम से करते आए हैं और हम लोग कर रहे हैं उन्हीं के बताए हुए रास्ते पे चल रहे हैं और अपने आप को उस चीज़ में ढाल रहे हैं और सनातन धर्म को बरक़रार रख रहे हैं",
+      "duration_seconds": 19.28,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 12,
+      "max_tokens": 512,
+      "input_sha256": "86d135945bb5ccac6d358ef8a26313a22451e49f67ace10263b71dc88b2dfab7",
+      "prediction": "सनातन धर्म में चला आ रहा है जिससे कि हम अपने आपको उस उनके माध्यम से जो भी हमारे पूर्वज हैं उनके माध्यम से करते आए हैं और हम लोग कर रहे हैं उन्हीं के बताए हुए रास्ते पर चल रहे हैं और अपने आपको उस चीज में ढाल रहे हैं और सनातन धर्म को बरकरार रख रहे हैं",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 63,
+        "prompt_tokens": 537,
+        "total_tokens": 600,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 537,
+        "prompt_ms": 8340.686,
+        "prompt_per_token_ms": 15.532003724394785,
+        "prompt_per_second": 64.38319342078098,
+        "predicted_n": 63,
+        "predicted_ms": 7874.092,
+        "predicted_per_token_ms": 127.00148387096773,
+        "predicted_per_second": 7.873923748922415
+      },
+      "seconds": 16.328
+    },
+    {
+      "id": "asr-noisy_hi-3-220",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0220.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "कोई कुछ भी कहे बनाने के लिए मेरे को कोई टेंसन नहीं होता खाना बनाने में मै यू ट्यूब से जो भी बनाने रेसिपियो मैं यूट्यूब से देख कर बनाती हूँ मेरे को कुछ नहीं आता है कुछ",
+      "duration_seconds": 11.01,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 220,
+      "max_tokens": 512,
+      "input_sha256": "33f3a1de8c8d9064215359a426952115bb8c0db654bd9bb3163649f8c5220b24",
+      "prediction": "कोई कोई चीज क्या है बनाने के लिए मेरे को कोई टेंशन नहीं है, खाना बनाने में और YouTube से जो भी बनाने की रेसिपी हो मैं YouTube से देखकर बनाती हूं अगर मेरे को कुछ नहीं आता है",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 41,
+        "prompt_tokens": 330,
+        "total_tokens": 371,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 330,
+        "prompt_ms": 5713.686,
+        "prompt_per_token_ms": 17.3142,
+        "prompt_per_second": 57.75606149865429,
+        "predicted_n": 41,
+        "predicted_ms": 4551.347,
+        "predicted_per_token_ms": 113.78367499999999,
+        "predicted_per_second": 8.788606977231137
+      },
+      "seconds": 10.343
+    },
+    {
+      "id": "asr-noisy_hi-3-28",
+      "kind": "audio",
+      "group": "noisy_hi",
+      "path": "tmp\\hinglish-dataset\\samples\\sample-3-0028.wav",
+      "prompt": "Transcribe this recording exactly in its original languages. Preserve Hindi-English code switching. Do not translate, summarize, correct or add speech. If there is no speech, output an empty string. Output only the transcript.",
+      "reference": "वह तो औरों आदमी सब आरों आदमी सबके बुला कर लेकर आएँगे घर पर का फोटो वोटो बनवाना है",
+      "duration_seconds": 5.538,
+      "source": "addyo07/noisy-hinglish-asr",
+      "noise_type": "synthesized_desktop",
+      "shard": 3,
+      "row": 28,
+      "max_tokens": 512,
+      "input_sha256": "ee474d24db969ea75985956ba47c869ba10f4a22044295d13586ce75e28593f3",
+      "prediction": "तो तो और आदमी सब और आदमी करके विलासिता लेके आएंगे घर पर सब फोटो-फोटो बनवाएंगे",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 194,
+        "total_tokens": 217,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 194,
+        "prompt_ms": 3472.486,
+        "prompt_per_token_ms": 17.89941237113402,
+        "prompt_per_second": 55.86775583832448,
+        "predicted_n": 23,
+        "predicted_ms": 3053.739,
+        "predicted_per_token_ms": 138.80631818181817,
+        "predicted_per_second": 7.204283011743964
+      },
+      "seconds": 6.562
+    }
+  ],
+  "method": "Standalone llama.cpp server; unchanged app recognizers. No source references in inference prompts.",
+  "load_seconds": 9.781,
+  "server_exit_code": 1
+}

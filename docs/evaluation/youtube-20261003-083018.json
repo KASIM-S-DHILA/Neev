@@ -1,0 +1,243 @@
+{
+  "date_utc": "20261003-083018",
+  "data_directory": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\youtube-integration-20261003-083018",
+  "live_url": "https://www.youtube.com/watch?v=WUvTyaaNkzM",
+  "checks": {
+    "live_snapshot_integrity": true,
+    "coverage_honest": true,
+    "authored_fixture_published": true
+  },
+  "live_caption_fetch": "available",
+  "live_seconds": 2.828,
+  "live_job": {
+    "id": "755eb873-034e-478d-a651-841080f444f6",
+    "workspace_id": "semester-3",
+    "subject_id": "probability",
+    "source_version_id": null,
+    "kind": "youtube_import",
+    "label": "The essence of calculus (live import) · Captions",
+    "state": "succeeded",
+    "stage": "Complete",
+    "done": 1,
+    "total": 1,
+    "error": null,
+    "cancel_requested": false,
+    "attempts": 1,
+    "failures": 0,
+    "max_attempts": 3,
+    "recoveries": 0,
+    "created_at": 1791016219.2601728,
+    "updated_at": 1791016221.959112,
+    "checkpoint": {
+      "snapshot_sha256": "5ee60d4caefe291571ba0e9620d68f11dc0adc8779e9b56d40f234cd05a0044c"
+    },
+    "result": {
+      "snapshot_sha256": "5ee60d4caefe291571ba0e9620d68f11dc0adc8779e9b56d40f234cd05a0044c",
+      "bytes": 28589,
+      "coverage": "captions_only",
+      "issue": null,
+      "source_id": "6ea3698e-e47e-4a4d-be3c-a23d99c17936",
+      "version_id": "8402df53-baa0-44e9-a1fa-e097df116e73",
+      "version": 1,
+      "duplicate": false
+    }
+  },
+  "live_extraction": {
+    "state": "partial",
+    "total": 16,
+    "completed": 16,
+    "integrity_verified": true,
+    "result": {
+      "units": 16,
+      "counts": {
+        "text": 0,
+        "needs_ocr": 0,
+        "empty": 0,
+        "unreadable": 0,
+        "too_large": 0,
+        "suspect": 16
+      },
+      "warnings": 16,
+      "text_only": true,
+      "source_sha256": "5ee60d4caefe291571ba0e9620d68f11dc0adc8779e9b56d40f234cd05a0044c",
+      "youtube": {
+        "video_id": "WUvTyaaNkzM",
+        "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM",
+        "requested_language": "en",
+        "language_code": "en",
+        "is_generated": false,
+        "tracks": [
+          {
+            "is_generated": false,
+            "language": "Arabic",
+            "language_code": "ar"
+          },
+          {
+            "is_generated": false,
+            "language": "Bangla",
+            "language_code": "bn"
+          },
+          {
+            "is_generated": false,
+            "language": "Bulgarian",
+            "language_code": "bg"
+          },
+          {
+            "is_generated": false,
+            "language": "Chinese",
+            "language_code": "zh"
+          },
+          {
+            "is_generated": false,
+            "language": "Chinese (Traditional)",
+            "language_code": "zh-Hant"
+          },
+          {
+            "is_generated": false,
+            "language": "Chinese (Taiwan)",
+            "language_code": "zh-TW"
+          },
+          {
+            "is_generated": false,
+            "language": "Dutch",
+            "language_code": "nl"
+          },
+          {
+            "is_generated": false,
+            "language": "English",
+            "language_code": "en"
+          },
+          {
+            "is_generated": false,
+            "language": "Filipino",
+            "language_code": "fil"
+          },
+          {
+            "is_generated": false,
+            "language": "French",
+            "language_code": "fr"
+          },
+          {
+            "is_generated": false,
+            "language": "German",
+            "language_code": "de"
+          },
+          {
+            "is_generated": false,
+            "language": "Greek",
+            "language_code": "el"
+          },
+          {
+            "is_generated": false,
+            "language": "Hebrew",
+            "language_code": "iw"
+          },
+          {
+            "is_generated": false,
+            "language": "Hindi",
+            "language_code": "hi"
+          },
+          {
+            "is_generated": false,
+            "language": "Hungarian",
+            "language_code": "hu"
+          },
+          {
+            "is_generated": false,
+            "language": "Indonesian",
+            "language_code": "id"
+          },
+          {
+            "is_generated": false,
+            "language": "Italian",
+            "language_code": "it"
+          },
+          {
+            "is_generated": false,
+            "language": "Japanese",
+            "language_code": "ja"
+          },
+          {
+            "is_generated": false,
+            "language": "Korean",
+            "language_code": "ko"
+          },
+          {
+            "is_generated": false,
+            "language": "Marathi",
+            "language_code": "mr"
+          },
+          {
+            "is_generated": false,
+            "language": "Persian",
+            "language_code": "fa"
+          },
+          {
+            "is_generated": false,
+            "language": "Polish",
+            "language_code": "pl"
+          },
+          {
+            "is_generated": false,
+            "language": "Portuguese",
+            "language_code": "pt"
+          },
+          {
+            "is_generated": false,
+            "language": "Portuguese (Brazil)",
+            "language_code": "pt-BR"
+          },
+          {
+            "is_generated": false,
+            "language": "Russian",
+            "language_code": "ru"
+          },
+          {
+            "is_generated": false,
+            "language": "Swedish",
+            "language_code": "sv"
+          },
+          {
+            "is_generated": false,
+            "language": "Tamil",
+            "language_code": "ta"
+          },
+          {
+            "is_generated": false,
+            "language": "Telugu",
+            "language_code": "te"
+          },
+          {
+            "is_generated": false,
+            "language": "Thai",
+            "language_code": "th"
+          },
+          {
+            "is_generated": false,
+            "language": "Turkish",
+            "language_code": "tr"
+          },
+          {
+            "is_generated": false,
+            "language": "Ukrainian",
+            "language_code": "uk"
+          },
+          {
+            "is_generated": true,
+            "language": "English (auto-generated)",
+            "language_code": "en"
+          }
+        ],
+        "issue": null,
+        "coverage": "captions_only",
+        "translated": false,
+        "revision": "youtube-captions-1"
+      }
+    }
+  },
+  "authored_ui_fixture": {
+    "label": "Authored cues, not actual video captions",
+    "version_id": "99919216-71b2-4077-bdaa-837e7ad6327a"
+  },
+  "status": "passed"
+}

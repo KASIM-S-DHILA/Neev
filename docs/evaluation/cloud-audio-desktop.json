@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "checks": {
+    "native_audio_ipc": true,
+    "transcript_visible": true,
+    "pcm_playback_metadata": true,
+    "timestamp_seek": true,
+    "automatic_disclosure": true,
+    "cloud_provenance": true,
+    "absolute_source_seek": true
+  },
+  "duration": 9.368063,
+  "seek_seconds": 2.74,
+  "absolute_seek": {
+    "source_seconds": 34,
+    "clip_seconds": 4.74
+  },
+  "screenshot": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\docs\\evaluation\\screenshots\\cloud-audio-desktop.png",
+  "data_directory": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\audio-integration-groq-20261002-193932"
+}

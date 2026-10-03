@@ -1,0 +1,680 @@
+{
+  "date_utc": "20261003-074535",
+  "data_directory": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\video-frames-integration-20261003-074535",
+  "method": "Real API/worker, FFmpeg PTS, PySceneDetect 0.7.1 and low-resolution pixel changes; no ASR, OCR or cloud",
+  "gold": {
+    "provenance": "Locally drawn, authored teaching slides and worked equation; FFmpeg H264. No audio or model-generated content.",
+    "slides_change_seconds": [
+      4,
+      8
+    ],
+    "whiteboard_change_seconds": [
+      3,
+      6,
+      9,
+      12
+    ],
+    "return_change_seconds": [
+      4,
+      8
+    ],
+    "vfr_change_seconds": [
+      2.4,
+      5.6
+    ],
+    "sample_delay_tolerance_seconds": 1.2,
+    "static_references_seconds": [
+      0,
+      60
+    ],
+    "limitations": "Known synthetic scenes; not held-out frame-selection quality. Brief changes between samples can be missed."
+  },
+  "samples": [
+    {
+      "name": "slides.mp4",
+      "version_id": "25f62f65-892f-4a43-bf39-70fa80853ad7",
+      "seconds": 1.063,
+      "checks": {
+        "selection_finished": true,
+        "original_unchanged": true,
+        "previews_available_and_unverified": true,
+        "private_paths_absent": true,
+        "gold_changes_preserved": true
+      },
+      "job": {
+        "id": "58b26974-8c98-4a7d-9c5a-7e8b5bfde394",
+        "workspace_id": "semester-3",
+        "subject_id": "probability",
+        "source_version_id": "25f62f65-892f-4a43-bf39-70fa80853ad7",
+        "kind": "video_frames",
+        "label": "slides.mp4 · Frames",
+        "state": "succeeded",
+        "stage": "Complete",
+        "done": 1,
+        "total": 1,
+        "error": null,
+        "cancel_requested": false,
+        "attempts": 1,
+        "failures": 0,
+        "max_attempts": 3,
+        "recoveries": 0,
+        "created_at": 1791013535.5959156,
+        "updated_at": 1791013536.6644263,
+        "checkpoint": {
+          "config": {
+            "version": "sampled-video-frames-1",
+            "sample_seconds": 1,
+            "scene_threshold": 18,
+            "changed_pixel_fraction": 0.002,
+            "pixel_delta": 24,
+            "max_duplicate_seconds": 60,
+            "scenedetect": "0.7.1",
+            "max_frames": 600
+          },
+          "source_sha256": "4c154432580e8b0283603ce18c0e60a16a4a406dd129d7b655b1934d3388f014",
+          "completed_windows": 1,
+          "sampled": 12,
+          "omitted": 0,
+          "helper_private_bytes_after_max": 431800320
+        },
+        "result": {
+          "selected_frames": 3,
+          "sampled_frames": 12,
+          "omitted_candidates": 0,
+          "scanned_seconds": 11.6,
+          "coverage": "sampled_frames",
+          "ocr_pending": true,
+          "source_sha256": "4c154432580e8b0283603ce18c0e60a16a4a406dd129d7b655b1934d3388f014",
+          "helper_private_bytes_after_max": 431800320,
+          "limitations": "One-second sampling can miss brief content. Frames are previews; OCR/vision has not run."
+        }
+      },
+      "frames": [
+        {
+          "id": "d03d500a-e1e5-5111-bb5b-6e68b728b61b",
+          "seconds": 0.0,
+          "reasons": [
+            "first_frame"
+          ],
+          "changed_fraction": 1.0,
+          "ocr_pending": true,
+          "review_required": true,
+          "asset": {
+            "sha256": "d882aae4b4e46fbe7dfa10d81f53a10d89b11b36a62709d4a271946d022fe456",
+            "caption": "Video frame · compare with the original",
+            "width": 640,
+            "height": 360
+          }
+        },
+        {
+          "id": "7ac98d2f-1e01-5449-a8f8-1bd7cd846a99",
+          "seconds": 4.0,
+          "reasons": [
+            "visual_change",
+            "sampled_scene_change"
+          ],
+          "changed_fraction": 0.987431,
+          "ocr_pending": true,
+          "review_required": true,
+          "asset": {
+            "sha256": "1aa6679fa8ee4c3da0bd0c0f5d3e9b728f42bf66be84f0102fb1a582f568d136",
+            "caption": "Video frame · compare with the original",
+            "width": 640,
+            "height": 360
+          }
+        },
+        {
+          "id": "4557f008-410a-5fea-b62b-21ee5d504a56",
+          "seconds": 8.0,
+          "reasons": [
+            "visual_change",
+            "sampled_scene_change"
+          ],
+          "changed_fraction": 0.95684,
+          "ocr_pending": true,
+          "review_required": true,
+          "asset": {
+            "sha256": "f36e0290ca5be700bdf94c4307789bf05db8c1b97a4adffaf378d2b9c7bba831",
+            "caption": "Video frame · compare with the original",
+            "width": 640,
+            "height": 360
+          }
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "whiteboard.mp4",
+      "version_id": "22c4b7be-cf1f-4a10-80f6-96a305eab0a8",
+      "seconds": 1.094,
+      "checks": {
+        "selection_finished": true,
+        "original_unchanged": true,
+        "previews_available_and_unverified": true,
+        "private_paths_absent": true,
+        "gold_changes_preserved": true
+      },
+      "job": {
+        "id": "db2113c3-b227-477d-9016-d6228024e490",
+        "workspace_id": "semester-3",
+        "subject_id": "probability",
+        "source_version_id": "22c4b7be-cf1f-4a10-80f6-96a305eab0a8",
+        "kind": "video_frames",
+        "label": "whiteboard.mp4 · Frames",
+        "state": "succeeded",
+        "stage": "Complete",
+        "done": 1,
+        "total": 1,
+        "error": null,
+        "cancel_requested": false,
+        "attempts": 1,
+        "failures": 0,
+        "max_attempts": 3,
+        "recoveries": 0,
+        "created_at": 1791013536.7079415,
+        "updated_at": 1791013537.8026454,
+        "checkpoint": {
+          "config": {
+            "version": "sampled-video-frames-1",
+            "sample_seconds": 1,
+            "scene_threshold": 18,
+            "changed_pixel_fraction": 0.002,
+            "pixel_delta": 24,
+            "max_duplicate_seconds": 60,
+            "scenedetect": "0.7.1",
+            "max_frames": 600
+          },
+          "source_sha256": "3c292f25148e8f8631d701b9e5b7a8ac49ca569d77e63d2008e7391cb903747c",
+          "completed_windows": 1,
+          "sampled": 15,
+          "omitted": 0,
+          "helper_private_bytes_after_max": 431632384
+        },
+        "result": {
+          "selected_frames": 5,
+          "sampled_frames": 15,
+          "omitted_candidates": 0,
+          "scanned_seconds": 14.8,
+          "coverage": "sampled_frames",
+          "ocr_pending": true,
+          "source_sha256": "3c292f25148e8f8631d701b9e5b7a8ac49ca569d77e63d2008e7391cb903747c",
+          "helper_private_bytes_after_max": 431632384,
+          "limitations": "One-second sampling can miss brief content. Frames are previews; OCR/vision has not run."
+        }
+      },
+      "frames": [
+        {
+          "id": "4d2c54d7-bc76-50b6-9485-a22b6e999616",
+          "seconds": 0.0,
+          "reasons": [
+            "first_frame"
+          ],
+          "changed_fraction": 1.0,
+          "ocr_pending": true,
+          "review_required": true,
+          "asset": {
+            "sha256": "c989488870f7fa09f67a20531f4c5c80097cf39c9d9fd05b37d782a7aa5f4c1d",
+            "caption": "Video frame · compare with the original",
+            "width": 640,
+            "height": 360
+          }
+        },
+        {
+          "id": "d5c3bea5-8283-5d0e-9731-e0d4542f2b0c",
+          "seconds": 3.0,
+          "reasons": [
+            "visual_change"
+          ],
+          "changed_fraction": 0.016684,
+          "ocr_pending": true,
+          "review_required": true,
+          "asset": {
+            "sha256": "3aee20787b19cd4c430bbe0d4e1445e06564da274c7ded3e1e3663a267758111",
+            "caption": "Video frame · compare with the original",
+            "width": 640,
+            "height": 360
+          }
+        },
+        {
+          "id": "7921e29c-9963-5459-aedd-68a9080b1857",
+          "seconds": 6.0,
+          "reasons": [
+            "visual_change"
+          ],
+          "changed_fraction": 0.006111,
+          "ocr_pending": true,
+          "review_required": true,
+          "asset": {
+            "sha256": "12aaeaaa452340bd55709353bf03cced4d8a603f349aa034f1a1037690ac1e22",
+            "caption": "Video frame · compare with the original",
+            "width": 640,
+            "height": 360
+          }
+        },
+        {
+          "id": "e88283fb-c1c7-5d78-8ee3-03638d5c2ae5",
+          "seconds": 9.0,
+          "reasons": [
+            "visual_change"
+          ],
+          "changed_fraction": 0.00974,
+          "ocr_pending": true,
+          "review_required": true,
+          "asset": {
+            "sha256": "7b312b84d4bf39fbf6c28f76379b8ba3bc2e3334e90ff2e8ff439bd5ccaddc7b",
+            "caption": "Video frame · compare with the original",
+            "width": 640,
+            "height": 360
+          }
+        },
+        {
+          "id": "5756c440-5141-51f4-a44e-5dc87656582e",
+          "seconds": 12.0,
+          "reasons": [
+            "visual_change"
+          ],
+          "changed_fraction": 0.007604,
+          "ocr_pending": true,
+          "review_required": true,
+          "asset": {
+            "sha256": "b657d9f46d5260bc38b9407bbe09881c848f48e4b68afd02c98cb2d979b0d50e",
+            "caption": "Video frame · compare with the original",
+            "width": 640,
+            "height": 360
+          }
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "return-slides.mp4",
+      "version_id": "d019bbe1-20f5-4346-938b-c3adcae3773d",
+      "seconds": 1.032,
+      "checks": {
+        "selection_finished": true,
+        "original_unchanged": true,
+        "previews_available_and_unverified": true,
+        "private_paths_absent": true,
+        "gold_changes_preserved": true
+      },
+      "job": {
+        "id": "15594dd9-f8c4-49ee-bffb-6e27edeb15fd",
+        "workspace_id": "semester-3",
+        "subject_id": "probability",
+        "source_version_id": "d019bbe1-20f5-4346-938b-c3adcae3773d",
+        "kind": "video_frames",
+        "label": "return-slides.mp4 · Frames",
+        "state": "succeeded",
+        "stage": "Complete",
+        "done": 1,
+        "total": 1,
+        "error": null,
+        "cancel_requested": false,
+        "attempts": 1,
+        "failures": 0,
+        "max_attempts": 3,
+        "recoveries": 0,
+        "created_at": 1791013537.8496344,
+        "updated_at": 1791013538.898288,
+        "checkpoint": {
+          "config": {
+            "version": "sampled-video-frames-1",
+            "sample_seconds": 1,
+            "scene_threshold": 18,
+            "changed_pixel_fraction": 0.002,
+            "pixel_delta": 24,
+            "max_duplicate_seconds": 60,
+            "scenedetect": "0.7.1",
+            "max_frames": 600
+          },
+          "source_sha256": "25b5a5be29352f2a7462a9fc587c81491a9a4e00189ed332d1bf099b0a22f6da",
+          "completed_windows": 1,
+          "sampled": 12,
+          "omitted": 0,
+          "helper_private_bytes_after_max": 432705536
+        },
+        "result": {
+          "selected_frames": 3,
+          "sampled_frames": 12,
+          "omitted_candidates": 0,
+          "scanned_seconds": 11.6,
+          "coverage": "sampled_frames",
+          "ocr_pending": true,
+          "source_sha256": "25b5a5be29352f2a7462a9fc587c81491a9a4e00189ed332d1bf099b0a22f6da",
+          "helper_private_bytes_after_max": 432705536,
+          "limitations": "One-second sampling can miss brief content. Frames are previews; OCR/vision has not run."
+        }
+      },
+      "frames": [
+        {
+          "id": "97aeed70-8d0b-53f3-a9ce-674e6380a81b",
+          "seconds": 0.0,
+          "reasons": [
+            "first_frame"
+          ],
+          "changed_fraction": 1.0,
+          "ocr_pending": true,
+          "review_required": true,
+          "asset": {
+            "sha256": "d882aae4b4e46fbe7dfa10d81f53a10d89b11b36a62709d4a271946d022fe456",
+            "caption": "Video frame · compare with the original",
+            "width": 640,
+            "height": 360
+          }
+        },
+        {
+          "id": "04fb80e5-8f36-5247-b5a0-b6288fcb12b3",
+          "seconds": 4.0,
+          "reasons": [
+            "visual_change",
+            "sampled_scene_change"
+          ],
+          "changed_fraction": 0.987431,
+          "ocr_pending": true,
+          "review_required": true,
+          "asset": {
+            "sha256": "1aa6679fa8ee4c3da0bd0c0f5d3e9b728f42bf66be84f0102fb1a582f568d136",
+            "caption": "Video frame · compare with the original",
+            "width": 640,
+            "height": 360
+          }
+        },
+        {
+          "id": "ac4dc495-bbef-5d46-9fcb-a16796b0fdd6",
+          "seconds": 8.0,
+          "reasons": [
+            "visual_change",
+            "sampled_scene_change"
+          ],
+          "changed_fraction": 0.987569,
+          "ocr_pending": true,
+          "review_required": true,
+          "asset": {
+            "sha256": "0beae2311f806c2123fd5fc8841296588c6d6d7b644d16fc88ee43b2581256c0",
+            "caption": "Video frame · compare with the original",
+            "width": 640,
+            "height": 360
+          }
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "static.mp4",
+      "version_id": "14ee1026-6de5-4b48-8cbb-41c304b14cce",
+      "seconds": 0.969,
+      "checks": {
+        "selection_finished": true,
+        "original_unchanged": true,
+        "previews_available_and_unverified": true,
+        "private_paths_absent": true,
+        "gold_changes_preserved": false
+      },
+      "job": {
+        "id": "712b66bc-d654-4cd5-995d-c0764e5af99e",
+        "workspace_id": "semester-3",
+        "subject_id": "probability",
+        "source_version_id": "14ee1026-6de5-4b48-8cbb-41c304b14cce",
+        "kind": "video_frames",
+        "label": "static.mp4 · Frames",
+        "state": "succeeded",
+        "stage": "Complete",
+        "done": 1,
+        "total": 1,
+        "error": null,
+        "cancel_requested": false,
+        "attempts": 1,
+        "failures": 0,
+        "max_attempts": 3,
+        "recoveries": 0,
+        "created_at": 1791013538.9371278,
+        "updated_at": 1791013539.928919,
+        "checkpoint": {
+          "config": {
+            "version": "sampled-video-frames-1",
+            "sample_seconds": 1,
+            "scene_threshold": 18,
+            "changed_pixel_fraction": 0.002,
+            "pixel_delta": 24,
+            "max_duplicate_seconds": 60,
+            "scenedetect": "0.7.1",
+            "max_frames": 600
+          },
+          "source_sha256": "39bbacb8c9e19c60a5ad6ade97633a6bfa1c4f6139b51ff22bbf474114614774",
+          "completed_windows": 1,
+          "sampled": 1,
+          "omitted": 0,
+          "helper_private_bytes_after_max": 431734784
+        },
+        "result": {
+          "selected_frames": 1,
+          "sampled_frames": 1,
+          "omitted_candidates": 0,
+          "scanned_seconds": 0.2,
+          "coverage": "sampled_frames",
+          "ocr_pending": true,
+          "source_sha256": "39bbacb8c9e19c60a5ad6ade97633a6bfa1c4f6139b51ff22bbf474114614774",
+          "helper_private_bytes_after_max": 431734784,
+          "limitations": "One-second sampling can miss brief content. Frames are previews; OCR/vision has not run."
+        }
+      },
+      "frames": [
+        {
+          "id": "e6c10c34-b1a1-5aa1-8e76-bc87314ab5b2",
+          "seconds": 0.0,
+          "reasons": [
+            "first_frame"
+          ],
+          "changed_fraction": 1.0,
+          "ocr_pending": true,
+          "review_required": true,
+          "asset": {
+            "sha256": "d882aae4b4e46fbe7dfa10d81f53a10d89b11b36a62709d4a271946d022fe456",
+            "caption": "Video frame · compare with the original",
+            "width": 640,
+            "height": 360
+          }
+        }
+      ],
+      "status": "needs-review"
+    },
+    {
+      "name": "vfr.mp4",
+      "version_id": "c6381261-dc85-469b-be92-bc1921bc3f17",
+      "seconds": 1.015,
+      "checks": {
+        "selection_finished": true,
+        "original_unchanged": true,
+        "previews_available_and_unverified": true,
+        "private_paths_absent": true,
+        "gold_changes_preserved": true
+      },
+      "job": {
+        "id": "29867497-1801-4745-9201-26a091e97efa",
+        "workspace_id": "semester-3",
+        "subject_id": "probability",
+        "source_version_id": "c6381261-dc85-469b-be92-bc1921bc3f17",
+        "kind": "video_frames",
+        "label": "vfr.mp4 · Frames",
+        "state": "succeeded",
+        "stage": "Complete",
+        "done": 1,
+        "total": 1,
+        "error": null,
+        "cancel_requested": false,
+        "attempts": 1,
+        "failures": 0,
+        "max_attempts": 3,
+        "recoveries": 0,
+        "created_at": 1791013539.9616535,
+        "updated_at": 1791013540.9589965,
+        "checkpoint": {
+          "config": {
+            "version": "sampled-video-frames-1",
+            "sample_seconds": 1,
+            "scene_threshold": 18,
+            "changed_pixel_fraction": 0.002,
+            "pixel_delta": 24,
+            "max_duplicate_seconds": 60,
+            "scenedetect": "0.7.1",
+            "max_frames": 600
+          },
+          "source_sha256": "f2b5fb34495570881c42ec61f73dbbcf86b6b8af373dc8cff2c0c655990cdab5",
+          "completed_windows": 1,
+          "sampled": 3,
+          "omitted": 0,
+          "helper_private_bytes_after_max": 431730688
+        },
+        "result": {
+          "selected_frames": 3,
+          "sampled_frames": 3,
+          "omitted_candidates": 0,
+          "scanned_seconds": 5.64,
+          "coverage": "sampled_frames",
+          "ocr_pending": true,
+          "source_sha256": "f2b5fb34495570881c42ec61f73dbbcf86b6b8af373dc8cff2c0c655990cdab5",
+          "helper_private_bytes_after_max": 431730688,
+          "limitations": "One-second sampling can miss brief content. Frames are previews; OCR/vision has not run."
+        }
+      },
+      "frames": [
+        {
+          "id": "1b827f6e-0e69-58f7-8099-591609b4641d",
+          "seconds": 0.0,
+          "reasons": [
+            "first_frame"
+          ],
+          "changed_fraction": 1.0,
+          "ocr_pending": true,
+          "review_required": true,
+          "asset": {
+            "sha256": "d882aae4b4e46fbe7dfa10d81f53a10d89b11b36a62709d4a271946d022fe456",
+            "caption": "Video frame · compare with the original",
+            "width": 640,
+            "height": 360
+          }
+        },
+        {
+          "id": "758339f6-9ea7-5976-a430-e381f13123ba",
+          "seconds": 2.4,
+          "reasons": [
+            "visual_change",
+            "sampled_scene_change"
+          ],
+          "changed_fraction": 0.987483,
+          "ocr_pending": true,
+          "review_required": true,
+          "asset": {
+            "sha256": "f1bb2626fcf7d92dc5460060c3bdbf6adbe3043abe8cb8c45b262efb986fe865",
+            "caption": "Video frame · compare with the original",
+            "width": 640,
+            "height": 360
+          }
+        },
+        {
+          "id": "cd79a601-82e1-54dc-bf02-6fd192408da7",
+          "seconds": 5.6,
+          "reasons": [
+            "visual_change",
+            "sampled_scene_change"
+          ],
+          "changed_fraction": 0.95724,
+          "ocr_pending": true,
+          "review_required": true,
+          "asset": {
+            "sha256": "5ec327b6149fd0e7fb86a9d247be73a0d827ad47b09af6fdec62782c4e51acd6",
+            "caption": "Video frame · compare with the original",
+            "width": 640,
+            "height": 360
+          }
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "rotated.mp4",
+      "version_id": "5f50112f-e726-4abb-a552-e82585c745d6",
+      "seconds": 0.953,
+      "checks": {
+        "selection_finished": true,
+        "original_unchanged": true,
+        "previews_available_and_unverified": true,
+        "private_paths_absent": true,
+        "rotation_applied": false
+      },
+      "job": {
+        "id": "f8333628-6825-4b16-8aaf-f1700ce18b7e",
+        "workspace_id": "semester-3",
+        "subject_id": "probability",
+        "source_version_id": "5f50112f-e726-4abb-a552-e82585c745d6",
+        "kind": "video_frames",
+        "label": "rotated.mp4 · Frames",
+        "state": "succeeded",
+        "stage": "Complete",
+        "done": 1,
+        "total": 1,
+        "error": null,
+        "cancel_requested": false,
+        "attempts": 1,
+        "failures": 0,
+        "max_attempts": 3,
+        "recoveries": 0,
+        "created_at": 1791013541.028394,
+        "updated_at": 1791013541.995762,
+        "checkpoint": {
+          "config": {
+            "version": "sampled-video-frames-1",
+            "sample_seconds": 1,
+            "scene_threshold": 18,
+            "changed_pixel_fraction": 0.002,
+            "pixel_delta": 24,
+            "max_duplicate_seconds": 60,
+            "scenedetect": "0.7.1",
+            "max_frames": 600
+          },
+          "source_sha256": "5b5a54deaece8eebf84f8663aacb23d132b7d7b317e6a825a5ec378d446e2268",
+          "completed_windows": 1,
+          "sampled": 4,
+          "omitted": 0,
+          "helper_private_bytes_after_max": 431624192
+        },
+        "result": {
+          "selected_frames": 1,
+          "sampled_frames": 4,
+          "omitted_candidates": 0,
+          "scanned_seconds": 4.0,
+          "coverage": "sampled_frames",
+          "ocr_pending": true,
+          "source_sha256": "5b5a54deaece8eebf84f8663aacb23d132b7d7b317e6a825a5ec378d446e2268",
+          "helper_private_bytes_after_max": 431624192,
+          "limitations": "One-second sampling can miss brief content. Frames are previews; OCR/vision has not run."
+        }
+      },
+      "frames": [
+        {
+          "id": "3e491c34-f51e-552e-852d-ba4cdecd41b1",
+          "seconds": 0.0,
+          "reasons": [
+            "first_frame"
+          ],
+          "changed_fraction": 1.0,
+          "ocr_pending": true,
+          "review_required": true,
+          "asset": {
+            "sha256": "d882aae4b4e46fbe7dfa10d81f53a10d89b11b36a62709d4a271946d022fe456",
+            "caption": "Video frame · compare with the original",
+            "width": 640,
+            "height": 360
+          }
+        }
+      ],
+      "status": "needs-review"
+    }
+  ],
+  "limitations": [
+    "Small authored teaching scenes, not held-out natural video quality.",
+    "One-second sampling can miss brief changes; previews are not extracted knowledge.",
+    "Helper private bytes after processing are not peak or whole-app 8 GB measurements."
+  ],
+  "status": "needs-review"
+}

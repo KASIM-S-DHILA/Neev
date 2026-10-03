@@ -1,0 +1,7 @@
+file 'slide-a.png'
+duration 2.4
+file 'slide-b.png'
+duration 3.2
+file 'slide-c.png'
+duration 4.4
+file 'slide-c.png'

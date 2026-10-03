@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "checks": {
+    "default_text_shows_groq": true,
+    "table_cells_visible": true,
+    "local_text_retained": true,
+    "local_initially_collapsed": true,
+    "local_text_exact": true,
+    "structured_view_preserved": true,
+    "stored_local_text_and_hash_unchanged": true
+  },
+  "method": "Native Electron with retained production Groq table result; no new provider requests"
+}

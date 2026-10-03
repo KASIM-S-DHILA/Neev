@@ -1,0 +1,1112 @@
+{
+  "date_utc": "20261003-070850",
+  "data_directory": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\video-integration-20261003-070850",
+  "method": "Real API/worker, FFmpeg and Silero VAD; automatic Groq with local Tiny fallback",
+  "samples": [
+    {
+      "name": "lecture.mp4",
+      "version_id": "c4a714bf-55c1-4de0-8824-a51ac439f3de",
+      "seconds": 6.61,
+      "state": "partial",
+      "error": null,
+      "checks": {
+        "original_unchanged": true,
+        "audio_only_explicit_unverified": true,
+        "playback_range_matches_original": true,
+        "known_phrases_recovered": true
+      },
+      "units": [
+        {
+          "id": "5dd774e8-b593-5180-aba5-118383306b0a",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 20.0
+          },
+          "text": "A triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.",
+          "text_sha256": "b87e871b50363a8fa9ec34700f276470277b811ebadb0143ab3cfbcc308f9531",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified. Video audio only: slides and on-screen content have not been extracted.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "cbc6638ccb120b45b46fb8e651894a3dd97fd816035d46c04a7819f13fedb930",
+              "duration_seconds": 20.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 1.72,
+                "text": "A triangle has three sides."
+              },
+              {
+                "start_seconds": 2.74,
+                "end_seconds": 4.86,
+                "text": "Water freezes at zero degrees Celsius."
+              },
+              {
+                "start_seconds": 5.98,
+                "end_seconds": 8.46,
+                "text": "This is an authored audio test for study lens."
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "video_timeline": "aresample-first-pts-0-v1",
+              "duration_seconds": 20.0,
+              "stream_index": 1,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": "English",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "cbc6638ccb120b45b46fb8e651894a3dd97fd816035d46c04a7819f13fedb930",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.0,
+                    "end": 9.04
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 1.7199999,
+                  "avg_logprob": -0.24356063,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                },
+                {
+                  "start": 2.74,
+                  "end": 4.8599997,
+                  "avg_logprob": -0.24356063,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                },
+                {
+                  "start": 5.98,
+                  "end": 8.46,
+                  "avg_logprob": -0.24356063,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                }
+              ],
+              "levels": {
+                "rms": 0.063508,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "video": {
+              "version": "video-audio-1",
+              "duration_seconds": 20.0,
+              "container_start_seconds": 0.0,
+              "stream_index": 0,
+              "video_streams": 1,
+              "codec": "h264",
+              "width": 320,
+              "height": 180,
+              "rotation": 0.0,
+              "frame_rate": "10/1",
+              "audio_present": true,
+              "audio_start_seconds": 0.0,
+              "coverage": "audio_only",
+              "timeline_method": "aresample-first-pts-0-v1"
+            },
+            "assets": []
+          }
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "delayed-audio.mp4",
+      "version_id": "4eee05c7-1b48-41e0-88f8-9dc2eea96b78",
+      "seconds": 4.625,
+      "state": "partial",
+      "error": null,
+      "checks": {
+        "original_unchanged": true,
+        "audio_only_explicit_unverified": true,
+        "playback_range_matches_original": true,
+        "known_phrases_recovered": false,
+        "pcm_delay_preserved": true,
+        "asr_on_original_clock": false
+      },
+      "units": [
+        {
+          "id": "cdc4d898-0a79-5ffc-b40b-b4c28ddb2adc",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 20.0
+          },
+          "text": "A triangle has three sides.\nWater freezes at 0 degrees Celsius.\nThis is an authored audio test for study lens.",
+          "text_sha256": "5d592895bb45dd1ddb5f471915c93b1ce1e0642332e63ca1a1571acfe6f6ff1e",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified. Video audio only: slides and on-screen content have not been extracted.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "0cc5fe1eac7a34b6a479e18506c449c2b8dd8e7433cd6ede29b0ea41b0f47a3a",
+              "duration_seconds": 20.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 6.96,
+                "text": "A triangle has three sides."
+              },
+              {
+                "start_seconds": 6.96,
+                "end_seconds": 10.1,
+                "text": "Water freezes at 0 degrees Celsius."
+              },
+              {
+                "start_seconds": 10.1,
+                "end_seconds": 12.6,
+                "text": "This is an authored audio test for study lens."
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "video_timeline": "aresample-first-pts-0-v1",
+              "duration_seconds": 20.0,
+              "stream_index": 1,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": "English",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "0cc5fe1eac7a34b6a479e18506c449c2b8dd8e7433cd6ede29b0ea41b0f47a3a",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 3.728,
+                    "end": 13.04
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 6.96,
+                  "avg_logprob": -0.21536493,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.15625
+                },
+                {
+                  "start": 6.96,
+                  "end": 10.099999,
+                  "avg_logprob": -0.21536493,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.15625
+                },
+                {
+                  "start": 10.099999,
+                  "end": 12.599999,
+                  "avg_logprob": -0.21536493,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.15625
+                }
+              ],
+              "levels": {
+                "rms": 0.063508,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "video": {
+              "version": "video-audio-1",
+              "duration_seconds": 20.0,
+              "container_start_seconds": 0.0,
+              "stream_index": 0,
+              "video_streams": 1,
+              "codec": "h264",
+              "width": 320,
+              "height": 180,
+              "rotation": 0.0,
+              "frame_rate": "10/1",
+              "audio_present": true,
+              "audio_start_seconds": 3.953016,
+              "coverage": "audio_only",
+              "timeline_method": "aresample-first-pts-0-v1"
+            },
+            "assets": []
+          }
+        }
+      ],
+      "status": "needs-review"
+    },
+    {
+      "name": "no-audio.mp4",
+      "version_id": "418f0b78-aee2-40f4-a577-c5024c676b5d",
+      "seconds": 0.609,
+      "state": "partial",
+      "error": null,
+      "checks": {
+        "original_unchanged": true,
+        "audio_only_explicit_unverified": true,
+        "playback_range_matches_original": true,
+        "no_invented_audio": true
+      },
+      "units": [
+        {
+          "id": "46673a7e-59d4-56fb-a106-1b5949a80ed5",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 5.0
+          },
+          "text": "",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "empty",
+          "warning": "This video has no audio stream. Visual extraction is pending; review the original video.",
+          "engine": "video-audio-1",
+          "metadata": {
+            "video": {
+              "version": "video-audio-1",
+              "duration_seconds": 5.0,
+              "container_start_seconds": 0.0,
+              "stream_index": 0,
+              "video_streams": 1,
+              "codec": "h264",
+              "width": 320,
+              "height": 180,
+              "rotation": 0.0,
+              "frame_rate": "10/1",
+              "audio_present": false,
+              "audio_start_seconds": null,
+              "coverage": "audio_only",
+              "timeline_method": "aresample-first-pts-0-v1"
+            },
+            "text_origin": "video_probe",
+            "review_required": true,
+            "assets": []
+          }
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "intervals.mp4",
+      "version_id": "4170c220-d29e-4aaa-95c3-bcc23e37ade6",
+      "seconds": 9.171,
+      "state": "partial",
+      "error": null,
+      "checks": {
+        "original_unchanged": true,
+        "audio_only_explicit_unverified": true,
+        "playback_range_matches_original": true,
+        "known_phrases_recovered": true,
+        "interval_boundaries": true,
+        "silent_tail": true,
+        "second_interval_absolute_time": true
+      },
+      "units": [
+        {
+          "id": "cda314d4-87c9-5694-bc66-65ee9584b1d5",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 30.0
+          },
+          "text": "A triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.",
+          "text_sha256": "b87e871b50363a8fa9ec34700f276470277b811ebadb0143ab3cfbcc308f9531",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified. Video audio only: slides and on-screen content have not been extracted.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "869c4040c1950fe3884f1e00a4df6f881c2b2850301d7291965d3bcf02fc96cf",
+              "duration_seconds": 30.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 1.72,
+                "text": "A triangle has three sides."
+              },
+              {
+                "start_seconds": 2.74,
+                "end_seconds": 4.86,
+                "text": "Water freezes at zero degrees Celsius."
+              },
+              {
+                "start_seconds": 5.98,
+                "end_seconds": 8.46,
+                "text": "This is an authored audio test for study lens."
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "video_timeline": "aresample-first-pts-0-v1",
+              "duration_seconds": 65.0,
+              "stream_index": 1,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": "English",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "869c4040c1950fe3884f1e00a4df6f881c2b2850301d7291965d3bcf02fc96cf",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.0,
+                    "end": 9.04
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 1.7199999,
+                  "avg_logprob": -0.24356063,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                },
+                {
+                  "start": 2.74,
+                  "end": 4.8599997,
+                  "avg_logprob": -0.24356063,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                },
+                {
+                  "start": 5.98,
+                  "end": 8.46,
+                  "avg_logprob": -0.24356063,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                }
+              ],
+              "levels": {
+                "rms": 0.051854,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "video": {
+              "version": "video-audio-1",
+              "duration_seconds": 65.0,
+              "container_start_seconds": 0.0,
+              "stream_index": 0,
+              "video_streams": 1,
+              "codec": "h264",
+              "width": 320,
+              "height": 180,
+              "rotation": 0.0,
+              "frame_rate": "10/1",
+              "audio_present": true,
+              "audio_start_seconds": 0.0,
+              "coverage": "audio_only",
+              "timeline_method": "aresample-first-pts-0-v1"
+            },
+            "assets": []
+          }
+        },
+        {
+          "id": "71d76a24-22a7-542f-ad98-8e75af09235c",
+          "ordinal": 2,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 30,
+            "end_seconds": 60.0
+          },
+          "text": "A triangle has three sides.\nWater freezes at 0 degrees Celsius.\nThis is an authored audio test for study lens.",
+          "text_sha256": "5d592895bb45dd1ddb5f471915c93b1ce1e0642332e63ca1a1571acfe6f6ff1e",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified. Video audio only: slides and on-screen content have not been extracted.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "7b29c0ae92b4d1b3bdb9f3727ab7c70708c25277ecb278b5d43c0e59000c3aaa",
+              "duration_seconds": 30.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 30.0,
+                "end_seconds": 34.96,
+                "text": "A triangle has three sides."
+              },
+              {
+                "start_seconds": 34.96,
+                "end_seconds": 38.1,
+                "text": "Water freezes at 0 degrees Celsius."
+              },
+              {
+                "start_seconds": 38.1,
+                "end_seconds": 40.6,
+                "text": "This is an authored audio test for study lens."
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "video_timeline": "aresample-first-pts-0-v1",
+              "duration_seconds": 65.0,
+              "stream_index": 1,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": "English",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "7b29c0ae92b4d1b3bdb9f3727ab7c70708c25277ecb278b5d43c0e59000c3aaa",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 1.712,
+                    "end": 11.024
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 4.96,
+                  "avg_logprob": -0.2389001,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.15625
+                },
+                {
+                  "start": 4.96,
+                  "end": 8.099999,
+                  "avg_logprob": -0.2389001,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.15625
+                },
+                {
+                  "start": 8.099999,
+                  "end": 10.599999,
+                  "avg_logprob": -0.2389001,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.15625
+                }
+              ],
+              "levels": {
+                "rms": 0.05189,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "video": {
+              "version": "video-audio-1",
+              "duration_seconds": 65.0,
+              "container_start_seconds": 0.0,
+              "stream_index": 0,
+              "video_streams": 1,
+              "codec": "h264",
+              "width": 320,
+              "height": 180,
+              "rotation": 0.0,
+              "frame_rate": "10/1",
+              "audio_present": true,
+              "audio_start_seconds": 0.0,
+              "coverage": "audio_only",
+              "timeline_method": "aresample-first-pts-0-v1"
+            },
+            "assets": []
+          }
+        },
+        {
+          "id": "2cff3afa-b8b7-5d23-96c2-2fa7d7018384",
+          "ordinal": 3,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 60,
+            "end_seconds": 65.0
+          },
+          "text": "",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "empty",
+          "warning": "No speech recognized in this interval. This may be silence, music or missed speech; listen to the original. Video audio only: slides and on-screen content have not been extracted.",
+          "engine": "faster-whisper-1.2.1-tiny-cpu-int8-v1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "6516da2b046a1040ba05a312c042bb45a0329baa73fd8b4907c7904bf367d363",
+              "duration_seconds": 5.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "video_timeline": "aresample-first-pts-0-v1",
+              "duration_seconds": 65.0,
+              "stream_index": 1,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": null,
+              "language_probability": null,
+              "provider": "none",
+              "model": "speech-detection",
+              "cached": false,
+              "input_sha256": null,
+              "fallback_reason": null,
+              "vad": {
+                "method": "exact-zero",
+                "speech_detected": false
+              },
+              "diagnostics": [],
+              "levels": {
+                "rms": 0.0,
+                "clipped_fraction": 0.0,
+                "near_zero": true
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "video": {
+              "version": "video-audio-1",
+              "duration_seconds": 65.0,
+              "container_start_seconds": 0.0,
+              "stream_index": 0,
+              "video_streams": 1,
+              "codec": "h264",
+              "width": 320,
+              "height": 180,
+              "rotation": 0.0,
+              "frame_rate": "10/1",
+              "audio_present": true,
+              "audio_start_seconds": 0.0,
+              "coverage": "audio_only",
+              "timeline_method": "aresample-first-pts-0-v1"
+            },
+            "assets": []
+          }
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "short-audio-long-video.mp4",
+      "version_id": "b2c71f13-3e03-4043-9911-c60984123930",
+      "seconds": 5.969,
+      "state": "partial",
+      "error": null,
+      "checks": {
+        "original_unchanged": true,
+        "audio_only_explicit_unverified": true,
+        "playback_range_matches_original": true,
+        "known_phrases_recovered": true,
+        "interval_boundaries": true,
+        "silent_tail": true
+      },
+      "units": [
+        {
+          "id": "33f2fa97-024a-5afd-9aba-9260d9eb2530",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 30.0
+          },
+          "text": "A triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.",
+          "text_sha256": "b87e871b50363a8fa9ec34700f276470277b811ebadb0143ab3cfbcc308f9531",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified. Video audio only: slides and on-screen content have not been extracted.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "869c4040c1950fe3884f1e00a4df6f881c2b2850301d7291965d3bcf02fc96cf",
+              "duration_seconds": 30.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 1.72,
+                "text": "A triangle has three sides."
+              },
+              {
+                "start_seconds": 2.74,
+                "end_seconds": 4.86,
+                "text": "Water freezes at zero degrees Celsius."
+              },
+              {
+                "start_seconds": 5.98,
+                "end_seconds": 8.46,
+                "text": "This is an authored audio test for study lens."
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "video_timeline": "aresample-first-pts-0-v1",
+              "duration_seconds": 65.0,
+              "stream_index": 1,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": "English",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": true,
+              "input_sha256": "869c4040c1950fe3884f1e00a4df6f881c2b2850301d7291965d3bcf02fc96cf",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.0,
+                    "end": 9.04
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 1.7199999,
+                  "avg_logprob": -0.24356063,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                },
+                {
+                  "start": 2.74,
+                  "end": 4.8599997,
+                  "avg_logprob": -0.24356063,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                },
+                {
+                  "start": 5.98,
+                  "end": 8.46,
+                  "avg_logprob": -0.24356063,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                }
+              ],
+              "levels": {
+                "rms": 0.051854,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "video": {
+              "version": "video-audio-1",
+              "duration_seconds": 65.0,
+              "container_start_seconds": 0.0,
+              "stream_index": 0,
+              "video_streams": 1,
+              "codec": "h264",
+              "width": 320,
+              "height": 180,
+              "rotation": 0.0,
+              "frame_rate": "10/1",
+              "audio_present": true,
+              "audio_start_seconds": 0.0,
+              "coverage": "audio_only",
+              "timeline_method": "aresample-first-pts-0-v1"
+            },
+            "assets": []
+          }
+        },
+        {
+          "id": "be0831f2-9aac-5a2d-9467-51a150240404",
+          "ordinal": 2,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 30,
+            "end_seconds": 60.0
+          },
+          "text": "",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "empty",
+          "warning": "No speech recognized in this interval. This may be silence, music or missed speech; listen to the original. Video audio only: slides and on-screen content have not been extracted.",
+          "engine": "faster-whisper-1.2.1-tiny-cpu-int8-v1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "4e6bd4783aeb9257f1779a9143788ba42feb4c0925a558336336f9bb8a2b1f49",
+              "duration_seconds": 30.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "video_timeline": "aresample-first-pts-0-v1",
+              "duration_seconds": 65.0,
+              "stream_index": 1,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": null,
+              "language_probability": null,
+              "provider": "none",
+              "model": "speech-detection",
+              "cached": false,
+              "input_sha256": null,
+              "fallback_reason": null,
+              "vad": {
+                "method": "exact-zero",
+                "speech_detected": false
+              },
+              "diagnostics": [],
+              "levels": {
+                "rms": 0.0,
+                "clipped_fraction": 0.0,
+                "near_zero": true
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "video": {
+              "version": "video-audio-1",
+              "duration_seconds": 65.0,
+              "container_start_seconds": 0.0,
+              "stream_index": 0,
+              "video_streams": 1,
+              "codec": "h264",
+              "width": 320,
+              "height": 180,
+              "rotation": 0.0,
+              "frame_rate": "10/1",
+              "audio_present": true,
+              "audio_start_seconds": 0.0,
+              "coverage": "audio_only",
+              "timeline_method": "aresample-first-pts-0-v1"
+            },
+            "assets": []
+          }
+        },
+        {
+          "id": "f92ca6b2-73ed-51d4-b582-b061364fdc26",
+          "ordinal": 3,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 60,
+            "end_seconds": 65.0
+          },
+          "text": "",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "empty",
+          "warning": "No speech recognized in this interval. This may be silence, music or missed speech; listen to the original. Video audio only: slides and on-screen content have not been extracted.",
+          "engine": "faster-whisper-1.2.1-tiny-cpu-int8-v1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "6516da2b046a1040ba05a312c042bb45a0329baa73fd8b4907c7904bf367d363",
+              "duration_seconds": 5.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "video_timeline": "aresample-first-pts-0-v1",
+              "duration_seconds": 65.0,
+              "stream_index": 1,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": null,
+              "language_probability": null,
+              "provider": "none",
+              "model": "speech-detection",
+              "cached": false,
+              "input_sha256": null,
+              "fallback_reason": null,
+              "vad": {
+                "method": "exact-zero",
+                "speech_detected": false
+              },
+              "diagnostics": [],
+              "levels": {
+                "rms": 0.0,
+                "clipped_fraction": 0.0,
+                "near_zero": true
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "video": {
+              "version": "video-audio-1",
+              "duration_seconds": 65.0,
+              "container_start_seconds": 0.0,
+              "stream_index": 0,
+              "video_streams": 1,
+              "codec": "h264",
+              "width": 320,
+              "height": 180,
+              "rotation": 0.0,
+              "frame_rate": "10/1",
+              "audio_present": true,
+              "audio_start_seconds": 0.0,
+              "coverage": "audio_only",
+              "timeline_method": "aresample-first-pts-0-v1"
+            },
+            "assets": []
+          }
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "lecture.mkv",
+      "version_id": "0ffd1c03-f1de-49b8-b262-287561328dc2",
+      "seconds": 5.484,
+      "state": "partial",
+      "error": null,
+      "checks": {
+        "original_unchanged": true,
+        "audio_only_explicit_unverified": true,
+        "playback_range_matches_original": true,
+        "known_phrases_recovered": true
+      },
+      "units": [
+        {
+          "id": "71639533-465a-578b-b6c7-be65ec22aad5",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 20.0
+          },
+          "text": "A triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.",
+          "text_sha256": "b87e871b50363a8fa9ec34700f276470277b811ebadb0143ab3cfbcc308f9531",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified. Video audio only: slides and on-screen content have not been extracted.",
+          "engine": "groq-audio-1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "42d3dd1656fb58d278d2525ff37db059d2dfdb315b2894ce8d6e25363efdb414",
+              "duration_seconds": 20.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 1.72,
+                "text": "A triangle has three sides."
+              },
+              {
+                "start_seconds": 2.74,
+                "end_seconds": 4.86,
+                "text": "Water freezes at zero degrees Celsius."
+              },
+              {
+                "start_seconds": 5.98,
+                "end_seconds": 8.46,
+                "text": "This is an authored audio test for study lens."
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "pipeline_version": 2,
+              "cloud_model": "whisper-large-v3-turbo",
+              "video_timeline": "aresample-first-pts-0-v1",
+              "duration_seconds": 20.0,
+              "stream_index": 1,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": "English",
+              "language_probability": null,
+              "provider": "groq",
+              "model": "whisper-large-v3-turbo",
+              "cached": false,
+              "input_sha256": "42d3dd1656fb58d278d2525ff37db059d2dfdb315b2894ce8d6e25363efdb414",
+              "fallback_reason": null,
+              "vad": {
+                "regions": [
+                  {
+                    "start": 0.0,
+                    "end": 9.04
+                  }
+                ],
+                "method": "silero-vad",
+                "speech_detected": true
+              },
+              "diagnostics": [
+                {
+                  "start": 0,
+                  "end": 1.7199999,
+                  "avg_logprob": -0.24131641,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                },
+                {
+                  "start": 2.74,
+                  "end": 4.8599997,
+                  "avg_logprob": -0.24131641,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                },
+                {
+                  "start": 5.98,
+                  "end": 8.46,
+                  "avg_logprob": -0.24131641,
+                  "no_speech_prob": 0,
+                  "compression_ratio": 1.1875
+                }
+              ],
+              "levels": {
+                "rms": 0.063508,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "video": {
+              "version": "video-audio-1",
+              "duration_seconds": 20.0,
+              "container_start_seconds": 0.0,
+              "stream_index": 0,
+              "video_streams": 1,
+              "codec": "h264",
+              "width": 320,
+              "height": 180,
+              "rotation": 0.0,
+              "frame_rate": "10/1",
+              "audio_present": true,
+              "audio_start_seconds": 0.0,
+              "coverage": "audio_only",
+              "timeline_method": "aresample-first-pts-0-v1"
+            },
+            "assets": []
+          }
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "corrupt.mp4",
+      "version_id": "825723ee-b999-4bbd-b794-8eaf91a33424",
+      "seconds": 0.547,
+      "state": "failed",
+      "error": "The native document helper could not process this source. Check its installation/language data or export a clearer copy.",
+      "checks": {
+        "original_unchanged": true,
+        "corrupt_declined": true
+      },
+      "units": [],
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Synthetic authored English speech and test patterns; not held-out lecture accuracy.",
+    "Audio only; no frames/visual knowledge or YouTube import yet.",
+    "Not an 8 GB whole-app benchmark; development laptop has 16 GB RAM."
+  ],
+  "status": "needs-review"
+}

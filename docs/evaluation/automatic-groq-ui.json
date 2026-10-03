@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "only_provider": "groq",
+  "groq_confirmation_required": false,
+  "provider_selector_present": false,
+  "upload_disclosure": true,
+  "cloud_requests": 0
+}

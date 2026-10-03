@@ -1,0 +1,235 @@
+STUDYLENS: STUDENT DESKTOP APP, PRODUCT DESIGN BRIEF
+
+TASK
+Redesign StudyLens as a student-only Electron desktop application. This is a product design task. Produce separate, cohesive, editable desktop mockups. Do not write application code.
+
+PRIMARY GOAL
+Reduce visual cognitive load. A student should immediately understand:
+1. Where they are.
+2. What they are studying.
+3. What to do next.
+
+Principles: progressive disclosure, restrained visual hierarchy, one main task per screen.
+Avoid: dashboard clutter, excessive badges, large statistics panels, gamified streaks, decorative illustrations.
+
+=====================================================
+GLOBAL RULES (apply to every screen)
+=====================================================
+
+WINDOW
+- Design for 1366 x 768 laptop screens. The layout must also be comfortable at smaller window sizes.
+- Use internal scrolling within the desktop window.
+- When space is limited, collapse the sidebar and show source evidence as a closable overlay rather than squeezing the answer column.
+- Avoid horizontal scrolling for ordinary study content.
+
+SHELL AND NAVIGATION
+- Compact Windows titlebar with Chrome-style study tabs.
+  - Each tab preserves its subject, topic, activity, and conversation.
+  - The "+" button opens a quiet Workspace start screen.
+  - Opening a tab must not automatically create a subject or start a conversation.
+  - Show clear active-tab and close-tab states.
+- Information hierarchy: Workspace > Subjects > Topics > Learn / Ask / Practice.
+  Example: Semester 3 > Probability > Conditional probability > Ask
+- Collapsible contextual sidebar containing, in order:
+  1. Workspace switcher
+  2. Workspace and Today
+  3. Subjects
+  4. Topics within the active subject
+  5. Subject materials
+  6. Settings (at the bottom)
+- Learn / Ask / Practice live inside the topic view, not in the sidebar.
+- Course map, Revision, and Schedule are reached through relevant subject/topic views. Do not place every feature permanently in the sidebar.
+
+DESIGN CHARACTER: A PERSONAL STUDY DESK
+- The interface should feel like a thoughtfully organized study notebook: warm, editorial, focused, and inviting.
+- Let the student's actual material provide visual interest: document excerpts, highlighted passages, equations, lecture frames, bookmarks, and small prerequisite diagrams.
+- Use different compositions for different tasks:
+  - Workspace: an editorial overview.
+  - Materials: an organized library.
+  - Tutor: a readable explanation with contextual evidence.
+  - Assessment: a focused question sheet.
+  - Review: annotated answers.
+  - Schedule: a practical agenda.
+- Avoid repeating the same rounded-card layout across every screen.
+- Do not use sparkles, AI orbs, robot avatars, decorative charts, or generic motivational slogans.
+- Engagement comes from meaningful interaction: selecting evidence, revealing a flashcard, bookmarking an explanation, and understanding why a topic is recommended.
+- Use restrained hover, selection, and transition states. Motion must serve orientation or feedback and respect reduced-motion preferences.
+
+VISUAL SYSTEM
+- Canvas: warm off-white #FBFBFA
+- Sidebar and tab strip: #F7F6F3
+- Cards and reading surfaces: white
+- Borders: #E8E6E1
+- Primary action: muted blue #2E5B88
+- Main text: #1E232A
+- Secondary text: #6E7480 (maintain accessible contrast)
+- Source citations: teal #0D9488
+- Status: restrained amber/green, always accompanied by text
+- Typography: Inter for controls and body text. Use Source Serif 4 selectively for topic titles and reading headings. Maintain readable mathematics and appropriate Hindi font support. Monospace only for timestamps, source locators, and code.
+- Readable body text, generous line spacing, consistent spacing, modest corner radii, subtle borders.
+- Avoid: gradients, glass effects, excessive shadows, oversized headings.
+
+CONSISTENCY AND STATES
+- Use the same titlebar, tabs, sidebar, typography, and spacing on every screen.
+- Design loading, empty, partial, error, and offline states wherever relevant.
+- Long-running work shows nonblocking progress.
+- Keep answer text readable when the source panel opens.
+- Use text and icons alongside color.
+- Avoid unnecessary panels and repeated composers.
+
+SAMPLE CONTENT
+- Use consistent Probability-course sample content throughout.
+- Use clearly fictional demo content for quiz scores, file progress, and student history. Never present invented benchmark results, accuracy metrics, or effectiveness claims as measured facts.
+- Wherever the screening example (Bayes' theorem) appears, use the same figures everywhere: 1% prevalence, 99% sensitivity, 5% false-positive rate. Per 10,000 people: 99 true positives, 495 false positives, 594 positive tests, P(disease | positive) = 16.7%, 83.3% of positive results are false positives.
+
+OUT OF SCOPE
+- Live audio tutoring and microphone-based conversation are ON HOLD. Do not include live voice-call controls.
+- Teacher or admin views: none. Student-only.
+
+=====================================================
+SCREENS AND STATES
+=====================================================
+
+1. WORKSPACE / NEW TAB
+Quiet landing view containing:
+- One recommended next action, with an expandable "Why recommended?"
+- Recent subjects
+- A small Today agenda
+- Create subject and Add materials as secondary actions
+Do not place a tutor composer on this screen.
+
+2. SUBJECT / TOPICS
+- Topics as clean, scannable rows.
+- Evidence-based statuses: Not assessed / Needs practice / Doing well.
+- "Review due" is a separate memory reminder, not a mastery category.
+- Avoid precise mastery percentages when evidence is insufficient.
+- Opening a topic reveals Learn / Ask / Practice and its relevant sources.
+
+3. NEW STUDENT STARTING POINT
+- Brief intake, one step at a time: study goal, familiar topics, optional exam date.
+- Offer a diagnostic quiz once course materials are ready.
+- The student may begin studying before completing the diagnostic.
+- Label the initial learner baseline as provisional.
+
+4. MATERIALS / MULTIMODAL UPLOAD
+- Supported types: textbooks/PDFs, slides, video, audio, images.
+- Per-file states (compact): Queued > Processing > Ready. Also Partial, Failed, Cancelled.
+- Show meaningful processing stages, plus Retry, Cancel, and Review actions.
+- Partial extraction must clearly identify which sections are unavailable.
+- Ready materials stay usable while other files process.
+- Preserve filename, version, and original source location.
+- Compact upload area plus a readable file list.
+- Never block the interface with a full-screen processing modal.
+
+5. GROUNDED TUTOR
+- Show a short, source-backed answer first.
+- "Explain step by step" and "Go deeper" are secondary actions.
+- Exact citation chips, for example:
+  - Textbook . p. 42
+  - Slides . slide 8
+  - Lecture 3 . 12:40
+- The source viewer opens on the RIGHT only when a citation is selected. It has a close action and highlights the cited passage or relevant frame.
+- One bottom conversation composer.
+- Clearly distinguish these five evidence states:
+  - Supported by uploaded materials
+  - Partially supported
+  - Evidence not found
+  - Material still processing
+  - Outside knowledge
+- Explanation language options: English / Hindi / Hinglish. Original source evidence stays unchanged.
+
+6. WEB SEARCH PERMISSION AND RESULTS
+Web search uses SearXNG.
+- After insufficient evidence, offer explicit permission for this question only:
+  - Show the proposed search query.
+  - Buttons: "Search the web" and "Keep using my materials".
+- Do not preselect consent. Do not search automatically.
+- Permission applies only to the current question or assessment.
+- Design separate BEFORE-search and AFTER-search states.
+- After search: label external information clearly and cite its source.
+- Offer "Add this source to [subject]" as a deliberate action. Never silently add web material to the knowledge base.
+- Generated explanations and saved notes must not appear as original course sources.
+
+7. ASSESSMENT SETUP
+Selectable options:
+- Quick Quiz or Mock Exam
+- Subject and topics
+- Course materials
+- Question types: MCQ, short answer, numerical
+- Difficulty
+- Question count
+- Optional time limit
+- Optional Web Challenge, with explicit permission for this assessment only.
+Course-material questions and external challenge questions must be distinguishable.
+Include preparation/validation progress and an actionable failure state.
+
+8. ASSESSMENT QUESTION
+- One question at a time, with restrained progress.
+- Show representative MCQ, short-answer, and numerical layouts.
+- Numerical questions support units and optional working.
+- Every answer requires an initially unselected confidence choice: Guessing / Unsure / Confident. Confidence does not change exam marks.
+- Quick Quiz: feedback can appear after checking an answer.
+- Mock Exam: feedback only after final submission.
+- Do not reveal answer keys or source passages before answering.
+- Provide Skip or Mark for review where appropriate.
+- Show a clear "Pending review" state when grading is uncertain.
+
+9. ASSESSMENT REPORT
+Priorities, in order:
+1. Weak topics
+2. Possible misconceptions, worded as hypotheses
+3. Recommended next action
+- Show score and evidence counts quietly.
+- Keep Web Challenge performance separate from course mastery.
+- Avoid large charts that add little value.
+
+10. QUESTION REVIEW / ASK DOUBT
+- Each question begins as a compact summary row.
+- Expanding it reveals the student answer, verified answer, worked explanation, and original-source citations.
+- "Ask doubt" and "Report problem" remain available for every question.
+- "Ask doubt" opens a conversation attached to that specific question: show the question context clearly and use one doubt composer.
+- Only one question's doubt conversation is open at a time.
+- Support rechecking of disputed questions and corrected-grading states.
+
+11. COURSE FLOW MAP
+- Default: a small local map showing the current topic, its immediate prerequisites, and the suggested next topic.
+- "Show full map" is secondary.
+- Inferred connections are marked "Suggested".
+- Nodes open topic details and study actions.
+- Prerequisites guide students but never prevent them from studying later topics.
+
+12. TARGETED REVISION
+- Generate revision material for chosen or weak topics: flashcards, revision slides, audio briefs.
+- One active format at a time.
+- Show citations and a "Generated study aid" label.
+- Flashcards use deliberate Reveal and recall-rating actions.
+- Reading revision material alone must not imply improved mastery.
+- No live voice controls (see Out of Scope).
+
+13. STUDY SCHEDULE / TODAY
+- Show Today first, with an optional full-calendar view.
+- Build a realistic plan from: exam date and scope, available study time, weak topics, prerequisites, review timing, mixed practice.
+- Actions: Edit availability, Defer, Reschedule.
+- "Why scheduled?" explanation available on demand.
+- Missing a planned session must not automatically reduce mastery.
+- Reminder notifications require explicit opt-in.
+
+14. SETTINGS / OPTIONAL INSPECT
+- Keep technical details off ordinary student screens.
+- Model/provider settings, processing diagnostics, and evaluation tools live inside Settings.
+- Do not expose FAISS, token budgets, learner algorithms, or RAM charts on the dashboard. Do not invent benchmark results.
+- The learner model includes: knowledge tracing, ability/difficulty estimation, practice history, prerequisites, misconception evidence, confidence calibration, spaced repetition, active recall, and interleaving. Translate these into simple student recommendations, with explanations available on demand.
+
+=====================================================
+DELIVERABLES
+=====================================================
+- First establish the design language using three separate screens:
+  1. Workspace / New Tab.
+  2. Grounded Tutor.
+  3. Assessment Question (MCQ).
+- Present these three screens for design-direction approval before generating the remaining screens.
+- Once that direction is approved, extend the same system to the remaining screens.
+- Add supporting states to the relevant screens in later batches: loading, empty, partial, error, offline, before/after web search, pending review, corrected grading, and the short-answer/numerical assessment layouts.
+- Keep screen numbers and mockup labels outside the app interface.
+- Clearly identify the main happy-path mockups and supporting states.
+- Show the actual desktop UI directly, without decorative device mockups.

@@ -1,0 +1,4 @@
+StudyLens Phase 2 storage fixture
+This is authored test content, not course material or an AI answer.
+Version 2: Conditional probability uses a restricted sample space.
+Hindi fixture: सशर्त संभाव्यता

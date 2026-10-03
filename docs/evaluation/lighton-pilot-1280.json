@@ -1,0 +1,256 @@
+{
+  "status": "completed",
+  "samples": [
+    {
+      "id": "image-fixture-blank",
+      "kind": "image",
+      "group": "fixture",
+      "path": "tmp\\lighton-ocr\\pilot-images-1280\\image-fixture-blank.png",
+      "prompt": "",
+      "max_tokens": 512,
+      "input_sha256": "303a3f5bd4fe81cf1c3bb82c7ef768e8cf17171fe33b59c3599be39fdb3496bc",
+      "dimensions": [
+        600,
+        500
+      ],
+      "preprocessing_max_edge": 1280,
+      "prediction": "",
+      "error": "timed out",
+      "finish_reason": "deadline",
+      "seconds": 120.016
+    },
+    {
+      "id": "image-fixture-scan",
+      "kind": "image",
+      "group": "fixture",
+      "path": "tmp\\lighton-ocr\\pilot-images-1280\\image-fixture-scan.png",
+      "prompt": "",
+      "max_tokens": 512,
+      "input_sha256": "a9cb4fe0b209b1b6fa5617101ba1a06a3cd3726a02186219630499c3417a6832",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "preprocessing_max_edge": 1280,
+      "prediction": "",
+      "error": "timed out",
+      "finish_reason": "deadline",
+      "seconds": 120.032
+    },
+    {
+      "id": "image-fixture-equation",
+      "kind": "image",
+      "group": "fixture",
+      "path": "tmp\\lighton-ocr\\pilot-images-1280\\image-fixture-equation.png",
+      "prompt": "",
+      "max_tokens": 512,
+      "input_sha256": "ec4d9ad96f6f317491023e9b619c4f983dcdf6e5fa31403ca4945fa163e1ad66",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "preprocessing_max_edge": 1280,
+      "prediction": "",
+      "error": "timed out",
+      "finish_reason": "deadline",
+      "seconds": 120.015
+    },
+    {
+      "id": "image-fixture-figure",
+      "kind": "image",
+      "group": "fixture",
+      "path": "tmp\\lighton-ocr\\pilot-images-1280\\image-fixture-figure.png",
+      "prompt": "",
+      "max_tokens": 512,
+      "input_sha256": "5822c0c5348073951d2fe44129996b2d74718a8b186e3179017192ad973ed8fd",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "preprocessing_max_edge": 1280,
+      "prediction": "",
+      "error": "timed out",
+      "finish_reason": "deadline",
+      "seconds": 120.016
+    },
+    {
+      "id": "image-table-slide-12",
+      "kind": "image",
+      "group": "fixture",
+      "path": "tmp\\lighton-ocr\\pilot-images-1280\\image-table-slide-12.png",
+      "prompt": "",
+      "max_tokens": 512,
+      "input_sha256": "6993cf72d4ab41925c9f12a955fc517db93df2cb9660cbb4ed86a5a509cc0db6",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "preprocessing_max_edge": 1280,
+      "prediction": "",
+      "error": "timed out",
+      "finish_reason": "deadline",
+      "seconds": 120.015
+    },
+    {
+      "id": "doc-000",
+      "kind": "image",
+      "group": "book",
+      "path": "tmp\\lighton-ocr\\pilot-images-1280\\doc-000.png",
+      "source_image": "page-80a540c8-88d4-4643-b40e-282489353fb8.png",
+      "source_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+      "dimensions": [
+        989,
+        1280
+      ],
+      "prompt": "",
+      "max_tokens": 1024,
+      "ground_truth_index": 0,
+      "source": "opendatalab/OmniDocBench",
+      "input_sha256": "3c543dde5a11627ddd348ddb1527039d383a34ff1798fa84a52dbb2b5bda5c12",
+      "preprocessing_max_edge": 1280,
+      "prediction": "",
+      "error": "timed out",
+      "finish_reason": "deadline",
+      "seconds": 120.015
+    },
+    {
+      "id": "doc-020",
+      "kind": "image",
+      "group": "PPT2PDF",
+      "path": "tmp\\lighton-ocr\\pilot-images-1280\\doc-020.png",
+      "source_image": "PPT_ch7_page_035.png",
+      "source_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "prompt": "",
+      "max_tokens": 1024,
+      "ground_truth_index": 20,
+      "source": "opendatalab/OmniDocBench",
+      "input_sha256": "d3be1a235f562b83facd5d35dd2a34b638b061492ba8972bdcf275b67262aca7",
+      "preprocessing_max_edge": 1280,
+      "prediction": "",
+      "error": "timed out",
+      "finish_reason": "deadline",
+      "seconds": 120.156
+    },
+    {
+      "id": "doc-040",
+      "kind": "image",
+      "group": "note",
+      "path": "tmp\\lighton-ocr\\pilot-images-1280\\doc-040.png",
+      "source_image": "notes_f7f010b78016aeebd76e56d9283eb67f_5.jpg",
+      "source_revision": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec",
+      "dimensions": [
+        906,
+        1280
+      ],
+      "prompt": "",
+      "max_tokens": 1024,
+      "ground_truth_index": 40,
+      "source": "opendatalab/OmniDocBench",
+      "input_sha256": "ec1bce2b460c26338686790a5a0358c989712edc49795b608fa45f3ac59b9491",
+      "preprocessing_max_edge": 1280,
+      "prediction": "",
+      "error": "timed out",
+      "finish_reason": "deadline",
+      "seconds": 120.016
+    }
+  ],
+  "mode": "CPU only",
+  "threads": 4,
+  "context": 4096,
+  "request_timeout_seconds": 120,
+  "memory_cap_gib": 5.5,
+  "peak_private_bytes": 4764413952,
+  "peak_resident_bytes": 3755487232,
+  "cloud_inference_requests": 0,
+  "method": "Exact community package; image-only /api/chat, empty text; private Ollama server/store; unchanged app recognizers.",
+  "model": {
+    "model": "maternion/LightOnOCR-2:1b",
+    "manifest_digest": "sha256:ee7d83c4eb673860b0cacc68401145b37ac2b13004e8d5e0c46f7b8e8dff79c1",
+    "runtime": {
+      "version": "0.32.9"
+    },
+    "assets": [
+      {
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "bytes": 555,
+        "sha256": "sha256:61aadc3ce608c958fbcaa8a4b8d65a4cf12d1d56a5bdb7cc7e339080c2cbffed",
+        "path": "tmp\\lighton-ocr\\models\\blobs\\sha256-61aadc3ce608c958fbcaa8a4b8d65a4cf12d1d56a5bdb7cc7e339080c2cbffed"
+      },
+      {
+        "media_type": "application/vnd.ollama.image.model",
+        "bytes": 639443680,
+        "sha256": "sha256:062cc44af0b922f016b1f73672389087494a893a4cc6f716b672f5c45ffbf000",
+        "path": "tmp\\lighton-ocr\\models\\blobs\\sha256-062cc44af0b922f016b1f73672389087494a893a4cc6f716b672f5c45ffbf000"
+      },
+      {
+        "media_type": "application/vnd.ollama.image.projector",
+        "bytes": 828905856,
+        "sha256": "sha256:b30a935ce0d3d971e5323bf27d8b660f7b8c940f27a1f1c74c158c9b90b79875",
+        "path": "tmp\\lighton-ocr\\models\\blobs\\sha256-b30a935ce0d3d971e5323bf27d8b660f7b8c940f27a1f1c74c158c9b90b79875"
+      },
+      {
+        "media_type": "application/vnd.ollama.image.template",
+        "bytes": 13,
+        "sha256": "sha256:b507b9c2f6ca642bffcd06665ea7c91f235fd32daeefdf875a0f938db05fb315",
+        "path": "tmp\\lighton-ocr\\models\\blobs\\sha256-b507b9c2f6ca642bffcd06665ea7c91f235fd32daeefdf875a0f938db05fb315"
+      },
+      {
+        "media_type": "application/vnd.ollama.image.params",
+        "bytes": 32,
+        "sha256": "sha256:54a429282c75fff84e41128dfff4447ea668674f67c60ce39782c7db91a13d90",
+        "path": "tmp\\lighton-ocr\\models\\blobs\\sha256-54a429282c75fff84e41128dfff4447ea668674f67c60ce39782c7db91a13d90"
+      }
+    ],
+    "details": {
+      "parent_model": "/usr/share/ollama/.ollama/models/blobs/sha256-062cc44af0b922f016b1f73672389087494a893a4cc6f716b672f5c45ffbf000",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3",
+        "clip"
+      ],
+      "parameter_size": "596.05M",
+      "quantization_level": "Q8_0"
+    },
+    "template": "{{ .Prompt }}",
+    "parameters": "temperature                    0.2\ntop_p                          0.9",
+    "capabilities": [
+      "completion",
+      "vision",
+      "tools"
+    ]
+  },
+  "load_seconds": 2.64,
+  "loaded_model": {
+    "models": [
+      {
+        "name": "maternion/LightOnOCR-2:1b",
+        "model": "maternion/LightOnOCR-2:1b",
+        "size": 1200661461,
+        "digest": "ee7d83c4eb673860b0cacc68401145b37ac2b13004e8d5e0c46f7b8e8dff79c1",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3",
+            "clip"
+          ],
+          "parameter_size": "596.05M",
+          "quantization_level": "Q8_0"
+        },
+        "expires_at": "2026-10-02T23:18:02.105794+05:30",
+        "size_vram": 0,
+        "context_length": 4096
+      }
+    ]
+  },
+  "server_exit_code": 0,
+  "prompt_cache_ram_mib": 8192,
+  "repeat_penalty": 1.1,
+  "num_gpu": 0
+}

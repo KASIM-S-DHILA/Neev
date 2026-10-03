@@ -1,0 +1,4 @@
+StudyLens Phase 2 storage fixture
+This is authored test content, not course material or an AI answer.
+Version 1: Probability is a number between zero and one.
+Hindi fixture: संभाव्यता

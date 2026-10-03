@@ -1,0 +1,23 @@
+{
+  "provenance": "Microsoft Windows SAPI English synthetic voice, self-authored StudyLens evaluation text; noisy/silent/tone/65s variants constructed locally with seed 6",
+  "text": "A triangle has three sides. Water freezes at zero degrees Celsius. This is an authored audio test for Study Lens.",
+  "needles": [
+    "triangle has three sides",
+    "water freezes at zero degrees celsius"
+  ],
+  "intervals": [
+    [
+      0,
+      30
+    ],
+    [
+      30,
+      60
+    ],
+    [
+      60,
+      65
+    ]
+  ],
+  "mixed_language": "Human Hindi/Hinglish quality review remains required; no synthetic English result establishes it."
+}

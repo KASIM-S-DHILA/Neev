@@ -1,0 +1,256 @@
+{
+  "date_utc": "20261003-074347",
+  "data_directory": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\video-frames-integration-20261003-074347",
+  "method": "Real API/worker, FFmpeg PTS, PySceneDetect 0.7.1 and low-resolution pixel changes; no ASR, OCR or cloud",
+  "gold": {
+    "provenance": "Locally drawn, authored teaching slides and worked equation; FFmpeg H264. No audio or model-generated content.",
+    "slides_change_seconds": [
+      4,
+      8
+    ],
+    "whiteboard_change_seconds": [
+      3,
+      6,
+      9,
+      12
+    ],
+    "return_change_seconds": [
+      4,
+      8
+    ],
+    "vfr_change_seconds": [
+      2.4,
+      5.6
+    ],
+    "sample_delay_tolerance_seconds": 1.2,
+    "static_references_seconds": [
+      0,
+      60
+    ],
+    "limitations": "Known synthetic scenes; not held-out frame-selection quality. Brief changes between samples can be missed."
+  },
+  "samples": [
+    {
+      "name": "slides.mp4",
+      "version_id": "1446bf28-d521-49e1-84bc-b00a34606541",
+      "seconds": 1.079,
+      "checks": {
+        "selection_finished": false,
+        "original_unchanged": true,
+        "previews_available_and_unverified": false,
+        "private_paths_absent": true,
+        "gold_changes_preserved": false
+      },
+      "job": {
+        "id": "e7210838-bfaf-49c7-9d93-3c70f428b63e",
+        "workspace_id": "semester-3",
+        "subject_id": "probability",
+        "source_version_id": "1446bf28-d521-49e1-84bc-b00a34606541",
+        "kind": "video_frames",
+        "label": "slides.mp4 · Frames",
+        "state": "failed",
+        "stage": "Needs attention",
+        "done": 0,
+        "total": 0,
+        "error": "The native document helper could not process this source. Check its installation/language data or export a clearer copy.",
+        "cancel_requested": false,
+        "attempts": 1,
+        "failures": 1,
+        "max_attempts": 3,
+        "recoveries": 0,
+        "created_at": 1791013427.3425407,
+        "updated_at": 1791013428.4444556,
+        "checkpoint": {},
+        "result": null
+      },
+      "frames": [],
+      "status": "needs-review"
+    },
+    {
+      "name": "whiteboard.mp4",
+      "version_id": "45839f25-7d5a-4b3b-a5e7-b729d1fad02b",
+      "seconds": 0.922,
+      "checks": {
+        "selection_finished": false,
+        "original_unchanged": true,
+        "previews_available_and_unverified": false,
+        "private_paths_absent": true,
+        "gold_changes_preserved": false
+      },
+      "job": {
+        "id": "7a458cf2-dcee-4986-a8e8-4807f563e4ed",
+        "workspace_id": "semester-3",
+        "subject_id": "probability",
+        "source_version_id": "45839f25-7d5a-4b3b-a5e7-b729d1fad02b",
+        "kind": "video_frames",
+        "label": "whiteboard.mp4 · Frames",
+        "state": "failed",
+        "stage": "Needs attention",
+        "done": 0,
+        "total": 0,
+        "error": "The native document helper could not process this source. Check its installation/language data or export a clearer copy.",
+        "cancel_requested": false,
+        "attempts": 1,
+        "failures": 1,
+        "max_attempts": 3,
+        "recoveries": 0,
+        "created_at": 1791013428.481432,
+        "updated_at": 1791013429.4430995,
+        "checkpoint": {},
+        "result": null
+      },
+      "frames": [],
+      "status": "needs-review"
+    },
+    {
+      "name": "return-slides.mp4",
+      "version_id": "08738a2a-9ce6-4154-b76f-50cc91044448",
+      "seconds": 0.922,
+      "checks": {
+        "selection_finished": false,
+        "original_unchanged": true,
+        "previews_available_and_unverified": false,
+        "private_paths_absent": true,
+        "gold_changes_preserved": false
+      },
+      "job": {
+        "id": "f6bbc787-bc97-4b00-8f8a-1e85967c5bd7",
+        "workspace_id": "semester-3",
+        "subject_id": "probability",
+        "source_version_id": "08738a2a-9ce6-4154-b76f-50cc91044448",
+        "kind": "video_frames",
+        "label": "return-slides.mp4 · Frames",
+        "state": "failed",
+        "stage": "Needs attention",
+        "done": 0,
+        "total": 0,
+        "error": "The native document helper could not process this source. Check its installation/language data or export a clearer copy.",
+        "cancel_requested": false,
+        "attempts": 1,
+        "failures": 1,
+        "max_attempts": 3,
+        "recoveries": 0,
+        "created_at": 1791013429.4724524,
+        "updated_at": 1791013430.4296172,
+        "checkpoint": {},
+        "result": null
+      },
+      "frames": [],
+      "status": "needs-review"
+    },
+    {
+      "name": "static.mp4",
+      "version_id": "2b5e8097-198c-4f4a-aef3-5096b6d54c88",
+      "seconds": 0.859,
+      "checks": {
+        "selection_finished": false,
+        "original_unchanged": true,
+        "previews_available_and_unverified": false,
+        "private_paths_absent": true,
+        "gold_changes_preserved": false
+      },
+      "job": {
+        "id": "bcd21eb9-27b8-4c01-9d55-825392966b58",
+        "workspace_id": "semester-3",
+        "subject_id": "probability",
+        "source_version_id": "2b5e8097-198c-4f4a-aef3-5096b6d54c88",
+        "kind": "video_frames",
+        "label": "static.mp4 · Frames",
+        "state": "failed",
+        "stage": "Needs attention",
+        "done": 0,
+        "total": 0,
+        "error": "The native document helper could not process this source. Check its installation/language data or export a clearer copy.",
+        "cancel_requested": false,
+        "attempts": 1,
+        "failures": 1,
+        "max_attempts": 3,
+        "recoveries": 0,
+        "created_at": 1791013430.4581196,
+        "updated_at": 1791013431.3472447,
+        "checkpoint": {},
+        "result": null
+      },
+      "frames": [],
+      "status": "needs-review"
+    },
+    {
+      "name": "vfr.mp4",
+      "version_id": "0537e76b-a480-4e4a-a9d0-c111ea687d90",
+      "seconds": 0.89,
+      "checks": {
+        "selection_finished": false,
+        "original_unchanged": true,
+        "previews_available_and_unverified": false,
+        "private_paths_absent": true,
+        "gold_changes_preserved": false
+      },
+      "job": {
+        "id": "270c306a-15d0-4904-9876-627130ba34c1",
+        "workspace_id": "semester-3",
+        "subject_id": "probability",
+        "source_version_id": "0537e76b-a480-4e4a-a9d0-c111ea687d90",
+        "kind": "video_frames",
+        "label": "vfr.mp4 · Frames",
+        "state": "failed",
+        "stage": "Needs attention",
+        "done": 0,
+        "total": 0,
+        "error": "The native document helper could not process this source. Check its installation/language data or export a clearer copy.",
+        "cancel_requested": false,
+        "attempts": 1,
+        "failures": 1,
+        "max_attempts": 3,
+        "recoveries": 0,
+        "created_at": 1791013431.3751457,
+        "updated_at": 1791013432.2984233,
+        "checkpoint": {},
+        "result": null
+      },
+      "frames": [],
+      "status": "needs-review"
+    },
+    {
+      "name": "rotated.mp4",
+      "version_id": "279d6d10-89eb-42fa-8305-fb4ba815b1bd",
+      "seconds": 0.953,
+      "checks": {
+        "selection_finished": false,
+        "original_unchanged": true,
+        "previews_available_and_unverified": false,
+        "private_paths_absent": true,
+        "rotation_applied": false
+      },
+      "job": {
+        "id": "12735ac7-be16-489f-8e75-bd964114cfc0",
+        "workspace_id": "semester-3",
+        "subject_id": "probability",
+        "source_version_id": "279d6d10-89eb-42fa-8305-fb4ba815b1bd",
+        "kind": "video_frames",
+        "label": "rotated.mp4 · Frames",
+        "state": "failed",
+        "stage": "Needs attention",
+        "done": 0,
+        "total": 0,
+        "error": "The native document helper could not process this source. Check its installation/language data or export a clearer copy.",
+        "cancel_requested": false,
+        "attempts": 1,
+        "failures": 1,
+        "max_attempts": 3,
+        "recoveries": 0,
+        "created_at": 1791013432.3327386,
+        "updated_at": 1791013433.3146396,
+        "checkpoint": {},
+        "result": null
+      },
+      "frames": [],
+      "status": "needs-review"
+    }
+  ],
+  "limitations": [
+    "Small authored teaching scenes, not held-out natural video quality.",
+    "One-second sampling can miss brief changes; previews are not extracted knowledge.",
+    "Helper private bytes after processing are not peak or whole-app 8 GB measurements."
+  ],
+  "status": "needs-review"
+}

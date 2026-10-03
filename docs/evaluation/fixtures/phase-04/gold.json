@@ -1,0 +1,34 @@
+{
+  "provenance": "Authored evaluation material; manually review rendered pages.",
+  "questions": [
+    {
+      "question": "What denominator appears in conditional probability?",
+      "source": "digital-notes.pdf",
+      "page": 1,
+      "needle": "P(A | B) = P(A and B) / P(B), provided P(B) > 0."
+    },
+    {
+      "question": "What is updated after observing evidence?",
+      "source": "digital-notes.pdf",
+      "page": 2,
+      "needle": "A prior probability is updated after observing evidence."
+    },
+    {
+      "question": "How is independence defined?",
+      "source": "digital-notes.pdf",
+      "page": 3,
+      "needle": "Events A and B are independent when P(A and B) = P(A) P(B)."
+    },
+    {
+      "question": "What does the scanned page say?",
+      "source": "mixed-notes.pdf",
+      "page": 2,
+      "expected": "needs_ocr; no invented answer"
+    },
+    {
+      "question": "Explain photosynthesis.",
+      "source": null,
+      "expected": "off-material; retrieval/refusal evaluation in later phases"
+    }
+  ]
+}

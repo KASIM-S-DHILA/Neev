@@ -1,0 +1,24 @@
+{
+  "sample": "numbers_gs150.jpg",
+  "original_failure": {
+    "status": 400,
+    "code": "json_validate_failed",
+    "type": "invalid_request_error",
+    "failed_generation_chars": 64,
+    "retry_after": null,
+    "description": "Provider failed to generate valid JSON"
+  },
+  "asset_sha256": "67dcb423ade5452fa43362f8e54d5003916568627152f332887d8b42eaec5738",
+  "method": "Production request_image fallback on the same student-approved preview; no app database mutations",
+  "output_mode": "text_with_local_validation",
+  "verified": false,
+  "status": "complete",
+  "tables": 1,
+  "table_rows": [
+    29
+  ],
+  "text_lines": 96,
+  "uncertainties": 3,
+  "is_blank": false,
+  "seconds": 4.828
+}

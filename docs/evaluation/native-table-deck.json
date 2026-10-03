@@ -1,0 +1,100 @@
+{
+  "file": "Presentation 2.pptx",
+  "source_sha256": "19a901a56f6244623db3c70a1e9d5910ac553a0d05bc7542af9385df465721bf",
+  "slides": [
+    {
+      "slide": 10,
+      "tables": [
+        {
+          "headers": [],
+          "rows": [
+            [
+              "Metric",
+              "Measurement",
+              "Target",
+              "Actual"
+            ],
+            [
+              "Audience attendance",
+              "# of attendees",
+              "150",
+              "120"
+            ],
+            [
+              "Engagement duration",
+              "Minutes",
+              "60",
+              "75"
+            ],
+            [
+              "Q&A interaction",
+              "# of questions",
+              "10",
+              "15"
+            ],
+            [
+              "Positive feedback",
+              "Percentage (%)",
+              "90",
+              "95"
+            ],
+            [
+              "Rate of information retention",
+              "Percentage (%)",
+              "80",
+              "85"
+            ]
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "slide": 12,
+      "tables": [
+        {
+          "headers": [],
+          "rows": [
+            [
+              "Impact factor",
+              "Measurement",
+              "Target",
+              "Achieved"
+            ],
+            [
+              "Audience interaction",
+              "Percentage (%)",
+              "85",
+              "88"
+            ],
+            [
+              "Knowledge retention",
+              "Percentage (%)",
+              "75",
+              "80"
+            ],
+            [
+              "Post-presentation surveys",
+              "Average rating",
+              "4.2",
+              "4.5"
+            ],
+            [
+              "Referral rate",
+              "Percentage (%)",
+              "10",
+              "12"
+            ],
+            [
+              "Collaboration opportunities",
+              "# of opportunities",
+              "8",
+              "10"
+            ]
+          ],
+          "notes": []
+        }
+      ]
+    }
+  ]
+}

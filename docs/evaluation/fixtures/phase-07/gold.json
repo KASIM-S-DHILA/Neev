@@ -1,0 +1,21 @@
+{
+  "provenance": "FFmpeg testsrc2 animation plus self-authored Windows SAPI speech from phase-06; H264/AAC, 320x180/10fps",
+  "audio_offset_seconds": 4,
+  "offset_tolerance_seconds": 0.15,
+  "duration_seconds": 20,
+  "intervals": [
+    [
+      0,
+      30
+    ],
+    [
+      30,
+      60
+    ],
+    [
+      60,
+      65
+    ]
+  ],
+  "limits": "Known synthetic fixtures, not lecture quality or 8 GB hardware evidence"
+}

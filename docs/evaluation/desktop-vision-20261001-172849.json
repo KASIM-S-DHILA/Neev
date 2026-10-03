@@ -1,0 +1,195 @@
+{
+  "date_utc": "20261001-172849",
+  "sample": "table-slide-12",
+  "method": "Real app API, real Tesseract and production cloud worker; isolated data directory, one image authorized for transfer.",
+  "model": "qwen/qwen3.8-27b",
+  "checks": {
+    "exact_single_table": true,
+    "local_text_unchanged": true,
+    "source_locator_unchanged": true,
+    "original_unchanged": true,
+    "unverified": true,
+    "cache_reused_without_new_send": true
+  },
+  "limitation": "One known table image, not held-out routing or an 8 GB benchmark.",
+  "local_text": "Speaking engagement metrics\nAudience interaction Percentage (%)\nKnowledge retention Percentage (%) 75 80\nPost-presentation surveys Average rating 4.2 45\nReferral rate Percentage (%) 10 12\nCollaboration opportunities # of opportunities 8 10",
+  "selective_job": {
+    "id": "38e86537-7ea1-4c19-b0ba-3373886b9a23",
+    "workspace_id": "semester-3",
+    "subject_id": "probability",
+    "source_version_id": "1a0923ea-c179-4922-8322-76afab77410b",
+    "kind": "cloud_visuals",
+    "label": "table-slide-12.png · Cloud visuals",
+    "state": "succeeded",
+    "stage": "Complete",
+    "done": 1,
+    "total": 1,
+    "error": null,
+    "cancel_requested": false,
+    "attempts": 1,
+    "failures": 0,
+    "max_attempts": 3,
+    "recoveries": 0,
+    "created_at": 1790875730.2651713,
+    "updated_at": 1790875731.4328835,
+    "checkpoint": {},
+    "result": {
+      "sent": 1,
+      "cached": 0,
+      "local": 0,
+      "needs_review": 0,
+      "units": 1,
+      "review_required": true,
+      "source_sha256": "6993cf72d4ab41925c9f12a955fc517db93df2cb9660cbb4ed86a5a509cc0db6"
+    }
+  },
+  "seconds": 1.172,
+  "final_job": {
+    "id": "38e86537-7ea1-4c19-b0ba-3373886b9a23",
+    "workspace_id": "semester-3",
+    "subject_id": "probability",
+    "source_version_id": "1a0923ea-c179-4922-8322-76afab77410b",
+    "kind": "cloud_visuals",
+    "label": "table-slide-12.png · Cloud visuals",
+    "state": "succeeded",
+    "stage": "Complete",
+    "done": 1,
+    "total": 1,
+    "error": null,
+    "cancel_requested": false,
+    "attempts": 1,
+    "failures": 0,
+    "max_attempts": 3,
+    "recoveries": 0,
+    "created_at": 1790875730.2651713,
+    "updated_at": 1790875731.4328835,
+    "checkpoint": {},
+    "result": {
+      "sent": 1,
+      "cached": 0,
+      "local": 0,
+      "needs_review": 0,
+      "units": 1,
+      "review_required": true,
+      "source_sha256": "6993cf72d4ab41925c9f12a955fc517db93df2cb9660cbb4ed86a5a509cc0db6"
+    }
+  },
+  "entry": {
+    "cache_key": "6993cf72d4ab41925c9f12a955fc517db93df2cb9660cbb4ed86a5a509cc0db6:qwen/qwen3.8-27b:visual-transcription-2",
+    "asset_sha256": "6993cf72d4ab41925c9f12a955fc517db93df2cb9660cbb4ed86a5a509cc0db6",
+    "sent_sha256": "6993cf72d4ab41925c9f12a955fc517db93df2cb9660cbb4ed86a5a509cc0db6",
+    "model": "qwen/qwen3.8-27b",
+    "prompt_version": "visual-transcription-2",
+    "source_version_id": "1a0923ea-c179-4922-8322-76afab77410b",
+    "unit_id": "4243c7d6-2192-548a-9943-346f4766fc0b",
+    "locator": {
+      "kind": "image",
+      "page": 1
+    },
+    "routing": {
+      "decision": "cloud",
+      "reasons": [
+        "Possible table: repeated numbers and horizontal rules",
+        "Possible diagram connections"
+      ]
+    },
+    "image_size": [
+      1280,
+      720
+    ],
+    "preview_bounds": [
+      0,
+      0,
+      1280,
+      720
+    ],
+    "verified": false,
+    "review_required": true,
+    "extraction": {
+      "is_blank": false,
+      "text_lines": [
+        "Speaking engagement metrics"
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Impact factor",
+            "Measurement",
+            "Target",
+            "Achieved"
+          ],
+          "rows": [
+            [
+              "Audience interaction",
+              "Percentage (%)",
+              "85",
+              "88"
+            ],
+            [
+              "Knowledge retention",
+              "Percentage (%)",
+              "75",
+              "80"
+            ],
+            [
+              "Post-presentation surveys",
+              "Average rating",
+              "4.2",
+              "4.5"
+            ],
+            [
+              "Referral rate",
+              "Percentage (%)",
+              "10",
+              "12"
+            ],
+            [
+              "Collaboration opportunities",
+              "# of opportunities",
+              "8",
+              "10"
+            ]
+          ],
+          "notes": []
+        }
+      ],
+      "equations": [],
+      "diagram_nodes": [],
+      "diagram_edges": [],
+      "uncertainties": []
+    },
+    "status": "complete"
+  },
+  "process_private_bytes_after": 73826304,
+  "status": "passed",
+  "cache_job": {
+    "id": "38e86537-7ea1-4c19-b0ba-3373886b9a23",
+    "workspace_id": "semester-3",
+    "subject_id": "probability",
+    "source_version_id": "1a0923ea-c179-4922-8322-76afab77410b",
+    "kind": "cloud_visuals",
+    "label": "table-slide-12.png · Cloud visuals",
+    "state": "succeeded",
+    "stage": "Complete",
+    "done": 1,
+    "total": 1,
+    "error": null,
+    "cancel_requested": false,
+    "attempts": 2,
+    "failures": 0,
+    "max_attempts": 3,
+    "recoveries": 0,
+    "created_at": 1790875730.2651713,
+    "updated_at": 1790875731.5433586,
+    "checkpoint": {},
+    "result": {
+      "sent": 0,
+      "cached": 1,
+      "local": 0,
+      "needs_review": 0,
+      "units": 1,
+      "review_required": true,
+      "source_sha256": "6993cf72d4ab41925c9f12a955fc517db93df2cb9660cbb4ed86a5a509cc0db6"
+    }
+  }
+}

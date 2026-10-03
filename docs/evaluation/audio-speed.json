@@ -1,0 +1,2088 @@
+{
+  "date_utc": "20261002-191443",
+  "data_directory": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\audio-speed-20261002-191443",
+  "repeat_count": 3,
+  "local_model": "faster-whisper Tiny CPU int8, 2 threads, fresh helper per 30-second chunk",
+  "local": [
+    {
+      "sample": "clean",
+      "repeat": 1,
+      "audio_seconds": 9.368072562358277,
+      "total_seconds": 4.184975199998007,
+      "verification_seconds": 0.01787789999798406,
+      "state": "partial",
+      "error": null,
+      "units": 1,
+      "stage_times": [
+        {
+          "stage": "probe",
+          "seconds": 0.15242240000225138
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.18396200001006946
+        },
+        {
+          "stage": "transcribe",
+          "seconds": 3.505810200003907
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 4.440000338945538e-05
+        },
+        {
+          "stage": "save_audio",
+          "seconds": 0.0041656000103103
+        },
+        {
+          "stage": "commit_unit",
+          "seconds": 0.017210100006195717
+        }
+      ],
+      "recognition": [
+        {
+          "seconds": 3.297,
+          "peak_private_bytes": 1356423168,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " A triangle has three sides.",
+              "avg_logprob": -0.40288541931658983,
+              "no_speech_prob": 0.00449835229665041
+            },
+            {
+              "start": 2.6,
+              "end": 5.3,
+              "text": " Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.40288541931658983,
+              "no_speech_prob": 0.00449835229665041
+            },
+            {
+              "start": 5.9,
+              "end": 8.9,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.40288541931658983,
+              "no_speech_prob": 0.00449835229665041
+            }
+          ],
+          "language": "en"
+        }
+      ],
+      "text": "A triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.",
+      "sha256": "e0889e7a332b0d0177409bbefc85dc875684b67be785856729380b2f25b32b6f"
+    },
+    {
+      "sample": "clean",
+      "repeat": 2,
+      "audio_seconds": 9.368072562358277,
+      "total_seconds": 3.5272182999906363,
+      "verification_seconds": 0.016927599994232878,
+      "state": "partial",
+      "error": null,
+      "units": 1,
+      "stage_times": [
+        {
+          "stage": "probe",
+          "seconds": 0.1487864999944577
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.18404439999721944
+        },
+        {
+          "stage": "transcribe",
+          "seconds": 2.89282410001033
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 4.410000110510737e-05
+        },
+        {
+          "stage": "save_audio",
+          "seconds": 0.00275580000015907
+        },
+        {
+          "stage": "commit_unit",
+          "seconds": 0.016536600000108592
+        }
+      ],
+      "recognition": [
+        {
+          "seconds": 2.656,
+          "peak_private_bytes": 1357041664,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " A triangle has three sides.",
+              "avg_logprob": -0.40288541931658983,
+              "no_speech_prob": 0.00449835229665041
+            },
+            {
+              "start": 2.6,
+              "end": 5.3,
+              "text": " Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.40288541931658983,
+              "no_speech_prob": 0.00449835229665041
+            },
+            {
+              "start": 5.9,
+              "end": 8.9,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.40288541931658983,
+              "no_speech_prob": 0.00449835229665041
+            }
+          ],
+          "language": "en"
+        }
+      ],
+      "text": "A triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.",
+      "sha256": "e0889e7a332b0d0177409bbefc85dc875684b67be785856729380b2f25b32b6f"
+    },
+    {
+      "sample": "clean",
+      "repeat": 3,
+      "audio_seconds": 9.368072562358277,
+      "total_seconds": 3.6151736999891,
+      "verification_seconds": 0.018058999994536862,
+      "state": "partial",
+      "error": null,
+      "units": 1,
+      "stage_times": [
+        {
+          "stage": "probe",
+          "seconds": 0.14403300000412855
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.1882356999994954
+        },
+        {
+          "stage": "transcribe",
+          "seconds": 2.9494865000015125
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 3.749999450519681e-05
+        },
+        {
+          "stage": "save_audio",
+          "seconds": 0.0021231999999145046
+        },
+        {
+          "stage": "commit_unit",
+          "seconds": 0.012626299998373725
+        }
+      ],
+      "recognition": [
+        {
+          "seconds": 2.688,
+          "peak_private_bytes": 1356673024,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 2.0,
+              "text": " A triangle has three sides.",
+              "avg_logprob": -0.40288541931658983,
+              "no_speech_prob": 0.00449835229665041
+            },
+            {
+              "start": 2.6,
+              "end": 5.3,
+              "text": " Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.40288541931658983,
+              "no_speech_prob": 0.00449835229665041
+            },
+            {
+              "start": 5.9,
+              "end": 8.9,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.40288541931658983,
+              "no_speech_prob": 0.00449835229665041
+            }
+          ],
+          "language": "en"
+        }
+      ],
+      "text": "A triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.",
+      "sha256": "e0889e7a332b0d0177409bbefc85dc875684b67be785856729380b2f25b32b6f"
+    },
+    {
+      "sample": "noisy",
+      "repeat": 1,
+      "audio_seconds": 9.368072562358277,
+      "total_seconds": 4.085935600000084,
+      "verification_seconds": 0.01687330000277143,
+      "state": "partial",
+      "error": null,
+      "units": 1,
+      "stage_times": [
+        {
+          "stage": "probe",
+          "seconds": 0.15283439999620896
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.19142039999132976
+        },
+        {
+          "stage": "transcribe",
+          "seconds": 3.4450966000003973
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 3.399999695830047e-05
+        },
+        {
+          "stage": "save_audio",
+          "seconds": 0.002409499997156672
+        },
+        {
+          "stage": "commit_unit",
+          "seconds": 0.0031082999921636656
+        }
+      ],
+      "recognition": [
+        {
+          "seconds": 3.172,
+          "peak_private_bytes": 1356537856,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " a triangle has three sides. Water freezes at zero degree Celsius. This is an authored audio test for study lens.",
+              "avg_logprob": -0.37811471202543806,
+              "no_speech_prob": 0.04242910072207451
+            }
+          ],
+          "language": "en"
+        }
+      ],
+      "text": "a triangle has three sides. Water freezes at zero degree Celsius. This is an authored audio test for study lens.",
+      "sha256": "440952d2f93324cadd4f98a93c1400d40d49103f71d611d8175db24f591fd700"
+    },
+    {
+      "sample": "noisy",
+      "repeat": 2,
+      "audio_seconds": 9.368072562358277,
+      "total_seconds": 3.8151722000038717,
+      "verification_seconds": 0.017751499995938502,
+      "state": "partial",
+      "error": null,
+      "units": 1,
+      "stage_times": [
+        {
+          "stage": "probe",
+          "seconds": 0.14339559999643825
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.17526960000395775
+        },
+        {
+          "stage": "transcribe",
+          "seconds": 3.147494099990581
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 3.060000017285347e-05
+        },
+        {
+          "stage": "save_audio",
+          "seconds": 0.0027982000028714538
+        },
+        {
+          "stage": "commit_unit",
+          "seconds": 0.01601969999319408
+        }
+      ],
+      "recognition": [
+        {
+          "seconds": 2.906,
+          "peak_private_bytes": 1356349440,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " a triangle has three sides. Water freezes at zero degree Celsius. This is an authored audio test for study lens.",
+              "avg_logprob": -0.37811471202543806,
+              "no_speech_prob": 0.04242910072207451
+            }
+          ],
+          "language": "en"
+        }
+      ],
+      "text": "a triangle has three sides. Water freezes at zero degree Celsius. This is an authored audio test for study lens.",
+      "sha256": "440952d2f93324cadd4f98a93c1400d40d49103f71d611d8175db24f591fd700"
+    },
+    {
+      "sample": "noisy",
+      "repeat": 3,
+      "audio_seconds": 9.368072562358277,
+      "total_seconds": 3.579535600001691,
+      "verification_seconds": 0.017490000012912787,
+      "state": "partial",
+      "error": null,
+      "units": 1,
+      "stage_times": [
+        {
+          "stage": "probe",
+          "seconds": 0.14952019999327604
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.20174170000245795
+        },
+        {
+          "stage": "transcribe",
+          "seconds": 2.8770243999897502
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 4.7900000936351717e-05
+        },
+        {
+          "stage": "save_audio",
+          "seconds": 0.005022900004405528
+        },
+        {
+          "stage": "commit_unit",
+          "seconds": 0.01736709999386221
+        }
+      ],
+      "recognition": [
+        {
+          "seconds": 2.594,
+          "peak_private_bytes": 1356881920,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 9.0,
+              "text": " a triangle has three sides. Water freezes at zero degree Celsius. This is an authored audio test for study lens.",
+              "avg_logprob": -0.37811471202543806,
+              "no_speech_prob": 0.04242910072207451
+            }
+          ],
+          "language": "en"
+        }
+      ],
+      "text": "a triangle has three sides. Water freezes at zero degree Celsius. This is an authored audio test for study lens.",
+      "sha256": "440952d2f93324cadd4f98a93c1400d40d49103f71d611d8175db24f591fd700"
+    },
+    {
+      "sample": "continuous-60",
+      "repeat": 1,
+      "audio_seconds": 60.0,
+      "total_seconds": 9.087769100005971,
+      "verification_seconds": 0.02192460000514984,
+      "state": "partial",
+      "error": null,
+      "units": 2,
+      "stage_times": [
+        {
+          "stage": "probe",
+          "seconds": 0.15246769999794196
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.32931729999836534
+        },
+        {
+          "stage": "transcribe",
+          "seconds": 4.4468149000022095
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 0.00018149999959859997
+        },
+        {
+          "stage": "save_audio",
+          "seconds": 0.004707400003098883
+        },
+        {
+          "stage": "commit_unit",
+          "seconds": 0.004267099997377954
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.26897039999312256
+        },
+        {
+          "stage": "transcribe",
+          "seconds": 3.530045399995288
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 0.00021009999909438193
+        },
+        {
+          "stage": "save_audio",
+          "seconds": 0.007298199998331256
+        },
+        {
+          "stage": "commit_unit",
+          "seconds": 0.016934600003878586
+        }
+      ],
+      "recognition": [
+        {
+          "seconds": 4.172,
+          "peak_private_bytes": 1360080896,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " A triangle has three sides. Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.1774895539444484,
+              "no_speech_prob": 0.04756699502468109
+            },
+            {
+              "start": 6.0,
+              "end": 9.0,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.1774895539444484,
+              "no_speech_prob": 0.04756699502468109
+            },
+            {
+              "start": 9.0,
+              "end": 14.0,
+              "text": " A triangle has three sides. Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.1774895539444484,
+              "no_speech_prob": 0.04756699502468109
+            },
+            {
+              "start": 15.0,
+              "end": 18.0,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.1774895539444484,
+              "no_speech_prob": 0.04756699502468109
+            },
+            {
+              "start": 19.0,
+              "end": 24.0,
+              "text": " A triangle has three sides. Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.1774895539444484,
+              "no_speech_prob": 0.04756699502468109
+            },
+            {
+              "start": 25.0,
+              "end": 27.0,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.1774895539444484,
+              "no_speech_prob": 0.04756699502468109
+            },
+            {
+              "start": 27.0,
+              "end": 30.0,
+              "text": " a triangle has three sides",
+              "avg_logprob": -0.7436075359582901,
+              "no_speech_prob": 0.24015744030475616
+            }
+          ],
+          "language": "en"
+        },
+        {
+          "seconds": 3.281,
+          "peak_private_bytes": 1359753216,
+          "segments": [
+            {
+              "start": 0.43,
+              "end": 3.43,
+              "text": " Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 3.43,
+              "end": 7.43,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 7.43,
+              "end": 9.43,
+              "text": " A triangle has three sides.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 9.43,
+              "end": 12.43,
+              "text": " Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 12.43,
+              "end": 16.43,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 16.43,
+              "end": 18.43,
+              "text": " A triangle has three sides.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 18.43,
+              "end": 22.43,
+              "text": " Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 22.43,
+              "end": 25.43,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 25.43,
+              "end": 28.43,
+              "text": " A triangle has three sides.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 28.43,
+              "end": 29.43,
+              "text": " Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            }
+          ],
+          "language": "en"
+        }
+      ],
+      "text": "A triangle has three sides. Water freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.\nA triangle has three sides. Water freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.\nA triangle has three sides. Water freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.\na triangle has three sides Water freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.\nA triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.\nA triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.\nA triangle has three sides.\nWater freezes at zero degrees Celsius.",
+      "sha256": "51b8b36bd3fa56473a3059c452e1dbec39cd5cd0c71c5458cee0f3b0608ef36f"
+    },
+    {
+      "sample": "continuous-60",
+      "repeat": 2,
+      "audio_seconds": 60.0,
+      "total_seconds": 8.960247499999241,
+      "verification_seconds": 0.0227117000031285,
+      "state": "partial",
+      "error": null,
+      "units": 2,
+      "stage_times": [
+        {
+          "stage": "probe",
+          "seconds": 0.14931890000298154
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.30301809999218676
+        },
+        {
+          "stage": "transcribe",
+          "seconds": 4.129763100005221
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 6.550000398419797e-05
+        },
+        {
+          "stage": "save_audio",
+          "seconds": 0.005624000012176111
+        },
+        {
+          "stage": "commit_unit",
+          "seconds": 0.015914100004010834
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.26814200000080746
+        },
+        {
+          "stage": "transcribe",
+          "seconds": 3.6961044000054244
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 0.00011789999553002417
+        },
+        {
+          "stage": "save_audio",
+          "seconds": 0.006619399995543063
+        },
+        {
+          "stage": "commit_unit",
+          "seconds": 0.016704699999536388
+        }
+      ],
+      "recognition": [
+        {
+          "seconds": 3.921,
+          "peak_private_bytes": 1360007168,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " A triangle has three sides. Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.1774895539444484,
+              "no_speech_prob": 0.04756699502468109
+            },
+            {
+              "start": 6.0,
+              "end": 9.0,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.1774895539444484,
+              "no_speech_prob": 0.04756699502468109
+            },
+            {
+              "start": 9.0,
+              "end": 14.0,
+              "text": " A triangle has three sides. Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.1774895539444484,
+              "no_speech_prob": 0.04756699502468109
+            },
+            {
+              "start": 15.0,
+              "end": 18.0,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.1774895539444484,
+              "no_speech_prob": 0.04756699502468109
+            },
+            {
+              "start": 19.0,
+              "end": 24.0,
+              "text": " A triangle has three sides. Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.1774895539444484,
+              "no_speech_prob": 0.04756699502468109
+            },
+            {
+              "start": 25.0,
+              "end": 27.0,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.1774895539444484,
+              "no_speech_prob": 0.04756699502468109
+            },
+            {
+              "start": 27.0,
+              "end": 30.0,
+              "text": " a triangle has three sides",
+              "avg_logprob": -0.7436075359582901,
+              "no_speech_prob": 0.24015744030475616
+            }
+          ],
+          "language": "en"
+        },
+        {
+          "seconds": 3.485,
+          "peak_private_bytes": 1359929344,
+          "segments": [
+            {
+              "start": 0.43,
+              "end": 3.43,
+              "text": " Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 3.43,
+              "end": 7.43,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 7.43,
+              "end": 9.43,
+              "text": " A triangle has three sides.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 9.43,
+              "end": 12.43,
+              "text": " Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 12.43,
+              "end": 16.43,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 16.43,
+              "end": 18.43,
+              "text": " A triangle has three sides.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 18.43,
+              "end": 22.43,
+              "text": " Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 22.43,
+              "end": 25.43,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 25.43,
+              "end": 28.43,
+              "text": " A triangle has three sides.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 28.43,
+              "end": 29.43,
+              "text": " Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            }
+          ],
+          "language": "en"
+        }
+      ],
+      "text": "A triangle has three sides. Water freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.\nA triangle has three sides. Water freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.\nA triangle has three sides. Water freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.\na triangle has three sides Water freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.\nA triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.\nA triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.\nA triangle has three sides.\nWater freezes at zero degrees Celsius.",
+      "sha256": "51b8b36bd3fa56473a3059c452e1dbec39cd5cd0c71c5458cee0f3b0608ef36f"
+    },
+    {
+      "sample": "continuous-60",
+      "repeat": 3,
+      "audio_seconds": 60.0,
+      "total_seconds": 9.175510900007794,
+      "verification_seconds": 0.02241810000850819,
+      "state": "partial",
+      "error": null,
+      "units": 2,
+      "stage_times": [
+        {
+          "stage": "probe",
+          "seconds": 0.1555062999977963
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.2945502999937162
+        },
+        {
+          "stage": "transcribe",
+          "seconds": 4.387610899997526
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 0.00022170000011101365
+        },
+        {
+          "stage": "save_audio",
+          "seconds": 0.007836499993572943
+        },
+        {
+          "stage": "commit_unit",
+          "seconds": 0.015914699994027615
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.27795719999994617
+        },
+        {
+          "stage": "transcribe",
+          "seconds": 3.634254600008717
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 0.00021470000501722097
+        },
+        {
+          "stage": "save_audio",
+          "seconds": 0.006926300004124641
+        },
+        {
+          "stage": "commit_unit",
+          "seconds": 0.017189499994856305
+        }
+      ],
+      "recognition": [
+        {
+          "seconds": 4.156,
+          "peak_private_bytes": 1360048128,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.0,
+              "text": " A triangle has three sides. Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.1774895539444484,
+              "no_speech_prob": 0.04756699502468109
+            },
+            {
+              "start": 6.0,
+              "end": 9.0,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.1774895539444484,
+              "no_speech_prob": 0.04756699502468109
+            },
+            {
+              "start": 9.0,
+              "end": 14.0,
+              "text": " A triangle has three sides. Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.1774895539444484,
+              "no_speech_prob": 0.04756699502468109
+            },
+            {
+              "start": 15.0,
+              "end": 18.0,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.1774895539444484,
+              "no_speech_prob": 0.04756699502468109
+            },
+            {
+              "start": 19.0,
+              "end": 24.0,
+              "text": " A triangle has three sides. Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.1774895539444484,
+              "no_speech_prob": 0.04756699502468109
+            },
+            {
+              "start": 25.0,
+              "end": 27.0,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.1774895539444484,
+              "no_speech_prob": 0.04756699502468109
+            },
+            {
+              "start": 27.0,
+              "end": 30.0,
+              "text": " a triangle has three sides",
+              "avg_logprob": -0.7436075359582901,
+              "no_speech_prob": 0.24015744030475616
+            }
+          ],
+          "language": "en"
+        },
+        {
+          "seconds": 3.39,
+          "peak_private_bytes": 1359859712,
+          "segments": [
+            {
+              "start": 0.43,
+              "end": 3.43,
+              "text": " Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 3.43,
+              "end": 7.43,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 7.43,
+              "end": 9.43,
+              "text": " A triangle has three sides.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 9.43,
+              "end": 12.43,
+              "text": " Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 12.43,
+              "end": 16.43,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 16.43,
+              "end": 18.43,
+              "text": " A triangle has three sides.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 18.43,
+              "end": 22.43,
+              "text": " Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 22.43,
+              "end": 25.43,
+              "text": " This is an authored audio test for study lens.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 25.43,
+              "end": 28.43,
+              "text": " A triangle has three sides.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            },
+            {
+              "start": 28.43,
+              "end": 29.43,
+              "text": " Water freezes at zero degrees Celsius.",
+              "avg_logprob": -0.12351713852527049,
+              "no_speech_prob": 0.18351875245571136
+            }
+          ],
+          "language": "en"
+        }
+      ],
+      "text": "A triangle has three sides. Water freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.\nA triangle has three sides. Water freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.\nA triangle has three sides. Water freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.\na triangle has three sides Water freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.\nA triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.\nA triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.\nA triangle has three sides.\nWater freezes at zero degrees Celsius.",
+      "sha256": "51b8b36bd3fa56473a3059c452e1dbec39cd5cd0c71c5458cee0f3b0608ef36f"
+    },
+    {
+      "sample": "silence-60",
+      "repeat": 1,
+      "audio_seconds": 60.0,
+      "total_seconds": 1.1530775999999605,
+      "verification_seconds": 0.023559299996122718,
+      "state": "partial",
+      "error": null,
+      "units": 2,
+      "stage_times": [
+        {
+          "stage": "probe",
+          "seconds": 0.16302680000080727
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.28883800000767224
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 8.100003469735384e-06
+        },
+        {
+          "stage": "save_audio",
+          "seconds": 0.004684400002588518
+        },
+        {
+          "stage": "commit_unit",
+          "seconds": 0.003990700002759695
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.31838960001186933
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 8.500006515532732e-06
+        },
+        {
+          "stage": "save_audio",
+          "seconds": 0.006465000013122335
+        },
+        {
+          "stage": "commit_unit",
+          "seconds": 0.0043231000017840415
+        }
+      ],
+      "recognition": [],
+      "text": " ",
+      "sha256": "4c59ed976769ba50aba4a23ef2823cf795f0b555d48f4c80d41576ce9f3378b7"
+    },
+    {
+      "sample": "silence-60",
+      "repeat": 2,
+      "audio_seconds": 60.0,
+      "total_seconds": 1.3161022999993293,
+      "verification_seconds": 0.02494930000102613,
+      "state": "partial",
+      "error": null,
+      "units": 2,
+      "stage_times": [
+        {
+          "stage": "probe",
+          "seconds": 0.1535889000078896
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.3431916999979876
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 9.200011845678091e-06
+        },
+        {
+          "stage": "save_audio",
+          "seconds": 0.007275700001628138
+        },
+        {
+          "stage": "commit_unit",
+          "seconds": 0.004106000007595867
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.3514844999881461
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 9.099996532313526e-06
+        },
+        {
+          "stage": "save_audio",
+          "seconds": 0.007011900001089089
+        },
+        {
+          "stage": "commit_unit",
+          "seconds": 0.004172400003881194
+        }
+      ],
+      "recognition": [],
+      "text": " ",
+      "sha256": "4c59ed976769ba50aba4a23ef2823cf795f0b555d48f4c80d41576ce9f3378b7"
+    },
+    {
+      "sample": "silence-60",
+      "repeat": 3,
+      "audio_seconds": 60.0,
+      "total_seconds": 1.1185063000011723,
+      "verification_seconds": 0.021657799996319227,
+      "state": "partial",
+      "error": null,
+      "units": 2,
+      "stage_times": [
+        {
+          "stage": "probe",
+          "seconds": 0.1561748000094667
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.25696939999761526
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 1.5300000086426735e-05
+        },
+        {
+          "stage": "save_audio",
+          "seconds": 0.010132199997315183
+        },
+        {
+          "stage": "commit_unit",
+          "seconds": 0.004310100004659034
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.3254237000073772
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 9.800001862458885e-06
+        },
+        {
+          "stage": "save_audio",
+          "seconds": 0.006806900011724792
+        },
+        {
+          "stage": "commit_unit",
+          "seconds": 0.004141799989156425
+        }
+      ],
+      "recognition": [],
+      "text": " ",
+      "sha256": "4c59ed976769ba50aba4a23ef2823cf795f0b555d48f4c80d41576ce9f3378b7"
+    },
+    {
+      "sample": "hinglish-1",
+      "repeat": 1,
+      "audio_seconds": 9.5675625,
+      "total_seconds": 4.849514800007455,
+      "verification_seconds": 0.02323669999896083,
+      "state": "failed",
+      "error": "Speech timestamps were invalid. No transcript was saved for this interval.",
+      "units": 0,
+      "stage_times": [
+        {
+          "stage": "probe",
+          "seconds": 0.16630010001244955
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.21150140000099782
+        },
+        {
+          "stage": "transcribe",
+          "seconds": 4.084718600002816
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 3.619999915827066e-05
+        }
+      ],
+      "recognition": [
+        {
+          "seconds": 3.812,
+          "peak_private_bytes": 1356677120,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.44,
+              "text": " Dusty book, Millie, Old Book Millie filled with mysterious symbol and ancient drawing,",
+              "avg_logprob": -0.4959412422031164,
+              "no_speech_prob": 0.013609325513243675
+            },
+            {
+              "start": 6.24,
+              "end": 10.0,
+              "text": " excited by their discovery they spent hours.",
+              "avg_logprob": -0.4959412422031164,
+              "no_speech_prob": 0.013609325513243675
+            }
+          ],
+          "language": "en"
+        }
+      ],
+      "text": "",
+      "sha256": "458b3e5edf7a5f0fcaa67297b9d6c4c91abb9e7f5835a86cec3810ceb5ce8f68"
+    },
+    {
+      "sample": "hinglish-1",
+      "repeat": 2,
+      "audio_seconds": 9.5675625,
+      "total_seconds": 4.488645499994163,
+      "verification_seconds": 0.031134899996686727,
+      "state": "failed",
+      "error": "Speech timestamps were invalid. No transcript was saved for this interval.",
+      "units": 0,
+      "stage_times": [
+        {
+          "stage": "probe",
+          "seconds": 0.16215840000950266
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.21189900000172202
+        },
+        {
+          "stage": "transcribe",
+          "seconds": 3.696735200006515
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 5.4899996030144393e-05
+        }
+      ],
+      "recognition": [
+        {
+          "seconds": 3.406,
+          "peak_private_bytes": 1356886016,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.44,
+              "text": " Dusty book, Millie, Old Book Millie filled with mysterious symbol and ancient drawing,",
+              "avg_logprob": -0.4959412422031164,
+              "no_speech_prob": 0.013609325513243675
+            },
+            {
+              "start": 6.24,
+              "end": 10.0,
+              "text": " excited by their discovery they spent hours.",
+              "avg_logprob": -0.4959412422031164,
+              "no_speech_prob": 0.013609325513243675
+            }
+          ],
+          "language": "en"
+        }
+      ],
+      "text": "",
+      "sha256": "458b3e5edf7a5f0fcaa67297b9d6c4c91abb9e7f5835a86cec3810ceb5ce8f68"
+    },
+    {
+      "sample": "hinglish-1",
+      "repeat": 3,
+      "audio_seconds": 9.5675625,
+      "total_seconds": 4.151335699993069,
+      "verification_seconds": 0.018346299999393523,
+      "state": "failed",
+      "error": "Speech timestamps were invalid. No transcript was saved for this interval.",
+      "units": 0,
+      "stage_times": [
+        {
+          "stage": "probe",
+          "seconds": 0.16079540000646375
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.19665930001065135
+        },
+        {
+          "stage": "transcribe",
+          "seconds": 3.3828701000020374
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 4.939999780617654e-05
+        }
+      ],
+      "recognition": [
+        {
+          "seconds": 3.109,
+          "peak_private_bytes": 1356750848,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 5.44,
+              "text": " Dusty book, Millie, Old Book Millie filled with mysterious symbol and ancient drawing,",
+              "avg_logprob": -0.4959412422031164,
+              "no_speech_prob": 0.013609325513243675
+            },
+            {
+              "start": 6.24,
+              "end": 10.0,
+              "text": " excited by their discovery they spent hours.",
+              "avg_logprob": -0.4959412422031164,
+              "no_speech_prob": 0.013609325513243675
+            }
+          ],
+          "language": "en"
+        }
+      ],
+      "text": "",
+      "sha256": "458b3e5edf7a5f0fcaa67297b9d6c4c91abb9e7f5835a86cec3810ceb5ce8f68"
+    },
+    {
+      "sample": "hinglish-2",
+      "repeat": 1,
+      "audio_seconds": 6.7251875,
+      "total_seconds": 4.255125700001372,
+      "verification_seconds": 0.017362800004775636,
+      "state": "failed",
+      "error": "Speech timestamps were invalid. No transcript was saved for this interval.",
+      "units": 0,
+      "stage_times": [
+        {
+          "stage": "probe",
+          "seconds": 0.1573179999977583
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.20501040000817738
+        },
+        {
+          "stage": "transcribe",
+          "seconds": 3.5592324000026565
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 1.1299998732283711e-05
+        }
+      ],
+      "recognition": [
+        {
+          "seconds": 3.312,
+          "peak_private_bytes": 1356886016,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Okay, can you describe the image? What are your thoughts about it? So there is a guy.",
+              "avg_logprob": -0.4398968120416005,
+              "no_speech_prob": 0.015261713415384293
+            }
+          ],
+          "language": "en"
+        }
+      ],
+      "text": "",
+      "sha256": "cdf7141b997282e51c8f9ba52bd777256eae9724820c3d519e3109b23e7f5b64"
+    },
+    {
+      "sample": "hinglish-2",
+      "repeat": 2,
+      "audio_seconds": 6.7251875,
+      "total_seconds": 3.9933540999918478,
+      "verification_seconds": 0.017646199994487688,
+      "state": "failed",
+      "error": "Speech timestamps were invalid. No transcript was saved for this interval.",
+      "units": 0,
+      "stage_times": [
+        {
+          "stage": "probe",
+          "seconds": 0.15598490000411402
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.18218020000495017
+        },
+        {
+          "stage": "transcribe",
+          "seconds": 3.3084401999949478
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 1.1299998732283711e-05
+        }
+      ],
+      "recognition": [
+        {
+          "seconds": 3.063,
+          "peak_private_bytes": 1356103680,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Okay, can you describe the image? What are your thoughts about it? So there is a guy.",
+              "avg_logprob": -0.4398968120416005,
+              "no_speech_prob": 0.015261713415384293
+            }
+          ],
+          "language": "en"
+        }
+      ],
+      "text": "",
+      "sha256": "cdf7141b997282e51c8f9ba52bd777256eae9724820c3d519e3109b23e7f5b64"
+    },
+    {
+      "sample": "hinglish-2",
+      "repeat": 3,
+      "audio_seconds": 6.7251875,
+      "total_seconds": 4.160558300005505,
+      "verification_seconds": 0.019254900005762465,
+      "state": "failed",
+      "error": "Speech timestamps were invalid. No transcript was saved for this interval.",
+      "units": 0,
+      "stage_times": [
+        {
+          "stage": "probe",
+          "seconds": 0.16273070000170264
+        },
+        {
+          "stage": "decode",
+          "seconds": 0.19614470000669826
+        },
+        {
+          "stage": "transcribe",
+          "seconds": 3.378351499995915
+        },
+        {
+          "stage": "validate_segments",
+          "seconds": 1.5699988580308855e-05
+        }
+      ],
+      "recognition": [
+        {
+          "seconds": 3.093,
+          "peak_private_bytes": 1355558912,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 7.0,
+              "text": " Okay, can you describe the image? What are your thoughts about it? So there is a guy.",
+              "avg_logprob": -0.4398968120416005,
+              "no_speech_prob": 0.015261713415384293
+            }
+          ],
+          "language": "en"
+        }
+      ],
+      "text": "",
+      "sha256": "cdf7141b997282e51c8f9ba52bd777256eae9724820c3d519e3109b23e7f5b64"
+    }
+  ],
+  "cloud": [
+    {
+      "sample": "clean",
+      "repeat": 1,
+      "audio_seconds": 9.3680625,
+      "upload_bytes": 299856,
+      "http_status": 200,
+      "rate_limit_headers": {
+        "x-ratelimit-limit-requests": "2000",
+        "x-ratelimit-remaining-requests": "1999",
+        "x-ratelimit-reset-requests": "43.2s"
+      },
+      "text": " A triangle has three sides. Water freezes at zero degrees Celsius. This is an authored audio test for study lens.",
+      "segments": [
+        {
+          "start": 0,
+          "end": 1.7199999,
+          "text": " A triangle has three sides.",
+          "avg_logprob": -0.1909694,
+          "no_speech_prob": 0,
+          "compression_ratio": 1.1875
+        },
+        {
+          "start": 2.74,
+          "end": 4.8599997,
+          "text": " Water freezes at zero degrees Celsius.",
+          "avg_logprob": -0.1909694,
+          "no_speech_prob": 0,
+          "compression_ratio": 1.1875
+        },
+        {
+          "start": 5.98,
+          "end": 8.46,
+          "text": " This is an authored audio test for study lens.",
+          "avg_logprob": -0.1909694,
+          "no_speech_prob": 0,
+          "compression_ratio": 1.1875
+        }
+      ],
+      "request_seconds": 0.45990979998896364
+    },
+    {
+      "sample": "clean",
+      "repeat": 2,
+      "audio_seconds": 9.3680625,
+      "upload_bytes": 299856,
+      "http_status": 200,
+      "rate_limit_headers": {
+        "x-ratelimit-limit-requests": "2000",
+        "x-ratelimit-remaining-requests": "1998",
+        "x-ratelimit-reset-requests": "1m26.4s"
+      },
+      "text": " A triangle has three sides. Water freezes at zero degrees Celsius. This is an authored audio test for study lens.",
+      "segments": [
+        {
+          "start": 0,
+          "end": 1.7199999,
+          "text": " A triangle has three sides.",
+          "avg_logprob": -0.1909694,
+          "no_speech_prob": 0,
+          "compression_ratio": 1.1875
+        },
+        {
+          "start": 2.74,
+          "end": 4.8599997,
+          "text": " Water freezes at zero degrees Celsius.",
+          "avg_logprob": -0.1909694,
+          "no_speech_prob": 0,
+          "compression_ratio": 1.1875
+        },
+        {
+          "start": 5.98,
+          "end": 8.46,
+          "text": " This is an authored audio test for study lens.",
+          "avg_logprob": -0.1909694,
+          "no_speech_prob": 0,
+          "compression_ratio": 1.1875
+        }
+      ],
+      "request_seconds": 0.3075630000093952
+    },
+    {
+      "sample": "clean",
+      "repeat": 3,
+      "audio_seconds": 9.3680625,
+      "upload_bytes": 299856,
+      "http_status": 200,
+      "rate_limit_headers": {
+        "x-ratelimit-limit-requests": "2000",
+        "x-ratelimit-remaining-requests": "1997",
+        "x-ratelimit-reset-requests": "2m9.6s"
+      },
+      "text": " A triangle has three sides. Water freezes at zero degrees Celsius. This is an authored audio test for study lens.",
+      "segments": [
+        {
+          "start": 0,
+          "end": 1.7199999,
+          "text": " A triangle has three sides.",
+          "avg_logprob": -0.1909694,
+          "no_speech_prob": 0,
+          "compression_ratio": 1.1875
+        },
+        {
+          "start": 2.74,
+          "end": 4.8599997,
+          "text": " Water freezes at zero degrees Celsius.",
+          "avg_logprob": -0.1909694,
+          "no_speech_prob": 0,
+          "compression_ratio": 1.1875
+        },
+        {
+          "start": 5.98,
+          "end": 8.46,
+          "text": " This is an authored audio test for study lens.",
+          "avg_logprob": -0.1909694,
+          "no_speech_prob": 0,
+          "compression_ratio": 1.1875
+        }
+      ],
+      "request_seconds": 0.30608890000439715
+    },
+    {
+      "sample": "noisy",
+      "repeat": 1,
+      "audio_seconds": 9.3680625,
+      "upload_bytes": 299856,
+      "http_status": 200,
+      "rate_limit_headers": {
+        "x-ratelimit-limit-requests": "2000",
+        "x-ratelimit-remaining-requests": "1996",
+        "x-ratelimit-reset-requests": "2m52.8s"
+      },
+      "text": " A triangle has three sides. Water freezes at zero degrees Celsius. This is an authored audio test for study lens.",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.6399999,
+          "text": " A triangle has three sides.",
+          "avg_logprob": -0.17927045,
+          "no_speech_prob": 0,
+          "compression_ratio": 1.1875
+        },
+        {
+          "start": 2.6399999,
+          "end": 5.9,
+          "text": " Water freezes at zero degrees Celsius.",
+          "avg_logprob": -0.17927045,
+          "no_speech_prob": 0,
+          "compression_ratio": 1.1875
+        },
+        {
+          "start": 5.9,
+          "end": 9.36,
+          "text": " This is an authored audio test for study lens.",
+          "avg_logprob": -0.17927045,
+          "no_speech_prob": 0,
+          "compression_ratio": 1.1875
+        }
+      ],
+      "request_seconds": 0.29301379999378696
+    },
+    {
+      "sample": "noisy",
+      "repeat": 2,
+      "audio_seconds": 9.3680625,
+      "upload_bytes": 299856,
+      "http_status": 200,
+      "rate_limit_headers": {
+        "x-ratelimit-limit-requests": "2000",
+        "x-ratelimit-remaining-requests": "1995",
+        "x-ratelimit-reset-requests": "3m36s"
+      },
+      "text": " A triangle has three sides. Water freezes at zero degrees Celsius. This is an authored audio test for study lens.",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.6399999,
+          "text": " A triangle has three sides.",
+          "avg_logprob": -0.17927045,
+          "no_speech_prob": 0,
+          "compression_ratio": 1.1875
+        },
+        {
+          "start": 2.6399999,
+          "end": 5.9,
+          "text": " Water freezes at zero degrees Celsius.",
+          "avg_logprob": -0.17927045,
+          "no_speech_prob": 0,
+          "compression_ratio": 1.1875
+        },
+        {
+          "start": 5.9,
+          "end": 9.36,
+          "text": " This is an authored audio test for study lens.",
+          "avg_logprob": -0.17927045,
+          "no_speech_prob": 0,
+          "compression_ratio": 1.1875
+        }
+      ],
+      "request_seconds": 0.30408319999696687
+    },
+    {
+      "sample": "noisy",
+      "repeat": 3,
+      "audio_seconds": 9.3680625,
+      "upload_bytes": 299856,
+      "http_status": 200,
+      "rate_limit_headers": {
+        "x-ratelimit-limit-requests": "2000",
+        "x-ratelimit-remaining-requests": "1994",
+        "x-ratelimit-reset-requests": "4m19.2s"
+      },
+      "text": " A triangle has three sides. Water freezes at zero degrees Celsius. This is an authored audio test for study lens.",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.6399999,
+          "text": " A triangle has three sides.",
+          "avg_logprob": -0.17927045,
+          "no_speech_prob": 0,
+          "compression_ratio": 1.1875
+        },
+        {
+          "start": 2.6399999,
+          "end": 5.9,
+          "text": " Water freezes at zero degrees Celsius.",
+          "avg_logprob": -0.17927045,
+          "no_speech_prob": 0,
+          "compression_ratio": 1.1875
+        },
+        {
+          "start": 5.9,
+          "end": 9.36,
+          "text": " This is an authored audio test for study lens.",
+          "avg_logprob": -0.17927045,
+          "no_speech_prob": 0,
+          "compression_ratio": 1.1875
+        }
+      ],
+      "request_seconds": 0.30352879999554716
+    },
+    {
+      "sample": "continuous-60",
+      "repeat": 1,
+      "audio_seconds": 30.0,
+      "upload_bytes": 960078,
+      "http_status": 200,
+      "rate_limit_headers": {
+        "x-ratelimit-limit-requests": "2000",
+        "x-ratelimit-remaining-requests": "1993",
+        "x-ratelimit-reset-requests": "5m2.4s"
+      },
+      "text": " A triangle has three sides. Water freezes at zero degrees Celsius. This is an authored audio test for study lens. A triangle has three sides. Water freezes at zero degrees Celsius. This is an authored audio test for study lens. A triangle has three sides. Water freezes at zero degrees Celsius. This is an authored audio test for study lens. A triangle has three sides.",
+      "segments": [
+        {
+          "start": 0,
+          "end": 1.74,
+          "text": " A triangle has three sides.",
+          "avg_logprob": -0.4101888,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.6633663
+        },
+        {
+          "start": 2.76,
+          "end": 4.8199997,
+          "text": " Water freezes at zero degrees Celsius.",
+          "avg_logprob": -0.4101888,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.6633663
+        },
+        {
+          "start": 5.6,
+          "end": 8.48,
+          "text": " This is an authored audio test for study lens.",
+          "avg_logprob": -0.4101888,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.6633663
+        },
+        {
+          "start": 8.84,
+          "end": 11.08,
+          "text": " A triangle has three sides.",
+          "avg_logprob": -0.4101888,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.6633663
+        },
+        {
+          "start": 11.679999,
+          "end": 14.219999,
+          "text": " Water freezes at zero degrees Celsius.",
+          "avg_logprob": -0.4101888,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.6633663
+        },
+        {
+          "start": 14.98,
+          "end": 17.82,
+          "text": " This is an authored audio test for study lens.",
+          "avg_logprob": -0.4101888,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.6633663
+        },
+        {
+          "start": 18.72,
+          "end": 20.439999,
+          "text": " A triangle has three sides.",
+          "avg_logprob": -0.4101888,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.6633663
+        },
+        {
+          "start": 21.26,
+          "end": 23.56,
+          "text": " Water freezes at zero degrees Celsius.",
+          "avg_logprob": -0.4101888,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.6633663
+        },
+        {
+          "start": 24.66,
+          "end": 27.199999,
+          "text": " This is an authored audio test for study lens.",
+          "avg_logprob": -0.4101888,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.6633663
+        },
+        {
+          "start": 28.14,
+          "end": 29.82,
+          "text": " A triangle has three sides.",
+          "avg_logprob": -0.4101888,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.6633663
+        }
+      ],
+      "request_seconds": 0.5074465999932727
+    },
+    {
+      "sample": "continuous-60",
+      "repeat": 2,
+      "audio_seconds": 30.0,
+      "upload_bytes": 960078,
+      "http_status": 200,
+      "rate_limit_headers": {
+        "x-ratelimit-limit-requests": "2000",
+        "x-ratelimit-remaining-requests": "1992",
+        "x-ratelimit-reset-requests": "5m45.6s"
+      },
+      "text": " a trianglehas three sides water freezes at zero degrees Celsius this is an authored audio test for study lens a triangle has three sides water freezes at zero degrees Celsius this is an authored audio test for study lens a trianglehas three sides water freezes at zero degrees Celsius this is an authored audio test for study lens A triangle has three sides.",
+      "segments": [
+        {
+          "start": 0,
+          "end": 5.92,
+          "text": " a trianglehas three sides water freezes at zero degrees Celsius",
+          "avg_logprob": -0.45984724,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.3434343
+        },
+        {
+          "start": 5.92,
+          "end": 9.34,
+          "text": " this is an authored audio test for study lens",
+          "avg_logprob": -0.45984724,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.3434343
+        },
+        {
+          "start": 9.34,
+          "end": 15.259999,
+          "text": " a triangle has three sides water freezes at zero degrees Celsius",
+          "avg_logprob": -0.45984724,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.3434343
+        },
+        {
+          "start": 15.259999,
+          "end": 18.699999,
+          "text": " this is an authored audio test for study lens",
+          "avg_logprob": -0.45984724,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.3434343
+        },
+        {
+          "start": 18.699999,
+          "end": 21.359999,
+          "text": " a trianglehas three sides",
+          "avg_logprob": -0.45984724,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.3434343
+        },
+        {
+          "start": 21.359999,
+          "end": 24.64,
+          "text": " water freezes at zero degrees Celsius",
+          "avg_logprob": -0.45984724,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.3434343
+        },
+        {
+          "start": 24.64,
+          "end": 28.08,
+          "text": " this is an authored audio test for study lens",
+          "avg_logprob": -0.45984724,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.3434343
+        },
+        {
+          "start": 28.08,
+          "end": 30.08,
+          "text": " A triangle has three sides.",
+          "avg_logprob": -0.37762064,
+          "no_speech_prob": 0,
+          "compression_ratio": 0.7777778
+        }
+      ],
+      "request_seconds": 0.5572697000025073
+    },
+    {
+      "sample": "continuous-60",
+      "repeat": 3,
+      "audio_seconds": 30.0,
+      "upload_bytes": 960078,
+      "http_status": 200,
+      "rate_limit_headers": {
+        "x-ratelimit-limit-requests": "2000",
+        "x-ratelimit-remaining-requests": "1991",
+        "x-ratelimit-reset-requests": "6m28.799s"
+      },
+      "text": " A triangle has three sides. water freezes at zero degrees Celsius this is an authored audio test for study lens A triangle has three sides water freezes at zero degrees Celsius this is an authored audio test for study lens a triangle has three sides water freezes at zero degrees Celsius this is an authored audio test for study lens a triangle has three sides",
+      "segments": [
+        {
+          "start": 0,
+          "end": 1.9399999,
+          "text": " A triangle has three sides.",
+          "avg_logprob": -0.7906405,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.4380953
+        },
+        {
+          "start": 2.48,
+          "end": 5.2,
+          "text": " water freezes at zero degrees Celsius",
+          "avg_logprob": -0.7906405,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.4380953
+        },
+        {
+          "start": 5.8599997,
+          "end": 8.76,
+          "text": " this is an authored audio test for study lens",
+          "avg_logprob": -0.7906405,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.4380953
+        },
+        {
+          "start": 9.36,
+          "end": 11.219999,
+          "text": " A triangle has three sides",
+          "avg_logprob": -0.7906405,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.4380953
+        },
+        {
+          "start": 12.0199995,
+          "end": 14.5199995,
+          "text": " water freezes at zero degrees Celsius",
+          "avg_logprob": -0.7906405,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.4380953
+        },
+        {
+          "start": 15.2,
+          "end": 18.08,
+          "text": " this is an authored audio test for study lens",
+          "avg_logprob": -0.7906405,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.4380953
+        },
+        {
+          "start": 18.68,
+          "end": 20.66,
+          "text": " a triangle has three sides",
+          "avg_logprob": -0.7906405,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.4380953
+        },
+        {
+          "start": 22.08,
+          "end": 24.08,
+          "text": " water freezes at zero degrees Celsius",
+          "avg_logprob": -0.7906405,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.4380953
+        },
+        {
+          "start": 24.56,
+          "end": 27.38,
+          "text": " this is an authored audio test for study lens",
+          "avg_logprob": -0.7906405,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.4380953
+        },
+        {
+          "start": 28.08,
+          "end": 29.98,
+          "text": " a triangle has three sides",
+          "avg_logprob": -0.7906405,
+          "no_speech_prob": 0,
+          "compression_ratio": 3.4380953
+        }
+      ],
+      "request_seconds": 0.4924787999916589
+    }
+  ],
+  "cloud_model": "whisper-large-v3-turbo",
+  "limitations": [
+    "Small latency pilot; three repeats, not p95.",
+    "16 GB development laptop, not an 8 GB whole-app test.",
+    "Continuous speech repeats authored synthetic English; not a real lecture.",
+    "Selective cloud audio integration and routing are not implemented. Cloud fallback is explicitly forced for timing.",
+    "Local timings include original verification, decoding, ASR, validation and SQLite writes; exclude UI/file picker/upload and worker queue wait.",
+    "Cloud timings include new HTTP connection, upload, service and response; exclude quota wait and retry.",
+    "No denoising or overlapping chunks were added for this pilot."
+  ],
+  "summary": {
+    "clean": {
+      "audio_seconds": 9.368072562358277,
+      "local_median_seconds": 3.6151736999891,
+      "local_min_seconds": 3.5272182999906363,
+      "local_max_seconds": 4.184975199998007,
+      "seconds_per_audio_minute": 23.154220951587284,
+      "successful_repeats": 3,
+      "stage_medians": {
+        "probe": 0.1487864999944577,
+        "decode": 0.18404439999721944,
+        "transcribe": 2.9494865000015125,
+        "validate_segments": 4.410000110510737e-05,
+        "save_audio": 0.00275580000015907,
+        "commit_unit": 0.016536600000108592
+      },
+      "cloud_interval_seconds": 9.3680625,
+      "cloud_request_median_seconds": 0.3075630000093952
+    },
+    "noisy": {
+      "audio_seconds": 9.368072562358277,
+      "local_median_seconds": 3.8151722000038717,
+      "local_min_seconds": 3.579535600001691,
+      "local_max_seconds": 4.085935600000084,
+      "seconds_per_audio_minute": 24.435157870148632,
+      "successful_repeats": 3,
+      "stage_medians": {
+        "probe": 0.14952019999327604,
+        "decode": 0.19142039999132976,
+        "transcribe": 3.147494099990581,
+        "validate_segments": 3.399999695830047e-05,
+        "save_audio": 0.0027982000028714538,
+        "commit_unit": 0.01601969999319408
+      },
+      "cloud_interval_seconds": 9.3680625,
+      "cloud_request_median_seconds": 0.30352879999554716
+    },
+    "continuous-60": {
+      "audio_seconds": 60.0,
+      "local_median_seconds": 9.087769100005971,
+      "local_min_seconds": 8.960247499999241,
+      "local_max_seconds": 9.175510900007794,
+      "seconds_per_audio_minute": 9.087769100005971,
+      "successful_repeats": 3,
+      "stage_medians": {
+        "probe": 0.15246769999794196,
+        "decode": 0.5725074999936623,
+        "transcribe": 7.976860299997497,
+        "validate_segments": 0.0003915999986929819,
+        "save_audio": 0.012243400007719174,
+        "commit_unit": 0.03261880000354722
+      },
+      "cloud_interval_seconds": 30.0,
+      "cloud_request_median_seconds": 0.5074465999932727
+    },
+    "silence-60": {
+      "audio_seconds": 60.0,
+      "local_median_seconds": 1.1530775999999605,
+      "local_min_seconds": 1.1185063000011723,
+      "local_max_seconds": 1.3161022999993293,
+      "seconds_per_audio_minute": 1.1530775999999605,
+      "successful_repeats": 3,
+      "stage_medians": {
+        "probe": 0.1561748000094667,
+        "decode": 0.6072276000195416,
+        "transcribe": 0,
+        "validate_segments": 1.8300008377991617e-05,
+        "save_audio": 0.014287600002717227,
+        "commit_unit": 0.008313800004543737
+      }
+    },
+    "hinglish-1": {
+      "audio_seconds": 9.5675625,
+      "local_median_seconds": 4.488645499994163,
+      "local_min_seconds": 4.151335699993069,
+      "local_max_seconds": 4.849514800007455,
+      "seconds_per_audio_minute": 28.14914770607977,
+      "successful_repeats": 0,
+      "stage_medians": {
+        "probe": 0.16215840000950266,
+        "decode": 0.21150140000099782,
+        "transcribe": 3.696735200006515,
+        "validate_segments": 4.939999780617654e-05,
+        "save_audio": 0,
+        "commit_unit": 0
+      }
+    },
+    "hinglish-2": {
+      "audio_seconds": 6.7251875,
+      "local_median_seconds": 4.160558300005505,
+      "local_min_seconds": 3.9933540999918478,
+      "local_max_seconds": 4.255125700001372,
+      "seconds_per_audio_minute": 37.11918782938473,
+      "successful_repeats": 0,
+      "stage_medians": {
+        "probe": 0.1573179999977583,
+        "decode": 0.19614470000669826,
+        "transcribe": 3.378351499995915,
+        "validate_segments": 1.1299998732283711e-05,
+        "save_audio": 0,
+        "commit_unit": 0
+      }
+    }
+  },
+  "completed_utc": "2026-10-02T19:16:30.264209+00:00",
+  "status": "measured",
+  "vad_only": {
+    "dependency_import_seconds": 0.283854599998449,
+    "samples": [
+      {
+        "name": "clean-cloud.wav",
+        "audio_seconds": 9.3680625,
+        "seconds": [
+          0.459058799999184,
+          0.022591999993892387,
+          0.02222569999867119
+        ],
+        "median_seconds": 0.022591999993892387,
+        "speech_regions": 1,
+        "speech_seconds": 9.3680625
+      },
+      {
+        "name": "noisy-cloud.wav",
+        "audio_seconds": 9.3680625,
+        "seconds": [
+          0.019868399991537444,
+          0.018277399998623878,
+          0.018879900002502836
+        ],
+        "median_seconds": 0.018879900002502836,
+        "speech_regions": 1,
+        "speech_seconds": 9.3680625
+      },
+      {
+        "name": "continuous-60.wav",
+        "audio_seconds": 60.0,
+        "seconds": [
+          0.12704419999499805,
+          0.1244447999924887,
+          0.1253528999950504
+        ],
+        "median_seconds": 0.1253528999950504,
+        "speech_regions": 1,
+        "speech_seconds": 60.0
+      },
+      {
+        "name": "silence-60.wav",
+        "audio_seconds": 60.0,
+        "seconds": [
+          0.1321178000071086,
+          0.13371159999223892,
+          0.12875410000560805
+        ],
+        "median_seconds": 0.1321178000071086,
+        "speech_regions": 0,
+        "speech_seconds": 0.0
+      }
+    ],
+    "process_private_bytes_after": 450973696,
+    "method": "Bundled faster-whisper Silero ONNX VAD; model session cached after first call; audio already decoded, no Whisper model loaded"
+  }
+}

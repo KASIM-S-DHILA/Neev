@@ -1,0 +1,515 @@
+{
+  "date_utc": "20261002-041044",
+  "data_directory": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\tmp\\audio-integration-20261002-041044",
+  "method": "Real app API, FFmpeg and isolated CPU int8 faster-whisper Tiny helpers; synthetic authored speech, no cloud",
+  "gold": {
+    "provenance": "Microsoft Windows SAPI English synthetic voice, self-authored StudyLens evaluation text; noisy/silent/tone/65s variants constructed locally with seed 6",
+    "text": "A triangle has three sides. Water freezes at zero degrees Celsius. This is an authored audio test for Study Lens.",
+    "needles": [
+      "triangle has three sides",
+      "water freezes at zero degrees celsius"
+    ],
+    "intervals": [
+      [
+        0,
+        30
+      ],
+      [
+        30,
+        60
+      ],
+      [
+        60,
+        65
+      ]
+    ],
+    "mixed_language": "Human Hindi/Hinglish quality review remains required; no synthetic English result establishes it."
+  },
+  "samples": [
+    {
+      "name": "clean.wav",
+      "version_id": "2eea797b-faf0-4cd2-87a0-b99db0e82ab7",
+      "seconds": 6.235,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "03215fe2-f823-5a8d-b8d9-9ece37de0316",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 9.368
+          },
+          "text": "A triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.",
+          "text_sha256": "b87e871b50363a8fa9ec34700f276470277b811ebadb0143ab3cfbcc308f9531",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "faster-whisper-1.2.1-tiny-cpu-int8-v1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "54a49b046479c1824d0766a14ec94cffa171a16b10a591f9fde036295807c0b6",
+              "duration_seconds": 9.368,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 2.0,
+                "text": "A triangle has three sides."
+              },
+              {
+                "start_seconds": 2.6,
+                "end_seconds": 5.3,
+                "text": "Water freezes at zero degrees Celsius."
+              },
+              {
+                "start_seconds": 5.9,
+                "end_seconds": 8.9,
+                "text": "This is an authored audio test for study lens."
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "duration_seconds": 9.368073,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": "en",
+              "language_probability": 0.9968152642250061,
+              "levels": {
+                "rms": 0.093815,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": 1283325952,
+              "helper_sampled_peak_private_bytes": 1356419072,
+              "helper_cpu_seconds": 4.172,
+              "helper_seconds": 4.703
+            },
+            "assets": []
+          }
+        }
+      ],
+      "parent_private_bytes_after": 69197824,
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "known_phrases_recovered": true
+      },
+      "status": "passed"
+    },
+    {
+      "name": "noisy.wav",
+      "version_id": "9428513e-a7c9-4c36-8373-b118031f93c8",
+      "seconds": 6.063,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "bc2a6eb6-132a-5cbf-99da-76061b1581fd",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 9.368
+          },
+          "text": "a triangle has three sides. Water freezes at zero degree Celsius. This is an authored audio test for study lens.",
+          "text_sha256": "f380856581c3792b7c400ce1b27f46e686386f28a16b8b9aa38ed99a08d44c04",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "faster-whisper-1.2.1-tiny-cpu-int8-v1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "6400c6b27c402a710789233e08ef7779c1c209239d3cf6a3011ffd4a2e04e3d3",
+              "duration_seconds": 9.368,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 9.0,
+                "text": "a triangle has three sides. Water freezes at zero degree Celsius. This is an authored audio test for study lens."
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "duration_seconds": 9.368073,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": "en",
+              "language_probability": 0.9951111674308777,
+              "levels": {
+                "rms": 0.070498,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": 1284845568,
+              "helper_sampled_peak_private_bytes": 1356419072,
+              "helper_cpu_seconds": 4.047,
+              "helper_seconds": 4.5
+            },
+            "assets": []
+          }
+        }
+      ],
+      "parent_private_bytes_after": 70328320,
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "known_phrases_recovered": false
+      },
+      "status": "needs-review"
+    },
+    {
+      "name": "silence.wav",
+      "version_id": "7751da39-8ccf-486e-b6e4-acf6cd7f6470",
+      "seconds": 1.047,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "9d54a84f-e89b-504b-a8f9-23bf3ef9e830",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 5.0
+          },
+          "text": "",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "empty",
+          "warning": "No speech recognized in this interval. This may be silence, music or missed speech; listen to the original.",
+          "engine": "faster-whisper-1.2.1-tiny-cpu-int8-v1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "6516da2b046a1040ba05a312c042bb45a0329baa73fd8b4907c7904bf367d363",
+              "duration_seconds": 5.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "duration_seconds": 5.0,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": null,
+              "language_probability": null,
+              "levels": {
+                "rms": 0.0,
+                "clipped_fraction": 0.0,
+                "near_zero": true
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "parent_private_bytes_after": 71376896,
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "no_invented_speech": true
+      },
+      "status": "passed"
+    },
+    {
+      "name": "tone.wav",
+      "version_id": "8ddc25a9-8420-41b1-9322-5de65ce3094f",
+      "seconds": 4.578,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "7edb2fa3-77b2-5e22-a6cd-b9d42b74aead",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 5.0
+          },
+          "text": "",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "empty",
+          "warning": "No speech recognized in this interval. This may be silence, music or missed speech; listen to the original.",
+          "engine": "faster-whisper-1.2.1-tiny-cpu-int8-v1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "f650e4cd6e480b91094a0e21f3774d2caaa05c7ac0fa11f9ada004165a9d856a",
+              "duration_seconds": 5.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "duration_seconds": 5.0,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": "en",
+              "language_probability": 0.25776809453964233,
+              "levels": {
+                "rms": 0.258942,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": 1248641024,
+              "helper_sampled_peak_private_bytes": 1318670336,
+              "helper_cpu_seconds": 2.516,
+              "helper_seconds": 3.109
+            },
+            "assets": []
+          }
+        }
+      ],
+      "parent_private_bytes_after": 71376896,
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "no_invented_speech": true
+      },
+      "status": "passed"
+    },
+    {
+      "name": "intervals.wav",
+      "version_id": "9af4dc15-6057-4f97-8f58-5562e9877bbd",
+      "seconds": 12.36,
+      "state": "partial",
+      "error": null,
+      "units": [
+        {
+          "id": "d0836e95-fae5-5680-8e05-3bc0bb8e69df",
+          "ordinal": 1,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 0,
+            "end_seconds": 30.0
+          },
+          "text": "A triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.",
+          "text_sha256": "b87e871b50363a8fa9ec34700f276470277b811ebadb0143ab3cfbcc308f9531",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "faster-whisper-1.2.1-tiny-cpu-int8-v1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "216c54f29bcaafaa18c178579ce3642b808da4ceb6b87a9c6fba7e6e80bafb9a",
+              "duration_seconds": 30.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 0.0,
+                "end_seconds": 2.0,
+                "text": "A triangle has three sides."
+              },
+              {
+                "start_seconds": 2.6,
+                "end_seconds": 5.3,
+                "text": "Water freezes at zero degrees Celsius."
+              },
+              {
+                "start_seconds": 5.9,
+                "end_seconds": 8.9,
+                "text": "This is an authored audio test for study lens."
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "duration_seconds": 65.0,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": "en",
+              "language_probability": 0.9970308542251587,
+              "levels": {
+                "rms": 0.052425,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": 1282179072,
+              "helper_sampled_peak_private_bytes": 1356767232,
+              "helper_cpu_seconds": 3.281,
+              "helper_seconds": 3.547
+            },
+            "assets": []
+          }
+        },
+        {
+          "id": "f4131d88-4e8a-5d15-95af-5e8dc6b47841",
+          "ordinal": 2,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 30,
+            "end_seconds": 60.0
+          },
+          "text": "A triangle has three sides.\nWater freezes at zero degrees Celsius.\nThis is an authored audio test for study lens.",
+          "text_sha256": "b87e871b50363a8fa9ec34700f276470277b811ebadb0143ab3cfbcc308f9531",
+          "status": "suspect",
+          "warning": "Automatic transcript: compare with the audio. Chunk boundaries may split words; speakers are not identified.",
+          "engine": "faster-whisper-1.2.1-tiny-cpu-int8-v1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "e38668098eb55ffa7b695139da5d4b86b7cb87617c14733eeecd2925221a226d",
+              "duration_seconds": 30.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [
+              {
+                "start_seconds": 31.71,
+                "end_seconds": 33.71,
+                "text": "A triangle has three sides."
+              },
+              {
+                "start_seconds": 34.71,
+                "end_seconds": 36.71,
+                "text": "Water freezes at zero degrees Celsius."
+              },
+              {
+                "start_seconds": 37.71,
+                "end_seconds": 40.71,
+                "text": "This is an authored audio test for study lens."
+              }
+            ],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "duration_seconds": 65.0,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": "en",
+              "language_probability": 0.9959153532981873,
+              "levels": {
+                "rms": 0.052425,
+                "clipped_fraction": 0.0,
+                "near_zero": false
+              },
+              "helper_private_bytes_after": 1283682304,
+              "helper_sampled_peak_private_bytes": 1356726272,
+              "helper_cpu_seconds": 5.469,
+              "helper_seconds": 5.656
+            },
+            "assets": []
+          }
+        },
+        {
+          "id": "d635e7b3-1f3f-5216-86b6-cd034840110c",
+          "ordinal": 3,
+          "locator": {
+            "kind": "time",
+            "start_seconds": 60,
+            "end_seconds": 65.0
+          },
+          "text": "",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "empty",
+          "warning": "No speech recognized in this interval. This may be silence, music or missed speech; listen to the original.",
+          "engine": "faster-whisper-1.2.1-tiny-cpu-int8-v1",
+          "metadata": {
+            "text_origin": "automatic_speech_transcription",
+            "review_required": true,
+            "audio": {
+              "sha256": "6516da2b046a1040ba05a312c042bb45a0329baa73fd8b4907c7904bf367d363",
+              "duration_seconds": 5.0,
+              "sample_rate": 16000,
+              "channels": 1
+            },
+            "segments": [],
+            "speech": {
+              "model_sha256": "be12c35ce2f4f639e2cc62e4c9748d105916292b50dfc6aa3807fd32faac9a39",
+              "language_hint": "auto",
+              "chunk_seconds": 30,
+              "duration_seconds": 65.0,
+              "stream_index": 0,
+              "audio_streams": 1,
+              "original_channels": 1,
+              "original_sample_rate": "22050",
+              "language": null,
+              "language_probability": null,
+              "levels": {
+                "rms": 0.0,
+                "clipped_fraction": 0.0,
+                "near_zero": true
+              },
+              "helper_private_bytes_after": null,
+              "helper_sampled_peak_private_bytes": null,
+              "helper_cpu_seconds": null,
+              "helper_seconds": null
+            },
+            "assets": []
+          }
+        }
+      ],
+      "parent_private_bytes_after": 79290368,
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "gold_interval_boundaries": true,
+        "second_chunk_absolute_time": true
+      },
+      "status": "passed"
+    },
+    {
+      "name": "corrupt.wav",
+      "version_id": "db3bb003-7cc1-45b0-960f-3ba4dd872f75",
+      "seconds": 0.86,
+      "state": "failed",
+      "error": "A local audio helper could not finish within its memory/time limits. Check FFmpeg/speech setup or export a shorter audio copy; saved intervals remain.",
+      "units": [],
+      "parent_private_bytes_after": 69537792,
+      "checks": {
+        "original_unchanged": true,
+        "all_transcripts_unverified": true,
+        "corrupt_declined": true
+      },
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Synthetic known English fixtures; not held-out natural speech accuracy.",
+    "Hindi/Hinglish and noisy student recordings require human review.",
+    "Sampled helper peak is not an 8 GB whole-app measurement."
+  ],
+  "status": "needs-review"
+}
