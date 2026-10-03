@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "fixture": "authored captions and authored local slides.mp4",
+  "checks": {
+    "on_demand_embed_url": true,
+    "player_unmount": true,
+    "browser_fallback": true,
+    "local_attachment_ui": true,
+    "mapped_seek": true
+  },
+  "local_seek_seconds": 5.5,
+  "remote_playback": "student manual check pending",
+  "screenshot": "C:\\Users\\User\\OneDrive\\Desktop\\Study\\docs\\evaluation\\screenshots\\youtube-media-desktop.png"
+}

@@ -15,11 +15,13 @@ import {
 export function ContentPreview({
   workspaceId,
   version,
+  initialSeekSeconds,
   job,
   close,
 }: {
   workspaceId: string;
   version: SourceVersion;
+  initialSeekSeconds?: number;
   job?: Job;
   close: () => void;
 }) {
@@ -301,7 +303,7 @@ export function ContentPreview({
             <button className={view === "structure" ? "secondary" : "text-button"}
               onClick={() => setView("structure")} aria-pressed={view === "structure"}>Tables &amp; structure</button>
           </div>}
-          {content?.kind === "video" ? <VideoTranscript key={unit.id} unit={unit} workspaceId={workspaceId} versionId={version.id} /> : content?.kind === "audio" ? <AudioTranscript key={unit.id} unit={unit} /> : view === "visual" ? (
+          {content?.kind === "video" ? <VideoTranscript key={unit.id} unit={unit} workspaceId={workspaceId} versionId={version.id} initialSeekSeconds={initialSeekSeconds} /> : content?.kind === "audio" ? <AudioTranscript key={unit.id} unit={unit} /> : view === "visual" ? (
             <div className="source-visuals">
               {unit.metadata.assets?.length ? (
                 unit.metadata.assets.map((asset, index) => (
@@ -410,7 +412,7 @@ export function ContentPreview({
           </p>
         )
       )}
-      {!loading && content?.kind === "video" && !unit && <VideoTranscript workspaceId={workspaceId} versionId={version.id} />}
+      {!loading && content?.kind === "video" && !unit && <VideoTranscript workspaceId={workspaceId} versionId={version.id} initialSeekSeconds={initialSeekSeconds} />}
       {content && ["pdf", "slides", "image"].includes(content.kind) && (
         <div className="visual-process-action">
           {vision?.automatic && <p className="small-text">Difficult visuals are automatically sent to Groq after local processing. Local results are retained.</p>}

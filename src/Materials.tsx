@@ -35,6 +35,7 @@ export function Materials({
   const mounted = useRef(false);
   const busy = imports.state.busy;
   const [preview, setPreview] = useState<SourceVersion | null>(null);
+  const [previewSeek,setPreviewSeek] = useState<number|undefined>(undefined);
   const [previewKind,setPreviewKind] = useState("");
   const [linkForm,setLinkForm] = useState(false);
   const [link,setLink] = useState("");
@@ -196,9 +197,9 @@ export function Materials({
         <div>
           <strong>PDF · Slides · Video · Audio · Images · Text</strong>
           <p>
-            Originals up to 2 GB. PDF, text, slides, images, audio and video audio are processed in
+            Originals up to 2 GB. PDF, text, slides, images, audio and video are processed in
             the background. OCR and automatic transcripts need review. Audio supports
-            recordings up to four hours. Video frames are selected locally; on-screen text extraction is pending. PDF/visual files
+            recordings up to four hours. Video frames and local text are processed in the background. PDF/visual files
             support up to 64 MB and 500 pages/slides; text files up to 16 MB.
           </p>
           {vision?.automatic && <p>Difficult page and picture previews are automatically sent to Groq after local processing. Local results are retained.</p>}
@@ -219,11 +220,16 @@ export function Materials({
         </p>
       )}
       {preview && previewKind === "youtube" ? <YouTubeReview key={preview.id} workspaceId={workspaceId} subjectId={subject.id} version={preview}
-        job={queue.jobs.find(job=>job.kind==="extract_source" && job.source_version_id===preview.id)} close={()=>setPreview(null)}/> : preview && (
+        job={queue.jobs.find(job=>job.kind==="extract_source" && job.source_version_id===preview.id)}
+        videos={sources.filter(source=>source.kind==="video").flatMap(source=>source.versions.map(version=>({version,displayName:source.display_name})))}
+        onOpenVideo={(versionId,seconds)=>{const found=sources.flatMap(source=>source.versions).find(version=>version.id===versionId);
+          if(found){setPreviewKind("video");setPreviewSeek(seconds);setPreview(found);}}}
+        onAssociationChange={()=>void refresh()} close={()=>setPreview(null)}/> : preview && (
         <ContentPreview
           key={preview.id}
           workspaceId={workspaceId}
           version={preview}
+          initialSeekSeconds={previewSeek}
           job={queue.jobs.find(
             (job) =>
               job.kind === "extract_source" &&
@@ -272,7 +278,7 @@ export function Materials({
                   </p>
                 </div>
                 <span className="stored-status">
-                  {source.kind === "youtube" ? source.versions[0].extraction?.result?.youtube?.coverage === "link_only" ? "Link only · Captions unavailable" : source.versions[0].extraction?.result?.youtube?.coverage === "captions_only" ? "Transcript only · Needs review" : "Reading saved captions…" : source.versions[0].extraction
+                    {source.kind === "youtube" ? source.media_link ? "Local copy attached · Review coverage" : source.versions[0].extraction?.result?.youtube?.coverage === "link_only" ? "Link only · Captions unavailable" : source.versions[0].extraction?.result?.youtube?.coverage === "captions_only" ? "Transcript only · Needs review" : "Reading saved captions…" : source.versions[0].extraction
                     ? source.versions[0].extraction.state === "succeeded"
                       ? "Text extracted"
                       : source.versions[0].extraction.state === "partial"
@@ -314,7 +320,7 @@ export function Materials({
                           <button
                             className="text-button"
                             disabled={!ready}
-                            onClick={() => {setPreviewKind(source.kind);setPreview(version);}}
+                            onClick={() => {setPreviewKind(source.kind);setPreviewSeek(undefined);setPreview(version);}}
                           >
                             {source.kind === "youtube" ? "Review YouTube source" : source.kind === "video" ? "Review video" : source.kind === "audio" ? "Review transcript" : "Review extracted text"}
                           </button>

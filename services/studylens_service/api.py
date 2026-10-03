@@ -12,8 +12,9 @@ from fastapi.responses import FileResponse, JSONResponse
 from starlette.requests import ClientDisconnect
 
 from .database import Conflict, Database, Missing, file_checksum
-from .schema import CloudVisualRequest, CreateWorkspace, QueueFixture, SaveSession, YouTubeImport
+from .schema import CloudVisualRequest, CreateWorkspace, QueueFixture, SaveSession, YouTubeImport, YouTubeMediaLink
 from .jobs import JobStore
+from .youtube_media import YouTubeMediaStore
 from .supervisor import WorkerSupervisor
 
 TYPES = {
@@ -30,6 +31,7 @@ def create_app(root: Path, token: str, *, max_file_bytes=2 * 1024**3, ready=None
         raise ValueError("A fresh local service token is required")
     db = Database(root)
     queue = JobStore(db)
+    youtube_media = YouTubeMediaStore(db)
     worker = WorkerSupervisor(db.root, allow_eval)
 
     @asynccontextmanager
@@ -183,6 +185,18 @@ def create_app(root: Path, token: str, *, max_file_bytes=2 * 1024**3, ready=None
             return await queue.import_youtube(workspace_id, subject_id, body)
         except ValueError as error:
             raise HTTPException(422, str(error)) from error
+
+    @app.get("/workspaces/{workspace_id}/source-versions/{version_id}/local-media")
+    async def read_youtube_media(workspace_id: str, version_id: str):
+        return await youtube_media.get(workspace_id, version_id)
+
+    @app.post("/workspaces/{workspace_id}/source-versions/{version_id}/local-media")
+    async def attach_youtube_media(workspace_id: str, version_id: str, body: YouTubeMediaLink):
+        return await youtube_media.attach(workspace_id, version_id, body)
+
+    @app.delete("/workspaces/{workspace_id}/source-versions/{version_id}/local-media")
+    async def detach_youtube_media(workspace_id: str, version_id: str):
+        return await youtube_media.detach(workspace_id, version_id)
 
     @app.post("/workspaces/{workspace_id}/subjects/{subject_id}/sources", status_code=201)
     async def upload(request: Request, workspace_id: str, subject_id: str, filename: str, source_id: str | None = None):

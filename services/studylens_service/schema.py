@@ -110,6 +110,15 @@ content_units = Table("content_units", metadata,
     UniqueConstraint("source_version_id", "ordinal"),
     CheckConstraint("status IN ('text', 'needs_ocr', 'empty', 'unreadable', 'too_large', 'suspect')", name="content_status"))
 
+youtube_media_links = Table("youtube_media_links", metadata,
+    Column("id", Integer, primary_key=True, autoincrement=True),
+    Column("youtube_source_id", String(36), ForeignKey("sources.id", ondelete="RESTRICT"), nullable=False),
+    Column("caption_version_id", String(36), ForeignKey("source_versions.id", ondelete="RESTRICT"), nullable=False),
+    Column("media_version_id", String(36), ForeignKey("source_versions.id", ondelete="RESTRICT")),
+    Column("youtube_start_seconds", Float, nullable=False),
+    Column("created_at", String(40), nullable=False),
+    CheckConstraint("youtube_start_seconds >= 0 AND youtube_start_seconds <= 14400", name="youtube_media_offset"))
+
 Identifier = Annotated[str, Field(min_length=1, max_length=200, pattern=r"^[a-zA-Z0-9_-]+$")]
 Name = Annotated[str, Field(min_length=1, max_length=60)]
 
@@ -122,6 +131,11 @@ class YouTubeImport(StrictModel):
     url: Annotated[str, Field(min_length=1, max_length=2048)]
     language: Annotated[str, Field(pattern=r"^[a-zA-Z]{2,3}(?:-[a-zA-Z0-9]{2,8})?$")] = "en"
     title: Annotated[str, Field(max_length=200)] = ""
+
+
+class YouTubeMediaLink(StrictModel):
+    media_version_id: Identifier
+    youtube_start_seconds: Annotated[float, Field(ge=0, le=14400)] = 0
 
 
 class TopicInput(StrictModel):

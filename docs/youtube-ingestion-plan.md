@@ -1,6 +1,6 @@
 # YouTube source ingestion — Phase 7 extension
 
-Research date: October 3, 2026. This document records the original plan. **7D-1 link/caption ingestion is now implemented**, ahead of frame OCR at the student's request; see the [implementation and measured results](evaluation/phase-07d-youtube.md). The pinned caption reader is installed, a live public lecture import passed, and production Electron review was checked. Media acquisition and embedded playback remain planned. Playback currently opens the system browser at a source timestamp.
+Research date: October 3, 2026. This document records the original plan. **7D-1 link/caption ingestion** and [7D-2 local-media association](evaluation/phase-07d-media.md) are implemented. The latter attaches a separately uploaded video version with an explicit timestamp offset, while the saved YouTube source has on-demand embedded playback and a browser fallback. Direct YouTube audiovisual acquisition remains unresolved under the platform policy below.
 
 ## Student flow
 
@@ -42,8 +42,8 @@ Caption-derived knowledge can be stored locally, subject to applicable retention
 
 **7D-1: Link and transcript.** Fixtures for URL forms, generated/manual captions, Hindi/English tracks, overlapping/rolling captions, missing captions, blocked requests, invalid timings, duplicates, workspace isolation and cancellation. Online playback/seek checked separately with a public lecture; never fabricate success for unavailable captions.
 
-**7D-2: Permitted media acquisition.** Small controlled source with explicit availability/permission; check partial download, expired media links, byte limits, cancellation/restart, original integrity and timestamp offsets before connecting to Groq.
+**7D-2: Permitted local media.** The student uploads a video file acquired through a permitted route, then attaches its immutable version to the YouTube caption source and states which YouTube time matches local 00:00. The existing upload and video audio/frame/visual jobs keep their own limits, integrity checks and cancellation/restart behavior. The association is append-only and does not assert that both files match. Direct YouTube downloading, including temporary downloading followed by deletion, still requires a compliant acquisition route and is not implemented.
 
-**7D-3: Full review.** Connect the acquired media to Phase 7 audio/frame extraction. Compare against manually marked lecture events and preserve a visible distinction between transcript-only and visual coverage. Test production Electron embedding and remote deletion/embedding-disabled failures.
+**7D-3: Full review.** Compare linked local-media events with manually marked lecture events and provide source-aware citations without silently merging unverified captions with video extraction. Test production Electron playback with accessible, embedding-disabled and removed videos. Confirm behavior on the student's 8 GB laptop.
 
 Recommended prototype sequence: finish uploaded-video checkpoints 7A–7C, then implement the YouTube link/transcript checkpoint. Treat the caption reader and downloader as replaceable acquisition adapters; the downstream content-unit contracts remain shared.

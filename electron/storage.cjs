@@ -105,6 +105,12 @@ function registerStorage(getWindow, getBackend) {
         await require("electron").shell.openExternal(youtubePlaybackUrl(body?.url));
         return {opened:true};
       }
+      if (action === "readYouTubeMedia" || action === "attachYouTubeMedia" || action === "detachYouTubeMedia") {
+        const route = "/workspaces/" + identifier(workspaceId) + "/source-versions/" +
+          identifier(versionId) + "/local-media";
+        return backend.request(route, action === "attachYouTubeMedia" ? json(body) :
+          action === "detachYouTubeMedia" ? {method: "DELETE"} : undefined);
+      }
       if (action === "processCloudVisuals")
         return backend.request(
           "/workspaces/" + identifier(workspaceId) + "/source-versions/" + identifier(versionId) + "/cloud-visuals",

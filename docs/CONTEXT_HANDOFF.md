@@ -1,6 +1,6 @@
 # Neev — continuation handoff
 
-Updated October 3, 2026, after Phase 7C frame-text integration, YouTube captions and the rename to **Neev** (नींव). Read this first when continuing. Detailed reports preserve the history under the former name StudyLens; do not rerun old model experiments or infer student acceptance from automated tests.
+Updated October 3, 2026, after Phase 7D-2 student-supplied local-media association and on-demand YouTube embedding. Read this first when continuing. Detailed reports preserve the history under the former name StudyLens; do not infer student acceptance from automated tests.
 
 ## Product and working agreements
 
@@ -16,7 +16,7 @@ Updated October 3, 2026, after Phase 7C frame-text integration, YouTube captions
 
 ## Repository and launch
 
-- Workspace: `C:/Users/User/OneDrive/Desktop/Study`. No Git repository was present at the last inspection; do not assume a branch or commit exists.
+- Workspace: `C:/Users/User/OneDrive/Desktop/Study`. The Git repository is on `main` and tracks `https://github.com/KASIM-S-DHILA/Neev.git`; commit each independent phase separately and verify the push.
 - React/TypeScript/Vite renderer; narrow sandboxed Electron preload IPC; authenticated loopback Python FastAPI service; SQLAlchemy/aiosqlite, SQLite WAL and Alembic; immutable original store and supervised single heavy worker.
 - Node 24, Python 3.12, project `.venv`, pinned `services/requirements-lock.txt`. Project dependencies are installed. No new AI model download is needed for the completed work.
 - Run native development: `npm.cmd run dev`. Run the built desktop app: `npm.cmd start` or `Neev.lnk` (the older shortcut still works). Rebuild changed UI with `npm.cmd run build`. `npm.cmd run dev:web` is the browser preview.
@@ -35,16 +35,18 @@ Updated October 3, 2026, after Phase 7C frame-text integration, YouTube captions
 | Phase 7B | Independent frame job: FFmpeg source PTS, PySceneDetect 0.7.1 and pixel changes, duplicate reduction, timestamp review, atomic window checkpoints, cancellation/restart |
 | Phase 7C | Separate retained-frame visual job: local Tesseract, bounded selective Groq, timestamped unverified review, separate nearby speech, per-frame restart checkpoints |
 | Phase 7D-1 | Materials → Add YouTube link → Import captions; manual/generated language provenance, immutable snapshots, timed content units, refresh/version dedup and link-only fallback; system-browser timestamp links |
+| Phase 7D-2 | Student uploads a permitted local video copy and links its saved version to a YouTube caption source with an explicit clock offset; caption review seeks local playback; YouTube player loads on demand with browser fallback |
 
 Frame selection uses one-second sampling in bounded 30-second windows, maximum 600 retained frames with at most 20 per window, and four previews per viewer page. Brief/small visual changes can be missed. The new frame-visual job runs OCR after selection and sends at most one difficult frame per window and twelve per uploaded video to Groq when configured. Results are unverified and are not yet retrieval evidence.
 
-YouTube captions are **Transcript only · Visuals not processed** and unverified, even for manual tracks. Link-only imports have zero caption units. Language association and case-sensitive video IDs remain scoped to workspace/subject. No video/audio downloading, embedded YouTube player, captionless-link ASR or linked-video frame extraction is implemented. Use an uploaded permitted media copy for the existing audio/frame pipeline. Snapshot hashes describe saved JSON, not remote video bytes.
+YouTube captions are **Transcript only · Visuals not processed** and unverified, even for manual tracks. Link-only imports have zero caption units. Language association and case-sensitive video IDs remain scoped to workspace/subject. The on-demand YouTube iframe requires internet and may fail when embedding is disabled; the canonical browser link remains. The student can upload a permitted video file and attach its immutable version with a YouTube-to-local time offset. Its audio/frame/visual jobs run independently; the association does not verify media identity or merge captions with video evidence. No direct YouTube audiovisual download or captionless-link ASR is implemented. Snapshot hashes describe saved JSON, not remote video bytes.
 
 Retrieval, grounded tutoring, assessments, learner models, SearXNG integration, course maps, generated revision aids, study schedules, formal RAG/personalization evaluation and packaged installer remain future work. Sample reading/draft UI does not implement these features or establish mastery.
 
 ## Latest verified evidence
 
 - Phase 7C: seven focused contracts and the final **163-test** full service regression passed. Fifteen JavaScript checks and the production build passed. Real local OCR and one authorized live Groq frame passed on an authored clip; saved local/cloud results were reviewed in hidden native Electron. [Report](evaluation/phase-07c.md).
+- Phase 7D-2: two focused association contracts, the full **165-test** service suite, fifteen JavaScript checks/build and an isolated production Electron check passed. The native check covered on-demand iframe URL, unmount, browser fallback, local association and a mapped 65.5 → 5.5 second seek; actual remote playback and student acceptance remain manual checks. [Report](evaluation/phase-07d-media.md).
 - Full service regression: **156 tests passed**, 259.970 s, `tmp/youtube-service-tests.log`. After the final case-sensitive YouTube ID refinement, the **13 focused YouTube tests passed** again (5.075 s), `tmp/youtube-tests.log`.
 - JavaScript checks: **15 passed**; TypeScript/Vite build passed. Includes native external-URL validation and distinct browser/API versus native/IPC request bodies.
 - Dependencies: `pip check` found no broken requirements.
@@ -62,13 +64,13 @@ Retrieval, grounded tutoring, assessments, learner models, SearXNG integration, 
 - Pipeline: `services/studylens_service/{api,database,jobs,worker,extraction,audio,video,video_frames,video_frame_visuals,youtube,youtube_helper}.py`.
 - Current reports: `docs/evaluation/phase-06-cloud-audio.md`, `phase-07a.md`, `phase-07b.md`, `phase-07d-youtube.md`.
 - YouTube evidence: `docs/evaluation/youtube-20261003-083018.json`, `youtube-desktop.json`, `screenshots/youtube-desktop.png`. Pilot data: `tmp/youtube-integration-20261003-083018`.
-- Reproduction: `npm.cmd run youtube:test`, `npm.cmd run video:frames:test`, `npm.cmd run video:visuals:test`, `npm.cmd run check`, `npm.cmd run api:test`; live/native scripts and limitations are in each report.
+- Reproduction: `npm.cmd run youtube:test`, `npm.cmd run youtube:media:test`, `npm.cmd run video:frames:test`, `npm.cmd run video:visuals:test`, `npm.cmd run check`, `npm.cmd run api:test`; live/native scripts and limitations are in each report.
 - `README.md` covers setup/current scope; `docs/PHASES.md` holds the full roadmap. Older dated milestone paragraphs are historical. `docs/architecture.md` records Phase 5 foundations; consult later reports for current automatic cloud/audio/video/YouTube behavior.
 
 ## Next checkpoint and pending manual checks
 
-Phase 7C is implemented for uploaded videos and awaits student manual acceptance. YouTube permitted-media/full multimodal acquisition is a separate unfinished 7D checkpoint. Confirm the user's next instruction before assuming a different order.
+Phase 7C is implemented for uploaded videos and awaits student manual acceptance. Phase 7D-2 provides a permitted local-media route without downloading YouTube audiovisual bytes. Full source-aware review/grounding and direct remote media acquisition remain separate future work; the latter needs a compliant route under [YouTube API Services Developer Policies](https://developers.google.com/youtube/terms/developer-policies).
 
-Student manual acceptance has not been reported for the latest frame/YouTube changes. Restart Electron, import/review frames from slide/whiteboard/silent videos, compare OCR and any Groq output with originals, seek timestamps, cancel/resume frame jobs, and check responsiveness on the 8 GB target. For YouTube, import a captioned link, click a timestamp to check the system browser, refresh unchanged captions, reopen and read saved text, then try unavailable captions. Keep these checks distinct from the completed automated gates.
+Student manual acceptance has not been reported for the latest frame/YouTube changes. Restart Electron, import/review frames from slide/whiteboard/silent videos, compare OCR and any Groq output with originals, seek timestamps, cancel/resume frame jobs, and check responsiveness on the 8 GB target. For YouTube, import a captioned link, try Watch here and the browser fallback on accessible and embedding-disabled videos, refresh captions, attach a permitted local copy, verify its entered time offset against the remote source, review frame text and test an unavailable-caption link. Keep these checks distinct from the completed automated gates.
 
 Latest user chose Neev and requested a prompt for a fresh context window. Branding, settings, launch metadata, service messages and a `Neev.lnk` shortcut were updated. No new ingestion checkpoint was started during the rename. See `docs/NEXT_CONTEXT_PROMPT.md` for the continuation prompt.

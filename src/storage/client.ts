@@ -202,7 +202,14 @@ export type Source = {
   display_name: string;
   kind: string;
   versions: SourceVersion[];
+  media_link?: YouTubeMediaLink | null;
 };
+export type YouTubeMediaLink = { media_version_id: string; filename: string; sha256: string;
+  caption_version_id_at_link: string; youtube_start_seconds: number; created_at: string;
+  provenance: "student_supplied_local_copy"; match_verified: false;
+  audio_state: Job["state"] | null; frames_state: Job["state"] | null; visual_state: Job["state"] | null;
+  duration_seconds: number | null };
+export type YouTubeMediaAssociation = {caption_version_id: string; media: YouTubeMediaLink | null};
 export type FileTicket = { id: string; name: string; size: number };
 export type ImportResult = {
   source_id: string;
@@ -238,6 +245,9 @@ export type StorageBridge = {
       | "audioStatus"
       | "importYouTube"
       | "openYouTube"
+      | "readYouTubeMedia"
+      | "attachYouTubeMedia"
+      | "detachYouTubeMedia"
       | "processAudio"
       | "processVideoFrames"
       | "processFrameVisuals"
@@ -355,6 +365,20 @@ export const storageClient = {
   openYouTube: async (url: string) => {
     if (window.studyLens?.storage) return unwrap(await window.studyLens.storage.request({action:"openYouTube",body:{url}}));
     window.open(url,"_blank","noopener,noreferrer");
+  },
+  youtubeMedia: (workspaceId: string, versionId: string) => operation<YouTubeMediaAssociation>(
+    "readYouTubeMedia", `/workspaces/${encodeURIComponent(workspaceId)}/source-versions/${encodeURIComponent(versionId)}/local-media`,
+    workspaceId, undefined, {versionId}),
+  attachYouTubeMedia: (workspaceId: string, versionId: string, mediaVersionId: string, youtubeStartSeconds: number) =>
+    operation<YouTubeMediaAssociation>("attachYouTubeMedia",
+      `/workspaces/${encodeURIComponent(workspaceId)}/source-versions/${encodeURIComponent(versionId)}/local-media`,
+      workspaceId, {media_version_id: mediaVersionId, youtube_start_seconds: youtubeStartSeconds}, {versionId}),
+  detachYouTubeMedia: async (workspaceId: string, versionId: string): Promise<YouTubeMediaAssociation> => {
+    if (window.studyLens?.storage) return unwrap(await window.studyLens.storage.request({
+      action:"detachYouTubeMedia",workspaceId,versionId})) as YouTubeMediaAssociation;
+    return browserRequest<YouTubeMediaAssociation>(
+      `/workspaces/${encodeURIComponent(workspaceId)}/source-versions/${encodeURIComponent(versionId)}/local-media`,
+      {method:"DELETE"});
   },
   videoFrames: (workspaceId: string, versionId: string, offset = 0) => operation<VideoFramePage>(
     "readVideoFrames", `/workspaces/${encodeURIComponent(workspaceId)}/source-versions/${encodeURIComponent(versionId)}/video-frames?offset=${offset}`,

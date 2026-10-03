@@ -309,6 +309,7 @@ class ExtractionTests(unittest.TestCase):
         before = self.client.get(BASE + "/session").json()
         self.client.__exit__(None, None, None)
         with closing(sqlite3.connect(self.root / "studylens.sqlite3")) as connection:
+            connection.execute("DROP TABLE youtube_media_links")
             connection.execute("DROP TABLE content_units")
             connection.execute("DELETE FROM jobs WHERE kind='extract_source'")
             connection.execute("UPDATE alembic_version SET version_num='0002_background_jobs'")
@@ -316,7 +317,7 @@ class ExtractionTests(unittest.TestCase):
         self.client = TestClient(create_app(self.root, TOKEN), headers=AUTH)
         self.client.__enter__()
         self.assertEqual(self.client.get(BASE + "/session").json(), before)
-        self.assertEqual(self.client.get("/health").json()["schema_version"], "0004_visual_content")
+        self.assertEqual(self.client.get("/health").json()["schema_version"], "0005_youtube_media_links")
         self.start()
         self.assertEqual(self.wait(original["version_id"])["state"], "succeeded")
         self.assertEqual(self.client.get("/source-versions/" + original["version_id"] + "/file").content, (FIXTURES / "digital-notes.pdf").read_bytes())

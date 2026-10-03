@@ -170,7 +170,10 @@ class Database:
                         "total": extraction["total"], "error": extraction["error"],
                         "result": json.loads(extraction["result_json"]) if extraction["result_json"] else None}
                     version_output.append({key: version[key] for key in ("id", "version", "filename", "sha256", "size_bytes", "state", "created_at")} | {"extraction": info})
-                output.append({key: source[key] for key in ("id", "display_name", "kind")} | {"versions": version_output})
+                from .youtube_media import YouTubeMediaStore
+                media = await YouTubeMediaStore(self).by_source(connection, source["id"]) if source["kind"] == "youtube" else None
+                output.append({key: source[key] for key in ("id", "display_name", "kind")} |
+                    {"versions": version_output, "media_link": media})
             return output
 
     async def register_source(self, workspace_id, subject_id, filename, kind, digest, size, relative_path, source_id=None):

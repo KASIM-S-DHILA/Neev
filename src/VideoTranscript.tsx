@@ -3,7 +3,7 @@ import { AudioTranscript, timestamp } from "./AudioTranscript";
 import type { ContentUnit } from "./storage/client";
 import { VideoFrames } from "./VideoFrames";
 
-export function VideoTranscript({ unit, workspaceId, versionId }: { unit?: ContentUnit; workspaceId: string; versionId: string }) {
+export function VideoTranscript({ unit, workspaceId, versionId, initialSeekSeconds }: { unit?: ContentUnit; workspaceId: string; versionId: string; initialSeekSeconds?: number }) {
   const player = useRef<HTMLVideoElement>(null);
   const pendingSeek = useRef<number | null>(null);
   const [failed, setFailed] = useState(false);
@@ -16,13 +16,13 @@ export function VideoTranscript({ unit, workspaceId, versionId }: { unit?: Conte
     if (player.current) player.current.currentTime = seconds;
   };
   return <div className="video-transcript">
-    <p className="small-text">{unit ? "Audio transcript only · Visual extraction is pending" : "Video playback · Transcript unavailable"}</p>
+    <p className="small-text">{unit ? "Audio transcript · Selected-frame text is available below when processing finishes" : "Video playback · Transcript unavailable"}</p>
     {failed ? <>
       <p className="content-warning">Video playback is unavailable for this file. Save the original to open in another player, or export an H.264 MP4 copy.</p>
       {unit?.metadata.audio && <AudioTranscript unit={unit} />}
     </> : <>
       <video ref={player} controls preload="metadata" src={source} aria-label="Original source video"
-        onLoadedMetadata={() => { if (player.current) player.current.currentTime = pendingSeek.current ?? start; }}
+        onLoadedMetadata={() => { if (player.current) player.current.currentTime = pendingSeek.current ?? initialSeekSeconds ?? start; }}
         onError={() => setFailed(true)} />
       {unit?.metadata.speech && <p className="small-text">{unit.metadata.speech.provider === "groq" ? "Transcribed by Groq" : unit.metadata.speech.provider === "none" ? "No speech detected" : "Transcribed on this device"} · Unverified</p>}
       {unit?.metadata.segments?.map((segment, index) => <div className="audio-segment" key={index}>

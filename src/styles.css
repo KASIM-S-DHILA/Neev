@@ -1652,10 +1652,16 @@ kbd {
 .youtube-import-form input { padding: 10px 12px; border: 1px solid var(--border); border-radius: 5px; width: 100%; min-width: 0; font: inherit; color: inherit; background: #fff; }
 .youtube-import-options { display: grid; grid-template-columns: minmax(0,1fr) 150px; gap: 16px; margin: 16px 0; }
 .youtube-review .youtube-source-actions { margin: 16px 0; }
-.youtube-cue { display: flex; align-items: baseline; gap: 16px; }
+.youtube-review .youtube-import-options { grid-template-columns: minmax(0,1fr) minmax(180px,220px); }
+.youtube-review .youtube-import-options label { display: flex; flex-direction: column; gap: 8px; font-size: 13px; }
+.youtube-review .youtube-import-options input, .youtube-review .youtube-import-options select { padding: 10px 12px; border: 1px solid var(--border); border-radius: 5px; width: 100%; min-width: 0; font: inherit; color: inherit; background: #fff; }
+.youtube-player { margin: 16px 0; max-width: 800px; }
+.youtube-player iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #111; }
+.youtube-cue { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 16px; }
+.youtube-cue p { flex: 1 1 240px; }
 .youtube-cue button { flex-shrink: 0; font-variant-numeric: tabular-nums; }
 .youtube-cue p { white-space: pre-wrap; line-height: 1.6; margin: 8px 0; }
-@media(max-width:760px) { .youtube-import-options { grid-template-columns: 1fr; } }
+@media(max-width:760px) { .youtube-import-options, .youtube-review .youtube-import-options { grid-template-columns: 1fr; } }
 .frame-extracted-text {
   white-space: pre-wrap;
   overflow-wrap: anywhere;

@@ -43,7 +43,7 @@ class StorageTests(unittest.TestCase):
             with closing(sqlite3.connect(root / "studylens.sqlite3")) as connection:
                 self.assertEqual(connection.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall(), [])
             with TestClient(create_app(root, TOKEN), headers=AUTH) as client:
-                self.assertEqual(client.get("/health").json()["schema_version"], "0004_visual_content")
+                self.assertEqual(client.get("/health").json()["schema_version"], "0005_youtube_media_links")
 
     def setUp(self):
         self.directory = tempfile.TemporaryDirectory(prefix="studylens-storage-")
@@ -68,7 +68,7 @@ class StorageTests(unittest.TestCase):
 
     def test_migration_wal_restart_and_unicode_snapshot(self):
         self.assertEqual(self.client.get("/health").json()["journal_mode"], "wal")
-        self.assertEqual(self.client.get("/health").json()["schema_version"], "0004_visual_content")
+        self.assertEqual(self.client.get("/health").json()["schema_version"], "0005_youtube_media_links")
         self.seed()
         self.client.__exit__(None, None, None)
         self.client = TestClient(create_app(self.root, TOKEN), headers=AUTH)

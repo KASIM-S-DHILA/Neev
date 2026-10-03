@@ -233,6 +233,7 @@ class VisualTests(unittest.TestCase):
             self.stop(process)
         self.client.__exit__(None, None, None)
         with closing(sqlite3.connect(self.root / "studylens.sqlite3")) as connection:
+            connection.execute("DROP TABLE youtube_media_links")
             connection.execute("ALTER TABLE content_units DROP COLUMN metadata_json")
             connection.execute("UPDATE alembic_version SET version_num='0003_content_units'")
             connection.commit()
@@ -242,7 +243,7 @@ class VisualTests(unittest.TestCase):
         self.assertEqual(after["id"], before["id"])
         self.assertEqual(after["text"], before["text"])
         self.assertEqual(after["metadata"].get("assets"), [])
-        self.assertEqual(self.client.get("/health").json()["schema_version"], "0004_visual_content")
+        self.assertEqual(self.client.get("/health").json()["schema_version"], "0005_youtube_media_links")
 
     def test_cancel_native_child_keeps_service_responsive_then_resumes(self):
         original = self.upload("scan.png")

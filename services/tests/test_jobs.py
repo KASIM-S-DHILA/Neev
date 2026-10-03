@@ -244,6 +244,7 @@ class QueueTests(unittest.TestCase):
         self.client.__exit__(None, None, None)
         # Reconstruct the previous schema within this disposable test directory.
         with closing(sqlite3.connect(self.root / "studylens.sqlite3")) as connection:
+            connection.execute("DROP TABLE youtube_media_links")
             connection.execute("DROP TABLE content_units")
             connection.execute("DROP TABLE jobs")
             connection.execute("UPDATE alembic_version SET version_num='0001_local_storage'")
