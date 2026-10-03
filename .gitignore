@@ -18,3 +18,8 @@ __pycache__/
 *.sqlite3
 *.sqlite3-wal
 *.sqlite3-shm
+
+# Windows shortcuts are per-machine artefacts: the target path only resolves on
+# the machine that created them. Kept out of the repository so a clone does not
+# ship broken or machine-specific links. Recreate on a new machine as needed.
+*.lnk
