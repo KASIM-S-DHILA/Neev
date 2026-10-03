@@ -47,6 +47,12 @@ import { StorageSettings } from "./StorageSettings";
 import { useJobs } from "./storage/useJobs";
 import { useImports } from "./storage/useImports";
 import { JobPanel } from "./JobPanel";
+import {
+  acknowledgedValue,
+  CLOUD_DISCLOSURE,
+  DISCLOSURE_KEY,
+  shouldShowDisclosure,
+} from "./disclosure";
 
 const icons = {
   probability: BrainCircuit,
@@ -66,6 +72,26 @@ export function App() {
     "workspace" | "subject" | "topic" | null
   >(null);
   const [maximized, setMaximized] = useState(false);
+  // One-time disclosure, not per-upload consent. See DECISIONS D8/D8a.
+  const [showDisclosure, setShowDisclosure] = useState(false);
+  useEffect(() => {
+    if (!storage.ready) return;
+    let stored: string | null = null;
+    try {
+      stored = window.localStorage.getItem(DISCLOSURE_KEY);
+    } catch {
+      // Storage can be unavailable; show once per launch rather than never.
+    }
+    setShowDisclosure(shouldShowDisclosure(stored));
+  }, [storage.ready]);
+  const acknowledgeDisclosure = () => {
+    setShowDisclosure(false);
+    try {
+      window.localStorage.setItem(DISCLOSURE_KEY, acknowledgedValue());
+    } catch {
+      // Nothing to persist; the notice simply returns next launch.
+    }
+  };
   const active = session.tabs.find((tab) => tab.id === session.activeTabId)!;
   const subject = session.subjects.find((item) => item.id === active.subjectId);
   const topic = subject?.topics.find((item) => item.id === active.topicId);
@@ -458,6 +484,12 @@ export function App() {
                   Load saved workspace
                 </button>
               )}
+            </div>
+          )}
+          {showDisclosure && (
+            <div className="notice" role="status" data-testid="cloud-disclosure">
+              <span>{CLOUD_DISCLOSURE}</span>
+              <button onClick={acknowledgeDisclosure}>Got it</button>
             </div>
           )}
           {notice && (

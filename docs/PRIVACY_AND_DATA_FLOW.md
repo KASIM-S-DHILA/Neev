@@ -63,9 +63,13 @@ faster-whisper Tiny model is the fallback when Groq is unavailable.
 
 ### Consent
 
-There is **no per-upload consent prompt.** Automatic sending is disclosed in the
-UI (Materials shows an automatic-upload notice) and is disabled by environment
-flag, not by a user decision.
+There is **no per-upload consent prompt.** A one-time disclosure is shown at
+first run and permanently in Settings. Automatic sending is disabled by
+environment flag, not by a user decision.
+
+The wording and the show-once rule live in `src/disclosure.ts`, versioned by the
+`studylens.cloud-disclosure.v1` key so a wording change re-notifies rather than
+silently reusing an old acknowledgement. Tests: `tests/disclosure.test.ts`.
 
 - `cloud_visuals` jobs carry a `consent` field in the job payload, and the manual
   route requires a literal `{consent:true}` body.

@@ -4,12 +4,15 @@ import {
   storageClient,
   type HealthStatus,
   type StorageInfo,
+  type VisionStatus,
 } from "./storage/client";
+import { cloudEnabled, CLOUD_DISCLOSURE } from "./disclosure";
 export function StorageSettings() {
   const [info, setInfo] = useState<StorageInfo | null>(null);
   const [health, setHealth] = useState<HealthStatus | null>(null);
   const [error, setError] = useState("");
   const [audio, setAudio] = useState<Awaited<ReturnType<typeof storageClient.audioStatus>> | null>(null);
+  const [vision, setVision] = useState<VisionStatus | null>(null);
   useEffect(() => {
     let alive = true;
     storageClient
@@ -30,6 +33,8 @@ export function StorageSettings() {
       });
     storageClient.audioStatus().then((value) => { if (alive) setAudio(value); })
       .catch(() => { if (alive) setAudio(null); });
+    storageClient.visionStatus().then((value) => { if (alive) setVision(value); })
+      .catch(() => { if (alive) setVision(null); });
     return () => {
       alive = false;
     };
@@ -41,6 +46,10 @@ export function StorageSettings() {
         Workspaces, subjects, topics, study tabs and drafts are stored in the
         local database. Uploaded originals are kept in their original form.
       </p>
+      <div className="info-row">
+        <span>Cloud processing</span>
+        <span>{cloudEnabled(audio, vision) ? "Automatic · Groq configured" : "Local only · nothing is sent"}</span>
+      </div>
       <div className="info-row">
         <span>Storage</span>
         <span>{describeStorage(health)}</span>
@@ -74,6 +83,18 @@ export function StorageSettings() {
         supported; frame text is produced by its own job and is labelled for
         review.
       </p>
+      <details className="content-provenance">
+        <summary>Cloud processing</summary>
+        <p className="small-text">{CLOUD_DISCLOSURE}</p>
+        <p className="small-text">
+          Set <code>STUDYLENS_AUTO_GROQ_VISION=0</code>,{" "}
+          <code>STUDYLENS_AUTO_GROQ_AUDIO=0</code>,{" "}
+          <code>STUDYLENS_AUTO_VIDEO_VISUALS=0</code> or{" "}
+          <code>STUDYLENS_AUTO_VIDEO_FRAMES=0</code> before launching to keep
+          processing on this device. Full detail is in
+          docs/PRIVACY_AND_DATA_FLOW.md.
+        </p>
+      </details>
       <details className="content-provenance">
         <summary>Audio processing setup</summary>
         {audio ? <p className="small-text">FFmpeg: {audio.ffmpeg && audio.ffprobe ? "Ready" : "Missing"} · Speech runtime: {audio.recognizer ? "Ready" : "Missing"} · Tiny model: {audio.model_ready ? "Ready" : "Missing"}</p> : <p className="small-text">Audio setup status unavailable.</p>}

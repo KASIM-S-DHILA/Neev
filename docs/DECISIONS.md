@@ -100,9 +100,18 @@ replace `content_units.text` or change its hash/status.
 
 **Status:** Provisional — see D8a
 
-Automatic Groq vision and speech are disclosed in the UI and controlled by
-`STUDYLENS_AUTO_GROQ_*` environment flags. `cloud_visuals` jobs carry a `consent`
-field and the manual route requires `{consent:true}`.
+Automatic Groq vision and speech are controlled by `STUDYLENS_AUTO_GROQ_*`
+environment flags. A **one-time disclosure** is shown at first run and
+permanently in Settings: detected speech intervals and selected images or video
+frames are sent automatically when a provider is configured, and original files
+stay on the device. `cloud_visuals` jobs carry a `consent` field in the job
+payload, and the manual route requires `{consent:true}`.
+
+The disclosure states what happens; it does not ask for a decision, and no upload
+is blocked or recorded based on it. Wording and the show-once rule live in
+`src/disclosure.ts` under the versioned key `studylens.cloud-disclosure.v1`, so
+changed wording re-notifies instead of reusing an old acknowledgement. Tests:
+`tests/disclosure.test.ts`.
 
 **Contradiction, now on the record:** the manual vision route requires explicit
 consent, automatic queueing does not ask, and automatic cloud audio carries no

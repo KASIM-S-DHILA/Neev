@@ -158,9 +158,10 @@ Stated plainly so they are not mistaken for oversights:
   assessment, learner modelling, and scored evaluation.
 - **Provenance is partial.** Immutable versions, hashes and locators exist.
   There are no external-web or generated-content tables.
-- **Consent.** Automatic Groq vision and speech are disclosed in the UI but do
-  not ask per upload. Cloud vision retains a `consent` flag on the job payload;
-  audio does not use a consent flow. See
+- **Consent.** A one-time disclosure is shown at first run and permanently in
+  Settings; automatic Groq vision and speech are **not** gated per upload. Cloud
+  vision retains a `consent` flag on the job payload; audio does not use a
+  consent flow. See
   [`PRIVACY_AND_DATA_FLOW.md`](PRIVACY_AND_DATA_FLOW.md).
 - **Providers are inlined.** Groq/Ollama/YouTube clients are embedded in the
   modules that use them; there is no shared provider interface or prompt
@@ -176,16 +177,17 @@ Stated plainly so they are not mistaken for oversights:
 | Gate | Command | Count |
 | --- | --- | --- |
 | Python service | `npm.cmd run api:test` | 184 collected: 170 pass, 14 skipped (scaffold placeholders) |
-| JavaScript + build | `npm.cmd run check` | 18 tests + `tsc --noEmit` + `vite build` |
+| JavaScript + build | `npm.cmd run check` | 22 tests + `tsc --noEmit` + `vite build` |
 | Desktop smoke | `npm.cmd run smoke:desktop` | hidden Electron window, isolated data dir |
 
-JavaScript tests per file (`node --test tests/<file>`), 18 total:
+JavaScript tests per file (`node --test tests/<file>`), 22 total:
 
 | File | Tests | Covers |
 | --- | --- | --- |
 | `tests/imports.test.ts` | 3 | import scope, cancel, partial failure |
 | `tests/session.test.ts` | 7 | tabs, drafts, restore validation, tab cap |
 | `tests/storage.test.ts` | 3 | `describeStorage` derives WAL from `/health` |
+| `tests/disclosure.test.ts` | 4 | one-time cloud disclosure and show-once rule |
 | `tests/writer.test.ts` | 3 | serialisation, coalescing, retry, conflict |
 | `tests/youtube.test.ts` | 2 | URL guard, browser + IPC scope |
 
@@ -233,7 +235,7 @@ response, including units whose status is `needs_ocr`, `suspect`, `unreadable`,
 | `electron/` | Main process, preload bridge, backend client, media |
 | `services/studylens_service/` | Python service — flat modules plus B4 interface scaffolds (§9) |
 | `services/tests/` | Python test suite (184 collected; 170 pass, 14 skipped) |
-| `tests/` | JavaScript test suite (18 tests across 5 files, §10) |
+| `tests/` | JavaScript test suite (22 tests across 6 files, §10) |
 | `tests/fixtures/ingestion/` | Authored ingestion fixtures used by tests and smoke |
 | `scripts/` | Build/dev/smoke entry points |
 | `scripts/ingestion-evals/` | Runnable standalone ingestion evaluators |
