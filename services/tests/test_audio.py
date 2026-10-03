@@ -14,7 +14,7 @@ from studylens_service.local_tools import find_tool
 from studylens_service.worker import Worker
 from studylens_service.job_errors import ExtractionFailure
 
-FIXTURES = Path(__file__).resolve().parents[2] / "docs/evaluation/fixtures/phase-06"
+FIXTURES = Path(__file__).resolve().parents[2] / "tests/fixtures/ingestion/phase-06"
 
 
 def speech(*args):

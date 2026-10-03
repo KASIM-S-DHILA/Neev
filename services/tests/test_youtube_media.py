@@ -16,7 +16,7 @@ from test_storage import AUTH, BASE, SOURCES, TOKEN
 from test_youtube import ROUTE, URL, snapshot
 
 
-VIDEO = Path(__file__).resolve().parents[2] / "docs/evaluation/fixtures/phase-07b/slides.mp4"
+VIDEO = Path(__file__).resolve().parents[2] / "tests/fixtures/ingestion/phase-07b/slides.mp4"
 
 
 class YouTubeMediaTests(unittest.TestCase):

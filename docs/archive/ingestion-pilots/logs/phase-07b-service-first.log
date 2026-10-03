@@ -1,0 +1,171 @@
+npm notice run studylens@0.6.0 api:test
+npm notice run node scripts/python.mjs -m unittest discover -s services/tests -v
+C:\Users\User\OneDrive\Desktop\Study\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_bad_speech_timestamps_are_not_committed (test_audio.AudioTests.test_bad_speech_timestamps_are_not_committed) ... ok
+test_cancel_then_resume_retains_first_interval_and_absolute_times (test_audio.AudioTests.test_cancel_then_resume_retains_first_interval_and_absolute_times) ... ok
+test_corrupt_audio_preserves_original_without_saved_transcript (test_audio.AudioTests.test_corrupt_audio_preserves_original_without_saved_transcript) ... ok
+test_missing_setup_never_downloads_and_resume_after_setup (test_audio.AudioTests.test_missing_setup_never_downloads_and_resume_after_setup) ... ok
+test_preview_corruption_is_flagged_and_private_path_is_not_exposed (test_audio.AudioTests.test_preview_corruption_is_flagged_and_private_path_is_not_exposed) ... ok
+test_real_decode_timestamp_and_review_contract_and_original (test_audio.AudioTests.test_real_decode_timestamp_and_review_contract_and_original) ... ok
+test_reprocess_is_scoped_and_rejects_busy_jobs (test_audio.AudioTests.test_reprocess_is_scoped_and_rejects_busy_jobs) ... ok
+test_silence_never_calls_asr_or_invents_text (test_audio.AudioTests.test_silence_never_calls_asr_or_invents_text) ... ok
+test_supported_compressed_formats_decode_and_keep_original_bytes (test_audio.AudioTests.test_supported_compressed_formats_decode_and_keep_original_bytes) ... ok
+test_duration_limits_and_no_stream (test_audio.AudioValidationTests.test_duration_limits_and_no_stream) ... ok
+test_out_of_order_overrun_and_nonfinite_segments_are_rejected (test_audio.AudioValidationTests.test_out_of_order_overrun_and_nonfinite_segments_are_rejected) ... ok
+test_automatic_completion_restart_and_cache_preserve_local_evidence (test_automatic_vision.AutomaticVisionTests.test_automatic_completion_restart_and_cache_preserve_local_evidence) ... ok
+test_cancelled_cloud_job_is_not_duplicated_or_resurrected (test_automatic_vision.AutomaticVisionTests.test_cancelled_cloud_job_is_not_duplicated_or_resurrected) ... ok
+test_equal_creation_times_claim_integrity_before_extraction (test_automatic_vision.AutomaticVisionTests.test_equal_creation_times_claim_integrity_before_extraction) ... ok
+test_failed_or_cancelled_local_work_does_not_queue_cloud (test_automatic_vision.AutomaticVisionTests.test_failed_or_cancelled_local_work_does_not_queue_cloud) ... ok
+test_missing_key_and_opt_out_do_not_queue (test_automatic_vision.AutomaticVisionTests.test_missing_key_and_opt_out_do_not_queue) ... ok
+test_new_local_work_takes_priority_over_automatic_cloud (test_automatic_vision.AutomaticVisionTests.test_new_local_work_takes_priority_over_automatic_cloud) ... ok
+test_no_preview_or_nonvisual_source_does_not_queue (test_automatic_vision.AutomaticVisionTests.test_no_preview_or_nonvisual_source_does_not_queue) ... ok
+test_opt_out_after_queue_blocks_network (test_automatic_vision.AutomaticVisionTests.test_opt_out_after_queue_blocks_network) ... ok
+test_ordinary_text_preview_stays_local_without_http (test_automatic_vision.AutomaticVisionTests.test_ordinary_text_preview_stays_local_without_http) ... ok
+test_bad_key_falls_back_once_for_remaining_intervals_without_response_body (test_cloud_audio.CloudAudioTests.test_bad_key_falls_back_once_for_remaining_intervals_without_response_body) ... ok
+test_budget_caps_and_bucket_reset (test_cloud_audio.CloudAudioTests.test_budget_caps_and_bucket_reset) ... ok
+test_cancel_after_cache_before_unit_save_reuses_response_on_resume (test_cloud_audio.CloudAudioTests.test_cancel_after_cache_before_unit_save_reuses_response_on_resume) ... ok
+test_cancel_inflight_request_never_commits_cache_or_transcript (test_cloud_audio.CloudAudioTests.test_cancel_inflight_request_never_commits_cache_or_transcript) ... ok
+test_cloud_transcript_provenance_original_and_multipart_contract (test_cloud_audio.CloudAudioTests.test_cloud_transcript_provenance_original_and_multipart_contract) ... ok
+test_cloud_without_local_model_and_cache_reused_after_reprocess (test_cloud_audio.CloudAudioTests.test_cloud_without_local_model_and_cache_reused_after_reprocess) ... ok
+test_corrupt_cache_fails_closed_to_local_without_resending (test_cloud_audio.CloudAudioTests.test_corrupt_cache_fails_closed_to_local_without_resending) ... ok
+test_ledger_corruption_cannot_bypass_limits (test_cloud_audio.CloudAudioTests.test_ledger_corruption_cannot_bypass_limits) ... ok
+test_malformed_text_timestamps_diagnostics_and_large_responses_use_local (test_cloud_audio.CloudAudioTests.test_malformed_text_timestamps_diagnostics_and_large_responses_use_local) ... ok
+test_network_error_uses_local_without_exposing_error_details (test_cloud_audio.CloudAudioTests.test_network_error_uses_local_without_exposing_error_details) ... ok
+test_normal_pacing_does_not_trigger_local_fallback (test_cloud_audio.CloudAudioTests.test_normal_pacing_does_not_trigger_local_fallback) ... ok
+test_opt_out_with_key_uses_local_without_http (test_cloud_audio.CloudAudioTests.test_opt_out_with_key_uses_local_without_http) ... ok
+test_original_corruption_prevents_cloud_upload (test_cloud_audio.CloudAudioTests.test_original_corruption_prevents_cloud_upload) ... ok
+test_quota_uses_ready_local_fallback (test_cloud_audio.CloudAudioTests.test_quota_uses_ready_local_fallback) ... ok
+test_quota_without_local_releases_worker_and_has_bounded_waits (test_cloud_audio.CloudAudioTests.test_quota_without_local_releases_worker_and_has_bounded_waits) ... ok
+test_restart_preserves_first_interval_and_resumes_absolute_location (test_cloud_audio.CloudAudioTests.test_restart_preserves_first_interval_and_resumes_absolute_location) ... ok
+test_silence_and_vad_negative_do_not_upload_or_invent_speech (test_cloud_audio.CloudAudioTests.test_silence_and_vad_negative_do_not_upload_or_invent_speech) ... ok
+test_uncertain_vad_transcribes_full_interval (test_cloud_audio.CloudAudioTests.test_uncertain_vad_transcribes_full_interval) ... ok
+test_corrupt_preview_and_original_prevent_network (test_cloud_vision.CloudTests.test_corrupt_preview_and_original_prevent_network) ... ok
+test_invalid_fallback_output_is_never_saved_as_transcription (test_cloud_vision.CloudTests.test_invalid_fallback_output_is_never_saved_as_transcription) ... ok
+test_invalid_tables_fail_review_without_replacing_local_text (test_cloud_vision.CloudTests.test_invalid_tables_fail_review_without_replacing_local_text) ... ok
+test_json_generation_400_resumes_once_with_local_validation (test_cloud_vision.CloudTests.test_json_generation_400_resumes_once_with_local_validation) ... ok
+test_local_rebuild_invalidates_cloud_output_and_job (test_cloud_vision.CloudTests.test_local_rebuild_invalidates_cloud_output_and_job) ... ok
+test_manual_scope_and_supported_provider_are_enforced (test_cloud_vision.CloudTests.test_manual_scope_and_supported_provider_are_enforced) ... ok
+test_missing_key_and_busy_local_processing_do_not_start_cloud (test_cloud_vision.CloudTests.test_missing_key_and_busy_local_processing_do_not_start_cloud) ... ok
+test_other_400_errors_do_not_resend_or_echo_provider_body (test_cloud_vision.CloudTests.test_other_400_errors_do_not_resend_or_echo_provider_body) ... ok
+test_quota_wait_releases_worker_and_is_cancellable_without_failure (test_cloud_vision.CloudTests.test_quota_wait_releases_worker_and_is_cancellable_without_failure) ... ok
+test_removed_provider_jobs_stop_without_network_or_provider_switch (test_cloud_vision.CloudTests.test_removed_provider_jobs_stop_without_network_or_provider_switch) ... ok
+test_repeated_generation_failure_is_partial_not_an_unbounded_retry (test_cloud_vision.CloudTests.test_repeated_generation_failure_is_partial_not_an_unbounded_retry) ... ok
+test_resume_after_spacing_counts_saved_calls_once (test_cloud_vision.CloudTests.test_resume_after_spacing_counts_saved_calls_once) ... ok
+test_running_request_cancels_promptly_and_saves_no_response (test_cloud_vision.CloudTests.test_running_request_cancels_promptly_and_saves_no_response) ... ok
+test_structured_result_preserves_text_locations_original_and_cache (test_cloud_vision.CloudTests.test_structured_result_preserves_text_locations_original_and_cache) ... ok
+test_exact_white_only_and_native_table_and_manual_override (test_cloud_vision.ShapeAndRoutingTests.test_exact_white_only_and_native_table_and_manual_override) ... ok
+test_native_table_preserves_grid_decimals_and_empty_cells (test_cloud_vision.ShapeAndRoutingTests.test_native_table_preserves_grid_decimals_and_empty_cells) ... ok
+test_rate_header_duration_units (test_cloud_vision.ShapeAndRoutingTests.test_rate_header_duration_units) ... ok
+test_retained_initial_pilot_partial_duplicates_are_rejected (test_cloud_vision.ShapeAndRoutingTests.test_retained_initial_pilot_partial_duplicates_are_rejected) ... ok
+test_shape_rejects_ragged_dangling_blank_contradiction_and_unknown_fields (test_cloud_vision.ShapeAndRoutingTests.test_shape_rejects_ragged_dangling_blank_contradiction_and_unknown_fields) ... ok
+test_single_json_fence_is_cosmetic_but_prose_and_fragments_are_rejected (test_cloud_vision.ShapeAndRoutingTests.test_single_json_fence_is_cosmetic_but_prose_and_fragments_are_rejected) ... ok
+test_corrupt_pdf_is_not_marked_extracted (test_extraction.ExtractionTests.test_corrupt_pdf_is_not_marked_extracted) ... ok
+test_deliberate_parser_recycle_does_not_exhaust_supervisor_budget (test_extraction.ExtractionTests.test_deliberate_parser_recycle_does_not_exhaust_supervisor_budget) ... ok
+test_duplicate_and_new_version_units_are_isolated_and_scope_checked (test_extraction.ExtractionTests.test_duplicate_and_new_version_units_are_isolated_and_scope_checked) ... ok
+test_encrypted_pdf_fails_once_and_preserves_original (test_extraction.ExtractionTests.test_encrypted_pdf_fails_once_and_preserves_original) ... ok
+test_invalid_encoding_and_binary_text_decline_without_guessed_content (test_extraction.ExtractionTests.test_invalid_encoding_and_binary_text_decline_without_guessed_content) ... ok
+test_killed_pdf_worker_recovers_without_replacing_completed_unit (test_extraction.ExtractionTests.test_killed_pdf_worker_recovers_without_replacing_completed_unit) ... ok
+test_long_lines_crlf_chunk_boundaries_do_not_drop_or_relabel_text (test_extraction.ExtractionTests.test_long_lines_crlf_chunk_boundaries_do_not_drop_or_relabel_text) ... ok
+test_malformed_video_never_claims_text_extraction (test_extraction.ExtractionTests.test_malformed_video_never_claims_text_extraction) ... ok
+test_mixed_language_utf16_has_exact_decoded_offsets (test_extraction.ExtractionTests.test_mixed_language_utf16_has_exact_decoded_offsets) ... ok
+test_mixed_pdf_preserves_text_scan_and_blank_locations (test_extraction.ExtractionTests.test_mixed_pdf_preserves_text_scan_and_blank_locations) ... ok
+test_page_count_limit_and_content_pagination_bounds (test_extraction.ExtractionTests.test_page_count_limit_and_content_pagination_bounds) ... ok
+test_parser_timeout_and_memory_budget_abort_without_fake_success (test_extraction.ExtractionTests.test_parser_timeout_and_memory_budget_abort_without_fake_success) ... ok
+test_pdf_page_stream_limit_is_partial_and_has_no_truncated_evidence (test_extraction.ExtractionTests.test_pdf_page_stream_limit_is_partial_and_has_no_truncated_evidence) ... ok
+test_phase_three_upgrade_preserves_original_and_backfills_extraction (test_extraction.ExtractionTests.test_phase_three_upgrade_preserves_original_and_backfills_extraction) ... ok
+test_reviewed_pdf_gold_locations_and_immutable_original (test_extraction.ExtractionTests.test_reviewed_pdf_gold_locations_and_immutable_original) ... ok
+test_running_cancel_and_resume_retains_stable_units (test_extraction.ExtractionTests.test_running_cancel_and_resume_retains_stable_units) ... ok
+test_saved_oversize_originals_decline_extraction_before_parsing (test_extraction.ExtractionTests.test_saved_oversize_originals_decline_extraction_before_parsing) ... ok
+test_stalled_parser_cancellation_recycles_and_api_remains_responsive (test_extraction.ExtractionTests.test_stalled_parser_cancellation_recycles_and_api_remains_responsive) ... ok
+test_clean_parent_eof_pauses_and_restart_resumes (test_jobs.QueueTests.test_clean_parent_eof_pauses_and_restart_resumes) ... ok
+test_completed_original_can_be_checked_again (test_jobs.QueueTests.test_completed_original_can_be_checked_again) ... ok
+test_duplicate_import_has_one_durable_job_and_correct_result (test_jobs.QueueTests.test_duplicate_import_has_one_durable_job_and_correct_result) ... ok
+test_killed_worker_recovers_checkpoint_without_repeating_units (test_jobs.QueueTests.test_killed_worker_recovers_checkpoint_without_repeating_units) ... ok
+test_orphan_audit_reports_old_files_without_deleting (test_jobs.QueueTests.test_orphan_audit_reports_old_files_without_deleting) ... ok
+test_permanent_failures_and_damaged_originals_do_not_retry (test_jobs.QueueTests.test_permanent_failures_and_damaged_originals_do_not_retry) ... ok
+test_phase_two_upgrade_preserves_session_and_original_and_backfills_job (test_jobs.QueueTests.test_phase_two_upgrade_preserves_session_and_original_and_backfills_job) ... ok
+test_queue_cancel_before_claim_does_not_run (test_jobs.QueueTests.test_queue_cancel_before_claim_does_not_run) ... ok
+test_running_cancel_then_manual_retry_resumes_exact_units (test_jobs.QueueTests.test_running_cancel_then_manual_retry_resumes_exact_units) ... ok
+test_service_remains_responsive_while_worker_runs (test_jobs.QueueTests.test_service_remains_responsive_while_worker_runs) ... ok
+test_supervisor_lifecycle_and_evaluation_default_off (test_jobs.QueueTests.test_supervisor_lifecycle_and_evaluation_default_off) ... ok
+test_supervisor_restarts_killed_process_and_recovers_job (test_jobs.QueueTests.test_supervisor_restarts_killed_process_and_recovers_job) ... ok
+test_transient_failures_retry_with_bound_and_succeed (test_jobs.QueueTests.test_transient_failures_retry_with_bound_and_succeed) ... ok
+test_transient_failures_stop_after_three_attempts (test_jobs.QueueTests.test_transient_failures_stop_after_three_attempts) ... ok
+test_two_worker_processes_never_run_two_heavy_jobs (test_jobs.QueueTests.test_two_worker_processes_never_run_two_heavy_jobs) ... FAIL
+test_workspace_scope_and_running_retry_are_rejected (test_jobs.QueueTests.test_workspace_scope_and_running_retry_are_rejected) ... ok
+test_auth_and_cross_origin_access_are_rejected (test_storage.StorageTests.test_auth_and_cross_origin_access_are_rejected) ... ok
+test_bad_filename_type_and_empty_file_leave_no_metadata (test_storage.StorageTests.test_bad_filename_type_and_empty_file_leave_no_metadata) ... ok
+test_failed_migration_rolls_back_and_can_restart (test_storage.StorageTests.test_failed_migration_rolls_back_and_can_restart) ... ok
+test_invalid_scope_and_dangling_refs_do_not_change_database (test_storage.StorageTests.test_invalid_scope_and_dangling_refs_do_not_change_database) ... ok
+test_migration_wal_restart_and_unicode_snapshot (test_storage.StorageTests.test_migration_wal_restart_and_unicode_snapshot) ... ok
+test_original_duplicate_and_version_history_are_exact (test_storage.StorageTests.test_original_duplicate_and_version_history_are_exact) ... ok
+test_oversize_and_disk_failure_are_actionable (test_storage.StorageTests.test_oversize_and_disk_failure_are_actionable) ... ok
+test_parallel_versions_get_distinct_monotonic_numbers (test_storage.StorageTests.test_parallel_versions_get_distinct_monotonic_numbers) ... ok
+test_revision_conflict_never_overwrites_saved_work (test_storage.StorageTests.test_revision_conflict_never_overwrites_saved_work) ... ok
+test_same_size_tampering_is_detected_on_download (test_storage.StorageTests.test_same_size_tampering_is_detected_on_download) ... ok
+test_source_foreign_key_blocks_inconsistent_subject_removal (test_storage.StorageTests.test_source_foreign_key_blocks_inconsistent_subject_removal) ... ok
+test_update_and_remove_topic_roundtrip (test_storage.StorageTests.test_update_and_remove_topic_roundtrip) ... ok
+test_workspaces_are_isolated_and_names_are_unique (test_storage.StorageTests.test_workspaces_are_isolated_and_names_are_unique) ... ok
+test_cancel_restart_retains_checkpoint_and_original_time (test_video.VideoTests.test_cancel_restart_retains_checkpoint_and_original_time) ... ok
+test_corrupt_and_audio_disguised_as_video_declined_keep_original (test_video.VideoTests.test_corrupt_and_audio_disguised_as_video_declined_keep_original) ... ok
+test_mkv_duration_and_native_stream_metadata (test_video.VideoTests.test_mkv_duration_and_native_stream_metadata) ... ok
+test_modified_original_not_decoded (test_video.VideoTests.test_modified_original_not_decoded) ... ok
+test_no_audio_needs_no_speech_setup_and_never_calls_asr (test_video.VideoTests.test_no_audio_needs_no_speech_setup_and_never_calls_asr) ... ok
+test_original_video_duration_coverage_and_delayed_pcm (test_video.VideoTests.test_original_video_duration_coverage_and_delayed_pcm) ... ok
+test_playback_authenticated_scoped_ranges_and_checksum_cache (test_video.VideoTests.test_playback_authenticated_scoped_ranges_and_checksum_cache) ... ok
+test_previously_saved_video_backfilled_on_restart (test_video.VideoTests.test_previously_saved_video_backfilled_on_restart) ... ok
+test_reprocess_scoped_busy_and_stable_ids (test_video.VideoTests.test_reprocess_scoped_busy_and_stable_ids) ... ok
+test_video_speech_window_maps_provider_time_and_keeps_internal_gaps (test_video.VideoTests.test_video_speech_window_maps_provider_time_and_keeps_internal_gaps) ... ok
+test_video_tail_after_audio_ends_is_silent (test_video.VideoTests.test_video_tail_after_audio_ends_is_silent) ... ok
+test_invalid_timeline_dimensions_and_attached_picture_rejected (test_video.VideoValidationTests.test_invalid_timeline_dimensions_and_attached_picture_rejected) ... ok
+test_automatic_new_and_saved_video_queue_is_idempotent (test_video_frames.FrameTests.test_automatic_new_and_saved_video_queue_is_idempotent) ... ok
+test_budget_keeps_late_windows_and_reports_omissions (test_video_frames.FrameTests.test_budget_keeps_late_windows_and_reports_omissions) ... ok
+test_cancel_resume_preserves_only_completed_windows (test_video_frames.FrameTests.test_cancel_resume_preserves_only_completed_windows) ... ok
+test_modified_original_and_corrupt_source_fail_closed (test_video_frames.FrameTests.test_modified_original_and_corrupt_source_fail_closed) ... ok
+test_scope_busy_pagination_rebuild_stable_ids_and_damaged_asset (test_video_frames.FrameTests.test_scope_busy_pagination_rebuild_stable_ids_and_damaged_asset) ... ok
+test_slides_locations_previews_independent_of_cancelled_audio (test_video_frames.FrameTests.test_slides_locations_previews_independent_of_cancelled_audio) ... ok
+test_static_duplicate_suppression_and_periodic_reference (test_video_frames.FrameTests.test_static_duplicate_suppression_and_periodic_reference) ... ok
+test_vfr_uses_presentation_times_and_rotation_is_applied (test_video_frames.FrameTests.test_vfr_uses_presentation_times_and_rotation_is_applied) ... ok
+test_video_track_can_end_before_container_audio (test_video_frames.FrameTests.test_video_track_can_end_before_container_audio) ... FAIL
+test_whiteboard_accumulation_and_returned_slides_are_kept (test_video_frames.FrameTests.test_whiteboard_accumulation_and_returned_slides_are_kept) ... ok
+test_blank_and_animated_images_do_not_invent_text (test_visual.VisualTests.test_blank_and_animated_images_do_not_invent_text) ... ok
+test_cancel_native_child_keeps_service_responsive_then_resumes (test_visual.VisualTests.test_cancel_native_child_keeps_service_responsive_then_resumes) ... ok
+test_corrupt_and_huge_dimension_images_fail_without_claimed_text (test_visual.VisualTests.test_corrupt_and_huge_dimension_images_fail_without_claimed_text) ... ok
+test_equation_preview_preserves_operands_and_refuses_unknown_or_deep_structure (test_visual.VisualTests.test_equation_preview_preserves_operands_and_refuses_unknown_or_deep_structure) ... ok
+test_exif_rotation_keeps_upright_ocr_and_original_unchanged (test_visual.VisualTests.test_exif_rotation_keeps_upright_ocr_and_original_unchanged) ... ok
+test_explicit_reprocessing_stable_ids_scope_and_damaged_preview (test_visual.VisualTests.test_explicit_reprocessing_stable_ids_scope_and_damaged_preview) ... ok
+test_legacy_ppt_retained_with_export_instruction (test_visual.VisualTests.test_legacy_ppt_retained_with_export_instruction) ... ok
+test_missing_ocr_keeps_visual_with_actionable_warning (test_visual.VisualTests.test_missing_ocr_keeps_visual_with_actionable_warning) ... ok
+test_multi_page_tiff_has_distinct_locations_and_stable_resume (test_visual.VisualTests.test_multi_page_tiff_has_distinct_locations_and_stable_resume) ... ok
+test_office_adapter_fixture_and_page_count_mismatch_withhold_bad_citations (test_visual.VisualTests.test_office_adapter_fixture_and_page_count_mismatch_withhold_bad_citations) ... ok
+test_optional_vision_fixture_is_local_unverified_bounded_and_unloaded (test_visual.VisualTests.test_optional_vision_fixture_is_local_unverified_bounded_and_unloaded) ... ok
+test_phase_four_migration_preserves_text_and_original (test_visual.VisualTests.test_phase_four_migration_preserves_text_and_original) ... ok
+test_real_image_ocr_confidence_boxes_original_and_preview (test_visual.VisualTests.test_real_image_ocr_confidence_boxes_original_and_preview) ... ok
+test_scanned_pdf_figure_equation_preserve_pages_without_math_claim (test_visual.VisualTests.test_scanned_pdf_figure_equation_preserve_pages_without_math_claim) ... ok
+test_slide_order_native_text_picture_ocr_equation_and_no_external_fetch (test_visual.VisualTests.test_slide_order_native_text_picture_ocr_equation_and_no_external_fetch) ... ok
+test_unsafe_xml_zip_limits_and_corrupt_slides_are_refused (test_visual.VisualTests.test_unsafe_xml_zip_limits_and_corrupt_slides_are_refused) ... ok
+
+======================================================================
+FAIL: test_two_worker_processes_never_run_two_heavy_jobs (test_jobs.QueueTests.test_two_worker_processes_never_run_two_heavy_jobs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\Study\services\tests\test_jobs.py", line 149, in test_two_worker_processes_never_run_two_heavy_jobs
+    self.fail("Queue did not complete")
+AssertionError: Queue did not complete
+
+======================================================================
+FAIL: test_video_track_can_end_before_container_audio (test_video_frames.FrameTests.test_video_track_can_end_before_container_audio)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\Study\services\tests\test_video_frames.py", line 87, in test_video_track_can_end_before_container_audio
+    page = self.run_frames(version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\Study\services\tests\test_video_frames.py", line 54, in run_frames
+    self.assertIn(job["state"], ("succeeded", "partial"), job["error"])
+AssertionError: 'failed' not found in ('succeeded', 'partial') : The native document helper could not process this source. Check its installation/language data or export a clearer copy.
+
+----------------------------------------------------------------------
+Ran 143 tests in 138.266s
+
+FAILED (failures=2)

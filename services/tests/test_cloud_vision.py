@@ -6,6 +6,7 @@ import os
 import threading
 import time
 import unittest
+from pathlib import Path
 from uuid import uuid4
 from unittest.mock import patch
 
@@ -21,6 +22,10 @@ from studylens_service.job_errors import Cancelled
 from studylens_service.slides import native_tables
 from studylens_service.visual_assets import save_preview
 from studylens_service.worker import Worker
+
+# Retained pilot evidence, archived by the B1 cleanup. Not a fixture: this is a
+# historical result kept so the duplicate-rejection rule stays tested against it.
+ARCHIVE = Path(__file__).resolve().parents[2] / "docs" / "archive" / "ingestion-pilots"
 
 
 def output(**changes):
@@ -350,7 +355,7 @@ class ShapeAndRoutingTests(unittest.TestCase):
                 vision.validate_output(invalid)
 
     def test_retained_initial_pilot_partial_duplicates_are_rejected(self):
-        report = json.loads((helpers.FIXTURES.parents[1] / "groq-vision-results.json").read_text("utf-8"))
+        report = json.loads((ARCHIVE / "groq-vision-results.json").read_text("utf-8"))
         table = next(sample["extraction"] for sample in report["samples"] if sample["sample"] == "table-slide-12")
         with self.assertRaises(ValueError):
             vision.validate_output(json.dumps(table))

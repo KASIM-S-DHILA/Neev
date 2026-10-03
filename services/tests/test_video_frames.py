@@ -14,7 +14,7 @@ from studylens_service import video_frames as frames
 from studylens_service.local_tools import find_tool
 from studylens_service.worker import Worker
 
-FIXTURES = Path(__file__).resolve().parents[2] / "docs/evaluation/fixtures/phase-07b"
+FIXTURES = Path(__file__).resolve().parents[2] / "tests/fixtures/ingestion/phase-07b"
 TOOLS = find_tool("ffmpeg") and find_tool("ffprobe") and importlib.util.find_spec("scenedetect") and importlib.util.find_spec("cv2")
 
 

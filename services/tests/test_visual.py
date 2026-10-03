@@ -19,7 +19,7 @@ from test_storage import AUTH, BASE, SOURCES, TOKEN
 from studylens_service.api import create_app
 from studylens_service.visual import visual_notes
 
-FIXTURES = Path(__file__).resolve().parents[2] / "docs/evaluation/fixtures/phase-05"
+FIXTURES = Path(__file__).resolve().parents[2] / "tests/fixtures/ingestion/phase-05"
 
 
 class VisualTests(unittest.TestCase):

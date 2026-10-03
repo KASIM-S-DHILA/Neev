@@ -1,6 +1,6 @@
 # YouTube source ingestion — Phase 7 extension
 
-Research date: October 3, 2026. This document records the original plan. **7D-1 link/caption ingestion** and [7D-2 local-media association](evaluation/phase-07d-media.md) are implemented. The latter attaches a separately uploaded video version with an explicit timestamp offset, while the saved YouTube source has on-demand embedded playback and a browser fallback. Direct YouTube audiovisual acquisition remains unresolved under the platform policy below.
+Research date: October 3, 2026. This document records the original plan. **7D-1 link/caption ingestion** and [7D-2 local-media association](archive/ingestion-pilots/phase-07d-media.md) are implemented. The latter attaches a separately uploaded video version with an explicit timestamp offset, while the saved YouTube source has on-demand embedded playback and a browser fallback. Direct YouTube audiovisual acquisition remains unresolved under the platform policy below.
 
 ## Student flow
 

@@ -50,7 +50,7 @@ elif mode in ("office-good", "office-count-mismatch"):
             return original_run(args, instance, job, guard, folder, **kwargs)
         # Explicit converter fixture: checks the adapter, not LibreOffice fidelity.
         writer = PdfWriter()
-        path = Path(__file__).resolve().parents[2] / "docs/evaluation/fixtures/phase-04/digital-notes.pdf"
+        path = Path(__file__).resolve().parents[2] / "tests/fixtures/ingestion/phase-04/digital-notes.pdf"
         writer.append(PdfReader(path), pages=(0, 2 if mode == "office-good" else 3))
         writer.write(folder / "source.pdf")
         (instance.root / "office-fixture-command.json").write_text(__import__("json").dumps(args))

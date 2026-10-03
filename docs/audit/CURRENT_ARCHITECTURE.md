@@ -723,7 +723,11 @@ Python groups (counts from actual unittest output checked against AST test names
 | [test_youtube.py](C:/Users/User/OneDrive/Desktop/Study/services/tests/test_youtube.py) | 13 | Links/snapshots/cues/tracks/versions/scope/errors |
 | [test_youtube_media.py](C:/Users/User/OneDrive/Desktop/Study/services/tests/test_youtube_media.py) | 2 | Separate versions/scope/offset/type/integrity |
 
-JS groups: [imports.test.ts](C:/Users/User/OneDrive/Desktop/Study/tests/imports.test.ts)3 (scope/cancel/partial failure); [model.test.ts](C:/Users/User/OneDrive/Desktop/Study/tests/model.test.ts)7 (tabs/drafts/validation/caps); [writer.test.ts](C:/Users/User/OneDrive/Desktop/Study/tests/writer.test.ts)3 (serialization/coalescing/retry/conflict); [youtube.test.ts](C:/Users/User/OneDrive/Desktop/Study/tests/youtube.test.ts)2 (URL guard/browser+IPC scope).
+JS groups: [imports.test.ts](C:/Users/User/OneDrive/Desktop/Study/tests/imports.test.ts)3 (scope/cancel/partial failure); [session.test.ts](C:/Users/User/OneDrive/Desktop/Study/tests/session.test.ts)7 (tabs/drafts/validation/caps); [writer.test.ts](C:/Users/User/OneDrive/Desktop/Study/tests/writer.test.ts)3 (serialization/coalescing/retry/conflict); [youtube.test.ts](C:/Users/User/OneDrive/Desktop/Study/tests/youtube.test.ts)2 (URL guard/browser+IPC scope).
+
+CORRECTION 2026-10-03 (B1): this line previously named model.test.ts. No such file exists; the group tests session state in src/model.ts, and the file is tests/session.test.ts. The §1 tree was right and this line was wrong. Fixed.
+
+NOTE ON PATHS IN THIS REPORT: the absolute `C:/.../scripts/*.py` and `docs/evaluation/*` paths above record the layout as it stood at baseline `4deb661` and are left unchanged as evidence. The B1 cleanup since moved scripts/ingestion-evals/*, tests/fixtures/ingestion/* and docs/archive/ingestion-pilots/*. Every route, size, table and count in this report still describes the same code.
 
 Cloud and many ASR outputs are mocked; native decoding/OCR/frame tests run actual tools. No live quality or coverage percentage established. TestClient emits an httpx deprecation warning; no dependency changed. No skips in A. Historical {docs/evaluation/phase-07b-service-first.log}:143tests,2failures (queue completion timeout; frame native helper failure); both pass in A. Root cause/repeatability: UNVERIFIED.
 

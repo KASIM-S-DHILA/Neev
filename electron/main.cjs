@@ -130,7 +130,7 @@ function createWindow() {
         const fixture = fs.readFileSync(
           path.join(
             __dirname,
-            "../docs/evaluation/fixtures/phase-04/digital-notes.pdf",
+            "../tests/fixtures/ingestion/phase-04/digital-notes.pdf",
           ),
         );
         const original = await backend.request(
@@ -179,7 +179,7 @@ function createWindow() {
             body: fs.readFileSync(
               path.join(
                 __dirname,
-                "../docs/evaluation/fixtures/phase-05/scan.png",
+                "../tests/fixtures/ingestion/phase-05/scan.png",
               ),
             ),
           },
@@ -267,7 +267,7 @@ function createWindow() {
           const screenshot = await window.webContents.capturePage(undefined, {
             stayHidden: true,
           });
-          const output = path.join(__dirname, "../docs/evaluation/screenshots");
+          const output = path.join(__dirname, "../tmp/smoke-screenshots");
           fs.mkdirSync(output, { recursive: true });
           fs.writeFileSync(
             path.join(output, "phase-05-workspace-desktop.png"),

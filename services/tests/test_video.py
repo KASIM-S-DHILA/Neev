@@ -17,7 +17,7 @@ from studylens_service.job_errors import ExtractionFailure
 from studylens_service.worker import Worker
 from studylens_service.jobs import JobStore
 
-FIXTURES = Path(__file__).resolve().parents[2] / "docs/evaluation/fixtures/phase-07"
+FIXTURES = Path(__file__).resolve().parents[2] / "tests/fixtures/ingestion/phase-07"
 
 
 @unittest.skipUnless(find_tool("ffmpeg") and find_tool("ffprobe"), "FFmpeg required")

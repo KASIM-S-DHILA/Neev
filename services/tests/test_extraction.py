@@ -19,7 +19,7 @@ from studylens_service.api import create_app
 from studylens_service.extraction import text_chunks
 from test_storage import AUTH, BASE, SESSION, SOURCES, TOKEN
 
-FIXTURES = Path(__file__).resolve().parents[2] / "docs/evaluation/fixtures/phase-04"
+FIXTURES = Path(__file__).resolve().parents[2] / "tests/fixtures/ingestion/phase-04"
 
 
 class ExtractionTests(unittest.TestCase):

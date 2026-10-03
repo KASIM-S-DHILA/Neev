@@ -2,6 +2,9 @@ node_modules/
 dist/
 tmp/
 *.log
+# Retained evaluation evidence is deliberately tracked; see
+# docs/archive/ingestion-pilots/logs/README.md
+!docs/archive/ingestion-pilots/logs/*.log
 .env
 .env.*
 !.env.example

@@ -45,8 +45,8 @@ Retrieval, grounded tutoring, assessments, learner models, SearXNG integration, 
 
 ## Latest verified evidence
 
-- Phase 7C: seven focused contracts and the final **163-test** full service regression passed. Fifteen JavaScript checks and the production build passed. Real local OCR and one authorized live Groq frame passed on an authored clip; saved local/cloud results were reviewed in hidden native Electron. [Report](evaluation/phase-07c.md).
-- Phase 7D-2: two focused association contracts, the full **165-test** service suite, fifteen JavaScript checks/build and an isolated production Electron check passed. The native check covered on-demand iframe URL, unmount, browser fallback, local association and a mapped 65.5 → 5.5 second seek; actual remote playback and student acceptance remain manual checks. [Report](evaluation/phase-07d-media.md).
+- Phase 7C: seven focused contracts and the final **163-test** full service regression passed. Fifteen JavaScript checks and the production build passed. Real local OCR and one authorized live Groq frame passed on an authored clip; saved local/cloud results were reviewed in hidden native Electron. [Report](archive/ingestion-pilots/phase-07c.md).
+- Phase 7D-2: two focused association contracts, the full **165-test** service suite, fifteen JavaScript checks/build and an isolated production Electron check passed. The native check covered on-demand iframe URL, unmount, browser fallback, local association and a mapped 65.5 → 5.5 second seek; actual remote playback and student acceptance remain manual checks. [Report](archive/ingestion-pilots/phase-07d-media.md).
 - Full service regression: **156 tests passed**, 259.970 s, `tmp/youtube-service-tests.log`. After the final case-sensitive YouTube ID refinement, the **13 focused YouTube tests passed** again (5.075 s), `tmp/youtube-tests.log`.
 - JavaScript checks: **15 passed**; TypeScript/Vite build passed. Includes native external-URL validation and distinct browser/API versus native/IPC request bodies.
 - Dependencies: `pip check` found no broken requirements.
@@ -62,8 +62,8 @@ Retrieval, grounded tutoring, assessments, learner models, SearXNG integration, 
 - Navigation/UI: `src/Materials.tsx`, `src/ContentPreview.tsx`, `src/VideoTranscript.tsx`, `src/VideoFrames.tsx`, `src/YouTubeReview.tsx`.
 - Native boundary: `electron/storage.cjs`, `electron/media.cjs`, `electron/youtube.cjs`; client contracts: `src/storage/client.ts`.
 - Pipeline: `services/studylens_service/{api,database,jobs,worker,extraction,audio,video,video_frames,video_frame_visuals,youtube,youtube_helper}.py`.
-- Current reports: `docs/evaluation/phase-06-cloud-audio.md`, `phase-07a.md`, `phase-07b.md`, `phase-07d-youtube.md`.
-- YouTube evidence: `docs/evaluation/youtube-20261003-083018.json`, `youtube-desktop.json`, `screenshots/youtube-desktop.png`. Pilot data: `tmp/youtube-integration-20261003-083018`.
+- Current reports: `docs/archive/ingestion-pilots/phase-06-cloud-audio.md`, `phase-07a.md`, `phase-07b.md`, `phase-07d-youtube.md`.
+- YouTube evidence: `docs/archive/ingestion-pilots/youtube-20261003-083018.json`, `youtube-desktop.json`, `screenshots/youtube-desktop.png`. Pilot data: `tmp/youtube-integration-20261003-083018`.
 - Reproduction: `npm.cmd run youtube:test`, `npm.cmd run youtube:media:test`, `npm.cmd run video:frames:test`, `npm.cmd run video:visuals:test`, `npm.cmd run check`, `npm.cmd run api:test`; live/native scripts and limitations are in each report.
 - `README.md` covers setup/current scope; `docs/PHASES.md` holds the full roadmap. Older dated milestone paragraphs are historical. `docs/architecture.md` records Phase 5 foundations; consult later reports for current automatic cloud/audio/video/YouTube behavior.
 
