@@ -223,6 +223,30 @@ export type StorageInfo = {
   originals_directory: string;
   max_file_bytes: number;
 };
+/** Mirrors the service's GET /health payload (database.py Database.health). */
+export type HealthStatus = {
+  ok: boolean;
+  database: string;
+  journal_mode: string;
+  schema_version: string;
+  queue?: {
+    available: boolean;
+    error: string | null;
+    restarts: number;
+    max_active_heavy_jobs: number;
+    evaluation_enabled: boolean;
+  };
+};
+/**
+ * Human-readable storage mode for the Settings panel. The service is the only
+ * source of truth: SQLite is expected in WAL mode, and anything else must be
+ * reported rather than asserted.
+ */
+export function describeStorage(health: HealthStatus | null): string {
+  if (!health) return "Checking storage mode…";
+  const mode = health.journal_mode === "wal" ? "WAL enabled" : `WAL off (${health.journal_mode})`;
+  return `SQLite · ${mode}`;
+}
 export type Result<T> =
   | { ok: true; data: T }
   | { ok: false; error: { message: string; status: number } };
@@ -490,6 +514,7 @@ export const storageClient = {
       { base_revision: revision, session },
     ),
   storageInfo: () => operation<StorageInfo>("storageInfo", "/storage"),
+  health: () => operation<HealthStatus>("health", "/health"),
   listSources: (workspaceId: string, subjectId: string) =>
     window.studyLens?.storage
       ? window.studyLens.storage

@@ -66,6 +66,20 @@ class VideoTests(unittest.TestCase):
         self.assertFalse(content["units"][0]["metadata"]["video"]["audio_present"])
         self.assertEqual(content["units"][0]["locator"]["end_seconds"], 5)
 
+    def test_video_audio_warning_does_not_claim_frames_are_unextracted(self):
+        # Frame selection and frame text are separate jobs (test_video_frames,
+        # test_video_frame_visuals), so the audio unit must scope itself to the
+        # audio stream instead of saying on-screen content is missing.
+        version = self.seed("delayed-audio.mp4")
+        unit = self.extract(version)["units"][0]
+        warning = unit["warning"]
+        self.assertIn("audio stream only", warning)
+        self.assertIn("separate jobs", warning)
+        self.assertNotIn("have not been extracted", warning)
+        self.assertNotIn("comes next", warning)
+        # The audio-only scope must still be stated in metadata, not just prose.
+        self.assertEqual(unit["metadata"]["video"]["coverage"], "audio_only")
+
     def test_cancel_restart_retains_checkpoint_and_original_time(self):
         version = self.seed("intervals.mp4")
         calls = 0

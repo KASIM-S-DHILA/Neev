@@ -289,7 +289,9 @@ def extract_audio(worker, job, guard, row, source, completed, *, media_info=None
                 if info["audio_streams"] > 1:
                     warning += " Only the first audio stream was processed."
                 if media_info:
-                    warning += " Video audio only: slides and on-screen content have not been extracted."
+                    # This unit is the audio stream only. Frame selection and frame
+                    # text are separate jobs, so do not claim they are missing here.
+                    warning += " This unit covers the audio stream only; selected frames and their text are produced by separate jobs."
                 if fallback:
                     warning += " " + fallback
                 if vad.get("warning"):

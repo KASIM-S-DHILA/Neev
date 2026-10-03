@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
-import { storageClient, type StorageInfo } from "./storage/client";
+import {
+  describeStorage,
+  storageClient,
+  type HealthStatus,
+  type StorageInfo,
+} from "./storage/client";
 export function StorageSettings() {
   const [info, setInfo] = useState<StorageInfo | null>(null);
+  const [health, setHealth] = useState<HealthStatus | null>(null);
   const [error, setError] = useState("");
   const [audio, setAudio] = useState<Awaited<ReturnType<typeof storageClient.audioStatus>> | null>(null);
   useEffect(() => {
@@ -13,6 +19,14 @@ export function StorageSettings() {
       })
       .catch((cause) => {
         if (alive) setError(cause.message);
+      });
+    storageClient
+      .health()
+      .then((value) => {
+        if (alive) setHealth(value);
+      })
+      .catch(() => {
+        if (alive) setHealth(null);
       });
     storageClient.audioStatus().then((value) => { if (alive) setAudio(value); })
       .catch(() => { if (alive) setAudio(null); });
@@ -29,8 +43,14 @@ export function StorageSettings() {
       </p>
       <div className="info-row">
         <span>Storage</span>
-        <span>SQLite · WAL enabled</span>
+        <span>{describeStorage(health)}</span>
       </div>
+      {health && health.schema_version && (
+        <div className="info-row">
+          <span>Schema</span>
+          <span>{health.schema_version}</span>
+        </div>
+      )}
       <div className="info-row">
         <span>Application</span>
         <span>Neev 0.6.0</span>
@@ -50,7 +70,9 @@ export function StorageSettings() {
         Tesseract; full slide previews use LibreOffice when installed. OCR
         language data must match the source. When configured, Groq processes
         difficult visuals and detected speech. A local speech model provides
-        audio fallback. Video audio and selected frame previews are supported; extracting on-screen text comes next.
+        audio fallback. Video audio, selected frame previews and on-screen frame text are
+        supported; frame text is produced by its own job and is labelled for
+        review.
       </p>
       <details className="content-provenance">
         <summary>Audio processing setup</summary>
