@@ -224,6 +224,22 @@ someone adds `Readme.md` alongside `README.md`.
 **Open risk:** a case-only rename commit can succeed locally on Windows and fail
 or silently no-op on a case-sensitive checkout. If CI ever runs on Linux, add a
 check that rejects any commit containing two paths that differ only in case.
+
+### D17a. Never assert a hash over raw working-copy bytes
+
+**Status:** Accepted — learned the hard way in B0
+
+The pilot fixture guard added in the same commit hashed the raw file bytes. It
+passed in the OneDrive working copy (CRLF) and **failed immediately** in the
+fresh `C:\dev\neev` clone (LF), because `.gitattributes` normalises JSON to LF in
+the index. Same committed content, different bytes on disk.
+
+The fix hashes the **parsed, canonically re-serialised JSON** instead, which is
+identical on every platform and still catches any real edit.
+
+**Why this belongs next to D17:** both are "the working tree is not the artefact".
+A test that pins bytes assumes the checkout matches the author's machine, which
+is the same class of mistake as assuming two case-variant filenames are distinct.
 engine/config/model, but **Ollama records only model and text with no prompt
 revision** — a real provenance gap, not a stylistic one.
 

@@ -24,9 +24,8 @@ from studylens_service.slides import native_tables
 from studylens_service.visual_assets import save_preview
 from studylens_service.worker import Worker
 
-# Copied from the retained Groq vision pilot (docs/archive/ingestion-pilots/
-# groq-vision-results.json, SHA256
-# CB340CD7A2F17EDAF192F389EA834A25CDE08C77A612319C438520799C15C27F). It is a real
+# Copied from the retained Groq vision pilot
+# (docs/archive/ingestion-pilots/groq-vision-results.json). It is a real
 # provider result, not authored material, so it is never regenerated and never
 # edited. Tests must never read from docs/archive/.
 PILOT_RESULTS = (
@@ -34,8 +33,23 @@ PILOT_RESULTS = (
     / "tests/fixtures/ingestion/pilot/groq-vision-results.json"
 )
 
+# SHA256 of the parsed JSON re-serialised canonically, NOT of the raw file.
+#
+# .gitattributes normalises this JSON to LF in the index, so a Windows working
+# copy with CRLF and a clean Linux/clone checkout have different bytes. Hashing
+# the raw file made this test pass on the authoring machine and fail in a fresh
+# clone. Hashing the normalised content is platform-independent and still catches
+# any real edit. See DECISIONS D17.
+PILOT_CANONICAL_SHA256 = "17fd8d31749f70644122be3960d9be1288f1e6c7712b21bede79fc6a40d915f2"
 
-PILOT_SHA256 = "cb340cd7a2f17edaf192f389ea834a25cde08c77a612319c438520799c15c27f"
+
+def pilot_content_sha256() -> str:
+    """Hash the pilot result's content, independent of line endings."""
+    data = json.loads(PILOT_RESULTS.read_text("utf-8-sig"))
+    canonical = json.dumps(
+        data, sort_keys=True, separators=(",", ":"), ensure_ascii=False
+    ).encode("utf-8")
+    return hashlib.sha256(canonical).hexdigest()
 
 
 def read_pilot_results():
@@ -394,9 +408,10 @@ class ShapeAndRoutingTests(unittest.TestCase):
             "pilot fixture is missing at " + str(PILOT_RESULTS),
         )
         self.assertEqual(
-            hashlib.sha256(PILOT_RESULTS.read_bytes()).hexdigest(),
-            PILOT_SHA256,
-            "pilot fixture was modified; restore it from docs/archive/ingestion-pilots/",
+            pilot_content_sha256(),
+            PILOT_CANONICAL_SHA256,
+            "pilot fixture content changed; restore it from "
+            "docs/archive/ingestion-pilots/groq-vision-results.json",
         )
         report = read_pilot_results()
         self.assertIn("samples", report)

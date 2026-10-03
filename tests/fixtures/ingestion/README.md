@@ -21,13 +21,18 @@ cleanup; every reference was updated in the same commit.
 
 `pilot/groq-vision-results.json` is a **real Groq vision result** from the
 original pilot, kept because `test_cloud_vision.py` needs a genuine malformed
-partial to prove duplicate rejection. It is byte-identical to
-`docs/archive/ingestion-pilots/groq-vision-results.json`
-(SHA256 `cb340cd7a2f17…c15c27f`) and stays in the archive too, because the archive
-index cites it as evidence.
+partial to prove duplicate rejection. It is a copy, not a move: the same file
+stays in `docs/archive/ingestion-pilots/` because the archive index cites it as
+evidence.
 
-Do not regenerate or edit it. `test_pilot_fixture_is_present_and_matches_the_retained_original`
-asserts the hash, so any edit fails loudly.
+Do not regenerate or edit it.
+`test_pilot_fixture_is_present_and_matches_the_retained_original` asserts the
+content hash, so any real edit fails loudly.
+
+**The hash is of the parsed JSON re-serialised canonically, not of the file
+bytes.** `.gitattributes` normalises JSON to LF in the index, so the same
+committed file checks out with CRLF in a Windows working copy and LF in a fresh
+clone. A raw-byte hash would pass on one machine and fail on another.
 
 **No test may read from `docs/archive/`.** That directory may be reorganised;
 the suite must not depend on documentation layout. This already broke once —
