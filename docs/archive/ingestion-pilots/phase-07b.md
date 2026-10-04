@@ -49,7 +49,7 @@ The approximately 0.5 MB visual fixture set is drawn locally; the short-video-tr
 - The first helper run used an integer FPS argument rejected by the current `FrameTimecode` constructor. Corrected to a float and retested; [first pilot](video-frames-20261003-074347.json) retains that failure.
 - Initial static/rotated fixtures did not contain the intended full duration/rotation matrix. FFprobe exposed this; fixtures were regenerated with a CFR FPS filter and explicit display rotation. [Earlier partial pilot](video-frames-20261003-074535.json) is retained.
 - An empty late-video window exposed FFmpeg's JPEG color-range initialization error. Explicit full-range JPEG output fixed it; all ten frame contracts passed afterward.
-- One full regression run hit that frame error and a scheduler fixture's ten-second completion deadline. Its [failure log](phase-07b-service-first.log) is retained. The focused queue gate passed; the final 143-test full rerun passed. Test-load contention is a possible explanation for the scheduler timeout, not an established cause.
+- One full regression run hit that frame error and a scheduler fixture's ten-second completion deadline. Its [failure log](logs/phase-07b-service-first.log) is retained. The focused queue gate passed; the final 143-test full rerun passed. Test-load contention is a possible explanation for the scheduler timeout, not an established cause.
 
 ## Remaining boundaries
 

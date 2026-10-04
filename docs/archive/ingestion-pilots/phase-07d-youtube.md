@@ -46,7 +46,7 @@ Initial focused testing exposed a test-cleanup handle ordering error on Windows,
 
 YouTube may block access, disable captions, remove videos or change remote timing. No authentication/proxy workaround is installed. Playlists, real-time live-stream capture, automatic translation, embedded IFrame playback, media downloading, Groq ASR for captionless links and visual-frame extraction of linked videos are not part of this checkpoint. Use an uploaded permitted media copy for the existing audio/frame pipeline.
 
-The [caption reader documentation](https://github.com/jdepoix/youtube-transcript-api/blob/master/README.md) describes this unofficial acquisition method and its blocking/authentication limitations. The [original plan](../youtube-ingestion-plan.md) retains the official API/platform-policy considerations for shipping and media acquisition. Successful retrieval does not constitute a policy review.
+The [caption reader documentation](https://github.com/jdepoix/youtube-transcript-api/blob/master/README.md) describes this unofficial acquisition method and its blocking/authentication limitations. The [original plan](../../youtube-ingestion-plan.md) retains the official API/platform-policy considerations for shipping and media acquisition. Successful retrieval does not constitute a policy review.
 
 No reliable Hindi/Hinglish transcription claim, natural-video visual coverage claim, learning-gain claim or whole-app 8 GB measurement follows from these gates.
 

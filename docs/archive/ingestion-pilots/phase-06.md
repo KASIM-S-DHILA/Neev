@@ -32,7 +32,7 @@ Model storage size is not runtime RAM. The initial real transcription showed abo
 
 ## Evaluation and failures retained
 
-Fixtures in `fixtures/phase-06` are self-authored English Windows SAPI speech, plus deterministic noise, silence, tone, corrupt bytes, compressed-format copies, and a 65-second recording with speech at 0 and 32 seconds. [Gold/provenance](fixtures/phase-06/gold.json). Unicode handling has a labeled contract test, not a claim of speech accuracy.
+Fixtures in `fixtures/phase-06` are self-authored English Windows SAPI speech, plus deterministic noise, silence, tone, corrupt bytes, compressed-format copies, and a 65-second recording with speech at 0 and 32 seconds. [Gold/provenance](../../../tests/fixtures/ingestion/phase-06/gold.json). Unicode handling has a labeled contract test, not a claim of speech accuracy.
 
 The October 2 [public Hinglish dataset evaluation](hinglish-asr.md) tested 120 seeded clips and a 20-clip paired Hindi hint check through the real pipeline. Tiny has not demonstrated reliable Hinglish quality: raw WER was 93.91% on 40 Hinglish clips, and 20 of those clips were rejected for timestamps. Three of ten room-background clips produced false speech. Script differences and unaudited dataset references limit accuracy interpretation. The quality gate remains open; this evaluation changed no production model settings or timestamp rules.
 

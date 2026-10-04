@@ -23,5 +23,5 @@ Recorded failures (143 tests, `FAILED (failures=2)`):
 | `test_video_frames.FrameTests.test_video_track_can_end_before_container_audio` | `AssertionError: 'failed' not found in ('succeeded', 'partial')` — native document helper could not process the source |
 
 The discrepancy is also recorded in
-[`docs/audit/CURRENT_ARCHITECTURE.md`](../../audit/CURRENT_ARCHITECTURE.md)
+[`docs/audit/CURRENT_ARCHITECTURE.md`](../../../audit/CURRENT_ARCHITECTURE.md)
 sections 9 and 13. Do not discard this file.

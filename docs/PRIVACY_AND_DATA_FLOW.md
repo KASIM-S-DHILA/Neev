@@ -41,6 +41,12 @@ everything; there is no off-device copy or sync.
 
 ### What leaves the device by default
 
+Nothing. `GROQ_API_KEY` unset means every cloud path stays local. Set
+`STUDYLENS_AUTO_GROQ_VISION=0`, `STUDYLENS_AUTO_GROQ_AUDIO=0`,
+`STUDYLENS_AUTO_VIDEO_FRAMES=0` or `STUDYLENS_AUTO_VIDEO_VISUALS=0` before
+launch to disable the corresponding automatic queueing. Jobs that were already
+created still run.
+
 ## Groq
 
 `https://api.groq.com/openai/v1/chat/completions` and

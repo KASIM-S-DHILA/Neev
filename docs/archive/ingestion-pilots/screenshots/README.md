@@ -21,4 +21,4 @@ the working tree.
 - `phase-07b-frames-desktop.png` — selected frame grid
 - `phase-07c-*-desktop.png` — frame text review
 - `youtube-desktop.png`, `youtube-media-desktop.png` — caption review and attached local media
-- `automatic-groq-desktop.png`, `cloud-*-desktop.png`, `cloud-extracted-text-*.png` — cloud routing notices
+- `automatic-groq-desktop.png`, `cloud-*-desktop.png`, `cloud-extracted-text-*.png` — cloud routing notices.

@@ -85,6 +85,13 @@ accuracy for code-switched Hindi/English than for clean English. So for a
    confirmed unit becomes a new version with status `text`. M1 does not build
    this path, but the schema leaves room for it.
 
+**One threshold by default (decision 11.9).** The refusal threshold in point 3
+is a single value, not a per-language value. If the §4 measurement shows
+Hinglish retrieval scoring materially worse than English, a stricter override
+for Hinglish-sourced answers may be introduced — but only on the strength of
+that measurement, and the numbers must be written down in `DECISIONS.md` at the
+time. Absent such evidence, one threshold stands.
+
 How the language is determined for an existing unit: prefer the
 `metadata.speech.language` already recorded by `audio.py`; fall back to
 `metadata.speech.language_probability`; if neither exists, treat the language as
@@ -98,6 +105,20 @@ a source version with warnings always renders that warning alongside the
 citation, and `weakest_state()` must not report `VERIFIED` while a warning
 applies — even for a `text` unit, because a warning is itself evidence that
 something about that unit is not trustworthy.
+
+**No age indicator (decision 11.8).** A `suspect` unit does not display how long
+it has been unreviewed. The badge is fixed. What M1 does expose is a
+**model/settings fingerprint in a details view** — the embedding model id and
+revision, chunker version, index build time and prompt version that produced a
+given answer — so a student can inspect provenance on demand without every
+citation carrying a date.
+
+**YouTube captions (decision 11.4).** A caption-derived citation is capped at
+`UNVERIFIED` for the whole of this hackathon. The citation additionally
+distinguishes **manual** from **auto-generated** caption tracks, because the two
+carry very different error profiles. Promotion above `UNVERIFIED` happens only
+through an explicit student review action — never automatically, and never as a
+side effect of a caption refresh.
 
 ---
 
@@ -137,6 +158,17 @@ Rules:
 Alembic head is `0005_youtube_media_links`. M1 adds **`0006_retrieval`**, forward
 only, under `BEGIN IMMEDIATE` like every existing migration. No table is altered;
 nothing existing is rewritten. Rollback is unsupported, consistent with D6.
+
+**M1 owns `0006_retrieval` (decision 11.7).** No other work is planned for that
+slot, so this migration will not have to be renumbered.
+
+Two operational conditions attach to it:
+
+* **Back up the real data directory before the first run.** The migration is
+  forward-only and rollback is unsupported, so the only way back from a bad
+  first run is a restored copy.
+* **Exercise the migration on a copy first.** Run it against a copy of the real
+  data directory and check the result before it touches the real one.
 
 ```sql
 -- One row per chunk. Source of truth for retrieval.
@@ -365,8 +397,14 @@ wheel. torch at ~2.5 GB is disqualifying on an 8 GB laptop.
   `docs/DECISIONS.md`. Most candidates are MIT or Apache-2.0; some multilingual
   checkpoints carry additional terms. **I have not verified any individual
   model's licence text** — that is a task, not an assumption.
-* `sqlite-vec`, if adopted, would be the first new compiled dependency in the
-  project and needs a licence and maintenance review before use.
+* `sqlite-vec` is **not adopted** (decision 11.3). It would be the first new
+  compiled dependency in the project. Brute force is used until the chunk
+  ceiling above is actually reached.
+
+**Brute force, not `sqlite-vec` (decision 11.3).** Vector search is a scan over
+a BLOB column for the whole of M1. No compiled extension is added. The ceiling
+above is the tripwire: if it is reached, §"Migration path if the ceiling is hit"
+below is followed, not pre-emptively.
 
 ---
 
@@ -435,6 +473,12 @@ is not being cited. Hiding it would be the dishonest choice.
 
 ## 7. Answer pipeline
 
+**Ships visible, with badges from day one (decision 11.5).** There is no feature
+flag and no dark launch. The answer surface and its evidence badges appear
+together in the first M1 demo. Shipping uncited machine text first and
+retro-fitting the badges afterwards is precisely the failure this design is
+built to avoid.
+
 ```
 question
   → eligibility gate (indexed corpus only)
@@ -460,16 +504,25 @@ paraphrasing, because paraphrase is where fabrication enters.
    `suspect` unit carries its badge. A citation that no longer resolves, or a
    badge that is missing, is an error rather than a warning.
 
-**Refusal threshold.** Refuse (return `refused: true`, no answer text) when:
+**Three-tier refusal (decision 11.2).** Refusal is not a binary. The pipeline
+has three behaviours, chosen by the evidence actually retrieved:
+
+| Evidence found | Behaviour |
+| --- | --- |
+| Strong | Answer normally, with citations. |
+| Weak | Short answer labelled **"Partially supported"**, with citations, plus an offer to search the web — taken only with explicit student permission. |
+| None | **"Evidence not found"**. No model-knowledge answer unless the student explicitly chooses **"Outside knowledge"**. |
+
+Return `refused: true` with no answer text when:
 
 * the merged hit set is empty, or
 * the top hit's score is below a **measured** threshold, or
 * after verification, no sentence retains a `VERIFIED` or `UNVERIFIED` citation, or
 * the only supporting evidence is low-confidence Hindi/Hinglish ASR (§1.2, rule 3).
 
-The threshold must come from the §4 measurement run, not a round number. Until
-measured, the honest behaviour is to **refuse more often** — a refusal is
-recoverable, a confident wrong answer teaches the student something false.
+Both thresholds are set from the **gold dev split**, not guessed. Until measured,
+the honest behaviour is to **refuse more often** — a refusal is recoverable, a
+confident wrong answer teaches the student something false.
 
 **The five evidence states** (`grounding.EvidenceState`):
 
@@ -487,9 +540,19 @@ citation is not presented as trustworthy. A citation from a `suspect` unit is
 
 **Off-material queries.** This is the case most likely to produce a plausible
 lie, so it gets an explicit rule: if the best hit is below the refusal
-threshold, **refuse**. Do not answer from model knowledge. M1 adds no web-search
-fallback — search is absent today and would be a new data flow with its own
-DECISIONS entry and consent question.
+threshold, **refuse**. Do not answer from model knowledge — not silently, and
+not as a default. If the student explicitly chooses **"Outside knowledge"**, the
+pipeline may answer from model knowledge, and the answer is labelled as such and
+carries no citation. Silent fallback to model knowledge is the thing this design
+exists to prevent.
+
+**Web search.** M1 does **not** implement web search, and no query text leaves
+the device in M1. What M1 does build is the **permission flow stub** (S5): the
+weak-evidence tier offers "search the web", and the offer is rendered and
+permission is collected, but no search backend is wired up. That keeps the
+student-facing contract honest now, and defers the data-flow and consent
+decision (a new `DECISIONS.md` entry) to the milestone that would actually
+perform the request.
 
 ---
 
@@ -550,20 +613,35 @@ does).
 2. A **versioned, scored, offline benchmark suite**: committed cases under
    `tests/fixtures/retrieval/`, deterministic, no network, a pinned
    `BenchmarkSuite.revision`, numeric results per case.
-3. **The first slice of the gold set**, minimum viable at 30–50 cases:
+3. **The first slice of the gold set: 45 cases across nine categories**
+   (decision 11.6).
 
-| Category | Count | Labels needed |
-| --- | --- | --- |
-| Direct fact in one chunk | 10 | `supports` / `does_not_support` per chunk |
-| Fact spanning two chunks | 5 | both chunks cited |
-| Answerable only from `page`/`slide`/`time` | 5 | exact locator expected |
-| **Unanswerable / off-material** | 10 | must refuse |
-| Answerable, but the only source is `suspect` ASR | 5 | must answer **with the §1.2 badge**, never `VERIFIED` |
-| Answerable, but the only source is OCR of a scan | 5 | must answer **with the scanned-text badge** |
-| Answerable numerically, but only from Hindi/Hinglish ASR | 5 | must **refuse** (§1.2 rule 3) |
-| Hinglish question, English source | 5 | retrieval must find it |
-| Adversarial: plausible but absent | 5 | must refuse |
+   | Category | Count | Labels needed |
+   | --- | --- | --- |
+   | Direct fact in one chunk | 6 | `supports` / `does_not_support` per chunk |
+   | Fact spanning two chunks | 5 | both chunks cited |
+   | Answerable only from `page`/`slide`/`time`, including video timestamp | 6 | exact locator expected |
+   | **Unanswerable / off-material** | 8 | must refuse |
+   | Adversarial: plausible but absent | 7 | must refuse |
+   | Answerable, but the only source is `suspect` ASR | 4 | must answer **with the §1.2 badge**, never `VERIFIED` |
+   | Answerable, but the only source is OCR of a scan | 4 | must answer **with the scanned-text badge** |
+   | Answerable numerically, but only from Hindi/Hinglish ASR | 3 | must **refuse** (§1.2 rule 3) |
+   | Hinglish question, English source | 2 | retrieval must find it |
+   | **Total** | **45** | |
 
+   Composition floors, both satisfied by the table above: **at least 15
+   off-material** cases (8 + 7 = 15) and **at least 10 Hindi/Hinglish or
+   video-timestamp** cases (6 + 3 + 2 = 11).
+
+   **Construction rules.** Real course material only — no invented documents.
+   Every locator is hand-verified against the actual page, slide or timestamp; a
+   locator nobody checked is worse than no locator, because it looks checked.
+   The set is split into a **dev** split used for tuning thresholds and choosing
+   the embedding model, and a **held-out** split that is never read during
+   tuning and is reported once. Borderline questions are kept in the set, not
+   dropped for being awkward.
+
+   **Growth.** The slice grows toward ~100 by M4, keeping the same floors.
 The refusal and badge cases are the ones that matter. A retrieval benchmark that
 only measures recall will happily reward a model that fabricates well, and a
 badge-blind one will happily reward hiding machine text.
@@ -599,46 +677,95 @@ transcripts becoming `text` units; per-subject indexes for large workspaces.
 
 ---
 
-## 11. Open questions for you
+## 11. Decisions taken
 
-Question 1 is **answered** and is kept here for the record.
+All nine questions are **answered**. This section is the record; the answers are
+also reflected in the sections that depend on them, which are marked
+"(decision 11.N)".
 
-1. ~~**Embeddings may send student material off-device.**~~ **ANSWERED: local
+1. **Embeddings may send student material off-device.** — **ANSWERED: local
    only.** M1 embeds locally with a pinned, hash-verified ONNX model. No hosted
    embedding provider, no new data flow, and `PRIVACY_AND_DATA_FLOW.md` is
    unchanged. (§4)
-2. **Which refusal behaviour do you prefer when the corpus is thin?** I propose
-   refusing often — correct but frustrating. The alternative is a visible
-   "weak evidence" answer. This also sets the bar for the §1.2 Hindi/Hinglish
-   refusal rule.
-3. **`sqlite-vec` — approve the pre-v1 compiled dependency now, or start with
-   brute force and revisit?** I recommend brute force and no new dependency
-   (§5 gives the chunk ceiling, ~25k–100k chunks depending on dimensions). I
-   would rather not add a compiled C extension without your decision.
-4. **Is a YouTube caption a citable *source*?** It is an imported course source
-   today, so yes — but its provenance is local documentation, not externally
-   verifiable (DECISIONS D10). Should caption citations be capped at
-   `UNVERIFIED` permanently?
-5. **Gate the answer feature behind a flag for the demo?** Ask is currently
-   disabled in the UI. M1 could ship dark, or visible with the refusal behaviour
-   and the badges on display. If visible, I would show badges from day one —
-   shipping uncited machine text first and retro-fitting the badges is exactly
-   the mistake this design is trying to avoid.
-6. **Gold-set size.** §9 now proposes 45 cases across nine categories. Confirm
-   the budget, or say if you want it larger before the model choice is locked.
-7. **Migration number.** `0006_retrieval` — confirm M1 owns `0006`, in case
-   something else is planned for that slot.
 
-Newly raised by this revision:
+2. **Refusal behaviour when the corpus is thin.** — **ANSWERED: three tiers.**
 
-8. **How long should a `suspect` badge persist?** A unit stays `suspect` until a
-   student or a later milestone corrects it. Should M1 display an age indicator
-   ("auto-transcript, 3 months old") on a long-unreviewed transcript, or is a
-   fixed badge sufficient?
-9. **Should the refusal threshold differ by language?** If Hinglish retrieval
-   scores materially worse (§4 measurement), the threshold for admitting a
-   Hinglish-source answer may need to be stricter than for English. I propose
-   yes, but it should follow the measurement rather than precede it.
+   | Evidence found | Behaviour |
+   | --- | --- |
+   | Strong | Answer normally, with citations. |
+   | Weak | Short answer labelled **"Partially supported"**, with citations, plus an offer to search the web — taken only with explicit student permission. |
+   | None | **"Evidence not found"**. No model-knowledge answer unless the student explicitly chooses **"Outside knowledge"**. |
+
+   Both thresholds are set from the gold dev split, not guessed. Borderline
+   questions are included in the gold set rather than excluded as inconvenient.
+
+3. **`sqlite-vec`.** — **ANSWERED: no.** Brute force only, until the §5 chunk
+   ceiling is actually reached. No new compiled dependency in M1.
+
+4. **Are YouTube captions citable sources?** — **ANSWERED: yes, and permanently
+   capped at `UNVERIFIED` for this hackathon.** The citation must additionally
+   distinguish **manual** from **auto-generated** caption tracks. Promotion above
+   `UNVERIFIED` happens only through an explicit student review action — never
+   automatically, and never as a side effect of a refresh.
+
+5. **Gate the answer feature behind a flag?** — **ANSWERED: no.** The answer
+   feature ships **visible, with badges from day one**. Shipping uncited machine
+   text first and retro-fitting the badges is the mistake this design exists to
+   avoid.
+
+6. **Gold-set size.** — **ANSWERED: first slice of 45 across nine categories**,
+   growing toward ~100 by M4, with **at least 15 off-material** cases and **at
+   least 10 Hindi/Hinglish or video-timestamp** cases. Real course material
+   only, hand-verified locators. Split into a **dev** set (for tuning) and a
+   **held-out** set (report only).
+
+7. **Migration number.** — **ANSWERED: M1 owns `0006_retrieval`.** No other work
+   is planned for that slot.
+
+   Two operational conditions attach: **back up the real data directory before
+   the first run**, and **exercise the migration on a copy first** (§3).
+
+8. **Badge age display.** — **ANSWERED: no age indicator.** A fixed badge is
+   sufficient. Instead, M1 exposes a **model/settings fingerprint in a details
+   view**, so what produced an answer is inspectable without decorating every
+   citation.
+
+9. **Should the refusal threshold differ by language?** — **ANSWERED: one
+   threshold by default.** A per-language override is permitted **only if the §4
+   measurement shows a real gap**, and the numbers behind any override must be
+   written down when it is introduced.
+
+---
+
+## 12. Implementation plan
+
+Sequenced so that each slice is independently reviewable and each can be
+stopped without leaving the repository in a state that cannot be explained.
+Gates run before and after every slice.
+
+**S1 — Retrieval skeleton, no embeddings.** Migration `0006_retrieval`, the §1
+eligibility gate, and the §2 chunker, with tests, plus a CLI/dev endpoint that
+lists eligible chunks for a source. Deliberately **no embeddings yet**, so the
+chunking contract is proven before anything depends on it.
+
+**S2 — Measurement, then the index.** Run the §4 measurement plan on 20–30 real
+course pages/segments and report disk, RAM, speed, and Hindi/Hinglish
+retrieval. Then choose and implement local embeddings, FTS5, the brute-force
+index and the retrieval API. First retrieval-only evaluation: **recall@k and MRR
+on the dev split**.
+
+**S3 — Providers and answers.** `providers/` (Groq, Ollama, prompt versions
+recorded) and answer composition: per-sentence citations, five evidence states,
+three-tier refusal.
+
+**S4 — Verifier. Only if time allows.** Propose approach and cost **first**,
+before writing any of it.
+
+**S5 — Renderer.** Tutor screen, citation chips, source viewer that opens the
+exact page/slide/timestamp, evidence-state banners, web-search permission flow
+stub.
+
+Nothing in this plan starts until the design is approved.
 
 ---
 

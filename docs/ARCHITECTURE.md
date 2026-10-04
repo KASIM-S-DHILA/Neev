@@ -53,6 +53,21 @@ local single-student storage, not a multi-user authentication system.
 
 ## 3. Repository layout
 
+| Path | Contents |
+| --- | --- |
+| `src/` | React renderer, typed storage client, hooks |
+| `electron/` | Main process, preload bridge, backend client, media |
+| `services/studylens_service/` | Python service — flat modules plus B4 interface scaffolds (§9) |
+| `services/tests/` | Python test suite (188 collected; 174 pass, 14 skipped) |
+| `tests/` | JavaScript test suite (25 tests across 7 files, §10) |
+| `tests/fixtures/ingestion/` | Authored ingestion fixtures used by tests and smoke |
+| `scripts/` | Build/dev/smoke entry points |
+| `scripts/lint-docs.mjs` | Documentation lint, run by `npm run check` |
+| `scripts/report-counts.mjs` | Measures every count quoted in the docs |
+| `scripts/ingestion-evals/` | Runnable standalone ingestion evaluators |
+| `docs/` | This document, audit, privacy, decisions, archive |
+| `evaluation/` | **Reserved** for the Track D benchmark; interfaces only (§9) |
+
 ## 4. Storage and persistence
 
 Ten tables, Alembic head `0005_youtube_media_links`:
@@ -107,6 +122,14 @@ and cross-site requests. Paths exclude the browser's `/api` prefix.
 | POST | `/workspaces/{id}/source-versions/{id}/cloud-visuals` | Queue cloud vision |
 | GET | `/workspaces/{id}/jobs`, `/jobs/{jid}` | Job list / one job |
 | POST | `/workspaces/{id}/jobs/{jid}/cancel`, `/retry` | Cancel / requeue |
+
+| POST | `/workspaces/{id}/queue-test` | Bounded fixture, evaluation mode only |
+
+`GET /workspaces/{id}/source-versions/{id}/content` is an **inspection API, not
+retrieval**. It returns scoped, ordered units with exact locators, at most 10 per
+response, including units whose status is `needs_ocr`, `suspect`, `unreadable`,
+`too_large` or `empty`. Do not treat it as a grounded-answer corpus.
+
 ## 6. Jobs
 
 Job state is `queued`/`running`/`succeeded`/`partial`/`failed`/`cancelled`. Only
@@ -144,6 +167,25 @@ external Ollama plus non-Windows helper memory sit outside them.
 - **Video frames** — FFmpeg samples source PTS in bounded 30-second windows;
   PySceneDetect and pixel change detect slide/whiteboard updates; adjacent
   duplicates are suppressed. Up to 600 frames, at most 20 retained per window.
+- **YouTube** — caption tracks for the selected language, stored as immutable
+  JSON snapshots. Refreshes create a version only when the snapshot changes.
+
+Every automatic transcript is marked `suspect` and requires listening. Model
+output never replaces `content_units.text` or changes its hash/status.
+
+## 8. Electron IPC
+
+`electron/preload.cjs` exposes a narrow, named-operation bridge. The renderer
+supplies no URLs or credentials. Native IPC accepts only the app's main frame.
+Chosen file paths stay behind short-lived file tickets; imports and downloads use
+streams rather than whole-file buffers.
+| POST | `/workspaces/{id}/queue-test` | Bounded fixture, evaluation mode only |
+
+`GET /workspaces/{id}/source-versions/{id}/content` is an **inspection API, not
+retrieval**. It returns scoped, ordered units with exact locators, at most 10 per
+response, including units whose status is `needs_ocr`, `suspect`, `unreadable`,
+`too_large` or `empty`. Do not treat it as a grounded-answer corpus.
+
 ## 9. Known gaps
 
 Stated plainly so they are not mistaken for oversights:
@@ -176,15 +218,27 @@ Stated plainly so they are not mistaken for oversights:
 
 | Gate | Command | Count |
 | --- | --- | --- |
-| Python service | `npm.cmd run api:test` | 184 collected: 170 pass, 14 skipped (scaffold placeholders) |
-| JavaScript + build | `npm.cmd run check` | 22 tests + `tsc --noEmit` + `vite build` |
+| Python service | `npm.cmd run api:test` | 188 collected: 174 pass, 14 skipped (scaffold placeholders) |
+| Docs lint | `npm.cmd run lint:docs` | section numbering, links, empty sections, truncation |
+| JavaScript + build | `npm.cmd run check` | 25 tests + `tsc --noEmit` + `vite build` |
 | Desktop smoke | `npm.cmd run smoke:desktop` | hidden Electron window, isolated data dir |
 
-JavaScript tests per file (`node --test tests/<file>`), 22 total:
+Every count in this section is measured, not remembered. Re-derive them with:
+
+```sh
+node scripts/report-counts.mjs
+```
+
+It runs the Python discovery, instantiates the app to enumerate routes, and
+counts tests per file. If a number here disagrees with that output, this
+document is wrong.
+
+JavaScript tests per file (`node --test tests/<file>`), 25 total:
 
 | File | Tests | Covers |
 | --- | --- | --- |
 | `tests/imports.test.ts` | 3 | import scope, cancel, partial failure |
+| `tests/jobpanel.test.ts` | 3 | job status labels, badge, timing display |
 | `tests/session.test.ts` | 7 | tabs, drafts, restore validation, tab cap |
 | `tests/storage.test.ts` | 3 | `describeStorage` derives WAL from `/health` |
 | `tests/disclosure.test.ts` | 4 | one-time cloud disclosure and show-once rule |
@@ -211,33 +265,3 @@ supervised worker, and persisted session. It writes its screenshot to
 
 Cloud and many ASR outputs are mocked; native decoding/OCR/frame tests run real
 tools. There is no live quality measurement and no coverage percentage.
-- **YouTube** — caption tracks for the selected language, stored as immutable
-  JSON snapshots. Refreshes create a version only when the snapshot changes.
-
-Every automatic transcript is marked `suspect` and requires listening. Model
-output never replaces `content_units.text` or changes its hash/status.
-
-## 8. Electron IPC
-
-`electron/preload.cjs` exposes a narrow, named-operation bridge. The renderer
-supplies no URLs or credentials. Native IPC accepts only the app's main frame.
-Chosen file paths stay behind short-lived file tickets; imports and downloads use
-streams rather than whole-file buffers.
-| POST | `/workspaces/{id}/queue-test` | Bounded fixture, evaluation mode only |
-
-`GET /workspaces/{id}/source-versions/{id}/content` is an **inspection API, not
-retrieval**. It returns scoped, ordered units with exact locators, at most 10 per
-response, including units whose status is `needs_ocr`, `suspect`, `unreadable`,
-`too_large` or `empty`. Do not treat it as a grounded-answer corpus.
-| Path | Contents |
-| --- | --- |
-| `src/` | React renderer, typed storage client, hooks |
-| `electron/` | Main process, preload bridge, backend client, media |
-| `services/studylens_service/` | Python service — flat modules plus B4 interface scaffolds (§9) |
-| `services/tests/` | Python test suite (184 collected; 170 pass, 14 skipped) |
-| `tests/` | JavaScript test suite (22 tests across 6 files, §10) |
-| `tests/fixtures/ingestion/` | Authored ingestion fixtures used by tests and smoke |
-| `scripts/` | Build/dev/smoke entry points |
-| `scripts/ingestion-evals/` | Runnable standalone ingestion evaluators |
-| `docs/` | This document, audit, privacy, decisions, archive |
-| `evaluation/` | **Reserved** for the Track D benchmark; interfaces only (§9) |
