@@ -8,6 +8,8 @@ Neev (नींव, foundation) is the chosen product name, formerly StudyLens. 
 
 Requires Node.js 24 and Python 3.12. The Python interpreter used by the app is the project `.venv`; you can override it with `STUDYLENS_PYTHON`.
 
+Project path: **`C:\dev\neev`**. The repository was moved out of OneDrive on 2026-10-04. The `%APPDATA%\StudyLens` profile and data directory are unchanged, so existing saved work is picked up.
+
 PowerShell, from this directory:
 
 ```powershell
@@ -20,7 +22,7 @@ The Python dependencies are pinned in `services/requirements-lock.txt`. The deve
 
 ## Run
 
-On Windows, double-click `Neev.lnk` in the project folder to open the native Electron app using the built interface. The older `StudyLens.lnk` also launches this checkout. Rebuild with `npm.cmd run build` after interface changes. The shortcut uses this checkout's Electron and Python dependencies; the packaged installer arrives in Phase 19.
+On Windows, double-click `Neev.lnk` in the project folder to open the native Electron app using the built interface. The shortcut is untracked and machine-specific (it points at this checkout's `node_modules\electron\dist\electron.exe`); recreate it on a new machine. The older `StudyLens.lnk` is historical and no longer tracked. Rebuild with `npm.cmd run build` after interface changes. The shortcut uses this checkout's Electron and Python dependencies; the packaged installer arrives in Phase 19.
 
 From PowerShell, you can also start the built Electron app with `npm.cmd start`.
 
@@ -101,7 +103,7 @@ Expand **Cloud help for difficult visuals** to retry Groq or request a specific 
 
 ## Data and recovery
 
-On Windows, the default data directory is `%APPDATA%\StudyLens\data`, outside the OneDrive project directory. Settings shows the actual location. `STUDYLENS_DATA_DIR` overrides it for evaluation. Both launch modes use this default, so use distinct evaluation data if you want to keep test work separate:
+On Windows, the default data directory is `%APPDATA%\StudyLens\data`, outside the project directory. Settings shows the actual location. `STUDYLENS_DATA_DIR` overrides it for evaluation. Both launch modes use this default, so use distinct evaluation data if you want to keep test work separate:
 
 ```powershell
 $env:STUDYLENS_DATA_DIR = Join-Path $PWD 'tmp/phase02-preview'

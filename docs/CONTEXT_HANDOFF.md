@@ -16,10 +16,10 @@ Updated October 3, 2026, after Phase 7D-2 student-supplied local-media associati
 
 ## Repository and launch
 
-- Workspace: `C:/Users/User/OneDrive/Desktop/Study`. The Git repository is on `main` and tracks `https://github.com/KASIM-S-DHILA/Neev.git`; commit each independent phase separately and verify the push.
+- Workspace: `C:/dev/neev`. **Moved out of OneDrive on 2026-10-04** (B0); the previous `C:/Users/User/OneDrive/Desktop/Study` copy is superseded and can be removed. The Git repository tracks `https://github.com/KASIM-S-DHILA/Neev.git` on branch `cleanup/architecture-reset`; commit each independent phase separately and verify the push.
 - React/TypeScript/Vite renderer; narrow sandboxed Electron preload IPC; authenticated loopback Python FastAPI service; SQLAlchemy/aiosqlite, SQLite WAL and Alembic; immutable original store and supervised single heavy worker.
 - Node 24, Python 3.12, project `.venv`, pinned `services/requirements-lock.txt`. Project dependencies are installed. No new AI model download is needed for the completed work.
-- Run native development: `npm.cmd run dev`. Run the built desktop app: `npm.cmd start` or `Neev.lnk` (the older shortcut still works). Rebuild changed UI with `npm.cmd run build`. `npm.cmd run dev:web` is the browser preview.
+- Run native development: `npm.cmd run dev`. Run the built desktop app: `npm.cmd start` or `Neev.lnk` (recreated for this path; `StudyLens.lnk` is historical and no longer tracked). Rebuild changed UI with `npm.cmd run build`. `npm.cmd run dev:web` is the browser preview.
 - The visible app/package name is Neev. Preserve the existing `%APPDATA%/StudyLens` profile/data location, `STUDYLENS_*` environment variables, `window.studyLens`, storage keys, Python module names and `studylens-media` scheme. The rename deliberately avoids moving data or changing persistent identifiers. Electron explicitly retains the old profile for normal launches.
 - Install/update pinned Python dependencies: `npm.cmd run api:install`. Current package version is 0.6.0.
 - Follow applicable user/AGENTS instructions. TinyFish is the preferred web research toolkit. Do not spawn sub-agents without explicit applicable authorization. Do not include credentials in notes, logs or responses.
