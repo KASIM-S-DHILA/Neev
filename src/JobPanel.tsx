@@ -1,23 +1,10 @@
 import { Check, RefreshCw, X } from "lucide-react";
-import type { Job } from "./storage/client";
 import type { useImports } from "./storage/useImports";
 import type { useJobs } from "./storage/useJobs";
+// jobStatus lives in a plain .ts module so node --test can cover the waiting
+// wording; see src/jobStatus.ts.
+import { jobStatus } from "./jobStatus";
 
-function jobStatus(job: Job) {
-  if (job.cancel_requested && job.state === "running") return "Stopping…";
-  if (job.state === "succeeded")
-    return job.kind === "queue_fixture"
-      ? "Test complete"
-      : job.kind === "extract_source"
-        ? "Text extracted"
-        : job.kind === "cloud_visuals" ? "Visuals processed" : job.kind === "video_frames" ? "Frames selected" : job.kind === "video_frame_visuals" ? "Frame text saved · review needed" : job.kind === "youtube_import" ? "YouTube captions saved" : "Original checked";
-  if (job.state === "partial") return "Some content needs review";
-  if (job.state === "queued")
-    return ["Waiting for Groq quota", "Waiting for Groq audio quota", "Pacing Groq audio requests", "Retrying visual output", "Retry scheduled"].includes(job.stage) ? job.stage : "Waiting";
-  if (job.state === "cancelled") return "Cancelled";
-  if (job.state === "failed") return "Needs attention";
-  return job.stage;
-}
 export function JobPanel({
   queue,
   imports,

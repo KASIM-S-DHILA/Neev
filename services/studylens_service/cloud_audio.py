@@ -15,6 +15,14 @@ MODEL = "whisper-large-v3-turbo"
 VERSION = "groq-audio-1"
 ENDPOINT = "https://api.groq.com/openai/v1/audio/transcriptions"
 WAIT_STAGE = "Waiting for Groq audio quota"
+PACING_STAGE = "Pacing Groq audio requests"
+
+# Wall-clock provider for the durable quota ledger. Production uses real time;
+# tests substitute a controllable value so hour/day rollover and pacing windows
+# can be exercised exactly instead of by waiting or by hoping for the right
+# moment. Kept as a module attribute (not a default argument) so it can be
+# patched at the call site and so the real default is impossible to lose.
+now = time.time
 
 
 def enabled():
@@ -44,22 +52,22 @@ def save_ledger(worker, value):
 
 def reserve(worker, duration):
     # One OS-locked heavy worker serializes the ledger across app windows.
-    value, now = ledger(worker), time.time()
-    hour, day = int(now // 3600), int(now // 86400)
+    value, now_seconds = ledger(worker), now()
+    hour, day = int(now_seconds // 3600), int(now_seconds // 86400)
     if value["hour"] != hour:
         value.update(hour=hour, hour_seconds=0)
     if value["day"] != day:
         value.update(day=day, day_seconds=0, day_requests=0)
     seconds = max(10, duration)  # Conservative accounting, including short requests.
     if value["hour_seconds"] + seconds > 7000:
-        raise Deferred((hour + 1) * 3600 - now, WAIT_STAGE)
+        raise Deferred((hour + 1) * 3600 - now_seconds, WAIT_STAGE)
     if value["day_seconds"] + seconds > 28000 or value["day_requests"] >= 1900:
-        raise Deferred((day + 1) * 86400 - now, WAIT_STAGE)
-    if value["next_request_at"] > now:
-        stage = "Pacing Groq audio requests" if value["next_request_at"] - now <= 3.3 else WAIT_STAGE
-        raise Deferred(value["next_request_at"] - now, stage)
+        raise Deferred((day + 1) * 86400 - now_seconds, WAIT_STAGE)
+    if value["next_request_at"] > now_seconds:
+        stage = PACING_STAGE if value["next_request_at"] - now_seconds <= 3.3 else WAIT_STAGE
+        raise Deferred(value["next_request_at"] - now_seconds, stage)
     value.update(hour_seconds=value["hour_seconds"] + seconds, day_seconds=value["day_seconds"] + seconds,
-                 day_requests=value["day_requests"] + 1, next_request_at=now + 3.2)
+                 day_requests=value["day_requests"] + 1, next_request_at=now_seconds + 3.2)
     save_ledger(worker, value)
 
 
@@ -85,7 +93,7 @@ async def request_audio(worker, job, raw, language):
                         delay = 65
                     wait = max(3.2, min(86400, delay))
                     value = ledger(worker)
-                    value["next_request_at"] = time.time() + wait
+                    value["next_request_at"] = now() + wait
                     save_ledger(worker, value)
                     raise Deferred(wait, WAIT_STAGE)
                 if response.status_code != 200:
@@ -96,7 +104,7 @@ async def request_audio(worker, job, raw, language):
                     remaining = 999999
                 if remaining < 1:
                     value = ledger(worker)
-                    value["next_request_at"] = max(value["next_request_at"], (int(time.time() // 86400) + 1) * 86400)
+                    value["next_request_at"] = max(value["next_request_at"], (int(now() // 86400) + 1) * 86400)
                     save_ledger(worker, value)
                 received = bytearray()
                 async for chunk in response.aiter_bytes():

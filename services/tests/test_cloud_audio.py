@@ -147,10 +147,89 @@ class CloudAudioTests(unittest.TestCase):
 
     def test_quota_uses_ready_local_fallback(self):
         version = self.seed()
-        with self.transport(lambda _: httpx.Response(429, headers={"retry-after": "65"})):
-            self.run_job()
+        # Pinned clock. This test was intermittently IndexError: the 429 path
+        # reserves a pacing slot, and under the real wall clock a slow or
+        # contended machine can land the job inside that 3.2s window, requeueing
+        # it as a Deferred before any unit was committed. A fixed clock removes
+        # the timing dependency without weakening what is asserted.
+        with patch.object(cloud_audio, "now", return_value=1_760_000_000.0):
+            with self.transport(lambda _: httpx.Response(429, headers={"retry-after": "65"})):
+                self.run_job()
         self.assertEqual(self.content(version)["units"][0]["metadata"]["speech"]["provider"], "local")
         self.assertEqual(cloud_audio.ledger(self.worker)["day_requests"], 1)
+
+    def test_pinned_clock_makes_pacing_and_quota_windows_exact(self):
+        # The same mechanism the intermittent failure came from, asserted
+        # deliberately: a request inside the pacing window must defer, and the
+        # same request once the window has passed must proceed.
+        base = 1_760_000_000.0
+        with patch.object(cloud_audio, "now", return_value=base):
+            cloud_audio.reserve(self.worker, 30)
+        first = cloud_audio.ledger(self.worker)
+        self.assertEqual(first["day_requests"], 1)
+        self.assertAlmostEqual(first["next_request_at"], base + 3.2, places=6)
+
+        # Still inside the pacing window -> Deferred with the pacing stage.
+        with patch.object(cloud_audio, "now", return_value=base + 1.0):
+            with self.assertRaises(Deferred) as caught:
+                cloud_audio.reserve(self.worker, 30)
+        self.assertEqual(caught.exception.stage, cloud_audio.PACING_STAGE)
+        self.assertEqual(cloud_audio.ledger(self.worker)["day_requests"], 1)
+
+        # Past the window -> the reserve succeeds and counts a second request.
+        with patch.object(cloud_audio, "now", return_value=base + 3.3):
+            cloud_audio.reserve(self.worker, 30)
+        self.assertEqual(cloud_audio.ledger(self.worker)["day_requests"], 2)
+
+    def test_hour_rollover_resets_hour_budget_but_keeps_day_count(self):
+        # Documented behaviour, previously only reachable by waiting for the
+        # wall clock to cross an hour boundary. An hour rollover resets
+        # hour_seconds but must NOT reset day_requests: the daily cap is
+        # deliberately per-day, not per-hour.
+        #
+        # Each reserve is separated by more than the 3.2s pacing window,
+        # otherwise the pinned clock makes the next call defer instead.
+        hour_one = 1_760_000_000.0
+        with patch.object(cloud_audio, "now", return_value=hour_one):
+            cloud_audio.reserve(self.worker, 30)
+        with patch.object(cloud_audio, "now", return_value=hour_one + 4.0):
+            cloud_audio.reserve(self.worker, 30)
+        self.assertEqual(cloud_audio.ledger(self.worker)["hour_seconds"], 60)
+        self.assertEqual(cloud_audio.ledger(self.worker)["day_requests"], 2)
+
+        # Two hours later, well past the pacing window: a new hour bucket.
+        with patch.object(cloud_audio, "now", return_value=hour_one + 2 * 3600 + 4000):
+            cloud_audio.reserve(self.worker, 30)
+        after = cloud_audio.ledger(self.worker)
+        self.assertEqual(after["hour_seconds"], 30, "hour budget resets on rollover")
+        self.assertEqual(after["day_requests"], 3, "daily count survives an hour rollover")
+
+    def test_day_rollover_resets_the_daily_request_count(self):
+        day_one = 1_760_000_000.0
+        ledger = cloud_audio.ledger(self.worker)
+        ledger.update(hour=int(day_one // 3600), day=int(day_one // 86400), hour_seconds=0,
+                      day_seconds=0, day_requests=1899, next_request_at=0)
+        cloud_audio.save_ledger(self.worker, ledger)
+        with patch.object(cloud_audio, "now", return_value=day_one):
+            cloud_audio.reserve(self.worker, 30)  # 1899 -> 1900
+        self.assertEqual(cloud_audio.ledger(self.worker)["day_requests"], 1900)
+
+        with patch.object(cloud_audio, "now", return_value=day_one + 86400 + 4000):
+            cloud_audio.reserve(self.worker, 30)
+        self.assertEqual(cloud_audio.ledger(self.worker)["day_requests"], 1,
+                         "daily count resets on day rollover")
+
+    def test_default_clock_is_real_time_and_patches_are_scoped(self):
+        # Guards the seam itself: production must keep the real clock, and a
+        # test's patch must not leak into the next test.
+        import time as real_time
+        self.assertIs(cloud_audio.now, real_time.time)
+        self.assertAlmostEqual(cloud_audio.now(), real_time.time(), delta=5)
+        # After the pinned-clock tests above have exited their context managers,
+        # the module attribute must be the original again.
+        with patch.object(cloud_audio, "now", return_value=0.0):
+            self.assertEqual(cloud_audio.now(), 0.0)
+        self.assertIs(cloud_audio.now, real_time.time)
 
     def test_network_error_uses_local_without_exposing_error_details(self):
         version = self.seed()
