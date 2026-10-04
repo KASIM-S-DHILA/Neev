@@ -3,11 +3,10 @@
 **Status: proposal. No code, no dependency, no migration.** This document exists
 to be approved or corrected before any of it is built.
 
-Branch context: `cleanup/architecture-reset` at `dd18146`. The contracts this
-design fills in are the unimplemented scaffolds in
-`studylens_service/knowledge/`, `grounding/`, `providers/` and the top-level
-`evaluation/` package. Every entry point there currently raises
-`NotImplementedError`.
+Branch context: `cleanup/architecture-reset`. The contracts this design fills in
+are the unimplemented scaffolds in `studylens_service/knowledge/`, `grounding/`,
+`providers/` and the top-level `evaluation/` package. Every entry point there
+currently raises `NotImplementedError`.
 
 Current behaviour, stated plainly: **there is no retrieval and there are no
 grounded answers.** `GET .../content` is an inspection API that returns units
@@ -20,8 +19,8 @@ not a retrieval corpus and M1 must never treat it as one.
 
 One function decides what may be indexed and what may be cited:
 `knowledge.eligible_source_versions()`. **It is the only place this rule lives.**
-Retrieval, grounding, the citation builder and the benchmark all call it. Nothing
-re-derives it.
+Retrieval, grounding, the citation builder and the benchmark all call it.
+Nothing re-derives it.
 
 A source version is eligible when **all** hold:
 
@@ -29,35 +28,77 @@ A source version is eligible when **all** hold:
 | --- | --- | --- |
 | Original integrity verified — a `verify_original` job for this version reached `succeeded` | `jobs`, `source_versions` | An unreadable original cannot support a citation |
 | Extraction terminal and not failed — latest `extract_source` job is `succeeded` or `partial` | `jobs` | Mid-extraction content is incomplete by construction |
-| For a `partial` extraction, **every** unit must be `text` | `content_units` | A partial extraction with a failed unit is not fully usable |
-| At least one unit with `status == "text"` | `content_units` | Otherwise there is nothing to cite |
+| At least one **citable** unit (see §1.1) | `content_units` | Otherwise there is nothing to cite |
 | Text integrity — unit `text_sha256` matches the stored `text` | `content_units` | A modified unit is not evidence of what was extracted |
 
-A **unit** is eligible only when `status == "text"`. These are never indexed and
-never cited, though they stay visible to the student in the content viewer:
+A `partial` extraction is eligible; the per-unit rule below filters its bad
+units, so the version-level rule does not need to.
 
-| Status | Reason | Student-facing label if it ever surfaces |
+### 1.1 Per-unit eligibility: `text` **and** `suspect` are both citable
+
+Both are indexed and both may be cited. Only these are excluded:
+
+| Unit status | Citable? | Reason | Badge on the citation |
+| --- | --- | --- | --- |
+| `text` | **yes** | Extracted text, integrity checked | none, or "verified" |
+| `suspect` | **yes** | Real extracted text that a machine produced and nobody has checked | **per-modality badge, §1.2** |
+| `needs_ocr` | no | No text was recognised at all | "Needs OCR" |
+| `empty` | no | Nothing to say | — |
+| `unreadable` | no | Extraction could not read it | "Not extracted" |
+| `too_large` | no | Deliberately skipped | "Not extracted" |
+
+Excluding `suspect` outright was my earlier recommendation and it was wrong. It
+would make **video, YouTube captions and scanned material largely unanswerable** —
+most of what a student would ask about. The honest arrangement is not to hide
+automatic text but to **index it and label every citation derived from it**, so
+the student can see exactly what they are trusting.
+
+`suspect` never reaches `VERIFIED`. It enters as `UNVERIFIED` at best, and the
+renderer must render the badge. A citation with no badge is a bug.
+
+### 1.2 Confidence differs by modality, and by language for speech
+
+A `suspect` unit is not one thing. The badge must say which kind of machine text
+the student is being shown:
+
+| Origin | Badge | Why confidence differs |
 | --- | --- | --- |
-| `needs_ocr` | no text recognised yet | "Needs OCR" |
-| `suspect` | automatic speech, unreviewed | "Automatic transcript — check against the audio" |
-| `unreadable` / `too_large` / `empty` | extraction could not or would not proceed | "Not extracted" |
+| ASR transcript of audio or video speech | **"auto-transcript, verify against clip"** | ASR substitutes, drops and splits words; timestamps are approximate |
+| ASR of **Hindi or Hinglish** speech | **"auto-transcript (Hindi/Hinglish), verify against clip"** plus an accuracy warning | See below |
+| OCR text from a scanned page | **"scanned text, verify against page"** | OCR degrades on low contrast, skew and mixed scripts; glyph confusion is common in Devanagari |
+| OCR text from a born-digital page | **"scanned text, verify against page"** | Same origin; the reader should still know it is machine-read |
+| Cloud model transcription of a visual | **"model output, not in the source"** | Already `MODEL_DERIVED` in §7; never shown as source text |
 
-**Suspect units are the interesting case.** They are excluded because an
-unreviewed transcript may contain ASR errors, and citing it as fact would be
-dishonest. But excluding them entirely would break video and YouTube review,
-which are core features today. So:
+**Hindi and Hinglish specifically.** The hinglish pilot
+(`docs/archive/ingestion-pilots/hinglish-asr.md`) records materially worse
+accuracy for code-switched Hindi/English than for clean English. So for a
+`suspect` unit detected as `hi` or as Hinglish:
 
-* `suspect` units are **not indexed** and **not citable as `VERIFIED`**.
-* If a future milestone confirms a student's correction, the corrected text is
-  stored as a **new unit version** that *is* eligible; the original `suspect`
-  unit stays for history. M1 does not build this path, but the schema leaves room.
-* A grounded answer about a video or YouTube source will therefore often have
-  **no citable transcript**, only frames and captions. That is the correct
-  outcome, and the answer must say so rather than guess.
+1. The badge is **longer and explicit**, not a footnote.
+2. The citation carries an extra `confidence_hint` the renderer must display:
+   `"asr_accuracy_low_for_language"`.
+3. Low-confidence ASR must **not** be the sole support for a numerical or
+   definitional claim. If the only available evidence is low-confidence ASR, the
+   pipeline **refuses**. Refusing is cheap; a wrong formula the student then
+   trusts is not.
+4. A future milestone may let the student confirm or correct a transcript; a
+   confirmed unit becomes a new version with status `text`. M1 does not build
+   this path, but the schema leaves room for it.
 
-Warnings and coverage gaps are carried through, never dropped. An eligible
-version with warnings still yields citations, but `weakest_state()` must not
-report `VERIFIED` while a warning applies.
+How the language is determined for an existing unit: prefer the
+`metadata.speech.language` already recorded by `audio.py`; fall back to
+`metadata.speech.language_probability`; if neither exists, treat the language as
+unknown and apply the long badge. **Never** guess "English" because the app
+happens to default to English.
+
+### 1.3 Warnings travel with the citation
+
+Warnings and coverage gaps are carried on every hit and never dropped. A hit from
+a source version with warnings always renders that warning alongside the
+citation, and `weakest_state()` must not report `VERIFIED` while a warning
+applies — even for a `text` unit, because a warning is itself evidence that
+something about that unit is not trustworthy.
+
 ---
 
 ## 2. Chunking
@@ -85,6 +126,10 @@ Rules:
 * **`text_sha256` on every chunk** is the SHA-256 of the chunk text, so an index
   built from changed text is detectable as stale without re-reading the unit.
 * **`chunker_version`** is bumped whenever any size, overlap or boundary rule
+  changes. An index row with an older version is not reused; it is rebuilt.
+* Minimum chunk: skip units shorter than ~40 characters unless it is the only
+  unit in its source version. Indexing a single word produces noise.
+
 ---
 
 ## 3. Storage — proposed migration `0006_retrieval`
@@ -139,10 +184,30 @@ CREATE TABLE index_state (
 
 `id` is deterministic:
 `uuid5(NAMESPACE_URL, f"{content_unit_id}:{ordinal}:{text_sha256[:16]}:{chunker_version}")`.
-Deterministic ids mean a rebuild returns the same rows, so a rebuild is idempotent
-and a retry cannot duplicate.
+Deterministic ids mean a rebuild returns the same rows, so a rebuild is
+idempotent and a retry cannot duplicate.
 
 **Provenance, per row:** `chunker_version` on every chunk; `model` + `revision` +
+`dimensions` on every embedding. This is the gap DECISIONS D14 calls out — Ollama
+currently records model but no prompt/model revision. This table makes that
+structurally impossible to omit.
+
+**Invalidation.** `invalidate(source_version_id)`:
+
+1. `DELETE FROM embeddings WHERE chunk_id IN (SELECT id FROM chunks WHERE source_version_id = ?)`
+2. `DELETE FROM chunks WHERE source_version_id = ?`
+3. FTS5 external-content rows follow the delete; the app issues `'delete'`
+   commands against `chunks_fts` for the affected rowids.
+4. `index_state` records the last successful full build, not a counter.
+
+Trigger: any `extract_source` rebuild, any `verify_original` failure, any source
+version delete. The worker already clears `content_units` and the cloud job on
+rebuild, so this hook sits in the same place.
+
+**Known SQLite limits, stated now:** FTS5 external-content tables do **not**
+support `UPSERT`, so re-chunk means delete-then-insert. Stock SQLite has no
+vector type and no ANN index; vector search is a scan over a BLOB column (§5).
+
 ---
 
 ## 4. Embeddings and reranker — measurement first, choice after
@@ -187,6 +252,48 @@ promoted into `evaluation/`:
 out of budget for the demo and is listed as optional in §10. If added it must run
 as a bounded top-k pass (k ≤ 20) inside the existing single heavy worker.
 
+**Local vs hosted embeddings — decided. M1 is local-only.** Chunk text is the
+student's own material; sending it to a hosted embedding API is a new data flow,
+and this milestone does not open one. `docs/PRIVACY_AND_DATA_FLOW.md` is
+therefore unchanged by M1 and no embedding request is added to its data-flow
+table. Revisiting that needs its own DECISIONS entry and a consent answer first.
+
+### 4.1 Who owns tokenizer and ONNX loading
+
+Someone has to own model loading, and "whoever needs retrieval first" is how
+duplicated tokenizers and double-loaded 1 GB models appear. The seam:
+
+| Concern | Owner | Where | Tests that must exist |
+| --- | --- | --- | --- |
+| Model download, hash verification, revision pinning | `scripts/setup-embeddings.py`, mirroring the existing `scripts/setup-audio.py` | `models/` (gitignored) | a download with a wrong hash is refused |
+| Tokenizer and ONNX session construction, **one process-wide cache keyed by model + revision** | `studylens_service/knowledge/embedder.py` | new module | a second call does **not** re-load; a different revision **does** re-load |
+| Chunking | `studylens_service/knowledge/chunker.py` | new module | per-modality boundary tests (§2) |
+| Index write and invalidation | `studylens_service/knowledge/index.py` | new module | invalidation leaves no orphan chunk, vector or FTS row |
+| Cosine similarity over the BLOB column | `studylens_service/knowledge/vectors.py` | new module | matches a reference implementation on random vectors |
+| HTTP surface | existing `api.py` pattern | `api.py` | the same scope/auth tests every other route has |
+
+**Rules.** The ONNX session is built **once per (model, revision)** and reused;
+building it per query would add seconds to every search. Inference runs inside
+the existing single heavy worker, never in the API request path. A failed load
+degrades to **FTS5-only**, with the UI saying lexical search is in use — the app
+must still work with no embedding model present.
+
+### 4.2 fastembed versus hand-rolled ONNX
+
+| | Hand-rolled (`onnxruntime` + `tokenizers`, both already locked) | `fastembed` |
+| --- | --- | --- |
+| New distributions | **0** | 1 (`fastembed`) plus its own transitive pins |
+| Wheel size | 0 | ~15–30 MB plus pins |
+| Licence | Apache-2.0 / MIT, already vendored by policy | Apache-2.0 |
+| Who maintains the loading code | us | upstream |
+| Model download | we write it, pinned and hash-verified | upstream registry, still pinned and hash-verified by us |
+| Risk | ~60 lines of loading code we must test and maintain | version conflicts against our pinned `onnxruntime==1.30.0`; a transitive bump is a supply-chain event in a project the audit already flags as unverified |
+
+**Recommendation: hand-rolled ONNX.** The loading code is small, we already own
+`huggingface-hub` for the audio model, and it adds **zero new dependencies**.
+Revisit `fastembed` only if we end up wanting several embedding models, which is
+M1-plus at best.
+
 ---
 
 ## 5. Index and dependencies — for approval
@@ -200,7 +307,7 @@ sequences; `remove_diacritics 2` is safe for both. Weakness: no stemming, so
 
 | Option | New dependency | Licence | Size | Maintenance | Notes |
 | --- | --- | --- | --- | --- | --- |
-| **A. Brute-force cosine over BLOB** | none | — | 0 | — | O(n). 20k chunks × 384 dims ≈ 30 MB scanned/query, ~10–30 ms in NumPy. **Fine for the demo**; removes every supply-chain question |
+| **A. Brute-force cosine over BLOB** | none | — | 0 | — | O(n). **Fine for the demo**; removes every supply-chain question |
 | **B. `sqlite-vec`** | 1 | Apache-2.0 | ~1 MB, compiles into SQLite | Active, **pre-v1**, ~1.0/yr | Best quality-of-life; pre-v1 is the risk |
 | **C. `hnswlib`** | 1 | Apache-2.0 | ~5 MB | Mature, low recent activity | Fast ANN; hand-rolled index lifecycle |
 | **D. LanceDB / Qdrant / Chroma** | 1 (large) | Apache-2.0 and others | 50–500 MB | Active | Overkill: duplicates storage we have, adds a service-shaped thing |
@@ -209,6 +316,33 @@ sequences; `remove_diacritics 2` is safe for both. Weakness: no stemming, so
 **Recommendation: start with A, move to B only if measured latency demands it.**
 A needs no new dependency, which matters for a supply chain the audit already
 flags as unverified. numpy is already in the lock.
+
+**The chunk-count ceiling for brute force.** Cost is `O(chunks × dims)` float32
+reads plus a dot product per chunk, in NumPy on one contiguous buffer. Using the
+§4 figures (384-dim, float32 = 1,536 bytes/vector) and the measured ~10–30 ms at
+20k chunks on this machine:
+
+| Chunks | Scan per query | Verdict |
+| --- | --- | --- |
+| 5,000 | ~7.7 MB | **Comfortable.** No thought needed |
+| 20,000 | ~31 MB | **Comfortable.** Typical single-student corpus |
+| 50,000 | ~77 MB | **Acceptable**, ~40–75 ms/query |
+| 100,000 | ~154 MB | **Borderline.** ~80–150 ms/query; the read dominates. Switch to ANN |
+| 250,000+ | ~384 MB | **Unacceptable.** Brute force is finished |
+
+With 768-dim (`e5-base`) every figure doubles: **comfortable ceiling ~25,000
+chunks**, borderline at ~50,000.
+
+Context: a 500-page PDF at ~1000 chars per chunk is ~500 chunks. Reaching 100,000
+chunks means ~100,000 pages, or a large audio/video library at one chunk per
+30-second cue. **For one student on an 8 GB laptop, brute force will not be the
+bottleneck.** Adopting ANN should be measurement-driven, not triggered by a
+chunk-count rule that will not fire in practice.
+
+**Migration path if the ceiling is hit.** `vectors.py` (§4.1) is the only module
+that knows how similarity is computed. Swapping to `sqlite-vec` or an ANN index
+is a change inside that module plus a rebuild of `embeddings`; `chunks`,
+`chunks_fts` and every caller stay untouched.
 
 Embedding inference needs a runtime, which is a real dependency decision:
 
@@ -227,6 +361,13 @@ wheel. torch at ~2.5 GB is disqualifying on an 8 GB laptop.
   pinned revision hash**, stored under `models/` (already gitignored) and
   verified by hash before use — the pattern `huggingface-hub` already uses in
   `setup-audio.py`.
+* Model licences must be recorded per model in `index_state` and
+  `docs/DECISIONS.md`. Most candidates are MIT or Apache-2.0; some multilingual
+  checkpoints carry additional terms. **I have not verified any individual
+  model's licence text** — that is a task, not an assumption.
+* `sqlite-vec`, if adopted, would be the first new compiled dependency in the
+  project and needs a licence and maintenance review before use.
+
 ---
 
 ## 6. Retrieval API and citation contract
@@ -251,11 +392,14 @@ Response shape (exact):
       "content_unit_id": "…",
       "ordinal": 3,
       "modality": "pdf",
+      "unit_status": "text",           // or "suspect"; drives the badge
       "text_sha256": "…",
       "snippet": "…",                 // bounded, <= 400 chars
       "locator": { "kind": "page", "page": 4, "width": 612, "height": 792, "rotation": 0 },
       "citation": {
         "label": "Notes.pdf, page 4",
+        "badge": null,                 // e.g. "scanned text, verify against page"
+        "confidence_hint": null,       // e.g. "asr_accuracy_low_for_language"
         "opens": { "view": "materials", "version_id": "…", "offset": 3 },
         "seek_seconds": null
       },
@@ -265,6 +409,10 @@ Response shape (exact):
   "eligibility": { "indexed_versions": 12, "skipped_unverified": 3 }
 }
 ```
+
+`badge` and `confidence_hint` follow §1.2 and are **required** whenever
+`unit_status == "suspect"`; the renderer must refuse to render a citation whose
+badge is missing for a `suspect` unit.
 
 **How a citation opens** — the part that must not be faked:
 
@@ -308,13 +456,41 @@ paraphrasing, because paraphrase is where fabrication enters.
    First implementation: embedding similarity above a threshold plus lexical
    overlap. Sentences failing this are removed.
 2. **Citation integrity** — every retained citation's `locator` still resolves to
-   a `content_units` row whose `text_sha256` matches. A citation that no longer
-   resolves is an error, not a warning.
+   a `content_units` row whose `text_sha256` matches, and every citation from a
+   `suspect` unit carries its badge. A citation that no longer resolves, or a
+   badge that is missing, is an error rather than a warning.
 
 **Refusal threshold.** Refuse (return `refused: true`, no answer text) when:
 
 * the merged hit set is empty, or
 * the top hit's score is below a **measured** threshold, or
+* after verification, no sentence retains a `VERIFIED` or `UNVERIFIED` citation, or
+* the only supporting evidence is low-confidence Hindi/Hinglish ASR (§1.2, rule 3).
+
+The threshold must come from the §4 measurement run, not a round number. Until
+measured, the honest behaviour is to **refuse more often** — a refusal is
+recoverable, a confident wrong answer teaches the student something false.
+
+**The five evidence states** (`grounding.EvidenceState`):
+
+| State | Meaning | UI |
+| --- | --- | --- |
+| `VERIFIED` | Original integrity checked; locator and text hash match | neutral marker |
+| `UNVERIFIED` | Real extracted text, never checked against the original | "Check against source" |
+| `MODEL_DERIVED` | Model output, not present in the source | must be visibly distinct |
+| `INSUFFICIENT` | Retrieved but does not support the claim | audit panel only |
+| `REFUSED` | No eligible evidence | shown instead of an answer |
+
+`weakest_state()` drives the banner. An answer containing one `INSUFFICIENT`
+citation is not presented as trustworthy. A citation from a `suspect` unit is
+`UNVERIFIED` at best and additionally carries its §1.2 badge.
+
+**Off-material queries.** This is the case most likely to produce a plausible
+lie, so it gets an explicit rule: if the best hit is below the refusal
+threshold, **refuse**. Do not answer from model knowledge. M1 adds no web-search
+fallback — search is absent today and would be a new data flow with its own
+DECISIONS entry and consent question.
+
 ---
 
 ## 8. Providers
@@ -322,7 +498,7 @@ paraphrasing, because paraphrase is where fabrication enters.
 All model calls go through `providers.Provider` (already scaffolded). M1 routes
 **new** M1 calls through it and, where cheap, records provenance for existing ones.
 
-**M1 call sites:** embedding (local model — not a network call, but the *model*
+**M1 call sites:** embedding (a local model — not a network call, but the *model*
 identity and revision must be recorded exactly as a provider response would be)
 and answer composition (if a local Ollama model is configured).
 
@@ -331,7 +507,7 @@ Rules:
 * `ProviderResponse.prompt_revision` is **required**. A response without it is a
   bug. This is the seam that closes the D14 gap.
 * `ProviderKind.LOCAL` covers Ollama at `127.0.0.1:11434`; `ProviderKind.GROQ`
-  covers the cloud path. Embeddings are `LOCAL` only for M1.
+  covers the cloud path. Embeddings are `LOCAL` only for M1 (§4).
 * Credentials never enter `ProviderRequest`; they stay in backend env and are
   stripped from helper environments as today.
 * Every stored answer, citation and model-derived value records provider, model,
@@ -351,82 +527,22 @@ a time):
 
 | Test | Asserts |
 | --- | --- |
-| `test_only_verified_terminal_text_units_enter_the_index` | the gate rejects `needs_ocr`, `suspect`, non-terminal and hash-mismatched units |
+| `test_only_verified_terminal_text_units_enter_the_index` | the gate rejects `needs_ocr`, `empty`, `unreadable`, `too_large`, non-terminal and hash-mismatched units, and **accepts `text` and `suspect`** |
+| `test_suspect_citations_carry_a_badge_and_never_reach_verified` | every `suspect` citation has the §1.2 badge for its modality and language, and its state is at best `UNVERIFIED` |
 | `test_rebuilding_a_source_version_invalidates_its_chunks` | rebuild leaves no orphan chunk, embedding or FTS row |
 | `test_answer_refuses_when_no_eligible_evidence_exists` | empty corpus → `refused: true`, empty text |
+| `test_answer_refuses_when_only_low_confidence_asr_supports_a_claim` | Hindi/Hinglish ASR alone cannot support a numerical or definitional claim |
 | `test_every_claim_carries_an_exact_locator` | no sentence without a resolvable citation |
 | `test_answer_is_only_as_strong_as_its_weakest_citation` | `weakest_state()` picks the worst state |
 | `test_model_text_never_replaces_content_unit_text` | `content_units.text` unchanged after answering |
 | `test_every_response_records_its_prompt_revision` | no provider response without a revision |
 
 Plus chunk-boundary tests per modality, deterministic-id idempotency, FTS and
-vector agreeing on a trivial query, and `opens` payloads for every locator kind.
+vector agreeing on a trivial query, `opens` payloads for every locator kind, and
+embedder-cache tests per §4.1 (second call does not re-load; different revision
+does).
 
 **What `evaluation/` needs from M1:**
----
-
-## 10. Cut line
-
-**Minimum for a working demo** (M1-min):
-
-* Eligibility gate + its tests.
-* Chunking for `page`, `slide`, `time`, `lines`.
-* Migration `0006_retrieval`: `chunks`, `embeddings`, `chunks_fts`, `index_state`.
-* Local ONNX embeddings, single model, revision pinned, hash-verified.
-* Hybrid retrieval (FTS5 + brute-force cosine, **no new PyPI dependency**).
-* `GET .../search` and the exact citation contract in §6, reusing existing
-  renderer navigation.
-* Extractive composition with per-sentence citations, the verifier as a lexical
-  overlap check, and a **measured** refusal threshold.
-* Five evidence states rendered.
-* Invalidation on reprocess.
-* 20-case gold set, offline, covering the refusal cases.
-
-Explicitly **not** in the demo: reranker, `sqlite-vec`, fusion beyond RRF, query
-rewriting, multi-turn, streaming answers, and migrating existing providers.
-
-**Optional** (M1-plus, each independently approvable): cross-encoder rerank;
-`sqlite-vec` if measured latency justifies it; a second embedding model behind
-`index_state` so a model swap is a rebuild not a migration; student-corrected
-transcripts becoming eligible units; per-subject indexes for large workspaces.
-
----
-
-## 11. Open questions for you
-
-1. **Embeddings may send student material off-device.** §4 proposes local-only.
-   Confirm that is the requirement, or tell me a hosted embedding provider is
-   acceptable — that is a new data flow, a new DECISIONS entry, and arguably a
-   consent question. **This is the biggest decision in M1.**
-2. **Which refusal behaviour do you prefer when the corpus is thin?** I propose
-   refusing often (correct but frustrating). The alternative is a visible
-   "weak evidence" answer.
-3. **`sqlite-vec` — approve the pre-v1 compiled dependency now, or start with
-   brute force and revisit?** I recommend brute force and no new dependency, and
-   would rather not add a compiled C extension without you deciding it.
-4. **Should `suspect` transcripts ever be citable?** I propose no, with a path
-   for student-corrected text to become eligible. If you want them citable with a
-   visible "unverified" badge, that is simpler and changes the eligibility gate.
-5. **Is a YouTube caption a citable *source*?** It is an imported course source
-   today, so yes — but its provenance is local documentation, not externally
-   verifiable (DECISIONS D10). Should caption citations be capped at
-   `UNVERIFIED` permanently?
-6. **Gate the answer feature behind a flag for the demo?** Ask is currently
-   disabled in the UI. M1 could ship dark, or visible with refusal on display.
-7. **Gold-set size.** I proposed 30–50 cases. Confirm the budget, or say if you
-   want it larger before the model choice is locked.
-8. **Migration number.** `0006_retrieval` — confirm M1 owns `0006`, in case
-   something else is planned for that slot.
-
----
-
-## Appendix — what this document does not do
-
-It changes no code, adds no dependency, and creates no migration. Every entry
-point in `knowledge/`, `grounding/`, `providers/` and `evaluation/` still raises
-`NotImplementedError`. No model was downloaded, benchmarked or evaluated. Model
-footprints in §4 are **estimates from published model cards, not measurements on
-this machine** — the measurement plan is what turns them into facts.
 
 1. A **public, callable entry point** — `knowledge.KnowledgeIndex` and
    `grounding.GroundingService` implemented as protocols, not scripts poking at
@@ -442,65 +558,96 @@ this machine** — the measurement plan is what turns them into facts.
 | Fact spanning two chunks | 5 | both chunks cited |
 | Answerable only from `page`/`slide`/`time` | 5 | exact locator expected |
 | **Unanswerable / off-material** | 10 | must refuse |
-| Answerable but source is `suspect` | 5 | must refuse or label `UNVERIFIED`, never `VERIFIED` |
+| Answerable, but the only source is `suspect` ASR | 5 | must answer **with the §1.2 badge**, never `VERIFIED` |
+| Answerable, but the only source is OCR of a scan | 5 | must answer **with the scanned-text badge** |
+| Answerable numerically, but only from Hindi/Hinglish ASR | 5 | must **refuse** (§1.2 rule 3) |
 | Hinglish question, English source | 5 | retrieval must find it |
 | Adversarial: plausible but absent | 5 | must refuse |
 
-The refusal and `suspect` cases are the ones that matter. A retrieval benchmark
-that only measures recall will happily reward a model that fabricates well.
-* after verification, no sentence retains a `VERIFIED` or `UNVERIFIED` citation.
+The refusal and badge cases are the ones that matter. A retrieval benchmark that
+only measures recall will happily reward a model that fabricates well, and a
+badge-blind one will happily reward hiding machine text.
 
-The threshold must come from the §4 measurement run, not a round number. Until
-measured, the honest behaviour is to **refuse more often** — a refusal is
-recoverable, a confident wrong answer teaches the student something false.
+---
 
-**The five evidence states** (`grounding.EvidenceState`):
+## 10. Cut line
 
-| State | Meaning | UI |
-| --- | --- | --- |
-| `VERIFIED` | Original integrity checked; locator and text hash match | neutral marker |
-| `UNVERIFIED` | Real extracted text, never checked against the original | "Check against source" |
-| `MODEL_DERIVED` | Model output, not present in the source | must be visibly distinct |
-| `INSUFFICIENT` | Retrieved but does not support the claim | audit panel only |
-| `REFUSED` | No eligible evidence | shown instead of an answer |
+**Minimum for a working demo** (M1-min):
 
-`weakest_state()` drives the banner. An answer containing one `INSUFFICIENT`
-citation is not presented as trustworthy.
+* Eligibility gate (§1) with `text` **and** `suspect` citable, badges, and the
+  Hindi/Hinglish refusal rule.
+* Chunking for `page`, `slide`, `time`, `lines`.
+* Migration `0006_retrieval`: `chunks`, `embeddings`, `chunks_fts`, `index_state`.
+* Local ONNX embeddings, single model, revision pinned, hash-verified, cached
+  once per (model, revision) per §4.1.
+* Hybrid retrieval (FTS5 + brute-force cosine, **no new PyPI dependency**).
+* `GET .../search` and the exact citation contract in §6, reusing existing
+  renderer navigation.
+* Extractive composition with per-sentence citations, the verifier as a lexical
+  overlap check, and a **measured** refusal threshold.
+* Five evidence states rendered, with the §1.2 badges on every `suspect` citation.
+* Invalidation on reprocess.
+* A first gold set covering the refusal and badge cases.
 
-**Off-material queries.** This is the case most likely to produce a plausible
-lie, so it gets an explicit rule: if the best hit is below the refusal
-threshold, **refuse**. Do not answer from model knowledge. M1 adds no web-search
-fallback — search is absent today and would be a new data flow with its own
-DECISIONS entry and consent question.
-* Model licences must be recorded per model in `index_state` and
-  `docs/DECISIONS.md`. Most candidates are MIT or Apache-2.0; some multilingual
-  checkpoints carry additional terms. **I have not verified any individual
-  model's licence text** — that is a task, not an assumption.
-* `sqlite-vec`, if adopted, would be the first new compiled dependency in the
-  project and needs a licence and maintenance review before use.
-**Local vs hosted embeddings.** Embeddings derive from the student's own
-material. Sending chunk text to a hosted embedding API is a **new data flow**
-needing its own DECISIONS entry and consent question. **M1 proposes local-only.**
-That is a decision, not a default — it is open question 1.
-`dimensions` on every embedding. This is the gap DECISIONS D14 calls out — Ollama
-currently records model but no prompt/model revision. This table makes that
-structurally impossible to omit.
+Explicitly **not** in the demo: reranker, `sqlite-vec`, fusion beyond RRF, query
+rewriting, multi-turn, streaming answers, and migrating existing providers.
 
-**Invalidation.** `invalidate(source_version_id)`:
+**Optional** (M1-plus, each independently approvable): cross-encoder rerank;
+`sqlite-vec` if measured latency justifies it; a second embedding model behind
+`index_state` so a model swap is a rebuild not a migration; student-corrected
+transcripts becoming `text` units; per-subject indexes for large workspaces.
 
-1. `DELETE FROM embeddings WHERE chunk_id IN (SELECT id FROM chunks WHERE source_version_id = ?)`
-2. `DELETE FROM chunks WHERE source_version_id = ?`
-3. FTS5 external-content rows follow the delete; the app issues `'delete'`
-   commands against `chunks_fts` for the affected rowids.
-4. `index_state` records the last successful full build, not a counter.
+---
 
-Trigger: any `extract_source` rebuild, any `verify_original` failure, any source
-version delete. The worker already clears `content_units` and the cloud job on
-rebuild, so this hook sits in the same place.
+## 11. Open questions for you
 
-**Known SQLite limits, stated now:** FTS5 external-content tables do **not**
-support `UPSERT`, so re-chunk means delete-then-insert. Stock SQLite has no
-vector type and no ANN index; vector search is a scan over a BLOB column (§5).
-  changes. An index row with an older version is not reused; it is rebuilt.
-* Minimum chunk: skip units shorter than ~40 characters unless it is the only
-  unit in its source version. Indexing a single word produces noise.
+Question 1 is **answered** and is kept here for the record.
+
+1. ~~**Embeddings may send student material off-device.**~~ **ANSWERED: local
+   only.** M1 embeds locally with a pinned, hash-verified ONNX model. No hosted
+   embedding provider, no new data flow, and `PRIVACY_AND_DATA_FLOW.md` is
+   unchanged. (§4)
+2. **Which refusal behaviour do you prefer when the corpus is thin?** I propose
+   refusing often — correct but frustrating. The alternative is a visible
+   "weak evidence" answer. This also sets the bar for the §1.2 Hindi/Hinglish
+   refusal rule.
+3. **`sqlite-vec` — approve the pre-v1 compiled dependency now, or start with
+   brute force and revisit?** I recommend brute force and no new dependency
+   (§5 gives the chunk ceiling, ~25k–100k chunks depending on dimensions). I
+   would rather not add a compiled C extension without your decision.
+4. **Is a YouTube caption a citable *source*?** It is an imported course source
+   today, so yes — but its provenance is local documentation, not externally
+   verifiable (DECISIONS D10). Should caption citations be capped at
+   `UNVERIFIED` permanently?
+5. **Gate the answer feature behind a flag for the demo?** Ask is currently
+   disabled in the UI. M1 could ship dark, or visible with the refusal behaviour
+   and the badges on display. If visible, I would show badges from day one —
+   shipping uncited machine text first and retro-fitting the badges is exactly
+   the mistake this design is trying to avoid.
+6. **Gold-set size.** §9 now proposes 45 cases across nine categories. Confirm
+   the budget, or say if you want it larger before the model choice is locked.
+7. **Migration number.** `0006_retrieval` — confirm M1 owns `0006`, in case
+   something else is planned for that slot.
+
+Newly raised by this revision:
+
+8. **How long should a `suspect` badge persist?** A unit stays `suspect` until a
+   student or a later milestone corrects it. Should M1 display an age indicator
+   ("auto-transcript, 3 months old") on a long-unreviewed transcript, or is a
+   fixed badge sufficient?
+9. **Should the refusal threshold differ by language?** If Hinglish retrieval
+   scores materially worse (§4 measurement), the threshold for admitting a
+   Hinglish-source answer may need to be stricter than for English. I propose
+   yes, but it should follow the measurement rather than precede it.
+
+---
+
+## Appendix — what this document does not do
+
+It changes no code, adds no dependency, and creates no migration. Every entry
+point in `knowledge/`, `grounding/`, `providers/` and `evaluation/` still raises
+`NotImplementedError`. No model was downloaded, benchmarked or evaluated. Model
+footprints in §4 are **estimates from published model cards, not measurements on
+this machine** — the measurement plan is what turns them into facts, and the
+Hinglish accuracy claim in §1.2 is likewise drawn from the archived pilot rather
+than from a fresh measurement.
